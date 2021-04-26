@@ -49,7 +49,7 @@ begin
   inherited;
   oPais:= Paises( pObj );
   aCtrlPaises:= ctrlPaises( pCtrl );
-  Self.DBGrid1.DataSource:= TDataSource( aCtrlPaises.getDS );
+  Self.DBGrid.DataSource:= TDataSource( aCtrlPaises.getDS );
 end;
 
 procedure Tform_consulta_paises.excluir;
