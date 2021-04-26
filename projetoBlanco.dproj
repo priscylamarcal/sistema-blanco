@@ -141,6 +141,17 @@
             <Form>form_cadastro_cidades</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Controller\uController.pas"/>
+        <DCCReference Include="DAO\uDM.pas">
+            <Form>DM</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Controller\uCtrlPaises.pas"/>
+        <DCCReference Include="Controller\uCtrlEstados.pas"/>
+        <DCCReference Include="DAO\uDAO.pas"/>
+        <DCCReference Include="DAO\uDaoPaises.pas"/>
+        <DCCReference Include="DAO\uDaoEstados.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

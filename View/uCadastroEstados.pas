@@ -13,7 +13,7 @@ type
     { Private declarations }
   public
     { Public declarations }
-    procedure conhecaObj ();  override;
+    procedure conhecaObj ( pCtrl, pObj : TObject );  override;
     procedure salvar;         override;
     procedure sair;           override;
     procedure limpaEdt;       override;
@@ -43,7 +43,7 @@ begin
 
 end;
 
-procedure Tform_cadastro_estados.conhecaObj;
+procedure Tform_cadastro_estados.conhecaObj(pCtrl, pObj: TObject);
 begin
   inherited;
 
