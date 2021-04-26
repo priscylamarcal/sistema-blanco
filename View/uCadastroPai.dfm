@@ -21,7 +21,7 @@ object form_cadastro_pai: Tform_cadastro_pai
     Height = 455
     Align = alClient
     BevelOuter = bvNone
-    Color = clWhite
+    Color = 14408667
     ParentBackground = False
     TabOrder = 0
     object lbl_codigo: TLabel
@@ -156,6 +156,7 @@ object form_cadastro_pai: Tform_cadastro_pai
       Top = 35
       Width = 80
       Height = 24
+      Enabled = False
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -13
