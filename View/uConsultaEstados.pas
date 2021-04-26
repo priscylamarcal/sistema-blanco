@@ -6,13 +6,18 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uConsultaPai, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.Buttons, Vcl.StdCtrls, campoEdit, ComboBox, Vcl.ExtCtrls,
-  uCadastroEstados;
+  uCadastroEstados,
+  uCtrlEstados,
+  uEstados;
 
 type
   Tform_consulta_estados = class(Tform_consulta_pai)
   private
     { Private declarations }
     oCadastroEstados : Tform_cadastro_estados;
+
+    oEstado : Estados;
+    aCtrlEstados : ctrlEstados;
   public
     { Public declarations }
     procedure novo;                                           override;
@@ -20,7 +25,7 @@ type
     procedure excluir;                                        override;
     procedure sair;                                           override;
     procedure pesquisar;                                      override;
-    procedure conhecaObj ( pObj : TObject; pCtrl : TObject ); override;
+    procedure conhecaObj ( pCtrl : TObject; pObj : TObject ); override;
     procedure setFrmCadastro ( pObj : TObject );                  override;
   end;
 
@@ -39,10 +44,11 @@ begin
 
 end;
 
-procedure Tform_consulta_estados.conhecaObj(pObj, pCtrl: TObject);
+procedure Tform_consulta_estados.conhecaObj(pCtrl, pObj: TObject);
 begin
   inherited;
-
+  oEstado:= Estados( pobj );
+  aCtrlEstados:= ctrlEstados( pObj );
 end;
 
 procedure Tform_consulta_estados.excluir;

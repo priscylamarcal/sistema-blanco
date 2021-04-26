@@ -116,7 +116,7 @@ object form_consulta_pai: Tform_consulta_pai
       Color = clWhite
       ParentBackground = False
       TabOrder = 1
-      object DBGrid1: TDBGrid
+      object DBGrid: TDBGrid
         Left = 0
         Top = 0
         Width = 858
