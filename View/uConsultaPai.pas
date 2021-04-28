@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Buttons, Vcl.StdCtrls,
-  campoEdit, Vcl.WinXCtrls, ComboBox, Data.DB, Vcl.Grids, Vcl.DBGrids;
+  campoEdit, Vcl.WinXCtrls, ComboBox, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  uFuncoes_Sistema;
 
 type
   Tform_consulta_pai = class(TForm)
@@ -53,6 +54,9 @@ type
     procedure btn_botao_alterarClick(Sender: TObject);
     procedure btn_botao_excluirClick(Sender: TObject);
     procedure btn_botao_sairClick(Sender: TObject);
+    procedure DBGridDrawDataCell(Sender: TObject; const Rect: TRect;
+  DataCol: Integer; Column: TColumn; State: TGridDrawState);
+    procedure FormShow(Sender: TObject);
    // procedure FormResize(Sender: TObject);
   private
     { Private declarations }
@@ -121,9 +125,39 @@ begin
 
 end;
 
+procedure Tform_consulta_pai.DBGridDrawDataCell(Sender: TObject; const Rect: TRect;
+  DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+  //zebrando o dbgrid
+  if Odd ( DBGrid.DataSource.DataSet.RecNo ) then
+        DBGrid.Canvas.Brush.Color:= $00FBFBFB
+  else
+        DBGrid.Canvas.Brush.Color:= clWhite;
+
+  //mudando a cor da seleção
+  if ( gdSelected in State ) then
+  begin
+    DBGrid.Canvas.Brush.Color:= $00FFE8CC;
+    DBGrid.Canvas.Font.Color:= clBlack;
+    DBGrid.Canvas.Font.Style:= [fsBold];
+  end;
+
+  DBGrid.Canvas.FillRect( Rect );
+  DBGrid.DefaultDrawColumnCell( Rect, DataCol, Column, State );
+
+  //mudando a posição e alinhamento vertical do texto de cada linha
+  DBGrid.Canvas.TextRect( Rect, Rect.Left + 8, Rect.Top + 8, Column.Field.DisplayText );
+end;
+
 procedure Tform_consulta_pai.excluir;
 begin
 
+end;
+
+procedure Tform_consulta_pai.FormShow(Sender: TObject);
+begin
+  prcAjustarColunasGrid (DBGrid);
+  prcAjustaTamanhoLinha(DBGrid);
 end;
 
 procedure Tform_consulta_pai.novo;
