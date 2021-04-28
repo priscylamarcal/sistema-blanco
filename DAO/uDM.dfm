@@ -13,20 +13,61 @@ object DM: TDM
       'CharacterSet=WIN1252'
       'DriverID=FB')
     Connected = True
-    Left = 80
-    Top = 184
+    Transaction = Transacao
+    Left = 56
+    Top = 112
   end
   object Transacao: TFDTransaction
     Connection = Conexao
-    Left = 184
-    Top = 184
+    Left = 112
+    Top = 112
   end
   object QPaises: TFDQuery
+    Active = True
     Connection = Conexao
+    Transaction = Transacao
+    SQL.Strings = (
+      'select * from paises')
     Left = 280
     Top = 184
+    object QPaisesCODPAIS: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODPAIS'
+      Origin = 'CODPAIS'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QPaisesPAIS: TStringField
+      DisplayLabel = 'Pa'#237's'
+      FieldName = 'PAIS'
+      Origin = 'PAIS'
+      Required = True
+      Size = 50
+    end
+    object QPaisesSIGLA: TStringField
+      DisplayLabel = 'Sigla'
+      DisplayWidth = 6
+      FieldName = 'SIGLA'
+      Origin = 'SIGLA'
+      Required = True
+      Size = 3
+    end
+    object QPaisesDDI: TStringField
+      DisplayWidth = 6
+      FieldName = 'DDI'
+      Origin = 'DDI'
+      Size = 4
+    end
+    object QPaisesMOEDA: TStringField
+      DisplayLabel = 'Moeda'
+      DisplayWidth = 3
+      FieldName = 'MOEDA'
+      Origin = 'MOEDA'
+      Size = 3
+    end
   end
   object DSPaises: TDataSource
+    DataSet = QPaises
     Left = 368
     Top = 184
   end
