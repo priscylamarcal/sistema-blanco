@@ -12,6 +12,7 @@ uses
 
 type
   Tform_consulta_estados = class(Tform_consulta_pai)
+
   private
     { Private declarations }
     oCadastroEstados : Tform_cadastro_estados;
@@ -48,7 +49,8 @@ procedure Tform_consulta_estados.conhecaObj(pCtrl, pObj: TObject);
 begin
   inherited;
   oEstado:= Estados( pobj );
-  aCtrlEstados:= ctrlEstados( pObj );
+  aCtrlEstados:= ctrlEstados( pCtrl );
+  Self.DBGrid.DataSource:= TDataSource( aCtrlEstados.getDS );
 end;
 
 procedure Tform_consulta_estados.excluir;

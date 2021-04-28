@@ -16,5 +16,44 @@
     <Transaction>2021/04/22 19:00:21.000.904,D:\Desenvolvimento\Projetos\sistema-blanco\Unit1.pas=D:\Desenvolvimento\Projetos\sistema-blanco\DAO\uDaoPaises.pas</Transaction>
     <Transaction>2021/04/22 19:01:10.000.589,=D:\Desenvolvimento\Projetos\sistema-blanco\Unit1.pas</Transaction>
     <Transaction>2021/04/22 19:02:06.000.524,D:\Desenvolvimento\Projetos\sistema-blanco\Unit1.pas=D:\Desenvolvimento\Projetos\sistema-blanco\DAO\uDaoEstados.pas</Transaction>
+    <Transaction>2021/04/27 22:16:45.681,=D:\Desenvolvimento\Projetos\sistema-blanco\Model\uFuncoes_Sistema.pas</Transaction>
   </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="Controller"/>
+    <File Path="Controller\uController.pas"/>
+    <File Path="Controller\uCtrlEstados.pas"/>
+    <File Path="Controller\uCtrlPaises.pas"/>
+    <File Path="DAO"/>
+    <File Path="DAO\uDAO.pas"/>
+    <File Path="DAO\uDaoEstados.pas"/>
+    <File Path="DAO\uDaoPaises.pas"/>
+    <File Path="DAO\uDM.pas"/>
+    <File Path="DAO\uDM.dfm"/>
+    <File Path="Model"/>
+    <File Path="Model\uCidades.pas"/>
+    <File Path="Model\uEstados.pas"/>
+    <File Path="Model\uInter.pas"/>
+    <File Path="Model\uPai.pas"/>
+    <File Path="Model\uPaises.pas"/>
+    <File Path="Model\uFuncoes_Sistema.pas"/>
+    <File Path="View"/>
+    <File Path="View\uCadastroCidades.pas"/>
+    <File Path="View\uCadastroCidades.dfm"/>
+    <File Path="View\uCadastroEstados.pas"/>
+    <File Path="View\uCadastroEstados.dfm"/>
+    <File Path="View\uCadastroPai.pas"/>
+    <File Path="View\uCadastroPai.dfm"/>
+    <File Path="View\uCadastroPaises.pas"/>
+    <File Path="View\uCadastroPaises.dfm"/>
+    <File Path="View\uConsultaCidades.pas"/>
+    <File Path="View\uConsultaCidades.dfm"/>
+    <File Path="View\uConsultaEstados.pas"/>
+    <File Path="View\uConsultaEstados.dfm"/>
+    <File Path="View\uConsultaPai.pas"/>
+    <File Path="View\uConsultaPai.dfm"/>
+    <File Path="View\uConsultaPaises.pas"/>
+    <File Path="View\uConsultaPaises.dfm"/>
+    <File Path="View\uGerente.pas"/>
+    <File Path="View\uGerente.dfm"/>
+  </ProjectSortOrder>
 </BorlandProject>

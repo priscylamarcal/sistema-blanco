@@ -8,6 +8,7 @@ type daoEstados = class( DAO )
   private
   protected
   public
+    constructor crieObj;                              override;
     function getDS : TObject;                         override;
     function pesquisar ( pChave : string ) : string;  override;
     function salvar ( pObj : TObject ) : string;      override;
@@ -24,6 +25,12 @@ begin
 
 end;
 
+constructor daoEstados.crieObj;
+begin
+  inherited;
+
+end;
+
 function daoEstados.excluir(pObj: TObject): string;
 begin
 
@@ -31,7 +38,7 @@ end;
 
 function daoEstados.getDS: TObject;
 begin
-
+  Result:= aDM.DSPaises;
 end;
 
 function daoEstados.pesquisar(pChave: string): string;

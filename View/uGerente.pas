@@ -132,6 +132,7 @@ begin
   aCtrlEstado:= ctrlEstados.crieObj;
 
   aDm:= TDM.Create(nil);
+
   aCtrlPais.setDM( aDm );
   aCtrlEstado.setDM( aDm );
 end;

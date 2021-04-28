@@ -4,8 +4,8 @@ interface
 
 uses uConsultaPaises, uConsultaEstados, uConsultaCidades,
      uCadastroPaises, uCadastroEstados, uCadastroCidades,
-     uPaises, uEstados, uCidades;
-    //uCtrlPaises, uCtrlEstados, uCtrlCidades;
+     uPaises, uEstados, uCidades,
+    uCtrlPaises, uCtrlEstados;
 
 type Inter = class
   private
