@@ -16,6 +16,11 @@ type
     Transacao: TFDTransaction;
     QPaises: TFDQuery;
     DSPaises: TDataSource;
+    QPaisesCODPAIS: TIntegerField;
+    QPaisesPAIS: TStringField;
+    QPaisesDDI: TStringField;
+    QPaisesSIGLA: TStringField;
+    QPaisesMOEDA: TStringField;
   private
     { Private declarations }
   public
