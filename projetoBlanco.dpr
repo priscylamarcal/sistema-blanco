@@ -22,7 +22,8 @@ uses
   uCtrlEstados in 'Controller\uCtrlEstados.pas',
   uDAO in 'DAO\uDAO.pas',
   uDaoPaises in 'DAO\uDaoPaises.pas',
-  uDaoEstados in 'DAO\uDaoEstados.pas';
+  uDaoEstados in 'DAO\uDaoEstados.pas',
+  uFuncoes_Sistema in 'Model\uFuncoes_Sistema.pas';
 
 {$R *.res}
 
