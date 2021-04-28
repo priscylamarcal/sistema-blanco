@@ -26,7 +26,7 @@ type
     spb_botao_pesquisar: TSpeedButton;
     combo_filtro: TComboBox1;
     pnl_central_topo: TPanel;
-    DBGrid: TDBGrid;
+    DBGrid1: TDBGrid;
 
     procedure btn_botao_sairMouseEnter(Sender: TObject);
     procedure btn_botao_sairMouseLeave(Sender: TObject);
@@ -63,7 +63,7 @@ type
     procedure excluir;                                        virtual;
     procedure sair;                                           virtual;
     procedure pesquisar;                                      virtual;
-    procedure conhecaObj ( pCtrl : TObject; pObj : TObject ); virtual;
+    procedure conhecaObj ( pObj : TObject; pCtrl : TObject ); virtual;
     procedure setFrmCadastro ( pObj : TObject );                  virtual;
   end;
 
@@ -116,7 +116,7 @@ begin
   btn_botao_sair.Font.Style:= [];
 end;
 
-procedure Tform_consulta_pai.conhecaObj(pCtrl, pObj: TObject);
+procedure Tform_consulta_pai.conhecaObj(pObj, pCtrl: TObject);
 begin
 
 end;

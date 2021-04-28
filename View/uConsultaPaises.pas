@@ -6,18 +6,13 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uConsultaPai, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.Buttons, Vcl.StdCtrls, campoEdit, ComboBox, Vcl.ExtCtrls,
-  uCadastroPaises,
-  uPaises,
-  uCtrlPaises;
+  uCadastroPaises;
 
 type
   Tform_consulta_paises = class(Tform_consulta_pai)
   private
     { Private declarations }
     oCadastroPaises : Tform_cadastro_paises;
-
-    oPais : Paises;
-    aCtrlPaises : ctrlPaises;
   public
     { Public declarations }
     procedure novo;                                           override;
@@ -25,7 +20,7 @@ type
     procedure excluir;                                        override;
     procedure sair;                                           override;
     procedure pesquisar;                                      override;
-    procedure conhecaObj ( pCtrl : TObject; pObj : TObject ); override;
+    procedure conhecaObj ( pObj : TObject; pCtrl : TObject ); override;
     procedure setFrmCadastro ( pObj : TObject );                  override;
   end;
 
@@ -44,12 +39,10 @@ begin
 
 end;
 
-procedure Tform_consulta_paises.conhecaObj(pCtrl, pObj: TObject);
+procedure Tform_consulta_paises.conhecaObj(pObj, pCtrl: TObject);
 begin
   inherited;
-  oPais:= Paises( pObj );
-  aCtrlPaises:= ctrlPaises( pCtrl );
-  Self.DBGrid1.DataSource:= TDataSource( aCtrlPaises.getDS );
+
 end;
 
 procedure Tform_consulta_paises.excluir;

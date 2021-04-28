@@ -2953,7 +2953,7 @@
           Tag = 3
           Left = 300
           Top = 0
-          Width = 170
+          Width = 150
           Height = 34
           Cursor = crHandPoint
           Align = alLeft
@@ -3069,7 +3069,7 @@
         end
         object spb_menu_roupas: TSpeedButton
           Tag = 4
-          Left = 470
+          Left = 450
           Top = 0
           Width = 150
           Height = 34
@@ -3184,11 +3184,10 @@
           ParentFont = False
           OnMouseEnter = spb_menu_localidadeMouseEnter
           OnMouseLeave = spb_menu_localidadeMouseLeave
-          ExplicitLeft = 450
         end
         object spb_menu_estoque: TSpeedButton
           Tag = 6
-          Left = 770
+          Left = 750
           Top = 0
           Width = 150
           Height = 34
@@ -3543,7 +3542,7 @@
         end
         object spb_menu_cadastros_basicos: TSpeedButton
           Tag = 5
-          Left = 620
+          Left = 600
           Top = 0
           Width = 150
           Height = 34
@@ -3658,7 +3657,6 @@
           ParentFont = False
           OnMouseEnter = spb_menu_localidadeMouseEnter
           OnMouseLeave = spb_menu_localidadeMouseLeave
-          ExplicitLeft = 600
         end
       end
       object pnl_barra_topo_menu: TPanel
@@ -3890,7 +3888,7 @@
       Tag = 4
       Left = 450
       Top = 76
-      Width = 150
+      Width = 148
       Height = 245
       BevelKind = bkFlat
       BevelOuter = bvNone
@@ -3899,7 +3897,7 @@
       object spb_tamanho: TSpeedButton
         Left = 0
         Top = 164
-        Width = 146
+        Width = 144
         Height = 41
         Cursor = crHandPoint
         Align = alTop
@@ -3915,11 +3913,12 @@
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitLeft = 2
+        ExplicitWidth = 146
       end
       object spb_cor: TSpeedButton
         Left = 0
         Top = 41
-        Width = 146
+        Width = 144
         Height = 41
         Cursor = crHandPoint
         Align = alTop
@@ -3940,7 +3939,7 @@
       object spb_colecao: TSpeedButton
         Left = 0
         Top = 0
-        Width = 146
+        Width = 144
         Height = 41
         Cursor = crHandPoint
         Align = alTop
@@ -3957,11 +3956,12 @@
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitLeft = -22
         ExplicitTop = 3
+        ExplicitWidth = 146
       end
       object spb_marca: TSpeedButton
         Left = 0
         Top = 123
-        Width = 146
+        Width = 144
         Height = 41
         Cursor = crHandPoint
         Align = alTop
@@ -3977,11 +3977,12 @@
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 90
+        ExplicitWidth = 146
       end
       object spb_grupo_roupas: TSpeedButton
         Left = 0
         Top = 82
-        Width = 146
+        Width = 144
         Height = 41
         Cursor = crHandPoint
         Align = alTop
@@ -3997,11 +3998,12 @@
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 90
+        ExplicitWidth = 146
       end
       object spb_roupas: TSpeedButton
         Left = 0
         Top = 205
-        Width = 146
+        Width = 144
         Height = 41
         Cursor = crHandPoint
         Align = alTop
@@ -4017,6 +4019,7 @@
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 172
+        ExplicitWidth = 146
       end
     end
     object pnl_funcionarios: TPanel

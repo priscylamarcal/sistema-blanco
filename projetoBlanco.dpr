@@ -15,14 +15,7 @@ uses
   uConsultaCidades in 'View\uConsultaCidades.pas' {form_consulta_cidades},
   uCadastroPaises in 'View\uCadastroPaises.pas' {form_cadastro_paises},
   uCadastroEstados in 'View\uCadastroEstados.pas' {form_cadastro_estados},
-  uCadastroCidades in 'View\uCadastroCidades.pas' {form_cadastro_cidades},
-  uController in 'Controller\uController.pas',
-  uDM in 'DAO\uDM.pas' {DM: TDataModule},
-  uCtrlPaises in 'Controller\uCtrlPaises.pas',
-  uCtrlEstados in 'Controller\uCtrlEstados.pas',
-  uDAO in 'DAO\uDAO.pas',
-  uDaoPaises in 'DAO\uDaoPaises.pas',
-  uDaoEstados in 'DAO\uDaoEstados.pas';
+  uCadastroCidades in 'View\uCadastroCidades.pas' {form_cadastro_cidades};
 
 {$R *.res}
 
@@ -36,6 +29,5 @@ begin
   Application.CreateForm(Tform_cadastro_paises, form_cadastro_paises);
   Application.CreateForm(Tform_cadastro_estados, form_cadastro_estados);
   Application.CreateForm(Tform_cadastro_cidades, form_cadastro_cidades);
-  Application.CreateForm(TDM, DM);
   Application.Run;
 end.

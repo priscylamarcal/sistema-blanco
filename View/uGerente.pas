@@ -6,10 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus,
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.StdCtrls, Vcl.Imaging.pngimage,
-  uPaises, uEstados, uCidades,
-  uInter,
-  uCtrlPaises, uCtrlEstados,
-  uDM;
+  uPaises, uEstados, uCidades, uInter;
 
 type
   Tform_principal = class(TForm)
@@ -100,11 +97,6 @@ type
 
     aInter  : Inter;
 
-    aCtrlPais : ctrlPaises;
-    aCtrlEstado : ctrlEstados;
-
-    aDm : TDM;
-
     procedure focar_botao( barraPainel: Tpanel; botao: TspeedButton;
       focar: boolean; local: string );
     procedure controlar_menu ( botao : TSpeedButton; ativar : Boolean );
@@ -127,13 +119,6 @@ begin
   oPais:= Paises.crieObj;
   oEstado:= Estados.crieObj;
   aCidade:= Cidades.crieObj;
-
-  aCtrlPais:= ctrlPaises.crieObj;
-  aCtrlEstado:= ctrlEstados.crieObj;
-
-  aDm:= TDM.Create(nil);
-  aCtrlPais.setDM( aDm );
-  aCtrlEstado.setDM( aDm );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -172,12 +157,12 @@ end;
 
 procedure Tform_principal.spb_estadosClick(Sender: TObject);
 begin
-  aInter.PDEstados( aCtrlEstado, oEstado );
+  aInter.PDEstados( nil, nil );
 end;
 
 procedure Tform_principal.spb_paisesClick(Sender: TObject);
 begin
-  aInter.PDPaises( aCtrlPais, oPais );
+  aInter.PDPaises( nil, nil );
 end;
 
 procedure Tform_principal.spb_sairClick(Sender: TObject);
@@ -186,7 +171,7 @@ begin
 end;
 
 
-//---------------------FUNÇÕES---------------------//
+//---------------------FUNÇÕES---------------------
 
 procedure Tform_principal.spb_paisesMouseEnter(Sender: TObject);
 begin

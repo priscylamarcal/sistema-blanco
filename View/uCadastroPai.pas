@@ -35,7 +35,7 @@ type
     { Private declarations }
   public
     { Public declarations }
-    procedure conhecaObj ( pCtrl, pObj : TObject );  virtual;
+    procedure conhecaObj ();  virtual;
     procedure salvar;         virtual;
     procedure sair;           virtual;
     procedure limpaEdt;       virtual;
@@ -56,9 +56,19 @@ begin
   salvar;
 end;
 
+procedure Tform_cadastro_pai.btn_botao_salvarMouseEnter(Sender: TObject);
+begin
+  btn_botao_salvar.Font.Style:= [fsBold];
+end;
+
+procedure Tform_cadastro_pai.btn_botao_salvarMouseLeave(Sender: TObject);
+begin
+  btn_botao_salvar.Font.Style:= [];
+end;
+
 procedure Tform_cadastro_pai.bloqueiaEdt;
 begin
-  Self.edt_codigo.Enabled:= false;
+
 end;
 
 procedure Tform_cadastro_pai.carregaEdt;
@@ -66,7 +76,7 @@ begin
 
 end;
 
-procedure Tform_cadastro_pai.conhecaObj(pCtrl, pObj: TObject);
+procedure Tform_cadastro_pai.conhecaObj;
 begin
 
 end;
@@ -78,7 +88,7 @@ end;
 
 procedure Tform_cadastro_pai.limpaEdt;
 begin
-  Self.edt_codigo.Text:= '0';
+
 end;
 
 procedure Tform_cadastro_pai.sair;
@@ -94,18 +104,6 @@ end;
 procedure Tform_cadastro_pai.btn_botao_sairClick(Sender: TObject);
 begin
   sair;
-end;
-
-//---------------------ESTILOS---------------------//
-
-procedure Tform_cadastro_pai.btn_botao_salvarMouseEnter(Sender: TObject);
-begin
-  btn_botao_salvar.Font.Style:= [fsBold];
-end;
-
-procedure Tform_cadastro_pai.btn_botao_salvarMouseLeave(Sender: TObject);
-begin
-  btn_botao_salvar.Font.Style:= [];
 end;
 
 procedure Tform_cadastro_pai.btn_botao_sairMouseEnter(Sender: TObject);

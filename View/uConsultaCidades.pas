@@ -20,7 +20,7 @@ type
     procedure excluir;                                        override;
     procedure sair;                                           override;
     procedure pesquisar;                                      override;
-    procedure conhecaObj ( pCtrl : TObject; pObj : TObject ); override;
+    procedure conhecaObj ( pObj : TObject; pCtrl : TObject ); override;
     procedure setFrmCadastro ( pObj : TObject );                  override;
   end;
 
@@ -39,7 +39,7 @@ begin
 
 end;
 
-procedure Tform_consulta_cidades.conhecaObj(pCtrl, pObj: TObject);
+procedure Tform_consulta_cidades.conhecaObj(pObj, pCtrl: TObject);
 begin
   inherited;
 
