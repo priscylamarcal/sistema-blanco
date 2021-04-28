@@ -1,7 +1,6 @@
 object form_consulta_pai: Tform_consulta_pai
   Left = 0
   Top = 0
-  Align = alClient
   BorderStyle = bsSingle
   Caption = 'form_consulta_pai'
   ClientHeight = 626
@@ -13,7 +12,8 @@ object form_consulta_pai: Tform_consulta_pai
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  WindowState = wsMaximized
+  Position = poScreenCenter
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 13
   object pnl_fundo: TPanel
@@ -122,12 +122,21 @@ object form_consulta_pai: Tform_consulta_pai
         Width = 858
         Height = 450
         Align = alClient
+        BorderStyle = bsNone
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Options = [dgTitles, dgIndicator, dgRowLines, dgTabs, dgRowSelect, dgTitleClick, dgTitleHotTrack]
+        ParentFont = False
         TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
-        TitleFont.Height = -11
+        TitleFont.Height = -13
         TitleFont.Name = 'Tahoma'
         TitleFont.Style = []
+        OnDrawColumnCell = DBGridDrawDataCell
       end
     end
     object pnl_botoes: TPanel
