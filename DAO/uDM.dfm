@@ -31,6 +31,7 @@ object DM: TDM
     Left = 280
     Top = 184
     object QPaisesCODPAIS: TIntegerField
+      Alignment = taLeftJustify
       DisplayLabel = 'C'#243'digo'
       FieldName = 'CODPAIS'
       Origin = 'CODPAIS'
@@ -39,6 +40,7 @@ object DM: TDM
     end
     object QPaisesPAIS: TStringField
       DisplayLabel = 'Pa'#237's'
+      DisplayWidth = 20
       FieldName = 'PAIS'
       Origin = 'PAIS'
       Required = True

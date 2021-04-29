@@ -37,9 +37,10 @@ begin
        ( xDBGrid.Fields[I].FieldName = 'ds_bairro' ) or
        ( xDBGrid.Fields[I].FieldName = 'ds_municipio' ) or
        ( xDBGrid.Fields[I].FieldName = 'ds_descricao' ) then}
-      xDBGrid.Fields[I].Tag := 15;
-    {else
-      xDBGrid.Fields[I].Tag := 0;  }
+
+      xDBGrid.Fields[I].Tag := 15
+//    else
+//      xDBGrid.Fields[I].Tag := 0;
 
   end;
 
