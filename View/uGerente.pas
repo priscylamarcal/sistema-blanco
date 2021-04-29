@@ -74,23 +74,49 @@ type
     spb_tipos_contato: TSpeedButton;
     spb_funcionários: TSpeedButton;
     spb_roupas: TSpeedButton;
+
     procedure Sair1Click(Sender: TObject);
+
     procedure spb_rapido_vendasMouseEnter(Sender: TObject);
-    procedure spb_rapido_vendasMouseLeave(Sender: TObject);
-    procedure FormResize(Sender: TObject);
+    procedure spb_paisesMouseEnter(Sender: TObject);
     procedure spb_menu_localidadeMouseEnter(Sender: TObject);
     procedure pnl_topoMouseEnter(Sender: TObject);
     procedure pnl_principalMouseEnter(Sender: TObject);
     procedure img_logo1MouseEnter(Sender: TObject);
+
+    procedure spb_rapido_vendasMouseLeave(Sender: TObject);
     procedure spb_menu_localidadeMouseLeave(Sender: TObject);
-    procedure spb_paisesMouseEnter(Sender: TObject);
     procedure spb_paisesMouseLeave(Sender: TObject);
+
     procedure spb_sairClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
     procedure spb_paisesClick(Sender: TObject);
     procedure spb_estadosClick(Sender: TObject);
     procedure spb_cidadesClick(Sender: TObject);
+    procedure spb_cargosClick(Sender: TObject);
+
+    procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure FormResize(Sender: TObject);
+    procedure spb_departamentosClick(Sender: TObject);
+    procedure spb_funcionáriosClick(Sender: TObject);
+    procedure spb_formas_pagamentoClick(Sender: TObject);
+    procedure spb_condicoes_pagamentoClick(Sender: TObject);
+    procedure spb_vendasClick(Sender: TObject);
+    procedure spb_contas_receberClick(Sender: TObject);
+    procedure spb_contas_pagarClick(Sender: TObject);
+    procedure spb_colecaoClick(Sender: TObject);
+    procedure spb_corClick(Sender: TObject);
+    procedure spb_grupo_roupasClick(Sender: TObject);
+    procedure spb_marcaClick(Sender: TObject);
+    procedure spb_tamanhoClick(Sender: TObject);
+    procedure spb_roupasClick(Sender: TObject);
+    procedure spb_fornecedoresClick(Sender: TObject);
+    procedure spb_clientesClick(Sender: TObject);
+    procedure spb_tipos_contatoClick(Sender: TObject);
+    procedure spb_menu_estoqueClick(Sender: TObject);
+    procedure spb_rapido_vendasClick(Sender: TObject);
+    procedure spb_rapido_contas_receberClick(Sender: TObject);
+    procedure spb_rapido_contas_pagarClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -166,14 +192,74 @@ begin
   close;
 end;
 
+procedure Tform_principal.spb_cargosClick(Sender: TObject);
+begin
+  aInter.PDCargos( nil, nil );
+end;
+
 procedure Tform_principal.spb_cidadesClick(Sender: TObject);
 begin
   aInter.PDCidades( nil, nil );
 end;
 
+procedure Tform_principal.spb_clientesClick(Sender: TObject);
+begin
+  aInter.PDClientes(nil, nil);
+end;
+
+procedure Tform_principal.spb_colecaoClick(Sender: TObject);
+begin
+  aInter.PDColecoes(nil, nil);
+end;
+
+procedure Tform_principal.spb_condicoes_pagamentoClick(Sender: TObject);
+begin
+  aInter.PDCondicoesPagamentos(nil, nil);
+end;
+
+procedure Tform_principal.spb_contas_pagarClick(Sender: TObject);
+begin
+  aInter.PDContasPagar(nil, nil);
+end;
+
+procedure Tform_principal.spb_contas_receberClick(Sender: TObject);
+begin
+  aInter.PDContasReceber(nil, nil);
+end;
+
+procedure Tform_principal.spb_corClick(Sender: TObject);
+begin
+  aInter.PDCores(nil, nil);
+end;
+
+procedure Tform_principal.spb_departamentosClick(Sender: TObject);
+begin
+  aInter.PDDepartamentos(nil, nil);
+end;
+
 procedure Tform_principal.spb_estadosClick(Sender: TObject);
 begin
   aInter.PDEstados( aCtrlEstado, oEstado );
+end;
+
+procedure Tform_principal.spb_formas_pagamentoClick(Sender: TObject);
+begin
+  aInter.PDFormasPagamentos(nil, nil);
+end;
+
+procedure Tform_principal.spb_fornecedoresClick(Sender: TObject);
+begin
+  aInter.PDFornecedores(nil, nil);
+end;
+
+procedure Tform_principal.spb_funcionáriosClick(Sender: TObject);
+begin
+  aInter.PDFuncionarios(nil, nil);
+end;
+
+procedure Tform_principal.spb_grupo_roupasClick(Sender: TObject);
+begin
+  aInter.PDGruposProdutos(nil, nil);
 end;
 
 procedure Tform_principal.spb_paisesClick(Sender: TObject);
@@ -186,6 +272,52 @@ begin
   close;
 end;
 
+procedure Tform_principal.spb_tamanhoClick(Sender: TObject);
+begin
+  aInter.PDTamanhos(nil, nil);
+end;
+
+procedure Tform_principal.spb_tipos_contatoClick(Sender: TObject);
+begin
+  aInter.PDTiposContatos(nil, nil);
+end;
+
+procedure Tform_principal.spb_vendasClick(Sender: TObject);
+begin
+  aInter.PDVendas(nil, nil);
+end;
+
+
+procedure Tform_principal.spb_marcaClick(Sender: TObject);
+begin
+  aInter.PDMarcas(nil, nil);
+end;
+
+procedure Tform_principal.spb_menu_estoqueClick(Sender: TObject);
+begin
+  aInter.PDEstoques(nil, nil);
+end;
+
+
+procedure Tform_principal.spb_roupasClick(Sender: TObject);
+begin
+  aInter.PDRoupas(nil, nil);
+end;
+
+procedure Tform_principal.spb_rapido_contas_pagarClick(Sender: TObject);
+begin
+  aInter.PDContasPagar(nil, nil);
+end;
+
+procedure Tform_principal.spb_rapido_contas_receberClick(Sender: TObject);
+begin
+  aInter.PDContasReceber(nil, nil);
+end;
+
+procedure Tform_principal.spb_rapido_vendasClick(Sender: TObject);
+begin
+  aInter.PDVendas(nil, nil);
+end;
 
 //---------------------FUNÇÕES---------------------//
 

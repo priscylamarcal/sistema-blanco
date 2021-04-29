@@ -778,6 +778,7 @@
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphTop
           ParentFont = False
+          OnClick = spb_rapido_vendasClick
           OnMouseEnter = spb_rapido_vendasMouseEnter
           OnMouseLeave = spb_rapido_vendasMouseLeave
           ExplicitTop = 50
@@ -2494,6 +2495,7 @@
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphTop
           ParentFont = False
+          OnClick = spb_rapido_contas_receberClick
           OnMouseEnter = spb_rapido_vendasMouseEnter
           OnMouseLeave = spb_rapido_vendasMouseLeave
           ExplicitLeft = 48
@@ -2923,6 +2925,7 @@
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphTop
           ParentFont = False
+          OnClick = spb_rapido_contas_pagarClick
           OnMouseEnter = spb_rapido_vendasMouseEnter
           OnMouseLeave = spb_rapido_vendasMouseLeave
           ExplicitHeight = 111
@@ -3301,6 +3304,7 @@
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           ParentFont = False
+          OnClick = spb_menu_estoqueClick
           OnMouseEnter = spb_menu_localidadeMouseEnter
           OnMouseLeave = spb_menu_localidadeMouseLeave
           ExplicitLeft = 600
@@ -3912,6 +3916,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_tamanhoClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitLeft = 2
@@ -3932,6 +3937,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_corClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 8
@@ -3953,6 +3959,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_colecaoClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitLeft = -22
@@ -3974,6 +3981,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_marcaClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 90
@@ -3994,6 +4002,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_grupo_roupasClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 90
@@ -4014,6 +4023,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_roupasClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 172
@@ -4045,6 +4055,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_departamentosClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 35
@@ -4065,6 +4076,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_cargosClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitLeft = 39
@@ -4086,6 +4098,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_funcionáriosClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 49
@@ -4117,6 +4130,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_contas_pagarClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 158
@@ -4138,6 +4152,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_condicoes_pagamentoClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 8
@@ -4159,6 +4174,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_formas_pagamentoClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 3
@@ -4180,6 +4196,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_contas_receberClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 90
@@ -4201,6 +4218,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_vendasClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 90
@@ -4233,6 +4251,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_clientesClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 8
@@ -4254,6 +4273,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_fornecedoresClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitLeft = -22
@@ -4275,6 +4295,7 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
+        OnClick = spb_tipos_contatoClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 90

@@ -153,6 +153,78 @@
         <DCCReference Include="DAO\uDaoPaises.pas"/>
         <DCCReference Include="DAO\uDaoEstados.pas"/>
         <DCCReference Include="Model\uFuncoes_Sistema.pas"/>
+        <DCCReference Include="View\uConsultaCargos.pas">
+            <Form>form_consulta_cargos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaDepartamentos.pas">
+            <Form>form_consulta_departamentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaFuncionarios.pas">
+            <Form>form_consulta_funcionários</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaFormasPagamentos.pas">
+            <Form>form_consulta_formas_pagamentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaCondicoesPagamentos.pas">
+            <Form>form_consulta_condicoes_pagamentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaVendas.pas">
+            <Form>form_consulta_vendas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaContasReceber.pas">
+            <Form>form_consulta_contas_receber</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaContasPagar.pas">
+            <Form>form_consulta_contas_pagar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaColecoes.pas">
+            <Form>form_consulta_colecoes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaCores.pas">
+            <Form>form_consulta_cores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaGruposProdutos.pas">
+            <Form>form_consulta_grupos_produtos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaMarcas.pas">
+            <Form>form_consulta_marcas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaTamanhos.pas">
+            <Form>form_consulta_tamanhos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaRoupas.pas">
+            <Form>form_consulta_roupas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaFornecedores.pas">
+            <Form>form_consulta_fornecedores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaClientes.pas">
+            <Form>form_consulta_clientes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaTiposContatos.pas">
+            <Form>form_consulta_tipos_contatos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaEstoques.pas">
+            <Form>form_consulta_estoques</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

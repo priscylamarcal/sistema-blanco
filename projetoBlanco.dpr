@@ -23,7 +23,25 @@ uses
   uDAO in 'DAO\uDAO.pas',
   uDaoPaises in 'DAO\uDaoPaises.pas',
   uDaoEstados in 'DAO\uDaoEstados.pas',
-  uFuncoes_Sistema in 'Model\uFuncoes_Sistema.pas';
+  uFuncoes_Sistema in 'Model\uFuncoes_Sistema.pas',
+  uConsultaCargos in 'View\uConsultaCargos.pas' {form_consulta_cargos},
+  uConsultaDepartamentos in 'View\uConsultaDepartamentos.pas' {form_consulta_departamentos},
+  uConsultaFuncionarios in 'View\uConsultaFuncionarios.pas' {form_consulta_funcionários},
+  uConsultaFormasPagamentos in 'View\uConsultaFormasPagamentos.pas' {form_consulta_formas_pagamentos},
+  uConsultaCondicoesPagamentos in 'View\uConsultaCondicoesPagamentos.pas' {form_consulta_condicoes_pagamentos},
+  uConsultaVendas in 'View\uConsultaVendas.pas' {form_consulta_vendas},
+  uConsultaContasReceber in 'View\uConsultaContasReceber.pas' {form_consulta_contas_receber},
+  uConsultaContasPagar in 'View\uConsultaContasPagar.pas' {form_consulta_contas_pagar},
+  uConsultaColecoes in 'View\uConsultaColecoes.pas' {form_consulta_colecoes},
+  uConsultaCores in 'View\uConsultaCores.pas' {form_consulta_cores},
+  uConsultaGruposProdutos in 'View\uConsultaGruposProdutos.pas' {form_consulta_grupos_produtos},
+  uConsultaMarcas in 'View\uConsultaMarcas.pas' {form_consulta_marcas},
+  uConsultaTamanhos in 'View\uConsultaTamanhos.pas' {form_consulta_tamanhos},
+  uConsultaRoupas in 'View\uConsultaRoupas.pas' {form_consulta_roupas},
+  uConsultaFornecedores in 'View\uConsultaFornecedores.pas' {form_consulta_fornecedores},
+  uConsultaClientes in 'View\uConsultaClientes.pas' {form_consulta_clientes},
+  uConsultaTiposContatos in 'View\uConsultaTiposContatos.pas' {form_consulta_tipos_contatos},
+  uConsultaEstoques in 'View\uConsultaEstoques.pas' {form_consulta_estoques};
 
 {$R *.res}
 
@@ -38,5 +56,23 @@ begin
   Application.CreateForm(Tform_cadastro_estados, form_cadastro_estados);
   Application.CreateForm(Tform_cadastro_cidades, form_cadastro_cidades);
   Application.CreateForm(TDM, DM);
+  Application.CreateForm(Tform_consulta_cargos, form_consulta_cargos);
+  Application.CreateForm(Tform_consulta_departamentos, form_consulta_departamentos);
+  Application.CreateForm(Tform_consulta_funcionários, form_consulta_funcionários);
+  Application.CreateForm(Tform_consulta_formas_pagamentos, form_consulta_formas_pagamentos);
+  Application.CreateForm(Tform_consulta_condicoes_pagamentos, form_consulta_condicoes_pagamentos);
+  Application.CreateForm(Tform_consulta_vendas, form_consulta_vendas);
+  Application.CreateForm(Tform_consulta_contas_receber, form_consulta_contas_receber);
+  Application.CreateForm(Tform_consulta_contas_pagar, form_consulta_contas_pagar);
+  Application.CreateForm(Tform_consulta_colecoes, form_consulta_colecoes);
+  Application.CreateForm(Tform_consulta_cores, form_consulta_cores);
+  Application.CreateForm(Tform_consulta_grupos_produtos, form_consulta_grupos_produtos);
+  Application.CreateForm(Tform_consulta_marcas, form_consulta_marcas);
+  Application.CreateForm(Tform_consulta_tamanhos, form_consulta_tamanhos);
+  Application.CreateForm(Tform_consulta_roupas, form_consulta_roupas);
+  Application.CreateForm(Tform_consulta_fornecedores, form_consulta_fornecedores);
+  Application.CreateForm(Tform_consulta_clientes, form_consulta_clientes);
+  Application.CreateForm(Tform_consulta_tipos_contatos, form_consulta_tipos_contatos);
+  Application.CreateForm(Tform_consulta_estoques, form_consulta_estoques);
   Application.Run;
 end.
