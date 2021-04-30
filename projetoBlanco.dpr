@@ -41,7 +41,11 @@ uses
   uConsultaFornecedores in 'View\uConsultaFornecedores.pas' {form_consulta_fornecedores},
   uConsultaClientes in 'View\uConsultaClientes.pas' {form_consulta_clientes},
   uConsultaTiposContatos in 'View\uConsultaTiposContatos.pas' {form_consulta_tipos_contatos},
-  uConsultaEstoques in 'View\uConsultaEstoques.pas' {form_consulta_estoques};
+  uConsultaEstoques in 'View\uConsultaEstoques.pas' {form_consulta_estoques},
+  uDepartamentos in 'Model\uDepartamentos.pas',
+  uMarcas in 'Model\uMarcas.pas',
+  uTamanhos in 'Model\uTamanhos.pas',
+  uCores in 'Model\uCores.pas';
 
 {$R *.res}
 

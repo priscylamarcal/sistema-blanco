@@ -8,9 +8,9 @@ uses Classes, SysUtils,
 type Cidades = class(Pai)
   private
   protected
-    cidade : string[50];
-    sigla : string[3];
-    DDD : string[3];
+    cidade  : string[50];
+    sigla   : string[3];
+    DDD     : string[3];
     oEstado : Estados;
   public
     constructor crieObj;
