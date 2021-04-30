@@ -9,7 +9,7 @@ type Estados = class(Pai)
   private
   protected
     estado : string[50];
-    UF : string[2];
+    UF     : string[2];
     umPais : Paises;
   public
     constructor crieObj;
