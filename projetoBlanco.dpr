@@ -45,13 +45,16 @@ uses
   uDepartamentos in 'Model\uDepartamentos.pas',
   uMarcas in 'Model\uMarcas.pas',
   uTamanhos in 'Model\uTamanhos.pas',
-  uCores in 'Model\uCores.pas';
+  uCores in 'Model\uCores.pas',
+  uCadastroCargos in 'View\uCadastroCargos.pas' {form_cadastro_cargos},
+  uCadastroDepartamentos in 'View\uCadastroDepartamentos.pas' {form_cadastro_departamento},
+  uCadastroFuncionarios in 'View\uCadastroFuncionarios.pas' {form_cadastro_funcionario};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(Tform_cadastro_cidades, form_cadastro_cidades);
+  Application.CreateForm(Tform_cadastro_funcionario, form_cadastro_funcionario);
   Application.Run;
 end.

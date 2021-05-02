@@ -229,6 +229,18 @@
         <DCCReference Include="Model\uMarcas.pas"/>
         <DCCReference Include="Model\uTamanhos.pas"/>
         <DCCReference Include="Model\uCores.pas"/>
+        <DCCReference Include="View\uCadastroCargos.pas">
+            <Form>form_cadastro_cargos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uCadastroDepartamentos.pas">
+            <Form>form_cadastro_departamento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uCadastroFuncionarios.pas">
+            <Form>form_cadastro_funcionario</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
