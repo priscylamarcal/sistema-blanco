@@ -1,14 +1,28 @@
 inherited form_cadastro_paises: Tform_cadastro_paises
-  Caption = 'Cadastro de Pa'#237'ses'
-  ClientHeight = 463
+  Caption = 'Cadastro de Pa'#237's'
+  ClientHeight = 382
   ClientWidth = 681
   ExplicitWidth = 697
-  ExplicitHeight = 502
+  ExplicitHeight = 421
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
     Width = 681
-    Height = 463
+    Height = 382
+    ExplicitWidth = 681
+    ExplicitHeight = 382
+    inherited lbl_data_cadastro: TLabel
+      Top = 277
+      ExplicitTop = 277
+    end
+    inherited lbl_data_ult_alt: TLabel
+      Top = 277
+      ExplicitTop = 277
+    end
+    inherited lbl_cod_usuario: TLabel
+      Top = 277
+      ExplicitTop = 277
+    end
     object lbl_pais: TLabel [4]
       Left = 112
       Top = 16
@@ -62,13 +76,11 @@ inherited form_cadastro_paises: Tform_cadastro_paises
       ParentFont = False
     end
     inherited pnl_bottom: TPanel
-      Top = 408
+      Top = 327
       Width = 681
       TabOrder = 4
-      inherited pnl_botao_sair: TPanel
-        Left = 520
-        ExplicitLeft = 520
-      end
+      ExplicitTop = 327
+      ExplicitWidth = 681
       inherited pnl_botao_salvar: TPanel
         Left = 344
         ExplicitLeft = 344
@@ -79,13 +91,19 @@ inherited form_cadastro_paises: Tform_cadastro_paises
       TabOrder = 5
     end
     inherited edt_data_cadastro: PriTEdit
+      Top = 293
       TabOrder = 6
+      ExplicitTop = 293
     end
     inherited edt_data_ult_alt: PriTEdit
+      Top = 293
       TabOrder = 7
+      ExplicitTop = 293
     end
     inherited edt_cod_usuario: PriTEdit
+      Top = 293
       TabOrder = 8
+      ExplicitTop = 293
     end
     object edt_pais: PriTEdit
       Left = 112
@@ -150,6 +168,34 @@ inherited form_cadastro_paises: Tform_cadastro_paises
       ParentFont = False
       TabOrder = 2
       MudarCor = clCream
+    end
+    object Panel1: TPanel
+      Left = 520
+      Top = 328
+      Width = 150
+      Height = 40
+      BevelOuter = bvNone
+      Color = 16119285
+      ParentBackground = False
+      TabOrder = 9
+      object SpeedButton1: TSpeedButton
+        Left = 0
+        Top = 0
+        Width = 150
+        Height = 40
+        Cursor = crHandPoint
+        Align = alClient
+        Caption = 'Cancelar'
+        Flat = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGray
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        OnMouseEnter = SpeedButton1MouseEnter
+        OnMouseLeave = SpeedButton1MouseLeave
+      end
     end
   end
 end
