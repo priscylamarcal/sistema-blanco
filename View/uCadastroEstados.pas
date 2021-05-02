@@ -9,6 +9,14 @@ uses
 
 type
   Tform_cadastro_estados = class(Tform_cadastro_pai)
+    edt_estado: PriTEdit;
+    edt_uf: PriTEdit;
+    lbl_estado: TLabel;
+    lbl_uf: TLabel;
+    edt_pesquisar_pais_estado: PriTEdit;
+    pnl_btn_pesquisa: TPanel;
+    btn_pesquisa: TSpeedButton;
+    lbl_pais_estado: TLabel;
   private
     { Private declarations }
   public

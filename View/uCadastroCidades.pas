@@ -9,6 +9,19 @@ uses
 
 type
   Tform_cadastro_cidades = class(Tform_cadastro_pai)
+    lbl_estado: TLabel;
+    edt_cidade: PriTEdit;
+    lbl_uf: TLabel;
+    edt_sigla: PriTEdit;
+    lbl_pais_estado: TLabel;
+    edt_pesquisar_estado_cidade: PriTEdit;
+    lbl_cidade: TLabel;
+    lbl_sigla: TLabel;
+    lbl_estado_cidade: TLabel;
+    lbl_ddd: TLabel;
+    edt_ddd: PriTEdit;
+    pnl_btn_pesquisa: TPanel;
+    btn_pesquisa: TSpeedButton;
   private
     { Private declarations }
   public

@@ -52,31 +52,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(Tform_principal, form_principal);
-  Application.CreateForm(Tform_consulta_paises, form_consulta_paises);
-  Application.CreateForm(Tform_consulta_estados, form_consulta_estados);
-  Application.CreateForm(Tform_consulta_cidades, form_consulta_cidades);
-  Application.CreateForm(Tform_cadastro_paises, form_cadastro_paises);
-  Application.CreateForm(Tform_cadastro_estados, form_cadastro_estados);
   Application.CreateForm(Tform_cadastro_cidades, form_cadastro_cidades);
-  Application.CreateForm(TDM, DM);
-  Application.CreateForm(Tform_consulta_cargos, form_consulta_cargos);
-  Application.CreateForm(Tform_consulta_departamentos, form_consulta_departamentos);
-  Application.CreateForm(Tform_consulta_funcionários, form_consulta_funcionários);
-  Application.CreateForm(Tform_consulta_formas_pagamentos, form_consulta_formas_pagamentos);
-  Application.CreateForm(Tform_consulta_condicoes_pagamentos, form_consulta_condicoes_pagamentos);
-  Application.CreateForm(Tform_consulta_vendas, form_consulta_vendas);
-  Application.CreateForm(Tform_consulta_contas_receber, form_consulta_contas_receber);
-  Application.CreateForm(Tform_consulta_contas_pagar, form_consulta_contas_pagar);
-  Application.CreateForm(Tform_consulta_colecoes, form_consulta_colecoes);
-  Application.CreateForm(Tform_consulta_cores, form_consulta_cores);
-  Application.CreateForm(Tform_consulta_grupos_produtos, form_consulta_grupos_produtos);
-  Application.CreateForm(Tform_consulta_marcas, form_consulta_marcas);
-  Application.CreateForm(Tform_consulta_tamanhos, form_consulta_tamanhos);
-  Application.CreateForm(Tform_consulta_roupas, form_consulta_roupas);
-  Application.CreateForm(Tform_consulta_fornecedores, form_consulta_fornecedores);
-  Application.CreateForm(Tform_consulta_clientes, form_consulta_clientes);
-  Application.CreateForm(Tform_consulta_tipos_contatos, form_consulta_tipos_contatos);
-  Application.CreateForm(Tform_consulta_estoques, form_consulta_estoques);
   Application.Run;
 end.

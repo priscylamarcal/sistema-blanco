@@ -19,6 +19,11 @@ type
     lbl_sigla: TLabel;
     lbl_moeda: TLabel;
     lbl_ddi: TLabel;
+    Panel1: TPanel;
+    SpeedButton1: TSpeedButton;
+
+    procedure SpeedButton1MouseEnter(Sender: TObject);
+    procedure SpeedButton1MouseLeave(Sender: TObject);
   private
     { Private declarations }
     oPais : Paises;
@@ -120,6 +125,17 @@ begin
     else //EXCLUIR
        aCtrlPais.excluir( oPais.clone );
   end;
+end;
+
+procedure Tform_cadastro_paises.SpeedButton1MouseEnter(Sender: TObject);
+begin
+  SpeedButton1.Font.Style:= [fsBold];
+end;
+
+procedure Tform_cadastro_paises.SpeedButton1MouseLeave(Sender: TObject);
+begin
+  Panel1.Color:= $00F5F5F5;
+  SpeedButton1.Font.Style:= [];
 end;
 
 end.

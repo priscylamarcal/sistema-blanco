@@ -21,7 +21,7 @@ object form_cadastro_pai: Tform_cadastro_pai
     Height = 455
     Align = alClient
     BevelOuter = bvNone
-    Color = 14408667
+    Color = 16514043
     ParentBackground = False
     TabOrder = 0
     object lbl_codigo: TLabel
@@ -84,36 +84,6 @@ object form_cadastro_pai: Tform_cadastro_pai
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 0
-      object pnl_botao_sair: TPanel
-        Left = 696
-        Top = 1
-        Width = 150
-        Height = 40
-        BevelOuter = bvNone
-        Color = 16119285
-        ParentBackground = False
-        TabOrder = 0
-        object btn_botao_sair: TSpeedButton
-          Left = 0
-          Top = 0
-          Width = 150
-          Height = 40
-          Cursor = crHandPoint
-          Align = alClient
-          Caption = 'Sair'
-          Flat = True
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clGray
-          Font.Height = -13
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          OnClick = btn_botao_sairClick
-          OnMouseEnter = btn_botao_sairMouseEnter
-          OnMouseLeave = btn_botao_sairMouseLeave
-          ExplicitWidth = 185
-        end
-      end
       object pnl_botao_salvar: TPanel
         Left = 528
         Top = 1
@@ -128,7 +98,7 @@ object form_cadastro_pai: Tform_cadastro_pai
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 1
+        TabOrder = 0
         object btn_botao_salvar: TSpeedButton
           Left = 0
           Top = 0
@@ -148,6 +118,42 @@ object form_cadastro_pai: Tform_cadastro_pai
           OnMouseEnter = btn_botao_salvarMouseEnter
           OnMouseLeave = btn_botao_salvarMouseLeave
           ExplicitHeight = 41
+        end
+      end
+      object pnl_botao_cancelar: TPanel
+        Left = 696
+        Top = 0
+        Width = 150
+        Height = 40
+        BevelOuter = bvNone
+        Color = 16119285
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 1
+        object btn_botao_cancelar: TSpeedButton
+          Left = 0
+          Top = 0
+          Width = 150
+          Height = 40
+          Cursor = crHandPoint
+          Align = alClient
+          Caption = 'Cancelar'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clGray
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          OnClick = btn_botao_cancelarClick
+          OnMouseEnter = btn_botao_cancelarMouseEnter
+          OnMouseLeave = btn_botao_cancelarMouseLeave
+          ExplicitHeight = 39
         end
       end
     end
