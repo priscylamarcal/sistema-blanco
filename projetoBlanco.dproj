@@ -161,10 +161,6 @@
             <Form>form_consulta_departamentos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\uConsultaFuncionarios.pas">
-            <Form>form_consulta_funcionários</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="View\uConsultaFormasPagamentos.pas">
             <Form>form_consulta_formas_pagamentos</Form>
             <FormType>dfm</FormType>
@@ -235,10 +231,6 @@
         </DCCReference>
         <DCCReference Include="View\uCadastroDepartamentos.pas">
             <Form>form_cadastro_departamento</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="View\uCadastroFuncionarios.pas">
-            <Form>form_cadastro_funcionario</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
