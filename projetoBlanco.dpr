@@ -26,7 +26,6 @@ uses
   uFuncoes_Sistema in 'Model\uFuncoes_Sistema.pas',
   uConsultaCargos in 'View\uConsultaCargos.pas' {form_consulta_cargos},
   uConsultaDepartamentos in 'View\uConsultaDepartamentos.pas' {form_consulta_departamentos},
-  uConsultaFuncionarios in 'View\uConsultaFuncionarios.pas' {form_consulta_funcionários},
   uConsultaFormasPagamentos in 'View\uConsultaFormasPagamentos.pas' {form_consulta_formas_pagamentos},
   uConsultaCondicoesPagamentos in 'View\uConsultaCondicoesPagamentos.pas' {form_consulta_condicoes_pagamentos},
   uConsultaVendas in 'View\uConsultaVendas.pas' {form_consulta_vendas},
@@ -47,14 +46,13 @@ uses
   uTamanhos in 'Model\uTamanhos.pas',
   uCores in 'Model\uCores.pas',
   uCadastroCargos in 'View\uCadastroCargos.pas' {form_cadastro_cargos},
-  uCadastroDepartamentos in 'View\uCadastroDepartamentos.pas' {form_cadastro_departamento},
-  uCadastroFuncionarios in 'View\uCadastroFuncionarios.pas' {form_cadastro_funcionario};
+  uCadastroDepartamentos in 'View\uCadastroDepartamentos.pas' {form_cadastro_departamento};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(Tform_cadastro_funcionario, form_cadastro_funcionario);
+  Application.CreateForm(Tform_principal, form_principal);
   Application.Run;
 end.
