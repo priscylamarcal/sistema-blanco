@@ -104,10 +104,6 @@
             <Form>form_principal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\uConsultaPai.pas">
-            <Form>form_consulta_pai</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
         <DCCReference Include="View\uCadastroPai.pas">
             <Form>form_cadastro_pai</Form>
             <FormType>dfm</FormType>
@@ -231,6 +227,22 @@
         </DCCReference>
         <DCCReference Include="View\uCadastroDepartamentos.pas">
             <Form>form_cadastro_departamento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaFuncionarios.pas">
+            <Form>form_consulta_funcionarios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uCadastroFuncionarios.pas">
+            <Form>form_cadastro_funcionario</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uConsultaPai.pas">
+            <Form>form_consulta_pai</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\uCadastroCondicoesPagamentos.pas">
+            <Form>form_cadastro_condicao_pagamento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

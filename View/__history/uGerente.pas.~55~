@@ -117,7 +117,6 @@ type
     procedure spb_rapido_vendasClick(Sender: TObject);
     procedure spb_rapido_contas_receberClick(Sender: TObject);
     procedure spb_rapido_contas_pagarClick(Sender: TObject);
-    procedure spb_funcionáriosClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -251,11 +250,6 @@ end;
 procedure Tform_principal.spb_fornecedoresClick(Sender: TObject);
 begin
   aInter.PDFornecedores(nil, nil);
-end;
-
-procedure Tform_principal.spb_funcionáriosClick(Sender: TObject);
-begin
-  aInter.PDFuncionarios(nil, nil);
 end;
 
 procedure Tform_principal.spb_grupo_roupasClick(Sender: TObject);
