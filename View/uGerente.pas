@@ -98,7 +98,7 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure FormResize(Sender: TObject);
     procedure spb_departamentosClick(Sender: TObject);
-    procedure spb_funcionáriosClick(Sender: TObject);
+
     procedure spb_formas_pagamentoClick(Sender: TObject);
     procedure spb_condicoes_pagamentoClick(Sender: TObject);
     procedure spb_vendasClick(Sender: TObject);
@@ -117,6 +117,7 @@ type
     procedure spb_rapido_vendasClick(Sender: TObject);
     procedure spb_rapido_contas_receberClick(Sender: TObject);
     procedure spb_rapido_contas_pagarClick(Sender: TObject);
+    procedure spb_funcionáriosClick(Sender: TObject);
   private
     { Private declarations }
 
