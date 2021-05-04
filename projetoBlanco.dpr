@@ -49,7 +49,8 @@ uses
   uConsultaFuncionarios in 'View\uConsultaFuncionarios.pas' {form_consulta_funcionarios},
   uCadastroFuncionarios in 'View\uCadastroFuncionarios.pas' {form_cadastro_funcionario},
   uConsultaPai in 'View\uConsultaPai.pas' {form_consulta_pai},
-  uCadastroCondicoesPagamentos in 'View\uCadastroCondicoesPagamentos.pas' {form_cadastro_condicao_pagamento};
+  uCadastroCondicoesPagamentos in 'View\uCadastroCondicoesPagamentos.pas' {form_cadastro_condicao_pagamento},
+  uCadastroGruposProdutos in 'View\uCadastroGruposProdutos.pas' {form_cadastro_grupos_produtos};
 
 {$R *.res}
 
@@ -88,5 +89,6 @@ begin
   Application.CreateForm(Tform_cadastro_funcionario, form_cadastro_funcionario);
   Application.CreateForm(Tform_consulta_pai, form_consulta_pai);
   Application.CreateForm(Tform_cadastro_condicao_pagamento, form_cadastro_condicao_pagamento);
+  Application.CreateForm(Tform_cadastro_grupos_produtos, form_cadastro_grupos_produtos);
   Application.Run;
 end.
