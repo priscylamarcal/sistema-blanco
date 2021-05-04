@@ -1,16 +1,16 @@
-unit uCadastroFormasPagamentos;
+unit uCadastroGruposProdutos;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroPai, Vcl.Buttons, Vcl.StdCtrls,
-  campoEdit, Vcl.ExtCtrls;
+  campoEdit, Vcl.ExtCtrls, Vcl.Mask, MaskEdit1;
 
 type
-  Tform_cadastro_forma_pagamento = class(Tform_cadastro_pai)
-    edt_forma_pagamento: PriTEdit;
-    lbl_forma_pagamento: TLabel;
+  Tform_cadastro_grupos_produtos = class(Tform_cadastro_pai)
+    lbl_grupo_produto: TLabel;
+    edt_grupo_produto: PriTEdit;
   private
     { Private declarations }
   public
@@ -18,7 +18,7 @@ type
   end;
 
 var
-  form_cadastro_forma_pagamento: Tform_cadastro_forma_pagamento;
+  form_cadastro_grupos_produtos: Tform_cadastro_grupos_produtos;
 
 implementation
 

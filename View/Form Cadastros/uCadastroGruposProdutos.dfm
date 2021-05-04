@@ -1,35 +1,33 @@
-inherited form_cadastro_tipos_contatos: Tform_cadastro_tipos_contatos
-  Caption = 'Cadastro de Tipo de Contato'
-  ClientHeight = 253
-  ClientWidth = 689
-  ExplicitWidth = 705
-  ExplicitHeight = 292
+inherited form_cadastro_grupos_produtos: Tform_cadastro_grupos_produtos
+  Caption = 'Cadastro de Grupo de Produto'
+  ClientHeight = 308
+  ExplicitHeight = 347
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
-    Width = 689
-    Height = 253
+    Height = 308
+    ExplicitHeight = 308
     inherited ScrollBox1: TScrollBox
-      Width = 689
-      Height = 253
+      Height = 308
+      ExplicitHeight = 308
       inherited lbl_cod_usuario: TLabel
-        Top = 149
-        ExplicitTop = 149
+        Top = 205
+        ExplicitTop = 205
       end
       inherited lbl_data_cadastro: TLabel
-        Top = 149
-        ExplicitTop = 149
+        Top = 205
+        ExplicitTop = 205
       end
       inherited lbl_data_ult_alt: TLabel
-        Top = 149
-        ExplicitTop = 149
+        Top = 205
+        ExplicitTop = 205
       end
-      object lbl_tipo_contato: TLabel [4]
+      object lbl_grupo_produto: TLabel [4]
         Left = 112
         Top = 16
-        Width = 103
+        Width = 112
         Height = 16
-        Caption = 'Tipo de Contato *'
+        Caption = 'Grupo de Produto *'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
@@ -38,34 +36,27 @@ inherited form_cadastro_tipos_contatos: Tform_cadastro_tipos_contatos
         ParentFont = False
       end
       inherited edt_cod_usuario: PriTEdit
-        Top = 164
-        ExplicitTop = 164
+        Top = 220
+        ExplicitTop = 220
       end
       inherited edt_data_cadastro: PriTEdit
-        Top = 164
-        ExplicitTop = 164
+        Top = 220
+        ExplicitTop = 220
       end
       inherited edt_data_ult_alt: PriTEdit
-        Top = 164
-        ExplicitTop = 164
+        Top = 220
+        ExplicitTop = 220
       end
       inherited pnl_bottom: TPanel
-        Top = 198
-        Width = 689
-        inherited pnl_botao_salvar: TPanel
-          Left = 360
-          ExplicitLeft = 360
-        end
-        inherited pnl_botao_cancelar: TPanel
-          Left = 528
-          ExplicitLeft = 528
-        end
+        Top = 253
+        ExplicitTop = 253
       end
-      object edt_tipo_contato: PriTEdit
+      object edt_grupo_produto: PriTEdit
         Left = 112
         Top = 35
         Width = 566
         Height = 24
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13

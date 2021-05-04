@@ -16,7 +16,7 @@ uses
   uCadastroEstados in 'View\Form Cadastros\uCadastroEstados.pas' {form_cadastro_estados},
   uCadastroCidades in 'View\Form Cadastros\uCadastroCidades.pas' {form_cadastro_cidades},
   uController in 'Controller\uController.pas',
-  uDM in 'Model\DM\uDM.pas' {DM: TDataModule},
+  uDM in 'DAO\uDM.pas' {DM: TDataModule},
   uCtrlPaises in 'Controller\uCtrlPaises.pas',
   uCtrlEstados in 'Controller\uCtrlEstados.pas',
   uDAO in 'DAO\uDAO.pas',

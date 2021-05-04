@@ -9,13 +9,13 @@ inherited form_cadastro_paises: Tform_cadastro_paises
   inherited pnl_fundo: TPanel
     Width = 692
     Height = 390
-    ExplicitWidth = 681
-    ExplicitHeight = 382
+    ExplicitWidth = 692
+    ExplicitHeight = 390
     inherited ScrollBox1: TScrollBox
       Width = 692
       Height = 390
-      ExplicitWidth = 681
-      ExplicitHeight = 382
+      ExplicitWidth = 692
+      ExplicitHeight = 390
       inherited lbl_cod_usuario: TLabel
         Top = 277
         ExplicitTop = 277
@@ -102,8 +102,8 @@ inherited form_cadastro_paises: Tform_cadastro_paises
         Top = 335
         Width = 692
         TabOrder = 8
-        ExplicitTop = 327
-        ExplicitWidth = 681
+        ExplicitTop = 335
+        ExplicitWidth = 692
         inherited pnl_botao_salvar: TPanel
           Left = 344
           ExplicitLeft = 344
