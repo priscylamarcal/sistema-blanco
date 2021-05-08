@@ -40,7 +40,7 @@ object DM: TDM
     end
     object QPaisesPAIS: TStringField
       DisplayLabel = 'Pa'#237's'
-      DisplayWidth = 189
+      DisplayWidth = 193
       FieldName = 'PAIS'
       Origin = 'PAIS'
       Required = True

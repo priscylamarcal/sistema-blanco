@@ -1,0 +1,62 @@
+inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
+  Caption = 'Cadastro de Fornecedor'
+  PixelsPerInch = 96
+  TextHeight = 13
+  inherited pnl_fundo: TPanel
+    inherited ScrollBox1: TScrollBox
+      inherited lbl_codigo: TLabel
+        Top = 39
+        ExplicitTop = 39
+      end
+      object lbl_tipo_cliente: TLabel [4]
+        Left = 112
+        Top = 39
+        Width = 86
+        Height = 16
+        Caption = 'Tipo de Cliente'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl_titulo_dados_gerais: TLabel [5]
+        Left = 16
+        Top = 15
+        Width = 116
+        Height = 18
+        Caption = 'DADOS GERAIS'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -15
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      inherited edt_codigo: PriTEdit
+        Top = 58
+        ExplicitTop = 58
+      end
+      object ComboBox_tipo_cliente: TComboBox1
+        Left = 112
+        Top = 58
+        Width = 145
+        Height = 24
+        CharCase = ecUpperCase
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 5
+        TextHint = 'Selecione o tipo'
+        Items.Strings = (
+          'PESSOA F'#205'SICA'
+          'PESSOA JUR'#205'DICA')
+        MudarCor = clCream
+      end
+    end
+  end
+end

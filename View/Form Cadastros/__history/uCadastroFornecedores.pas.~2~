@@ -1,0 +1,28 @@
+unit uCadastroFornecedores;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroPai, Vcl.Buttons, Vcl.StdCtrls,
+  campoEdit, Vcl.ExtCtrls, ComboBox;
+
+type
+  Tform_cadastro_fornecedores = class(Tform_cadastro_pai)
+    lbl_titulo_dados_gerais: TLabel;
+    lbl_tipo_cliente: TLabel;
+    ComboBox_tipo_cliente: TComboBox1;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  form_cadastro_fornecedores: Tform_cadastro_fornecedores;
+
+implementation
+
+{$R *.dfm}
+
+end.

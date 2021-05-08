@@ -1206,6 +1206,7 @@
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphTop
           ParentFont = False
+          OnClick = spb_rapido_clientesClick
           OnMouseEnter = spb_rapido_vendasMouseEnter
           OnMouseLeave = spb_rapido_vendasMouseLeave
         end
@@ -1631,6 +1632,7 @@
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphTop
           ParentFont = False
+          OnClick = spb_rapido_roupaClick
           OnMouseEnter = spb_rapido_vendasMouseEnter
           OnMouseLeave = spb_rapido_vendasMouseLeave
           ExplicitLeft = 48

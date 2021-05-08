@@ -214,6 +214,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Top = 80
         Width = 150
         Height = 40
+        Cursor = crHandPoint
         BevelOuter = bvNone
         Color = clRed
         DragCursor = crHandPoint
