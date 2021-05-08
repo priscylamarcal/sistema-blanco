@@ -19,14 +19,15 @@ type
     btn_botao_sair: TSpeedButton;
     pnl_botao_excluir: TPanel;
     btn_botao_excluir: TSpeedButton;
-    pnl_botao_alterar: TPanel;
-    btn_botao_alterar: TSpeedButton;
-    pnl_botao_novo: TPanel;
-    btn_botao_novo: TSpeedButton;
     combobox_tipo_filtro: TComboBox1;
     edt_pesquisa: PriTEdit;
     pnl_botao_pesquisar: TPanel;
     spb_botao_pesquisar: TSpeedButton;
+    pnl_botao_novo: TPanel;
+    btn_botao_novo: TSpeedButton;
+    pnl_botao_alterar: TPanel;
+    btn_botao_alterar: TSpeedButton;
+    ScrollBox1: TScrollBox;
 
     procedure btn_botao_sairMouseEnter(Sender: TObject);
     procedure btn_botao_sairMouseLeave(Sender: TObject);
@@ -50,6 +51,13 @@ type
     procedure btn_botao_novoClick(Sender: TObject);
     procedure btn_botao_alterarClick(Sender: TObject);
     procedure btn_botao_excluirClick(Sender: TObject);
+
+    procedure btn_botao_novoMouseEnter2(Sender: TObject);
+    procedure btn_botao_novoMouseLeave2(Sender: TObject);
+
+    procedure btn_botao_alterarMouseEnter2(Sender: TObject);
+    procedure btn_botao_alterarMouseLeave2(Sender: TObject);
+    procedure combobox_tipo_filtroChange(Sender: TObject);
   private
     { Private declarations }
   public
@@ -61,6 +69,7 @@ type
     procedure pesquisar;                                        virtual;
     procedure conhecaObj ( pObj : TObject; pCtrl : TObject );   virtual;
     procedure setFrmCadastro ( pObj : TObject );                virtual;
+    procedure tipoFiltro;                                       virtual;
   end;
 
 var
@@ -84,6 +93,11 @@ procedure Tform_consulta_pai.btn_botao_sairMouseLeave(Sender: TObject);
 begin
   pnl_botao_sair.Color:= $00F5F5F5;
   btn_botao_sair.Font.Style:= [];
+end;
+
+procedure Tform_consulta_pai.combobox_tipo_filtroChange(Sender: TObject);
+begin
+  tipoFiltro;
 end;
 
 procedure Tform_consulta_pai.conhecaObj(pObj, pCtrl: TObject);
@@ -124,6 +138,8 @@ procedure Tform_consulta_pai.FormShow(Sender: TObject);
 begin
  // prcAjustarColunasGrid (DBGrid);
   prcAjustaTamanhoLinha(DBGrid);
+
+  tipoFiltro;
 end;
 
 procedure Tform_consulta_pai.novo;
@@ -204,6 +220,45 @@ end;
 procedure Tform_consulta_pai.spb_botao_pesquisarMouseLeave(Sender: TObject);
 begin
   pnl_botao_pesquisar.Font.Style:= [];
+end;
+
+procedure Tform_consulta_pai.tipoFiltro;
+begin
+  case combobox_tipo_filtro.ItemIndex of
+    0:  //código
+      begin
+        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR CÓDIGO!';
+        edt_pesquisa.NumbersOnly:= true;
+        edt_pesquisa.Enabled:= true;
+        edt_pesquisa.Clear;
+      end;
+    1: //todos
+      begin
+        edt_pesquisa.NumbersOnly:= false;
+        edt_pesquisa.Enabled:= false;
+        edt_pesquisa.Clear;
+      end;
+  end;
+end;
+
+procedure Tform_consulta_pai.btn_botao_novoMouseEnter2(Sender: TObject);
+begin
+  btn_botao_novo.Font.Style:= [fsBold];
+end;
+
+procedure Tform_consulta_pai.btn_botao_novoMouseLeave2(Sender: TObject);
+begin
+  btn_botao_novo.Font.Style:= [];
+end;
+
+procedure Tform_consulta_pai.btn_botao_alterarMouseEnter2(Sender: TObject);
+begin
+  btn_botao_alterar.Font.Style:= [fsBold];
+end;
+
+procedure Tform_consulta_pai.btn_botao_alterarMouseLeave2(Sender: TObject);
+begin
+  btn_botao_alterar.Font.Style:= [];
 end;
 
 end.

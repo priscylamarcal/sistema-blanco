@@ -249,6 +249,54 @@
             <Form>form_cadastro_grupos_produtos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="View\Form Cadastros\uCadastroMarcas.pas">
+            <Form>form_cadastro_marcas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form Cadastros\uCadastroColecoes.pas">
+            <Form>form_cadastro_colecoes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form Cadastros\uCadastroTamanhos.pas">
+            <Form>form_cadastro_tamanhos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form Cadastros\uCadastroCores.pas">
+            <Form>form_cadastro_cores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form Cadastros\uCadastroProdutos.pas">
+            <Form>form_cadastro_produtos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form Cadastros\uCadastroClientes.pas">
+            <Form>form_cadastro_clientes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form Cadastros\uCadastroFornecedores.pas">
+            <Form>form_cadastro_fornecedores</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form Cadastros\uCadastroVendas.pas">
+            <Form>form_cadastro_vendas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form Cadastros\uCadastroContasReceber.pas">
+            <Form>form_cadastro_contas_receber</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form Cadastros\uCadastroContasPagar.pas">
+            <Form>form_cadastro_contas_pagar</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form Cadastros\uCadastroFormasPagamentos.pas">
+            <Form>form_cadastro_formas_pagamentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="View\Form Cadastros\uCadastroTiposContatos.pas">
+            <Form>form_cadastro_tipo_contato</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

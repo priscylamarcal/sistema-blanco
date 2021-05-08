@@ -1,0 +1,5 @@
+inherited form_cadastro_produtos: Tform_cadastro_produtos
+  Caption = 'Cadastro de Produto'
+  PixelsPerInch = 96
+  TextHeight = 13
+end

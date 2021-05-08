@@ -118,6 +118,8 @@ type
     procedure spb_rapido_contas_receberClick(Sender: TObject);
     procedure spb_rapido_contas_pagarClick(Sender: TObject);
     procedure spb_funcionáriosClick(Sender: TObject);
+    procedure spb_rapido_clientesClick(Sender: TObject);
+    procedure spb_rapido_roupaClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -305,6 +307,11 @@ begin
   aInter.PDRoupas(nil, nil);
 end;
 
+procedure Tform_principal.spb_rapido_clientesClick(Sender: TObject);
+begin
+  aInter.PDClientes(nil, nil);
+end;
+
 procedure Tform_principal.spb_rapido_contas_pagarClick(Sender: TObject);
 begin
   aInter.PDContasPagar(nil, nil);
@@ -313,6 +320,11 @@ end;
 procedure Tform_principal.spb_rapido_contas_receberClick(Sender: TObject);
 begin
   aInter.PDContasReceber(nil, nil);
+end;
+
+procedure Tform_principal.spb_rapido_roupaClick(Sender: TObject);
+begin
+  aInter.PDRoupas(nil, nil);
 end;
 
 procedure Tform_principal.spb_rapido_vendasClick(Sender: TObject);

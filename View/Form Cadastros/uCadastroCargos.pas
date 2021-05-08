@@ -19,6 +19,13 @@ type
     { Private declarations }
   public
     { Public declarations }
+    procedure conhecaObj ( pCtrl, pObj : TObject );  override;
+    procedure salvar;         override;
+    procedure sair;           override;
+    procedure limpaEdt;       override;
+    procedure carregaEdt;     override;
+    procedure bloqueiaEdt;    override;
+    procedure desbloqueiaEdt; override;
   end;
 
 var
@@ -27,5 +34,49 @@ var
 implementation
 
 {$R *.dfm}
+
+{ Tform_cadastro_cargos }
+
+procedure Tform_cadastro_cargos.bloqueiaEdt;
+begin
+  inherited;
+
+end;
+
+procedure Tform_cadastro_cargos.carregaEdt;
+begin
+  inherited;
+
+end;
+
+procedure Tform_cadastro_cargos.conhecaObj(pCtrl, pObj: TObject);
+begin
+  inherited;
+
+end;
+
+procedure Tform_cadastro_cargos.desbloqueiaEdt;
+begin
+  inherited;
+
+end;
+
+procedure Tform_cadastro_cargos.limpaEdt;
+begin
+  inherited;
+
+end;
+
+procedure Tform_cadastro_cargos.sair;
+begin
+  inherited;
+
+end;
+
+procedure Tform_cadastro_cargos.salvar;
+begin
+  inherited;
+
+end;
 
 end.

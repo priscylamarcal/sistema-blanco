@@ -22,7 +22,7 @@ object form_consulta_pai: Tform_consulta_pai
     Height = 825
     Align = alClient
     BevelOuter = bvNone
-    Color = clWhite
+    Color = 14869726
     ParentBackground = False
     TabOrder = 0
     object pnl_topo: TPanel
@@ -55,14 +55,20 @@ object form_consulta_pai: Tform_consulta_pai
           Font.Height = -13
           Font.Name = 'Tahoma'
           Font.Style = []
+          ItemIndex = 1
           ParentFont = False
           TabOrder = 0
+          Text = 'TODOS'
+          OnChange = combobox_tipo_filtroChange
+          Items.Strings = (
+            'C'#211'DIGO'
+            'TODOS')
           MudarCor = clCream
         end
         object edt_pesquisa: PriTEdit
-          Left = 207
+          Left = 223
           Top = 21
-          Width = 369
+          Width = 586
           Height = 24
           CharCase = ecUpperCase
           Font.Charset = DEFAULT_CHARSET
@@ -72,11 +78,10 @@ object form_consulta_pai: Tform_consulta_pai
           Font.Style = []
           ParentFont = False
           TabOrder = 1
-          TextHint = 'DIGITE AQUI A SUA PESQUISA!'
           MudarCor = clCream
         end
         object pnl_botao_pesquisar: TPanel
-          Left = 600
+          Left = 824
           Top = 12
           Width = 150
           Height = 40
@@ -119,7 +124,7 @@ object form_consulta_pai: Tform_consulta_pai
       BevelOuter = bvNone
       TabOrder = 1
       object pnl_botao_sair: TPanel
-        Left = 1323
+        Left = 1379
         Top = 8
         Width = 150
         Height = 40
@@ -150,7 +155,7 @@ object form_consulta_pai: Tform_consulta_pai
         end
       end
       object pnl_botao_excluir: TPanel
-        Left = 1160
+        Left = 1208
         Top = 8
         Width = 150
         Height = 40
@@ -182,54 +187,15 @@ object form_consulta_pai: Tform_consulta_pai
           ExplicitHeight = 22
         end
       end
-      object pnl_botao_alterar: TPanel
-        Left = 992
+      object pnl_botao_novo: TPanel
+        Left = 872
         Top = 8
         Width = 150
         Height = 40
         BevelOuter = bvNone
         Color = 4227072
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
         ParentBackground = False
-        ParentFont = False
         TabOrder = 2
-        object btn_botao_alterar: TSpeedButton
-          Left = 0
-          Top = 0
-          Width = 150
-          Height = 40
-          Cursor = crHandPoint
-          Align = alClient
-          Caption = 'Alterar'
-          Flat = True
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWhite
-          Font.Height = -13
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          OnClick = btn_botao_alterarClick
-          OnMouseEnter = btn_botao_alterarMouseEnter
-          OnMouseLeave = btn_botao_alterarMouseLeave
-          ExplicitLeft = 40
-          ExplicitTop = 8
-          ExplicitWidth = 23
-          ExplicitHeight = 22
-        end
-      end
-      object pnl_botao_novo: TPanel
-        Left = 824
-        Top = 8
-        Width = 150
-        Height = 40
-        BevelOuter = bvNone
-        Color = 1624307
-        ParentBackground = False
-        TabOrder = 3
         object btn_botao_novo: TSpeedButton
           Left = 0
           Top = 0
@@ -240,18 +206,51 @@ object form_consulta_pai: Tform_consulta_pai
           Caption = 'Novo'
           Flat = True
           Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
+          Font.Color = clWhite
           Font.Height = -13
           Font.Name = 'Tahoma'
           Font.Style = []
           ParentFont = False
           OnClick = btn_botao_novoClick
-          OnMouseEnter = btn_botao_novoMouseEnter
-          OnMouseLeave = btn_botao_novoMouseLeave
-          ExplicitLeft = 48
-          ExplicitTop = 16
-          ExplicitWidth = 23
-          ExplicitHeight = 22
+          OnMouseEnter = btn_botao_novoMouseEnter2
+          OnMouseLeave = btn_botao_novoMouseLeave2
+          ExplicitTop = -2
+        end
+      end
+      object pnl_botao_alterar: TPanel
+        Left = 1040
+        Top = 8
+        Width = 150
+        Height = 40
+        BevelOuter = bvNone
+        Color = 1624307
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 3
+        object btn_botao_alterar: TSpeedButton
+          Left = 0
+          Top = 0
+          Width = 150
+          Height = 40
+          Cursor = crHandPoint
+          Align = alClient
+          Caption = 'Alterar'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          OnClick = btn_botao_alterarClick
+          OnMouseEnter = btn_botao_alterarMouseEnter2
+          OnMouseLeave = btn_botao_alterarMouseLeave2
+          ExplicitTop = -2
         end
       end
     end
@@ -263,30 +262,42 @@ object form_consulta_pai: Tform_consulta_pai
       Align = alClient
       Anchors = [akTop, akBottom]
       BevelOuter = bvNone
-      Color = clWhite
+      Color = 14869726
       ParentBackground = False
       TabOrder = 2
-      object DBGrid: TDBGrid
-        Left = 53
-        Top = 6
-        Width = 1420
-        Height = 646
-        Color = clWhite
-        FixedColor = 64
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = 64
-        Font.Height = -11
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        Options = [dgTitles, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgTitleClick, dgTitleHotTrack]
-        ParentFont = False
+      object ScrollBox1: TScrollBox
+        Left = 0
+        Top = 0
+        Width = 1539
+        Height = 668
+        Align = alClient
+        BevelInner = bvNone
+        BevelOuter = bvNone
+        BorderStyle = bsNone
         TabOrder = 0
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -13
-        TitleFont.Name = 'Tahoma'
-        TitleFont.Style = [fsBold]
-        OnDrawColumnCell = DBGridDrawColumnCell
+        object DBGrid: TDBGrid
+          Left = 0
+          Top = 0
+          Width = 1539
+          Height = 668
+          Align = alClient
+          Color = clWhite
+          FixedColor = 64
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 64
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          Options = [dgTitles, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgTitleClick, dgTitleHotTrack]
+          ParentFont = False
+          TabOrder = 0
+          TitleFont.Charset = DEFAULT_CHARSET
+          TitleFont.Color = clWindowText
+          TitleFont.Height = -13
+          TitleFont.Name = 'Tahoma'
+          TitleFont.Style = [fsBold]
+          OnDrawColumnCell = DBGridDrawColumnCell
+        end
       end
     end
   end

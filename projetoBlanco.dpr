@@ -50,7 +50,19 @@ uses
   uCadastroFuncionarios in 'View\Form Cadastros\uCadastroFuncionarios.pas' {form_cadastro_funcionario},
   uConsultaPai in 'View\Form Pai\uConsultaPai.pas' {form_consulta_pai},
   uCadastroCondicoesPagamentos in 'View\Form Cadastros\uCadastroCondicoesPagamentos.pas' {form_cadastro_condicao_pagamento},
-  uCadastroGruposProdutos in 'View\Form Cadastros\uCadastroGruposProdutos.pas' {form_cadastro_grupos_produtos};
+  uCadastroGruposProdutos in 'View\Form Cadastros\uCadastroGruposProdutos.pas' {form_cadastro_grupos_produtos},
+  uCadastroMarcas in 'View\Form Cadastros\uCadastroMarcas.pas' {form_cadastro_marcas},
+  uCadastroColecoes in 'View\Form Cadastros\uCadastroColecoes.pas' {form_cadastro_colecoes},
+  uCadastroTamanhos in 'View\Form Cadastros\uCadastroTamanhos.pas' {form_cadastro_tamanhos},
+  uCadastroCores in 'View\Form Cadastros\uCadastroCores.pas' {form_cadastro_cores},
+  uCadastroProdutos in 'View\Form Cadastros\uCadastroProdutos.pas' {form_cadastro_produtos},
+  uCadastroClientes in 'View\Form Cadastros\uCadastroClientes.pas' {form_cadastro_clientes},
+  uCadastroFornecedores in 'View\Form Cadastros\uCadastroFornecedores.pas' {form_cadastro_fornecedores},
+  uCadastroVendas in 'View\Form Cadastros\uCadastroVendas.pas' {form_cadastro_vendas},
+  uCadastroContasReceber in 'View\Form Cadastros\uCadastroContasReceber.pas' {form_cadastro_contas_receber},
+  uCadastroContasPagar in 'View\Form Cadastros\uCadastroContasPagar.pas' {form_cadastro_contas_pagar},
+  uCadastroFormasPagamentos in 'View\Form Cadastros\uCadastroFormasPagamentos.pas' {form_cadastro_formas_pagamentos},
+  uCadastroTiposContatos in 'View\Form Cadastros\uCadastroTiposContatos.pas' {form_cadastro_tipo_contato};
 
 {$R *.res}
 
@@ -90,5 +102,17 @@ begin
   Application.CreateForm(Tform_consulta_pai, form_consulta_pai);
   Application.CreateForm(Tform_cadastro_condicao_pagamento, form_cadastro_condicao_pagamento);
   Application.CreateForm(Tform_cadastro_grupos_produtos, form_cadastro_grupos_produtos);
+  Application.CreateForm(Tform_cadastro_marcas, form_cadastro_marcas);
+  Application.CreateForm(Tform_cadastro_colecoes, form_cadastro_colecoes);
+  Application.CreateForm(Tform_cadastro_tamanhos, form_cadastro_tamanhos);
+  Application.CreateForm(Tform_cadastro_cores, form_cadastro_cores);
+  Application.CreateForm(Tform_cadastro_produtos, form_cadastro_produtos);
+  Application.CreateForm(Tform_cadastro_clientes, form_cadastro_clientes);
+  Application.CreateForm(Tform_cadastro_fornecedores, form_cadastro_fornecedores);
+  Application.CreateForm(Tform_cadastro_vendas, form_cadastro_vendas);
+  Application.CreateForm(Tform_cadastro_contas_receber, form_cadastro_contas_receber);
+  Application.CreateForm(Tform_cadastro_contas_pagar, form_cadastro_contas_pagar);
+  Application.CreateForm(Tform_cadastro_formas_pagamentos, form_cadastro_formas_pagamentos);
+  Application.CreateForm(Tform_cadastro_tipo_contato, form_cadastro_tipo_contato);
   Application.Run;
 end.
