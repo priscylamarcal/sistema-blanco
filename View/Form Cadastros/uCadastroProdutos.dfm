@@ -10,12 +10,12 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
     Width = 897
     Height = 957
     ExplicitWidth = 897
-    ExplicitHeight = 1061
+    ExplicitHeight = 957
     inherited ScrollBox1: TScrollBox
       Width = 897
       Height = 957
       ExplicitWidth = 897
-      ExplicitHeight = 1061
+      ExplicitHeight = 957
       inherited lbl_cod_usuario: TLabel
         Top = 1289
         ExplicitTop = 967
@@ -395,25 +395,36 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       inherited edt_cod_usuario: PriTEdit
         Top = 1304
+        TabOrder = 7
         ExplicitTop = 1304
       end
       inherited edt_codigo: PriTEdit
         Top = 75
+        TabOrder = 23
         ExplicitTop = 75
       end
       inherited edt_data_cadastro: PriTEdit
         Top = 1304
+        TabOrder = 9
         ExplicitTop = 1304
       end
       inherited edt_data_ult_alt: PriTEdit
         Top = 1304
+        TabOrder = 8
         ExplicitTop = 1304
       end
       inherited pnl_bottom: TPanel
         Top = 1328
         Width = 880
+        TabOrder = 24
         ExplicitTop = 1328
         ExplicitWidth = 880
+        inherited pnl_botao_salvar: TPanel
+          TabOrder = 1
+        end
+        inherited pnl_botao_cancelar: TPanel
+          TabOrder = 0
+        end
       end
       object edt_descricao_produto: PriTEdit
         Left = 112
@@ -427,7 +438,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 5
+        TabOrder = 10
         MudarCor = clCream
       end
       object edt_referencia: PriTEdit
@@ -442,7 +453,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 6
+        TabOrder = 11
         MudarCor = clCream
       end
       object edt_cod_barra: PriTEdit
@@ -457,7 +468,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 7
+        TabOrder = 12
         MudarCor = clCream
       end
       object edt_pesquisar_grupoProduto_produto: PriTEdit
@@ -472,7 +483,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 8
+        TabOrder = 13
         MudarCor = clCream
       end
       object pnl_btn_pesquisa_grupoProduto: TPanel
@@ -487,7 +498,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 9
+        TabOrder = 1
         object btn_pesquisa_grupoProduto: TSpeedButton
           Left = 0
           Top = 0
@@ -545,7 +556,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 10
+        TabOrder = 14
         MudarCor = clCream
       end
       object pnl_btn_pesquisa_marca: TPanel
@@ -560,7 +571,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 11
+        TabOrder = 0
         object btn_pesquisa_marca: TSpeedButton
           Left = 0
           Top = 0
@@ -612,7 +623,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 12
+        TabOrder = 15
         MudarCor = clCream
       end
       object edt_lucro: PriTEdit
@@ -627,7 +638,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 13
+        TabOrder = 16
         MudarCor = clCream
       end
       object edt_valor_venda: PriTEdit
@@ -642,7 +653,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 14
+        TabOrder = 17
         MudarCor = clCream
       end
       object edt_pesquisar_cor: PriTEdit
@@ -656,7 +667,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 15
+        TabOrder = 18
         MudarCor = clCream
       end
       object pnl_btn_pesquisa_cor: TPanel
@@ -665,7 +676,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Width = 35
         Height = 22
         BevelOuter = bvNone
-        TabOrder = 16
+        TabOrder = 2
         object btn_pesquisa_cor: TSpeedButton
           Left = 0
           Top = 0
@@ -722,7 +733,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 17
+        TabOrder = 19
         MudarCor = clCream
       end
       object pnl_btn_pesquisa_tamanho: TPanel
@@ -731,7 +742,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Width = 35
         Height = 22
         BevelOuter = bvNone
-        TabOrder = 18
+        TabOrder = 3
         object btn_pesquisa_tamanho: TSpeedButton
           Left = 0
           Top = 0
@@ -791,7 +802,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 19
+        TabOrder = 5
         object btn_adicionar_cor: TSpeedButton
           Left = 0
           Top = 0
@@ -821,7 +832,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 20
+        TabOrder = 4
         object btn_adicionar_tamanho: TSpeedButton
           Left = 0
           Top = 0
@@ -842,7 +853,8 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Top = 376
         Width = 865
         Height = 177
-        TabOrder = 21
+        TabStop = False
+        TabOrder = 25
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -11
@@ -910,11 +922,11 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 22
+        TabOrder = 26
         MudarCor = clCream
       end
       object edt_pesquisar_registro: PriTEdit
-        Left = 8
+        Left = 6
         Top = 651
         Width = 280
         Height = 24
@@ -925,7 +937,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 23
+        TabOrder = 20
         MudarCor = clCream
       end
       object pnl_btn_pesquisa: TPanel
@@ -934,7 +946,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Width = 35
         Height = 22
         BevelOuter = bvNone
-        TabOrder = 24
+        TabOrder = 27
         object btn_pesquisa: TSpeedButton
           Left = 0
           Top = 0
@@ -992,7 +1004,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 25
+        TabOrder = 21
         MudarCor = clCream
       end
       object Panel1: TPanel
@@ -1001,7 +1013,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Width = 35
         Height = 22
         BevelOuter = bvNone
-        TabOrder = 26
+        TabOrder = 28
         object SpeedButton1: TSpeedButton
           Left = 0
           Top = 0
@@ -1061,7 +1073,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 27
+        TabOrder = 6
         object btn_adicionar_img: TSpeedButton
           Left = 0
           Top = 0
@@ -1071,10 +1083,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
           Align = alClient
           Caption = 'Selecionar Foto'
           Flat = True
-          ExplicitLeft = 56
-          ExplicitTop = 8
-          ExplicitWidth = 23
-          ExplicitHeight = 22
+          ExplicitLeft = -8
         end
       end
       object memo_obs: TMemo
@@ -1082,7 +1091,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Top = 1078
         Width = 824
         Height = 193
-        TabOrder = 28
+        TabOrder = 22
       end
     end
   end

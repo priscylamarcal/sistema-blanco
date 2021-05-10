@@ -48,10 +48,10 @@ type
     pnl_adicionar_contato: TPanel;
     btn_adicionar_contato: TSpeedButton;
     DBGrid_Contatos_Funcionarios: TDBGrid;
-    lbl_cnpj: TLabel;
+    lbl_cpf_cnpj: TLabel;
     edt_cpf_cnpj: PriTMaskEdit;
     edt_rg_ie: PriTEdit;
-    lbl_ie: TLabel;
+    lbl_rg_ie: TLabel;
     lbl_titulo_financeiro: TLabel;
     pnl_pesquisa_condicao_pagamento: TPanel;
     btn_pesquisa_condicao_pagamento: TSpeedButton;
@@ -59,10 +59,13 @@ type
     edt_cod_condicao_pagamento: PriTEdit;
     lbl_cod_condicao_pagamento: TLabel;
     lbl_condicao_pagamento: TLabel;
+    procedure ComboBox_tipo_fornecedorChange(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    procedure tipoFornecedor;
   end;
 
 var
@@ -71,5 +74,44 @@ var
 implementation
 
 {$R *.dfm}
+
+{ Tform_cadastro_fornecedores }
+
+procedure Tform_cadastro_fornecedores.ComboBox_tipo_fornecedorChange(
+  Sender: TObject);
+begin
+  inherited;
+  tipoFornecedor;
+end;
+
+procedure Tform_cadastro_fornecedores.FormShow(Sender: TObject);
+begin
+  inherited;
+  tipoFornecedor;
+end;
+
+procedure Tform_cadastro_fornecedores.tipoFornecedor;
+begin
+  case ComboBox_tipo_fornecedor.ItemIndex of
+    0:  //pessoa física
+      begin
+        lbl_nome_razao_social.Caption:= 'Nome';
+        lbl_apelido_nome_fantasia.Caption:= 'Apelido';
+        lbl_cpf_cnpj.Caption:= 'CPF';
+        lbl_rg_ie.Caption:= 'RG';
+
+        edt_cpf_cnpj.TipoMascara:= tmCPF;
+      end;
+    1: //pessoa jurídica
+      begin
+        lbl_nome_razao_social.Caption:= 'Razão Social';
+        lbl_apelido_nome_fantasia.Caption:= 'Nome Fantasia';
+        lbl_cpf_cnpj.Caption:= 'CNPJ';
+        lbl_rg_ie.Caption:= 'IE';
+
+        edt_cpf_cnpj.TipoMascara:= tmCNPJ;
+      end;
+  end;
+end;
 
 end.

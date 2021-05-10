@@ -49,8 +49,18 @@ inherited form_cadastro_estados: Tform_cadastro_estados
         Font.Style = []
         ParentFont = False
       end
+      inherited edt_codigo: PriTEdit
+        TabOrder = 4
+      end
+      inherited edt_data_cadastro: PriTEdit
+        TabOrder = 5
+      end
+      inherited edt_data_ult_alt: PriTEdit
+        TabOrder = 6
+      end
       inherited pnl_bottom: TPanel
         Width = 769
+        TabOrder = 7
         ExplicitWidth = 769
         inherited pnl_botao_salvar: TPanel
           Left = 424
@@ -73,7 +83,7 @@ inherited form_cadastro_estados: Tform_cadastro_estados
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 5
+        TabOrder = 1
         MudarCor = clCream
       end
       object edt_pesquisar_pais_estado: PriTEdit
@@ -88,7 +98,7 @@ inherited form_cadastro_estados: Tform_cadastro_estados
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 6
+        TabOrder = 3
         MudarCor = clCream
       end
       object edt_uf: PriTEdit
@@ -103,7 +113,7 @@ inherited form_cadastro_estados: Tform_cadastro_estados
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 7
+        TabOrder = 2
         MudarCor = clCream
       end
       object pnl_btn_pesquisa: TPanel

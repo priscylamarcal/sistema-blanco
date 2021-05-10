@@ -1,6 +1,8 @@
 inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
   Caption = 'Cadastro de Fornecedor'
   ClientHeight = 982
+  OnShow = FormShow
+  ExplicitTop = -379
   ExplicitHeight = 1021
   PixelsPerInch = 96
   TextHeight = 13
@@ -223,7 +225,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Style = []
         ParentFont = False
       end
-      object lbl_cnpj: TLabel [21]
+      object lbl_cpf_cnpj: TLabel [21]
         Left = 8
         Top = 679
         Width = 67
@@ -236,7 +238,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Style = []
         ParentFont = False
       end
-      object lbl_ie: TLabel [22]
+      object lbl_rg_ie: TLabel [22]
         Left = 184
         Top = 679
         Width = 44
@@ -290,22 +292,27 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       inherited edt_cod_usuario: PriTEdit
         Top = 892
+        TabOrder = 1
         ExplicitTop = 892
       end
       inherited edt_codigo: PriTEdit
         Top = 58
+        TabOrder = 19
         ExplicitTop = 58
       end
       inherited edt_data_cadastro: PriTEdit
         Top = 892
+        TabOrder = 20
         ExplicitTop = 892
       end
       inherited edt_data_ult_alt: PriTEdit
         Top = 892
+        TabOrder = 21
         ExplicitTop = 892
       end
       inherited pnl_bottom: TPanel
         Top = 927
+        TabOrder = 22
         ExplicitTop = 927
       end
       object ComboBox_tipo_fornecedor: TComboBox1
@@ -319,9 +326,12 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        ItemIndex = 1
         ParentFont = False
-        TabOrder = 5
+        TabOrder = 2
+        Text = 'PESSOA JUR'#205'DICA'
         TextHint = 'Selecione o tipo'
+        OnChange = ComboBox_tipo_fornecedorChange
         Items.Strings = (
           'PESSOA F'#205'SICA'
           'PESSOA JUR'#205'DICA')
@@ -339,7 +349,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 6
+        TabOrder = 3
         MudarCor = clCream
       end
       object edt_apelido_nome_fantasia: PriTEdit
@@ -354,7 +364,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 7
+        TabOrder = 4
         MudarCor = clCream
       end
       object edt_endereco: PriTEdit
@@ -369,7 +379,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 8
+        TabOrder = 5
         MudarCor = clCream
       end
       object edt_numero: PriTEdit
@@ -384,7 +394,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 9
+        TabOrder = 6
         MudarCor = clCream
       end
       object edt_complemento: PriTEdit
@@ -399,7 +409,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 10
+        TabOrder = 7
         MudarCor = clCream
       end
       object edt_bairro: PriTEdit
@@ -414,7 +424,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 11
+        TabOrder = 8
         MudarCor = clCream
       end
       object edt_cep: PriTMaskEdit
@@ -430,7 +440,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Style = []
         MaxLength = 10
         ParentFont = False
-        TabOrder = 12
+        TabOrder = 9
         Text = '  .   -   '
         MudarCor = clCream
         TipoMascara = tmCEP
@@ -447,7 +457,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 13
+        TabOrder = 10
         MudarCor = clCream
       end
       object edt_uf: PriTEdit
@@ -455,6 +465,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Top = 327
         Width = 80
         Height = 24
+        TabStop = False
         CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -462,7 +473,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 14
+        TabOrder = 0
         MudarCor = clCream
       end
       object edt_pesquisar_cidade: PriTEdit
@@ -476,7 +487,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 15
+        TabOrder = 11
         MudarCor = clCream
       end
       object pnl_btn_pesquisa: TPanel
@@ -485,7 +496,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Width = 35
         Height = 22
         BevelOuter = bvNone
-        TabOrder = 16
+        TabOrder = 23
         object btn_pesquisa: TSpeedButton
           Left = 0
           Top = 0
@@ -543,7 +554,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 17
+        TabOrder = 14
         MudarCor = clCream
       end
       object edt_nome_tipo_selecionado: PriTEdit
@@ -558,7 +569,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 18
+        TabOrder = 13
         MudarCor = clCream
       end
       object edt_tipo_contato: PriTEdit
@@ -573,7 +584,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 19
+        TabOrder = 12
         MudarCor = clCream
       end
       object pnl_pesquisa_tipo_contato: TPanel
@@ -588,7 +599,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 20
+        TabOrder = 24
         object btn_pesquisa_tipo_contato: TSpeedButton
           Left = 0
           Top = 0
@@ -642,7 +653,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 21
+        TabOrder = 25
         object btn_adicionar_contato: TSpeedButton
           Left = 0
           Top = 0
@@ -664,7 +675,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Width = 838
         Height = 193
         TabStop = False
-        TabOrder = 22
+        TabOrder = 26
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -11
@@ -684,7 +695,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Style = []
         MaxLength = 18
         ParentFont = False
-        TabOrder = 23
+        TabOrder = 15
         Text = '  .   .   /    -  '
         MudarCor = clCream
         TipoMascara = tmCNPJ
@@ -700,7 +711,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 24
+        TabOrder = 16
         MudarCor = clCream
       end
       object pnl_pesquisa_condicao_pagamento: TPanel
@@ -709,7 +720,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Width = 35
         Height = 22
         BevelOuter = bvNone
-        TabOrder = 25
+        TabOrder = 27
         object btn_pesquisa_condicao_pagamento: TSpeedButton
           Left = 0
           Top = 0
@@ -766,7 +777,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 26
+        TabOrder = 18
         MudarCor = clCream
       end
       object edt_cod_condicao_pagamento: PriTEdit
@@ -781,7 +792,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 27
+        TabOrder = 17
         MudarCor = clCream
       end
     end
