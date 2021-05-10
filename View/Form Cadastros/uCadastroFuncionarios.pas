@@ -12,8 +12,6 @@ type
   Tform_cadastro_funcionario = class(Tform_cadastro_pai)
     lbl_titulo_dados_gerais: TLabel;
     edt_nome: PriTEdit;
-    check_masc: TCheckBox;
-    check_fem: TCheckBox;
     edt_mask_cpf: PriTMaskEdit;
     edt_rg: PriTEdit;
     date_data_nasc: TDateTimePicker;
@@ -68,12 +66,20 @@ type
     DBGrid_Contatos_Funcionarios: TDBGrid;
     lbl_foto: TLabel;
     img_funcionario: TImage;
-    pnl_adicionar_img: TPanel;
-    btn_adicionar_img: TSpeedButton;
     lbl_obs: TLabel;
     memo_obs: TMemo;
+    pnl_btn_selecionar_foto: TPanel;
+    btn_selecionar_foto: TSpeedButton;
+    rb_mas: TRadioButton;
+    rb_fem: TRadioButton;
     procedure btn_adicionar_contatoMouseEnter(Sender: TObject);
     procedure btn_adicionar_contatoMouseLeave(Sender: TObject);
+
+    procedure btn_selecionar_fotoMouseEnter(
+  Sender: TObject);
+    procedure btn_selecionar_fotoMouseLeave(
+  Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -98,6 +104,24 @@ procedure Tform_cadastro_funcionario.btn_adicionar_contatoMouseLeave(
   Sender: TObject);
 begin
   btn_adicionar_contato.Font.Style:= [];
+end;
+
+procedure Tform_cadastro_funcionario.btn_selecionar_fotoMouseEnter(
+  Sender: TObject);
+begin
+  btn_selecionar_foto.Font.Style:= [fsBold];
+end;
+
+procedure Tform_cadastro_funcionario.btn_selecionar_fotoMouseLeave(
+  Sender: TObject);
+begin
+  btn_selecionar_foto.Font.Style:= [];
+end;
+
+procedure Tform_cadastro_funcionario.FormShow(Sender: TObject);
+begin
+  inherited;
+  date_data_admissao.Date:= Date;
 end;
 
 end.

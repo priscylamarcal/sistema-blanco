@@ -69,6 +69,21 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         ParentFont = False
       end
+      inherited edt_cod_usuario: PriTEdit
+        TabOrder = 3
+      end
+      inherited edt_codigo: PriTEdit
+        TabOrder = 9
+      end
+      inherited edt_data_cadastro: PriTEdit
+        TabOrder = 10
+      end
+      inherited edt_data_ult_alt: PriTEdit
+        TabOrder = 11
+      end
+      inherited pnl_bottom: TPanel
+        TabOrder = 12
+      end
       object edt_condicao_pagamento: PriTEdit
         Left = 112
         Top = 35
@@ -80,7 +95,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 5
+        TabOrder = 4
         MudarCor = clCream
       end
       object edt_num_parcelas: PriTEdit
@@ -95,7 +110,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 6
+        TabOrder = 5
         MudarCor = clCream
       end
       object edt_desconto: PriTEdit
@@ -110,7 +125,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 7
+        TabOrder = 6
         MudarCor = clCream
       end
       object edt_juros: PriTEdit
@@ -125,7 +140,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 8
+        TabOrder = 7
         MudarCor = clCream
       end
       object edt_multa: PriTEdit
@@ -140,7 +155,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 9
+        TabOrder = 8
         MudarCor = clCream
       end
       object pnl_adicionar_contato: TPanel
@@ -157,7 +172,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 10
+        TabOrder = 2
         object btn_adicionar_contato: TSpeedButton
           Left = 0
           Top = 0
@@ -178,9 +193,10 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Top = 152
         Width = 838
         Height = 185
+        TabStop = False
         FixedColor = clWhite
         Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-        TabOrder = 11
+        TabOrder = 0
         TitleFont.Charset = DEFAULT_CHARSET
         TitleFont.Color = clWindowText
         TitleFont.Height = -11
@@ -225,7 +241,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 12
+        TabOrder = 1
         object btn_limpar_grid: TSpeedButton
           Left = 0
           Top = 0

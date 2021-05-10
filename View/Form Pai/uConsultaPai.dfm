@@ -130,7 +130,13 @@ object form_consulta_pai: Tform_consulta_pai
         Height = 40
         BevelOuter = bvNone
         Color = 16119285
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
         ParentBackground = False
+        ParentFont = False
         TabOrder = 0
         object btn_botao_sair: TSpeedButton
           Left = 0
@@ -161,7 +167,13 @@ object form_consulta_pai: Tform_consulta_pai
         Height = 40
         BevelOuter = bvNone
         Color = clRed
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
         ParentBackground = False
+        ParentFont = False
         TabOrder = 1
         object btn_botao_excluir: TSpeedButton
           Left = 0
@@ -194,7 +206,13 @@ object form_consulta_pai: Tform_consulta_pai
         Height = 40
         BevelOuter = bvNone
         Color = 4227072
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
         ParentBackground = False
+        ParentFont = False
         TabOrder = 2
         object btn_botao_novo: TSpeedButton
           Left = 0
