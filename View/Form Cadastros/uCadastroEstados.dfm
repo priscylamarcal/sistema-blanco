@@ -1,15 +1,31 @@
 inherited form_cadastro_estados: Tform_cadastro_estados
   Caption = 'Cadastro de Estado'
+  ClientHeight = 269
   ClientWidth = 769
   ExplicitWidth = 785
+  ExplicitHeight = 308
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
     Width = 769
+    Height = 269
     ExplicitWidth = 769
     inherited ScrollBox1: TScrollBox
       Width = 769
+      Height = 269
       ExplicitWidth = 769
+      inherited lbl_cod_usuario: TLabel
+        Top = 173
+        ExplicitTop = 173
+      end
+      inherited lbl_data_cadastro: TLabel
+        Top = 173
+        ExplicitTop = 173
+      end
+      inherited lbl_data_ult_alt: TLabel
+        Top = 173
+        ExplicitTop = 173
+      end
       object lbl_estado: TLabel [4]
         Left = 112
         Top = 16
@@ -24,7 +40,7 @@ inherited form_cadastro_estados: Tform_cadastro_estados
         ParentFont = False
       end
       object lbl_pais_estado: TLabel [5]
-        Left = 8
+        Left = 112
         Top = 83
         Width = 35
         Height = 16
@@ -49,16 +65,38 @@ inherited form_cadastro_estados: Tform_cadastro_estados
         Font.Style = []
         ParentFont = False
       end
+      object lbl_cod_pais: TLabel [7]
+        Left = 8
+        Top = 85
+        Width = 39
+        Height = 16
+        Caption = 'C'#243'digo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      inherited edt_cod_usuario: PriTEdit
+        Top = 188
+        ExplicitTop = 188
+      end
       inherited edt_codigo: PriTEdit
         TabOrder = 4
       end
       inherited edt_data_cadastro: PriTEdit
+        Top = 188
         TabOrder = 5
+        ExplicitTop = 188
       end
       inherited edt_data_ult_alt: PriTEdit
+        Top = 188
         TabOrder = 6
+        ExplicitTop = 188
       end
       inherited pnl_bottom: TPanel
+        Top = 214
         Width = 769
         TabOrder = 7
         ExplicitWidth = 769
@@ -87,7 +125,7 @@ inherited form_cadastro_estados: Tform_cadastro_estados
         MudarCor = clCream
       end
       object edt_pesquisar_pais_estado: PriTEdit
-        Left = 8
+        Left = 112
         Top = 105
         Width = 417
         Height = 24
@@ -117,7 +155,7 @@ inherited form_cadastro_estados: Tform_cadastro_estados
         MudarCor = clCream
       end
       object pnl_btn_pesquisa: TPanel
-        Left = 429
+        Left = 533
         Top = 104
         Width = 35
         Height = 25
@@ -161,6 +199,21 @@ inherited form_cadastro_estados: Tform_cadastro_estados
           ExplicitWidth = 65
           ExplicitHeight = 21
         end
+      end
+      object edt_cod_pais: PriTEdit
+        Left = 8
+        Top = 105
+        Width = 80
+        Height = 24
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        NumbersOnly = True
+        ParentFont = False
+        TabOrder = 9
+        MudarCor = clCream
       end
     end
   end

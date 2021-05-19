@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroPai, Vcl.Buttons, Vcl.StdCtrls,
   campoEdit, Vcl.ExtCtrls, ComboBox, Vcl.Mask, MaskEdit1, Data.DB, Vcl.Grids,
-  Vcl.DBGrids;
+  Vcl.DBGrids, Vcl.ComCtrls;
 
 type
   Tform_cadastro_fornecedores = class(Tform_cadastro_pai)
@@ -47,7 +47,6 @@ type
     btn_pesquisa_tipo_contato: TSpeedButton;
     pnl_adicionar_contato: TPanel;
     btn_adicionar_contato: TSpeedButton;
-    DBGrid_Contatos_Funcionarios: TDBGrid;
     lbl_cpf_cnpj: TLabel;
     edt_cpf_cnpj: PriTMaskEdit;
     edt_rg_ie: PriTEdit;
@@ -59,6 +58,13 @@ type
     edt_cod_condicao_pagamento: PriTEdit;
     lbl_cod_condicao_pagamento: TLabel;
     lbl_condicao_pagamento: TLabel;
+    Label1: TLabel;
+    PriTEdit1: PriTEdit;
+    ListView1: TListView;
+    pnl_botao_alterar: TPanel;
+    btn_botao_alterar: TSpeedButton;
+    pnl_botao_excluir: TPanel;
+    btn_botao_excluir: TSpeedButton;
     procedure ComboBox_tipo_fornecedorChange(Sender: TObject);
     procedure FormShow(Sender: TObject);
   private
@@ -95,19 +101,19 @@ begin
   case ComboBox_tipo_fornecedor.ItemIndex of
     0:  //pessoa física
       begin
-        lbl_nome_razao_social.Caption:= 'Nome';
-        lbl_apelido_nome_fantasia.Caption:= 'Apelido';
-        lbl_cpf_cnpj.Caption:= 'CPF';
-        lbl_rg_ie.Caption:= 'RG';
+        lbl_nome_razao_social.Caption:= 'Nome *';
+        lbl_apelido_nome_fantasia.Caption:= 'Apelido *';
+        lbl_cpf_cnpj.Caption:= 'CPF *';
+        lbl_rg_ie.Caption:= 'RG *';
 
         edt_cpf_cnpj.TipoMascara:= tmCPF;
       end;
     1: //pessoa jurídica
       begin
-        lbl_nome_razao_social.Caption:= 'Razão Social';
-        lbl_apelido_nome_fantasia.Caption:= 'Nome Fantasia';
-        lbl_cpf_cnpj.Caption:= 'CNPJ';
-        lbl_rg_ie.Caption:= 'IE';
+        lbl_nome_razao_social.Caption:= 'Razão Social *';
+        lbl_apelido_nome_fantasia.Caption:= 'Nome Fantasia *';
+        lbl_cpf_cnpj.Caption:= 'CNPJ *';
+        lbl_rg_ie.Caption:= 'IE *';
 
         edt_cpf_cnpj.TipoMascara:= tmCNPJ;
       end;

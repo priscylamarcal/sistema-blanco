@@ -2,7 +2,7 @@ unit uDaoPaises;
 
 interface
 
-uses uDAO;
+uses uDAO, System.SysUtils;
 
 type daoPaises = class( DAO )
   private
@@ -20,9 +20,6 @@ implementation
 
 { daoPaises }
 
-
-
-{ daoPaises }
 
 function daoPaises.carregar(pObj: TObject): string;
 begin
@@ -46,7 +43,9 @@ begin
 end;
 
 function daoPaises.pesquisar(pChave: string): string;
+
 begin
+
 
 end;
 

@@ -19,6 +19,8 @@ type
     edt_ddd: PriTEdit;
     pnl_btn_pesquisa: TPanel;
     btn_pesquisa: TSpeedButton;
+    lbl_cod_estado: TLabel;
+    edt_cod_estado: PriTEdit;
   private
     { Private declarations }
   public

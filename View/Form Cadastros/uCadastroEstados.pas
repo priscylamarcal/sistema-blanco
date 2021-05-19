@@ -17,6 +17,8 @@ type
     pnl_btn_pesquisa: TPanel;
     btn_pesquisa: TSpeedButton;
     lbl_pais_estado: TLabel;
+    lbl_cod_pais: TLabel;
+    edt_cod_pais: PriTEdit;
   private
     { Private declarations }
   public

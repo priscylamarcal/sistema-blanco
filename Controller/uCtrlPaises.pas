@@ -52,7 +52,7 @@ end;
 
 function ctrlPaises.pesquisar(pChave: string): string;
 begin
-
+  aDaoPais.pesquisar(pChave);
 end;
 
 function ctrlPaises.salvar(pObj: TObject): string;

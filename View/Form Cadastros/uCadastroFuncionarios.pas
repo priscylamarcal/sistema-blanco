@@ -12,33 +12,12 @@ type
   Tform_cadastro_funcionario = class(Tform_cadastro_pai)
     lbl_titulo_dados_gerais: TLabel;
     edt_nome: PriTEdit;
-    edt_mask_cpf: PriTMaskEdit;
-    edt_rg: PriTEdit;
-    date_data_nasc: TDateTimePicker;
-    lbl_nome: TLabel;
+    lbl_funcionario: TLabel;
     lbl_sexo: TLabel;
-    lbl_cpf: TLabel;
-    lbl_rg: TLabel;
-    lbl_data_nascimento: TLabel;
-    lbl_titulo_trabalho: TLabel;
-    edt_pesquisar_registro: PriTEdit;
-    pnl_btn_pesquisa: TPanel;
-    btn_pesquisa: TSpeedButton;
-    date_data_admissao: TDateTimePicker;
-    date_data_demissao: TDateTimePicker;
-    edt_salario: PriTEdit;
-    edt_comissao: PriTEdit;
-    lbl_cargo: TLabel;
-    lbl_data_admissao: TLabel;
-    lbl_data_demissao: TLabel;
-    lbl_salario: TLabel;
-    lbl_comissao: TLabel;
     lbl_titulo_endereco: TLabel;
     edt_endereco: PriTEdit;
     edt_numero: PriTEdit;
-    edt_complemento: PriTEdit;
     edt_bairro: PriTEdit;
-    edt_cod_cidade: PriTEdit;
     edt_uf: PriTEdit;
     edt_cep: PriTMaskEdit;
     edt_cidade: PriTEdit;
@@ -46,7 +25,6 @@ type
     btn_adicionar_cidade: TSpeedButton;
     lbl_endereco: TLabel;
     lbl_numero: TLabel;
-    lbl_complemento: TLabel;
     lbl_bairro: TLabel;
     lbl_cep: TLabel;
     lbl_codigo_cidade: TLabel;
@@ -63,15 +41,45 @@ type
     lbl_algo_contato: TLabel;
     pnl_adicionar_contato: TPanel;
     btn_adicionar_contato: TSpeedButton;
-    DBGrid_Contatos_Funcionarios: TDBGrid;
-    lbl_foto: TLabel;
-    img_funcionario: TImage;
     lbl_obs: TLabel;
     memo_obs: TMemo;
-    pnl_btn_selecionar_foto: TPanel;
-    btn_selecionar_foto: TSpeedButton;
     rb_mas: TRadioButton;
     rb_fem: TRadioButton;
+    img_funcionario: TImage;
+    edt_cod_cidade: PriTEdit;
+    pnl_btn_selecionar_foto: TPanel;
+    btn_selecionar_foto: TSpeedButton;
+    pnl_img: TPanel;
+    lbl_cod_contato: TLabel;
+    edt_cod_contato: PriTEdit;
+    ListView1: TListView;
+    lbl_titulo_trabalho: TLabel;
+    lbl_cod_cargo: TLabel;
+    edt_cod_cargo: PriTEdit;
+    lbl_salario: TLabel;
+    edt_salario: PriTEdit;
+    edt_comissao: PriTEdit;
+    lbl_cargo: TLabel;
+    edt_pesquisar_registro: PriTEdit;
+    lbl_data_admissao: TLabel;
+    date_data_admissao: TDateTimePicker;
+    date_data_demissao: TDateTimePicker;
+    lbl_data_demissao: TLabel;
+    lbl_comissao: TLabel;
+    pnl_btn_pesquisa: TPanel;
+    btn_pesquisa: TSpeedButton;
+    lbl_cpf: TLabel;
+    edt_mask_cpf: PriTMaskEdit;
+    edt_rg: PriTEdit;
+    lbl_rg: TLabel;
+    date_data_nasc: TDateTimePicker;
+    lbl_data_nascimento: TLabel;
+    edt_complemento: PriTEdit;
+    lbl_complemento: TLabel;
+    pnl_botao_alterar: TPanel;
+    btn_botao_alterar: TSpeedButton;
+    pnl_botao_excluir: TPanel;
+    btn_botao_excluir: TSpeedButton;
     procedure btn_adicionar_contatoMouseEnter(Sender: TObject);
     procedure btn_adicionar_contatoMouseLeave(Sender: TObject);
 
@@ -80,6 +88,12 @@ type
     procedure btn_selecionar_fotoMouseLeave(
   Sender: TObject);
     procedure FormShow(Sender: TObject);
+
+    procedure btn_botao_alterarMouseEnter(Sender: TObject);
+    procedure btn_botao_alterarMouseLeave(Sender: TObject);
+
+    procedure btn_botao_excluirMouseEnter(Sender: TObject);
+    procedure btn_botao_excluirMouseLeave(Sender: TObject);
   private
     { Private declarations }
   public
@@ -122,6 +136,26 @@ procedure Tform_cadastro_funcionario.FormShow(Sender: TObject);
 begin
   inherited;
   date_data_admissao.Date:= Date;
+end;
+
+procedure Tform_cadastro_funcionario.btn_botao_alterarMouseEnter(Sender: TObject);
+begin
+  btn_botao_alterar.Font.Style:= [fsBold];
+end;
+
+procedure Tform_cadastro_funcionario.btn_botao_alterarMouseLeave(Sender: TObject);
+begin
+  btn_botao_alterar.Font.Style:= [];
+end;
+
+procedure Tform_cadastro_funcionario.btn_botao_excluirMouseEnter(Sender: TObject);
+begin
+  btn_botao_excluir.Font.Style:= [fsBold];
+end;
+
+procedure Tform_cadastro_funcionario.btn_botao_excluirMouseLeave(Sender: TObject);
+begin
+  btn_botao_excluir.Font.Style:= [];
 end;
 
 end.

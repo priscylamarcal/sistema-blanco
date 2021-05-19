@@ -1,12 +1,28 @@
 inherited form_cadastro_cargos: Tform_cadastro_cargos
   Caption = 'Cadastro de Cargo'
+  ClientHeight = 277
+  ExplicitHeight = 316
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
+    Height = 277
     inherited ScrollBox1: TScrollBox
+      Height = 277
+      inherited lbl_cod_usuario: TLabel
+        Top = 181
+        ExplicitTop = 181
+      end
+      inherited lbl_data_cadastro: TLabel
+        Top = 181
+        ExplicitTop = 181
+      end
+      inherited lbl_data_ult_alt: TLabel
+        Top = 181
+        ExplicitTop = 181
+      end
       object Departamento: TLabel [4]
-        Left = 8
-        Top = 86
+        Left = 112
+        Top = 83
         Width = 93
         Height = 16
         Caption = 'Departamento *'
@@ -30,21 +46,43 @@ inherited form_cadastro_cargos: Tform_cadastro_cargos
         Font.Style = []
         ParentFont = False
       end
+      object lbl_cod_departamento: TLabel [6]
+        Left = 8
+        Top = 83
+        Width = 39
+        Height = 16
+        Caption = 'C'#243'digo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      inherited edt_cod_usuario: PriTEdit
+        Top = 196
+        ExplicitTop = 196
+      end
       inherited edt_codigo: PriTEdit
         TabOrder = 3
       end
       inherited edt_data_cadastro: PriTEdit
+        Top = 196
         TabOrder = 4
+        ExplicitTop = 196
       end
       inherited edt_data_ult_alt: PriTEdit
+        Top = 196
         TabOrder = 5
+        ExplicitTop = 196
       end
       inherited pnl_bottom: TPanel
+        Top = 222
         TabOrder = 6
       end
       object edt_pesquisar_departamento_cargo: PriTEdit
-        Left = 8
-        Top = 105
+        Left = 112
+        Top = 103
         Width = 512
         Height = 24
         CharCase = ecUpperCase
@@ -58,7 +96,7 @@ inherited form_cadastro_cargos: Tform_cadastro_cargos
         MudarCor = clCream
       end
       object pnl_btn_pesquisa: TPanel
-        Left = 524
+        Left = 628
         Top = 104
         Width = 35
         Height = 22
@@ -116,6 +154,21 @@ inherited form_cadastro_cargos: Tform_cadastro_cargos
         Font.Style = []
         ParentFont = False
         TabOrder = 1
+        MudarCor = clCream
+      end
+      object edt_cod_departamento: PriTEdit
+        Left = 8
+        Top = 103
+        Width = 80
+        Height = 24
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        NumbersOnly = True
+        ParentFont = False
+        TabOrder = 8
         MudarCor = clCream
       end
     end
