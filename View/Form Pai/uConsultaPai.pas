@@ -58,6 +58,7 @@ type
     procedure btn_botao_alterarMouseEnter2(Sender: TObject);
     procedure btn_botao_alterarMouseLeave2(Sender: TObject);
     procedure combobox_tipo_filtroChange(Sender: TObject);
+    procedure spb_botao_pesquisarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -210,6 +211,11 @@ end;
 procedure Tform_consulta_pai.setFrmCadastro(pObj: TObject);
 begin
 
+end;
+
+procedure Tform_consulta_pai.spb_botao_pesquisarClick(Sender: TObject);
+begin
+  prcAjustaTamanhoLinha(DBGrid);
 end;
 
 procedure Tform_consulta_pai.spb_botao_pesquisarMouseEnter(Sender: TObject);

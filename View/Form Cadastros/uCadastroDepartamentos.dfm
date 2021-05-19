@@ -1,9 +1,25 @@
 inherited form_cadastro_departamento: Tform_cadastro_departamento
   Caption = 'Cadastro de Departamento'
+  ClientHeight = 212
+  ExplicitHeight = 251
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
+    Height = 212
     inherited ScrollBox1: TScrollBox
+      Height = 212
+      inherited lbl_cod_usuario: TLabel
+        Top = 117
+        ExplicitTop = 117
+      end
+      inherited lbl_data_cadastro: TLabel
+        Top = 117
+        ExplicitTop = 117
+      end
+      inherited lbl_data_ult_alt: TLabel
+        Top = 117
+        ExplicitTop = 117
+      end
       object lbl_departamento: TLabel [4]
         Left = 112
         Top = 16
@@ -17,16 +33,25 @@ inherited form_cadastro_departamento: Tform_cadastro_departamento
         Font.Style = []
         ParentFont = False
       end
+      inherited edt_cod_usuario: PriTEdit
+        Top = 132
+        ExplicitTop = 132
+      end
       inherited edt_codigo: PriTEdit
         TabOrder = 2
       end
       inherited edt_data_cadastro: PriTEdit
+        Top = 132
         TabOrder = 3
+        ExplicitTop = 132
       end
       inherited edt_data_ult_alt: PriTEdit
+        Top = 132
         TabOrder = 4
+        ExplicitTop = 132
       end
       inherited pnl_bottom: TPanel
+        Top = 157
         TabOrder = 5
       end
       object edt_departamento: PriTEdit

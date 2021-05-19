@@ -15,6 +15,8 @@ type
     pnl_btn_pesquisa: TPanel;
     btn_pesquisa: TSpeedButton;
     Departamento: TLabel;
+    lbl_cod_departamento: TLabel;
+    edt_cod_departamento: PriTEdit;
   private
     { Private declarations }
   public
