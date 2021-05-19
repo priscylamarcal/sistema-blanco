@@ -1,5 +1,0 @@
-inherited form_cadastro_clientes: Tform_cadastro_clientes
-  Caption = 'Cadastro de Cliente'
-  PixelsPerInch = 96
-  TextHeight = 13
-end

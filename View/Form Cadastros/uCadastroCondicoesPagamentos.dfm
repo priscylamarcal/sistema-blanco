@@ -70,19 +70,19 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         ParentFont = False
       end
       inherited edt_cod_usuario: PriTEdit
-        TabOrder = 3
+        TabOrder = 2
       end
       inherited edt_codigo: PriTEdit
-        TabOrder = 9
+        TabOrder = 8
       end
       inherited edt_data_cadastro: PriTEdit
-        TabOrder = 10
+        TabOrder = 9
       end
       inherited edt_data_ult_alt: PriTEdit
-        TabOrder = 11
+        TabOrder = 10
       end
       inherited pnl_bottom: TPanel
-        TabOrder = 12
+        TabOrder = 11
       end
       object edt_condicao_pagamento: PriTEdit
         Left = 112
@@ -95,7 +95,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 4
+        TabOrder = 3
         MudarCor = clCream
       end
       object edt_num_parcelas: PriTEdit
@@ -110,7 +110,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 5
+        TabOrder = 4
         MudarCor = clCream
       end
       object edt_desconto: PriTEdit
@@ -125,7 +125,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 6
+        TabOrder = 5
         MudarCor = clCream
       end
       object edt_juros: PriTEdit
@@ -140,7 +140,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 7
+        TabOrder = 6
         MudarCor = clCream
       end
       object edt_multa: PriTEdit
@@ -155,7 +155,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 8
+        TabOrder = 7
         MudarCor = clCream
       end
       object pnl_adicionar_contato: TPanel
@@ -172,7 +172,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 2
+        TabOrder = 1
         object btn_adicionar_contato: TSpeedButton
           Left = 0
           Top = 0
@@ -180,50 +180,13 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
           Height = 40
           Cursor = crHandPoint
           Align = alClient
-          Caption = 'Adicionar'
+          Caption = 'Gerar Parcela(s)'
           Flat = True
           OnMouseEnter = btn_adicionar_contatoMouseEnter
           OnMouseLeave = btn_adicionar_contatoMouseLeave
           ExplicitLeft = -32
           ExplicitTop = -15
         end
-      end
-      object DBGrid_parcelas: TDBGrid
-        Left = 8
-        Top = 152
-        Width = 838
-        Height = 185
-        TabStop = False
-        FixedColor = clWhite
-        Options = [dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-        TabOrder = 0
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Tahoma'
-        TitleFont.Style = []
-        Columns = <
-          item
-            Expanded = False
-            FieldName = 'N'#186' Parcela'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'Dias'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'Percentual'
-            Visible = True
-          end
-          item
-            Expanded = False
-            FieldName = 'Forma de Pagamento'
-            Width = 183
-            Visible = True
-          end>
       end
       object pnl_limpar_grid: TPanel
         Left = 696
@@ -241,7 +204,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 1
+        TabOrder = 0
         object btn_limpar_grid: TSpeedButton
           Left = 0
           Top = 0
@@ -261,6 +224,46 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
           ExplicitWidth = 23
           ExplicitHeight = 22
         end
+      end
+      object ListView_condicao_pagamento: TListView
+        Left = 8
+        Top = 144
+        Width = 838
+        Height = 177
+        Columns = <
+          item
+            Caption = 'N'#186' Parcela'
+            Width = 80
+          end
+          item
+            Caption = 'Dias'
+          end
+          item
+            Caption = 'Condi'#231#227'o de Pagamento'
+            Width = 150
+          end
+          item
+            Caption = 'Forma de Pagamento'
+            Width = 140
+          end
+          item
+            Caption = 'Desconto'
+            Width = 70
+          end
+          item
+            Caption = 'Juros'
+          end
+          item
+            Caption = 'Multa'
+          end>
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 12
+        ViewStyle = vsReport
       end
     end
   end

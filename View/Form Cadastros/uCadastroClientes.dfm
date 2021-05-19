@@ -1,21 +1,21 @@
 inherited form_cadastro_clientes: Tform_cadastro_clientes
   Caption = 'Cadastro de Cliente'
-  ClientHeight = 897
-  ClientWidth = 868
-  ExplicitWidth = 884
-  ExplicitHeight = 936
+  ClientHeight = 845
+  ClientWidth = 931
+  ExplicitWidth = 947
+  ExplicitHeight = 884
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
-    Width = 868
-    Height = 897
+    Width = 931
+    Height = 845
     ExplicitWidth = 868
-    ExplicitHeight = 897
+    ExplicitHeight = 845
     inherited ScrollBox1: TScrollBox
-      Width = 868
-      Height = 897
-      ExplicitWidth = 868
-      ExplicitHeight = 897
+      Width = 931
+      Height = 845
+      ExplicitWidth = 931
+      ExplicitHeight = 845
       inherited lbl_cod_usuario: TLabel
         Top = 1077
         ExplicitTop = 967
@@ -159,26 +159,44 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
       object lbl_codigo_cidade: TLabel [14]
         Left = 8
         Top = 309
-        Width = 59
-        Height = 13
-        Caption = 'C'#243'd. Cidade'
+        Width = 39
+        Height = 16
+        Caption = 'C'#243'digo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
       end
       object lbl_cidade: TLabel [15]
-        Left = 120
+        Left = 96
         Top = 309
-        Width = 42
-        Height = 13
+        Width = 51
+        Height = 16
         Caption = 'Cidade *'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
       end
       object lbl_uf: TLabel [16]
-        Left = 579
+        Left = 539
         Top = 309
-        Width = 13
-        Height = 13
+        Width = 15
+        Height = 16
         Caption = 'UF'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
       end
       object lbl_algo_contato: TLabel [17]
-        Left = 498
+        Left = 539
         Top = 387
         Width = 76
         Height = 16
@@ -204,7 +222,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         ParentFont = False
       end
       object lbl_nome_tipo: TLabel [19]
-        Left = 228
+        Left = 308
         Top = 387
         Width = 147
         Height = 16
@@ -217,7 +235,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         ParentFont = False
       end
       object lbl_tipo_contato: TLabel [20]
-        Left = 8
+        Left = 96
         Top = 387
         Width = 91
         Height = 16
@@ -230,8 +248,8 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         ParentFont = False
       end
       object lbl_vendedor_responsavel: TLabel [21]
-        Left = 8
-        Top = 680
+        Left = 96
+        Top = 683
         Width = 131
         Height = 16
         Caption = 'Vendedor/Respons'#225'vel'
@@ -295,7 +313,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         ParentFont = False
       end
       object lbl_cod_condicao_pagamento: TLabel [26]
-        Left = 112
+        Left = 120
         Top = 836
         Width = 39
         Height = 16
@@ -308,7 +326,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         ParentFont = False
       end
       object lbl_condicao_pagamento: TLabel [27]
-        Left = 216
+        Left = 208
         Top = 834
         Width = 138
         Height = 16
@@ -333,6 +351,32 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         Font.Style = [fsBold]
         ParentFont = False
       end
+      object lbl_cod_contato: TLabel [29]
+        Left = 8
+        Top = 387
+        Width = 39
+        Height = 16
+        Caption = 'C'#243'digo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object lbl_cod_vendedor_responsavel: TLabel [30]
+        Left = 8
+        Top = 683
+        Width = 39
+        Height = 16
+        Caption = 'C'#243'digo'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
       inherited edt_cod_usuario: PriTEdit
         Top = 1092
         ExplicitTop = 1092
@@ -354,10 +398,18 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
       end
       inherited pnl_bottom: TPanel
         Top = 1116
-        Width = 851
+        Width = 914
         TabOrder = 23
         ExplicitTop = 1116
-        ExplicitWidth = 851
+        ExplicitWidth = 914
+        inherited pnl_botao_salvar: TPanel
+          Left = 584
+          ExplicitLeft = 584
+        end
+        inherited pnl_botao_cancelar: TPanel
+          Left = 752
+          ExplicitLeft = 752
+        end
       end
       object ComboBox_tipo_cliente: TComboBox1
         Left = 112
@@ -458,8 +510,8 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         MudarCor = clCream
       end
       object edt_cidade: PriTEdit
-        Left = 120
-        Top = 329
+        Left = 96
+        Top = 328
         Width = 389
         Height = 24
         CharCase = ecUpperCase
@@ -473,7 +525,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         MudarCor = clCream
       end
       object edt_uf: PriTEdit
-        Left = 579
+        Left = 539
         Top = 328
         Width = 80
         Height = 24
@@ -534,7 +586,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         MudarCor = clCream
       end
       object pnl_adicionar_cidade: TPanel
-        Left = 511
+        Left = 487
         Top = 330
         Width = 35
         Height = 22
@@ -586,7 +638,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         end
       end
       object edt_algo: PriTEdit
-        Left = 498
+        Left = 539
         Top = 409
         Width = 180
         Height = 24
@@ -601,7 +653,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         MudarCor = clCream
       end
       object edt_nome_tipo_selecionado: PriTEdit
-        Left = 228
+        Left = 308
         Top = 409
         Width = 220
         Height = 24
@@ -616,7 +668,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         MudarCor = clCream
       end
       object edt_tipo_contato: PriTEdit
-        Left = 8
+        Left = 96
         Top = 409
         Width = 166
         Height = 24
@@ -631,7 +683,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         MudarCor = clCream
       end
       object pnl_pesquisa_tipo_contato: TPanel
-        Left = 175
+        Left = 263
         Top = 411
         Width = 35
         Height = 22
@@ -682,51 +734,8 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
           ExplicitHeight = 21
         end
       end
-      object pnl_adicionar_contato: TPanel
-        Left = 696
-        Top = 400
-        Width = 150
-        Height = 40
-        BevelOuter = bvNone
-        Color = 4227327
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentBackground = False
-        ParentFont = False
-        TabOrder = 28
-        object btn_adicionar_contato: TSpeedButton
-          Left = 0
-          Top = 0
-          Width = 150
-          Height = 40
-          Cursor = crHandPoint
-          Align = alClient
-          Caption = 'Adicionar'
-          Flat = True
-          ExplicitLeft = 56
-          ExplicitTop = 8
-          ExplicitWidth = 23
-          ExplicitHeight = 22
-        end
-      end
-      object DBGrid_Contatos_Funcionarios: TDBGrid
-        Left = 8
-        Top = 464
-        Width = 838
-        Height = 193
-        TabStop = False
-        TabOrder = 29
-        TitleFont.Charset = DEFAULT_CHARSET
-        TitleFont.Color = clWindowText
-        TitleFont.Height = -11
-        TitleFont.Name = 'Tahoma'
-        TitleFont.Style = []
-      end
       object edt_pesquisar_registro: PriTEdit
-        Left = 8
+        Left = 96
         Top = 702
         Width = 280
         Height = 24
@@ -740,12 +749,12 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         MudarCor = clCream
       end
       object pnl_btn_pesquisa: TPanel
-        Left = 294
+        Left = 376
         Top = 704
         Width = 35
         Height = 22
         BevelOuter = bvNone
-        TabOrder = 30
+        TabOrder = 28
         object btn_pesquisa: TSpeedButton
           Left = 0
           Top = 0
@@ -794,7 +803,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
       object edt_cnpj: PriTMaskEdit
         Left = 8
         Top = 768
-        Width = 120
+        Width = 124
         Height = 24
         EditMask = '99.999.999/9999-99;1;_'
         Font.Charset = DEFAULT_CHARSET
@@ -839,7 +848,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         MudarCor = clCream
       end
       object edt_cod_condicao_pagamento: PriTEdit
-        Left = 112
+        Left = 120
         Top = 856
         Width = 80
         Height = 24
@@ -854,7 +863,7 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         MudarCor = clCream
       end
       object edt_pesquisa_condicao_pagamento: PriTEdit
-        Left = 216
+        Left = 208
         Top = 856
         Width = 280
         Height = 24
@@ -868,12 +877,12 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         MudarCor = clCream
       end
       object pnl_pesquisa_condicao_pagamento: TPanel
-        Left = 500
+        Left = 492
         Top = 857
         Width = 35
         Height = 22
         BevelOuter = bvNone
-        TabOrder = 31
+        TabOrder = 29
         object btn_pesquisa_condicao_pagamento: TSpeedButton
           Left = 0
           Top = 0
@@ -926,6 +935,139 @@ inherited form_cadastro_clientes: Tform_cadastro_clientes
         Height = 130
         ScrollBars = ssVertical
         TabOrder = 19
+      end
+      object edt_cod_contato: PriTEdit
+        Left = 8
+        Top = 409
+        Width = 80
+        Height = 24
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        NumbersOnly = True
+        ParentFont = False
+        TabOrder = 30
+        MudarCor = clCream
+      end
+      object edt_cod_vendedor_responsavel: PriTEdit
+        Left = 8
+        Top = 702
+        Width = 80
+        Height = 24
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        NumbersOnly = True
+        ParentFont = False
+        TabOrder = 31
+        MudarCor = clCream
+      end
+      object ListView1: TListView
+        Left = 8
+        Top = 462
+        Width = 777
+        Height = 172
+        Columns = <>
+        TabOrder = 32
+      end
+      object pnl_adicionar_contato: TPanel
+        Left = 800
+        Top = 463
+        Width = 94
+        Height = 40
+        BevelOuter = bvNone
+        Color = 4227327
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 33
+        object btn_adicionar_contato: TSpeedButton
+          Left = 0
+          Top = 0
+          Width = 94
+          Height = 40
+          Cursor = crHandPoint
+          Align = alClient
+          Caption = 'Adicionar'
+          Flat = True
+          ExplicitLeft = 56
+          ExplicitTop = 8
+          ExplicitWidth = 23
+          ExplicitHeight = 22
+        end
+      end
+      object pnl_botao_alterar: TPanel
+        Left = 800
+        Top = 529
+        Width = 94
+        Height = 40
+        BevelOuter = bvNone
+        Color = 1624307
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 34
+        object btn_botao_alterar: TSpeedButton
+          Left = 0
+          Top = 0
+          Width = 94
+          Height = 40
+          Cursor = crHandPoint
+          Align = alClient
+          Caption = 'Alterar'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          ExplicitLeft = -12
+          ExplicitTop = -15
+          ExplicitWidth = 150
+        end
+      end
+      object pnl_botao_excluir: TPanel
+        Left = 800
+        Top = 594
+        Width = 94
+        Height = 40
+        BevelOuter = bvNone
+        Color = clRed
+        ParentBackground = False
+        TabOrder = 35
+        object btn_botao_excluir: TSpeedButton
+          Left = 0
+          Top = 0
+          Width = 94
+          Height = 40
+          Cursor = crHandPoint
+          Align = alClient
+          Caption = 'Excluir'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          ExplicitLeft = 40
+          ExplicitTop = 16
+          ExplicitWidth = 23
+          ExplicitHeight = 22
+        end
       end
     end
   end

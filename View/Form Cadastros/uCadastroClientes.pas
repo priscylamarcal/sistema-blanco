@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroPai, Vcl.Buttons, Vcl.StdCtrls,
   campoEdit, Vcl.ExtCtrls, ComboBox, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Mask,
-  MaskEdit1;
+  MaskEdit1, Vcl.ComCtrls;
 
 type
   Tform_cadastro_clientes = class(Tform_cadastro_pai)
@@ -45,9 +45,6 @@ type
     lbl_algo_contato: TLabel;
     pnl_pesquisa_tipo_contato: TPanel;
     btn_pesquisa_tipo_contato: TSpeedButton;
-    pnl_adicionar_contato: TPanel;
-    btn_adicionar_contato: TSpeedButton;
-    DBGrid_Contatos_Funcionarios: TDBGrid;
     edt_pesquisar_registro: PriTEdit;
     pnl_btn_pesquisa: TPanel;
     btn_pesquisa: TSpeedButton;
@@ -67,6 +64,17 @@ type
     lbl_condicao_pagamento: TLabel;
     lbl_obs: TLabel;
     memo_obs: TMemo;
+    lbl_cod_contato: TLabel;
+    edt_cod_contato: PriTEdit;
+    lbl_cod_vendedor_responsavel: TLabel;
+    edt_cod_vendedor_responsavel: PriTEdit;
+    ListView1: TListView;
+    pnl_adicionar_contato: TPanel;
+    btn_adicionar_contato: TSpeedButton;
+    pnl_botao_alterar: TPanel;
+    btn_botao_alterar: TSpeedButton;
+    pnl_botao_excluir: TPanel;
+    btn_botao_excluir: TSpeedButton;
   private
     { Private declarations }
   public
