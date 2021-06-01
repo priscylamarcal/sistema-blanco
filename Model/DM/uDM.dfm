@@ -67,6 +67,21 @@ object DM: TDM
       Origin = 'MOEDA'
       Size = 3
     end
+    object QPaisesDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QPaisesULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QPaisesCODUSUALT: TIntegerField
+      FieldName = 'CODUSUALT'
+      Origin = 'CODUSUALT'
+      Visible = False
+    end
   end
   object DSPaises: TDataSource
     DataSet = QPaises

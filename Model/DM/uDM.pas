@@ -21,6 +21,9 @@ type
     QPaisesDDI: TStringField;
     QPaisesSIGLA: TStringField;
     QPaisesMOEDA: TStringField;
+    QPaisesDATACAD: TSQLTimeStampField;
+    QPaisesULTALT: TSQLTimeStampField;
+    QPaisesCODUSUALT: TIntegerField;
   private
     { Private declarations }
   public

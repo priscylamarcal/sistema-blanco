@@ -47,7 +47,9 @@ type
 
     procedure DBGridDrawColumnCell(Sender: TObject; const Rect: TRect;
   DataCol: Integer; Column: TColumn; State: TGridDrawState);
+
     procedure FormShow(Sender: TObject);
+
     procedure btn_botao_novoClick(Sender: TObject);
     procedure btn_botao_alterarClick(Sender: TObject);
     procedure btn_botao_excluirClick(Sender: TObject);

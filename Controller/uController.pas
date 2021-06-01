@@ -2,6 +2,8 @@ unit uController;
 
 interface
 
+uses uFilterSearch;
+
 type Ctrl = class
   private
   protected
@@ -10,7 +12,7 @@ type Ctrl = class
     destructor destrua_se;                            virtual;
     procedure setDM ( pDM : TObject );                virtual;
     function getDS : TObject;                         virtual;
-    function pesquisar ( pChave : string ) : string;  virtual;
+    function pesquisar ( AFilter: TFilterSearch; pChave : string ): string; virtual;
     function salvar ( pObj : TObject ) : string;      virtual;
     function excluir ( pObj : TObject ) : string;     virtual;
     function carregar ( pObj : TObject ) : string;    virtual;
@@ -45,7 +47,7 @@ begin
 
 end;
 
-function Ctrl.pesquisar(pChave: string): string;
+function Ctrl.pesquisar(AFilter: TFilterSearch; pChave: string): string;
 begin
 
 end;

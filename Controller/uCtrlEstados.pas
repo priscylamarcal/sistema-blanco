@@ -13,7 +13,7 @@ type ctrlEstados = class( Ctrl )
     destructor destrua_se;                            override;
     procedure setDM ( pDM : TObject );                override;
     function getDS : TObject;                         override;
-    function pesquisar ( pChave : string ) : string;  override;
+//    function pesquisar ( pChave : string ) : string;  override;
     function salvar ( pObj : TObject ) : string;      override;
     function excluir ( pObj : TObject ) : string;     override;
     function carregar ( pObj : TObject ) : string;    override;
@@ -50,10 +50,10 @@ begin
   Result:= aDaoEstados.getDS;
 end;
 
-function ctrlEstados.pesquisar(pChave: string): string;
-begin
-
-end;
+//function ctrlEstados.pesquisar(pChave: string): string;
+//begin
+//
+//end;
 
 function ctrlEstados.salvar(pObj: TObject): string;
 begin
