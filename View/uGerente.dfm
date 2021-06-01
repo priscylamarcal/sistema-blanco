@@ -4043,7 +4043,7 @@
       Visible = False
       object spb_departamentos: TSpeedButton
         Left = 0
-        Top = 41
+        Top = 0
         Width = 146
         Height = 41
         Cursor = crHandPoint
@@ -4060,11 +4060,12 @@
         OnClick = spb_departamentosClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
-        ExplicitTop = 35
+        ExplicitLeft = -2
+        ExplicitTop = 3
       end
       object spb_cargos: TSpeedButton
         Left = 0
-        Top = 0
+        Top = 41
         Width = 146
         Height = 41
         Cursor = crHandPoint
@@ -4081,8 +4082,7 @@
         OnClick = spb_cargosClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
-        ExplicitLeft = 39
-        ExplicitTop = -4
+        ExplicitTop = 56
       end
       object spb_funcionários: TSpeedButton
         Left = 0

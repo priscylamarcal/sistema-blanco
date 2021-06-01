@@ -2,7 +2,7 @@ unit uDAO;
 
 interface
 
-uses uDM;
+uses uDM, uFilterSearch;
 
 type DAO = class
   private
@@ -13,7 +13,7 @@ type DAO = class
     destructor destrua_se;                            virtual;
     procedure setDM ( pDM : TObject );                virtual;
     function getDS : TObject;                         virtual;
-    function pesquisar ( pChave : string ) : string;  virtual;
+    function pesquisar ( AFilter: TFilterSearch; pChave : string ): string;  virtual;
     function salvar ( pObj : TObject ) : string;      virtual;
     function excluir ( pObj : TObject ) : string;     virtual;
     function carregar ( pObj : TObject ) : string;    virtual;
@@ -48,7 +48,7 @@ begin
 
 end;
 
-function DAO.pesquisar(pChave: string): string;
+function DAO.pesquisar(AFilter: TFilterSearch; pChave: string): string;
 begin
 
 end;

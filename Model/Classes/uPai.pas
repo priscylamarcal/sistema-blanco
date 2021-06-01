@@ -6,19 +6,19 @@ type Pai = class
   private
   protected
     codigo  : integer;
-    dataCad : string[10];
-    ultAlt  : string[10];
+    dataCad : TDateTime;
+    ultAlt  : TDateTime;
     codUsu  : integer;
   public
     constructor crieObj;
     destructor destrua_se;
     procedure setCodigo ( pCodigo : integer );
-    procedure setDataCad ( pDataCad : string );
-    procedure setUltAlt ( pUltAlt : string );
+    procedure setDataCad ( pDataCad : TDateTime );
+    procedure setUltAlt ( pUltAlt : TDateTime );
     procedure setCodUsu ( pCodUsu : integer );
     function getCodigo : integer;
-    function getDataCad : string;
-    function getUltAlt : string;
+    function getDataCad : TDateTime;
+    function getUltAlt : TDateTime;
     function getCodUsu : integer;
 end;
 
@@ -29,9 +29,9 @@ implementation
 constructor Pai.crieObj;
 begin
   codigo:= 0;
-  dataCad:= '';
-  ultAlt:= '';
-  codUsu:= 0;
+  dataCad:= 0;
+  ultAlt:= 0;
+  codUsu:= 1;
 end;
 
 destructor Pai.destrua_se;
@@ -49,12 +49,12 @@ begin
   Result:= codUsu;
 end;
 
-function Pai.getDataCad: string;
+function Pai.getDataCad: TDateTime;
 begin
   Result:= dataCad;
 end;
 
-function Pai.getUltAlt: string;
+function Pai.getUltAlt: TDateTime;
 begin
   Result:= ultAlt;
 end;
@@ -69,12 +69,12 @@ begin
   codUsu:= pCodUsu;
 end;
 
-procedure Pai.setDataCad(pDataCad: string);
+procedure Pai.setDataCad(pDataCad: TDateTime);
 begin
   dataCad:= pDataCad;
 end;
 
-procedure Pai.setUltAlt(pUltAlt: string);
+procedure Pai.setUltAlt(pUltAlt: TDateTime);
 begin
   ultAlt:= pUltAlt;
 end;

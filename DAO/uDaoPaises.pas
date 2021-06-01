@@ -2,7 +2,7 @@ unit uDaoPaises;
 
 interface
 
-uses uDAO, System.SysUtils;
+uses uDAO, System.SysUtils, uFilterSearch, FireDAC.Comp.Client, uPaises;
 
 type daoPaises = class( DAO )
   private
@@ -10,7 +10,7 @@ type daoPaises = class( DAO )
   public
     constructor crieObj;                              override;
     function getDS : TObject;                         override;
-    function pesquisar ( pChave : string ) : string;  override;
+    function pesquisar ( AFilter: TFilterSearch; pChave : string ): string; override;
     function salvar ( pObj : TObject ) : string;      override;
     function excluir ( pObj : TObject ) : string;     override;
     function carregar ( pObj : TObject ) : string;    override;
@@ -20,10 +20,16 @@ implementation
 
 { daoPaises }
 
-
 function daoPaises.carregar(pObj: TObject): string;
+var mPais : Paises;
 begin
+  mPais:= Paises( pObj );
 
+  mPais.setCodigo( aDM.QPaises.FieldByName('CODPAIS').Value );
+  mPais.setPais( aDM.QPaises.FieldByName('PAIS').AsString );
+  mPais.setDDI( aDM.QPaises.FieldByName('DDI').AsString );
+  mPais.setSigla( aDM.QPaises.FieldByName('SIGLA').AsString );
+  mPais.setDataCad( aDM.QPaises.FieldByName('DATACAD').AsDateTime );
 end;
 
 constructor daoPaises.crieObj;
@@ -42,16 +48,72 @@ begin
   Result:= aDM.DSPaises;
 end;
 
-function daoPaises.pesquisar(pChave: string): string;
-
+function daoPaises.pesquisar(AFilter: TFilterSearch; pChave: string): string;
+var msql : string;
 begin
+    msql:= '';
 
+    case AFilter.TipoConsulta of
+
+     TpCCodigo:
+     begin
+       msql:= 'SELECT * FROM PAISES WHERE CODPAIS =' + IntToStr( AFilter.Codigo );
+     end;
+
+     TpCParam:
+     begin
+       msql:= ( 'SELECT * FROM PAISES WHERE PAIS LIKE ' + QuotedStr( '%' + AFilter.Parametro + '%' ) );
+     end;
+
+     TpCDDI:
+     begin
+       msql:= ( 'SELECT * FROM PAISES WHERE DDI LIKE ' + QuotedStr( '%' + AFilter.DDI + '%' ) );
+     end;
+
+     TpCMoeda:
+     begin
+       msql:= ( 'SELECT * FROM PAISES WHERE MOEDA LIKE ' + QuotedStr( '%' + AFilter.Moeda + '%' ) );
+     end;
+
+     TpCTODOS:
+     begin
+       msql:= 'SELECT * FROM PAISES ORDER BY CODPAIS';
+     end;
+
+    end;
+
+
+
+    aDM.QPaises.Active:= false;
+    aDM.QPaises.SQL.Text:=msql;
+    aDM.QPaises.Open;
+    result:= '';
 
 end;
 
 function daoPaises.salvar(pObj: TObject): string;
+var mPais : Paises;
 begin
+  mPais:= Paises( pObj );
+  aDM.Transacao.StartTransaction;
+  try
+    if mPais.getCodigo = 0 then
+       aDM.QPaises.Insert
+    else
+       aDM.QPaises.Edit;
 
+    aDM.QPaises.FieldByName('CODPAIS').AsInteger:= mPais.getCodigo;
+    aDM.QPaises.FieldByName('PAIS').AsAnsiString:= mPais.getPais;
+    aDM.QPaises.FieldByName('DDI').AsAnsiString:= mPais.getDDI;
+    aDM.QPaises.FieldByName('SIGLA').AsAnsiString:= mPais.getSigla;
+    aDM.QPaises.FieldByName('DATACAD').AsDateTime:= mPais.getDataCad;
+
+    aDM.QPaises.Post;
+
+    aDM.Transacao.Commit;
+  except
+    aDM.Transacao.Rollback;
+  end;
 end;
 
 end.

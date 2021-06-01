@@ -173,6 +173,10 @@ begin
   oPais.destrua_se;
   oEstado.destrua_se;
   aCidade.destrua_se;
+
+  aCtrlPais.destrua_se;
+
+  aDm.DisposeOf;
 end;
 
 procedure Tform_principal.img_logo1MouseEnter(Sender: TObject);

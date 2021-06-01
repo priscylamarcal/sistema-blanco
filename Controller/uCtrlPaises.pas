@@ -3,7 +3,7 @@ unit uCtrlPaises;
 interface
 
 uses uController,
-     uDaoPaises;
+     uDaoPaises, uFilterSearch;
 
 type ctrlPaises = class( Ctrl )
   private
@@ -14,7 +14,7 @@ type ctrlPaises = class( Ctrl )
     destructor destrua_se;                            override;
     procedure setDM ( pDM : TObject );                override;
     function getDS : TObject;                         override;
-    function pesquisar ( pChave : string ) : string;  override;
+    function pesquisar ( AFilter: TFilterSearch; pChave : string ): string; override;
     function salvar ( pObj : TObject ) : string;      override;
     function excluir ( pObj : TObject ) : string;     override;
     function carregar ( pObj : TObject ) : string;    override;
@@ -26,9 +26,8 @@ implementation
 
 function ctrlPaises.carregar(pObj: TObject): string;
 begin
-
+  aDaoPais.carregar(pObj);
 end;
-
 
 constructor ctrlPaises.crieObj;
 begin
@@ -50,14 +49,14 @@ begin
   Result:= aDaoPais.getDS;
 end;
 
-function ctrlPaises.pesquisar(pChave: string): string;
+function ctrlPaises.pesquisar(AFilter: TFilterSearch; pChave: string): string;
 begin
-  aDaoPais.pesquisar(pChave);
+ Result := aDaoPais.Pesquisar( AFilter, pChave );
 end;
 
 function ctrlPaises.salvar(pObj: TObject): string;
 begin
-
+  aDaoPais.salvar(pObj);
 end;
 
 procedure ctrlPaises.setDM(pDM: TObject);
