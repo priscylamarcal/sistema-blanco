@@ -8,11 +8,12 @@ uses
   Vcl.DBGrids, Vcl.Buttons, Vcl.StdCtrls, campoEdit, ComboBox, Vcl.ExtCtrls,
   uCadastroPaises,
   uPaises,
-  uCtrlPaises;
+  uCtrlPaises, uFilterSearch;
 
 type
   Tform_consulta_paises = class(Tform_consulta_pai)
     procedure spb_botao_pesquisarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
     oCadastroPaises : Tform_cadastro_paises;
@@ -43,7 +44,9 @@ implementation
 procedure Tform_consulta_paises.alterar;
 begin
   inherited;
-
+  aCtrlPaises.carregar(oPais);
+  oCadastroPaises.conhecaObj( aCtrlPaises, oPais );
+  oCadastroPaises.ShowModal;
 end;
 
 procedure Tform_consulta_paises.conhecaObj(pCtrl, pObj: TObject);
@@ -61,16 +64,92 @@ begin
 
 end;
 
+procedure Tform_consulta_paises.FormShow(Sender: TObject);
+begin
+  inherited;
+  combobox_tipo_filtro.ItemIndex:= 4;
+  edt_pesquisa.Clear;
+  pesquisar;   inherited;
+end;
+
 procedure Tform_consulta_paises.novo;
 begin
   inherited;
+  oCadastroPaises.conhecaObj( aCtrlPaises, oPais );
+  oCadastroPaises.limpaEdt;
   oCadastroPaises.ShowModal;
 end;
 
 procedure Tform_consulta_paises.pesquisar;
+var vFilter : TFilterSearch;
+    pchave : string;
 begin
-  inherited;
+  //inherited;
+  VFilter   := TFilterSearch.Create;
 
+  try
+    Try
+     case combobox_tipo_filtro.ItemIndex of
+      0:
+        begin
+          if edt_pesquisa.Text = '' then
+          begin
+            MessageDlg( 'Campo do filtro não pode ser vazio!', MtInformation, [ MbOK ], 0 );
+            edt_pesquisa.SetFocus;
+           Exit;
+          end;
+
+          vFilter.TipoConsulta:= TpCCodigo;
+          vFilter.Codigo:= StrToInt(edt_pesquisa.Text);
+        end;
+
+    1:
+        begin
+          if Length( edt_pesquisa.Text ) < 3 then
+          begin
+            MessageDlg( 'Digite ao menos 3 caracteres para consulta!', MtInformation, [ MbOK ], 0 );
+            edt_pesquisa.SetFocus;
+            Exit;
+          end;
+          VFilter.TipoConsulta := TpCParam;
+          VFilter.Parametro    := Uppercase( edt_pesquisa.Text );
+        end;
+    2:
+        begin
+          if edt_pesquisa.Text = '' then
+          begin
+            MessageDlg( 'Campo do filtro não pode ser vazio!', MtInformation, [ MbOK ], 0 );
+            edt_pesquisa.SetFocus;
+            Exit;
+          end;
+          VFilter.TipoConsulta := TpCDDI;
+          VFilter.DDI    := Uppercase( edt_pesquisa.Text );
+        end;
+    3:
+        begin
+          if edt_pesquisa.Text = '' then
+          begin
+            MessageDlg( 'Campo do filtro não pode ser vazio!', MtInformation, [ MbOK ], 0 );
+            edt_pesquisa.SetFocus;
+            Exit;
+          end;
+          VFilter.TipoConsulta := TpCMoeda;
+          VFilter.Moeda    := Uppercase( edt_pesquisa.Text );
+        end;
+      4:
+        begin
+          VFilter.TipoConsulta := TpCTODOS;
+        end;
+    end;
+
+  finally
+    aCtrlPaises.pesquisar(VFilter, pchave);
+    VFilter.Free;
+  end;
+    Except
+//    on e: exception do
+//    ShowMessage(e.ClassName +'asdfasdfasdf');
+    End;
 end;
 
 procedure Tform_consulta_paises.sair;
@@ -89,7 +168,7 @@ end;
 
 procedure Tform_consulta_paises.spb_botao_pesquisarClick(Sender: TObject);
 begin
-  aCtrlPaises.pesquisar(self.edt_pesquisa.Text);
+  pesquisar;
   inherited;
 end;
 

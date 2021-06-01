@@ -56,6 +56,10 @@ end;
 procedure Tform_cadastro_paises.carregaEdt;
 begin
   inherited;
+
+  if oPais.getCodigo <> 0 then
+     self.edt_codigo.Text:= IntToStr(oPais.getCodigo);
+
   Self.edt_pais.Text:= oPais.getPais;
   Self.edt_sigla.Text:= oPais.getSigla;
   Self.edt_ddi.Text:= oPais.getDDI;
@@ -67,6 +71,8 @@ begin
   inherited;
   oPais:= Paises( pObj );
   aCtrlPais:= ctrlPaises( pCtrl );
+  self.limpaEdt;
+  self.carregaEdt;
 end;
 
 procedure Tform_cadastro_paises.desbloqueiaEdt;
@@ -113,8 +119,8 @@ begin
     oPais.setSigla( Self.edt_sigla.Text );
     oPais.setDDI( Self.edt_ddi.Text );
     oPais.setMoeda( Self.edt_moeda.Text );
-    oPais.setDataCad( Self.edt_data_cadastro.Text );
-    oPais.setUltAlt( Self.edt_data_ult_alt.Text );
+    oPais.setDataCad( Date );
+    oPais.setUltAlt( Date );
     oPais.setCodUsu( StrToInt ( Self.edt_cod_usuario.Text ) );
     if Self.btn_botao_salvar.Caption = 'Salvar' then // INCLUIR-ALTERAR
        aCtrlPais.salvar( oPais.clone )

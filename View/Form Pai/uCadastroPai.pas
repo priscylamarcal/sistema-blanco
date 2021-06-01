@@ -38,6 +38,7 @@ type
       MousePos: TPoint; var Handled: Boolean);
     procedure FormMouseWheelUp(Sender: TObject; Shift: TShiftState;
       MousePos: TPoint; var Handled: Boolean);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   public
@@ -99,6 +100,13 @@ begin
   begin
     Position := Position - Increment;
   end;
+end;
+
+procedure Tform_cadastro_pai.FormShow(Sender: TObject);
+begin
+  edt_data_cadastro.Text:= DateToStr(Date());
+
+  edt_cod_usuario.Text:= '1';
 end;
 
 procedure Tform_cadastro_pai.limpaEdt;
