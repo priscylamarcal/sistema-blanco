@@ -178,6 +178,7 @@ end;
 procedure Tform_consulta_pai.btn_botao_alterarClick(Sender: TObject);
 begin
   alterar;
+  prcAjustaTamanhoLinha(DBGrid);
 end;
 
 procedure Tform_consulta_pai.btn_botao_alterarMouseEnter(Sender: TObject);
@@ -193,6 +194,7 @@ end;
 procedure Tform_consulta_pai.btn_botao_novoClick(Sender: TObject);
 begin
   novo;
+  prcAjustaTamanhoLinha(DBGrid);
 end;
 
 procedure Tform_consulta_pai.btn_botao_novoMouseEnter(Sender: TObject);
@@ -212,7 +214,7 @@ end;
 
 procedure Tform_consulta_pai.setFrmCadastro(pObj: TObject);
 begin
-
+  prcAjustaTamanhoLinha(DBGrid);
 end;
 
 procedure Tform_consulta_pai.spb_botao_pesquisarClick(Sender: TObject);

@@ -82,8 +82,6 @@ begin
 
     end;
 
-
-
     aDM.QPaises.Active:= false;
     aDM.QPaises.SQL.Text:=msql;
     aDM.QPaises.Open;
@@ -106,11 +104,13 @@ begin
     aDM.QPaises.FieldByName('PAIS').AsAnsiString:= mPais.getPais;
     aDM.QPaises.FieldByName('DDI').AsAnsiString:= mPais.getDDI;
     aDM.QPaises.FieldByName('SIGLA').AsAnsiString:= mPais.getSigla;
+    aDM.QPaises.FieldByName('MOEDA').AsAnsiString:= mPais.getMoeda;
     aDM.QPaises.FieldByName('DATACAD').AsDateTime:= mPais.getDataCad;
 
     aDM.QPaises.Post;
 
     aDM.Transacao.Commit;
+
   except
     aDM.Transacao.Rollback;
   end;

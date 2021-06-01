@@ -33,6 +33,7 @@ type
     procedure carregaEdt;     override;
     procedure bloqueiaEdt;    override;
     procedure desbloqueiaEdt; override;
+    function validaFormulario : Boolean; override;
   end;
 
 var
@@ -84,6 +85,7 @@ begin
   Self.edt_moeda.Enabled:= true;
 end;
 
+
 procedure Tform_cadastro_paises.limpaEdt;
 begin
   inherited;
@@ -102,31 +104,43 @@ end;
 procedure Tform_cadastro_paises.salvar;
 begin
   inherited;
+  if validaFormulario then
+    begin
+      oPais.setCodigo( StrToInt ( Self.edt_codigo.Text ) );
+      oPais.setPais( Self.edt_pais.Text );
+      oPais.setSigla( Self.edt_sigla.Text );
+      oPais.setDDI( Self.edt_ddi.Text );
+      oPais.setMoeda( Self.edt_moeda.Text );
+      oPais.setDataCad( Date );
+      oPais.setUltAlt( Date );
+      oPais.setCodUsu( StrToInt ( Self.edt_cod_usuario.Text ) );
+      if Self.btn_botao_salvar.Caption = 'Salvar' then // INCLUIR-ALTERAR
+         aCtrlPais.salvar( oPais.clone )
+      else //EXCLUIR
+         aCtrlPais.excluir( oPais.clone );
+    end;
+    self.sair;
+end;
+
+function Tform_cadastro_paises.validaFormulario: Boolean;
+begin
+  Result:= False;
+
   if Self.edt_pais.Text = '' then
   begin
-    ShowMessage('O campo País é obrigatório!');
-    Self.edt_pais.SetFocus;
-  end
-  else if Self.edt_sigla.Text = '' then
-  begin
-    ShowMessage('O campo Sigla é obrigatório!');
-    Self.edt_sigla.SetFocus;
-  end
-  else
-  begin
-    oPais.setCodigo( StrToInt ( Self.edt_codigo.Text ) );
-    oPais.setPais( Self.edt_pais.Text );
-    oPais.setSigla( Self.edt_sigla.Text );
-    oPais.setDDI( Self.edt_ddi.Text );
-    oPais.setMoeda( Self.edt_moeda.Text );
-    oPais.setDataCad( Date );
-    oPais.setUltAlt( Date );
-    oPais.setCodUsu( StrToInt ( Self.edt_cod_usuario.Text ) );
-    if Self.btn_botao_salvar.Caption = 'Salvar' then // INCLUIR-ALTERAR
-       aCtrlPais.salvar( oPais.clone )
-    else //EXCLUIR
-       aCtrlPais.excluir( oPais.clone );
+    MessageDlg( 'O campo País é obrigatório!', MtInformation, [ MbOK ], 0 );
+    edt_pais.SetFocus;
+    Exit;
   end;
+
+  if Self.edt_sigla.Text = '' then
+  begin
+    MessageDlg( 'O campo Sigla é obrigatório!', MtInformation, [ MbOK ], 0 );
+    edt_sigla.SetFocus;
+    Exit;
+  end;
+
+  Result:= true;
 end;
 
 end.

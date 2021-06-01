@@ -73,11 +73,18 @@ begin
 end;
 
 procedure Tform_consulta_paises.novo;
+var form : Tform_cadastro_paises;
 begin
   inherited;
   oCadastroPaises.conhecaObj( aCtrlPaises, oPais );
   oCadastroPaises.limpaEdt;
   oCadastroPaises.ShowModal;
+
+  if form.salvou then
+  begin
+    Self.pesquisar;      inherited;
+  end;
+
 end;
 
 procedure Tform_consulta_paises.pesquisar;
@@ -159,11 +166,14 @@ begin
 end;
 
 procedure Tform_consulta_paises.setFrmCadastro(pObj: TObject);
+var form : Tform_cadastro_paises;
 begin
   inherited;
 
   //cast do objeto
   oCadastroPaises:= Tform_cadastro_paises( pObj );
+    if form.salvou then
+     self.pesquisar; inherited;
 end;
 
 procedure Tform_consulta_paises.spb_botao_pesquisarClick(Sender: TObject);

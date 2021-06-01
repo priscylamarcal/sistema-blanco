@@ -43,6 +43,9 @@ type
     { Private declarations }
   public
     { Public declarations }
+
+    salvou : Boolean;
+
     procedure conhecaObj ( pCtrl, pObj : TObject );  virtual;
     procedure salvar;         virtual;
     procedure sair;           virtual;
@@ -50,6 +53,7 @@ type
     procedure carregaEdt;     virtual;
     procedure bloqueiaEdt;    virtual;
     procedure desbloqueiaEdt; virtual;
+    function validaFormulario : Boolean; virtual;
   end;
 
 var
@@ -120,6 +124,11 @@ begin
 end;
 
 procedure Tform_cadastro_pai.salvar;
+begin
+
+end;
+
+function Tform_cadastro_pai.validaFormulario: Boolean;
 begin
 
 end;
