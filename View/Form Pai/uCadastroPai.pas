@@ -108,7 +108,8 @@ end;
 
 procedure Tform_cadastro_pai.FormShow(Sender: TObject);
 begin
-  edt_data_cadastro.Text:= DateToStr(Date());
+//  edt_data_cadastro.Text:= DateToStr(Date());
+//  edt_data_ult_alt.Text:= DateToStr(Date());
 
   edt_cod_usuario.Text:= '1';
 end;

@@ -18,7 +18,7 @@ uses uConsultaPaises, uConsultaEstados, uConsultaCidades, uConsultaCargos, uCons
 
      uPaises, uEstados, uCidades,
 
-     uCtrlPaises, uCtrlEstados;
+     uCtrlPaises, uCtrlEstados, uDepartamentos;
 
 type Inter = class
   private
@@ -73,7 +73,7 @@ type Inter = class
     procedure PDEstados ( pCtrl : TObject; pObj : Estados );
     procedure PDCidades ( pCtrl : TObject; pObj : Cidades);
     procedure PDCargos ( pCtrl : TObject; pObj : TObject);
-    procedure PDDepartamentos ( pCtrl : TObject; pObj : TObject );
+    procedure PDDepartamentos ( pCtrl : TObject; pObj : Departamentos );
     procedure PDFuncionarios ( pCtrl : TObject; pObj : TObject );
     procedure PDFormasPagamentos ( pCtrl : TObject; pObj : TObject );
     procedure PDCondicoesPagamentos ( pCtrl : TObject; pObj : TObject );
@@ -253,8 +253,9 @@ begin
   aConsultaCores.ShowModal;
 end;
 
-procedure Inter.PDDepartamentos(pCtrl, pObj: TObject);
+procedure Inter.PDDepartamentos(pCtrl : TObject; pObj: Departamentos);
 begin
+  aConsultaDepartamentos.conhecaObj( pCtrl, pObj );
   aConsultaDepartamentos.ShowModal;
 end;
 
