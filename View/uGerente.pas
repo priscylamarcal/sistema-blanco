@@ -6,9 +6,9 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus,
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.StdCtrls, Vcl.Imaging.pngimage,
-  uPaises, uEstados, uCidades,
+  uPaises, uEstados, uCidades, uDepartamentos,
   uInter,
-  uCtrlPaises, uCtrlEstados,
+  uCtrlPaises, uCtrlEstados, uCtrlDepartamentos,
   uDM;
 
 type
@@ -123,14 +123,16 @@ type
   private
     { Private declarations }
 
-    oPais   : Paises;
-    oEstado : Estados;
-    aCidade : Cidades;
+    oPais         : Paises;
+    oEstado       : Estados;
+    aCidade       : Cidades;
+    oDepartamento : Departamentos;
 
     aInter  : Inter;
 
-    aCtrlPais : ctrlPaises;
-    aCtrlEstado : ctrlEstados;
+    aCtrlPais         : ctrlPaises;
+    aCtrlEstado       : ctrlEstados;
+    aCtrlDepartamento : ctrlDepartamentos;
 
     aDm : TDM;
 
@@ -156,14 +158,17 @@ begin
   oPais:= Paises.crieObj;
   oEstado:= Estados.crieObj;
   aCidade:= Cidades.crieObj;
+  oDepartamento:= Departamentos.crieObj;
 
   aCtrlPais:= ctrlPaises.crieObj;
   aCtrlEstado:= ctrlEstados.crieObj;
+  aCtrlDepartamento:= ctrlDepartamentos.crieObj;
 
   aDm:= TDM.Create(nil);
 
   aCtrlPais.setDM( aDm );
   aCtrlEstado.setDM( aDm );
+  aCtrlDepartamento.setDM( aDm );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -173,8 +178,10 @@ begin
   oPais.destrua_se;
   oEstado.destrua_se;
   aCidade.destrua_se;
+  oDepartamento.destrua_se;
 
   aCtrlPais.destrua_se;
+  aCtrlDepartamento.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -241,7 +248,7 @@ end;
 
 procedure Tform_principal.spb_departamentosClick(Sender: TObject);
 begin
-  aInter.PDDepartamentos(nil, nil);
+  aInter.PDDepartamentos(aCtrlDepartamento, oDepartamento);
 end;
 
 procedure Tform_principal.spb_estadosClick(Sender: TObject);

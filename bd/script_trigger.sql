@@ -9,3 +9,15 @@ BEGIN
         new.CODPAIS = GEN_ID(GEN_PAISES, 1);
 END ^
 set term ; ^
+
+set term ^;
+
+create TRIGGER DEPARTAMENTOS_BI for paises
+
+ACTIVE BEFORE INSERT POSITION 0
+AS
+BEGIN
+    if (NEW.CODDEPARTAMENTO = 0) THEN
+        new.CODDEPARTAMENTO = GEN_ID(GEN_DEPARTAMENTOS, 1);
+END ^
+set term ; ^

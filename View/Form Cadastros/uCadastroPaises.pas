@@ -19,6 +19,7 @@ type
     lbl_sigla: TLabel;
     lbl_moeda: TLabel;
     lbl_ddi: TLabel;
+    procedure FormActivate(Sender: TObject);
 
   private
     { Private declarations }
@@ -65,6 +66,9 @@ begin
   Self.edt_sigla.Text:= oPais.getSigla;
   Self.edt_ddi.Text:= oPais.getDDI;
   Self.edt_moeda.Text:= oPais.getMoeda;
+ Self.edt_data_cadastro.Text:= DateToStr( oPais.getDataCad);
+ //self.edt_data_cadastro.Text:= DateToStr(date);
+ self.edt_data_ult_alt.Text:= DateToStr(oPais.getUltAlt);
 end;
 
 procedure Tform_cadastro_paises.conhecaObj(pCtrl, pObj: TObject);
@@ -85,6 +89,11 @@ begin
   Self.edt_moeda.Enabled:= true;
 end;
 
+procedure Tform_cadastro_paises.FormActivate(Sender: TObject);
+begin
+  inherited;
+  edt_pais.SetFocus;
+end;
 
 procedure Tform_cadastro_paises.limpaEdt;
 begin
@@ -93,6 +102,8 @@ begin
   Self.edt_sigla.Clear;
   Self.edt_ddi.Clear;
   Self.edt_moeda.Clear;
+  Self.edt_data_cadastro.Clear;
+  self.edt_data_ult_alt.Clear;
 end;
 
 procedure Tform_cadastro_paises.sair;
@@ -105,7 +116,7 @@ procedure Tform_cadastro_paises.salvar;
 begin
   inherited;
   if validaFormulario then
-    begin
+  begin
       oPais.setCodigo( StrToInt ( Self.edt_codigo.Text ) );
       oPais.setPais( Self.edt_pais.Text );
       oPais.setSigla( Self.edt_sigla.Text );
@@ -114,12 +125,14 @@ begin
       oPais.setDataCad( Date );
       oPais.setUltAlt( Date );
       oPais.setCodUsu( StrToInt ( Self.edt_cod_usuario.Text ) );
+
       if Self.btn_botao_salvar.Caption = 'Salvar' then // INCLUIR-ALTERAR
          aCtrlPais.salvar( oPais.clone )
       else //EXCLUIR
          aCtrlPais.excluir( oPais.clone );
-    end;
-    self.sair;
+
+      self.sair;
+  end;
 end;
 
 function Tform_cadastro_paises.validaFormulario: Boolean;
@@ -140,7 +153,7 @@ begin
     Exit;
   end;
 
-  Result:= true;
+ Result:= true;
 end;
 
 end.
