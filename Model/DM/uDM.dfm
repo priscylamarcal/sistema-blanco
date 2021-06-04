@@ -88,4 +88,47 @@ object DM: TDM
     Left = 368
     Top = 184
   end
+  object QDepartamentos: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from departamentos')
+    Left = 448
+    Top = 304
+    object QDepartamentosCODDEPARTAMENTO: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODDEPARTAMENTO'
+      Origin = 'CODDEPARTAMENTO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QDepartamentosDEPARTAMENTO: TStringField
+      DisplayLabel = 'Departamento'
+      DisplayWidth = 220
+      FieldName = 'DEPARTAMENTO'
+      Origin = 'DEPARTAMENTO'
+      Required = True
+      Size = 80
+    end
+    object QDepartamentosDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QDepartamentosULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QDepartamentosCODUSUALT: TIntegerField
+      FieldName = 'CODUSUALT'
+      Origin = 'CODUSUALT'
+      Visible = False
+    end
+  end
+  object DSDepartamentos: TDataSource
+    DataSet = QDepartamentos
+    Left = 544
+    Top = 304
+  end
 end

@@ -2,6 +2,7 @@ inherited form_cadastro_paises: Tform_cadastro_paises
   Caption = 'Cadastro de Pa'#237's'
   ClientHeight = 269
   ClientWidth = 692
+  OnActivate = FormActivate
   ExplicitWidth = 708
   ExplicitHeight = 308
   PixelsPerInch = 96

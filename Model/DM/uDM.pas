@@ -24,6 +24,13 @@ type
     QPaisesDATACAD: TSQLTimeStampField;
     QPaisesULTALT: TSQLTimeStampField;
     QPaisesCODUSUALT: TIntegerField;
+    QDepartamentos: TFDQuery;
+    DSDepartamentos: TDataSource;
+    QDepartamentosCODDEPARTAMENTO: TIntegerField;
+    QDepartamentosDEPARTAMENTO: TStringField;
+    QDepartamentosDATACAD: TSQLTimeStampField;
+    QDepartamentosULTALT: TSQLTimeStampField;
+    QDepartamentosCODUSUALT: TIntegerField;
   private
     { Private declarations }
   public

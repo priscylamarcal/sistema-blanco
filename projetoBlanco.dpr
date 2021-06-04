@@ -63,7 +63,9 @@ uses
   uCadastroContasPagar in 'View\Form Cadastros\uCadastroContasPagar.pas' {form_cadastro_contas_pagar},
   uCadastroFormasPagamentos in 'View\Form Cadastros\uCadastroFormasPagamentos.pas' {form_cadastro_formas_pagamentos},
   uCadastroTiposContatos in 'View\Form Cadastros\uCadastroTiposContatos.pas' {form_cadastro_tipo_contato},
-  uFilterSearch in 'Model\uFilterSearch.pas';
+  uFilterSearch in 'Model\uFilterSearch.pas',
+  uCtrlDepartamentos in 'Controller\uCtrlDepartamentos.pas',
+  uDaoDepartamentos in 'DAO\uDaoDepartamentos.pas';
 
 {$R *.res}
 

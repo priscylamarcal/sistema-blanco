@@ -19,3 +19,11 @@ create table ESTADOS(
     codUsuAlt integer,
 	constraint fk_Estado_Pais foreign key (codPais) references PAISES (codPais)
 );
+
+create table DEPARTAMENTOS(
+    codDepartamento integer not null primary key,
+    depatamento varchar(80) not null,
+    dataCad timestamp,
+    ultAlt timestamp,
+    codUsuAlt integer
+);

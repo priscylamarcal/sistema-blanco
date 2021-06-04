@@ -46,6 +46,9 @@ begin
   inherited;
   aCtrlPaises.carregar(oPais);
   oCadastroPaises.conhecaObj( aCtrlPaises, oPais );
+
+  oCadastroPaises.Caption:= 'Alteração de País';
+
   oCadastroPaises.ShowModal;
 end;
 
@@ -69,7 +72,7 @@ begin
   inherited;
   combobox_tipo_filtro.ItemIndex:= 4;
   edt_pesquisa.Clear;
-  pesquisar;   inherited;
+  self.pesquisar;   inherited;
 end;
 
 procedure Tform_consulta_paises.novo;
@@ -78,12 +81,13 @@ begin
   inherited;
   oCadastroPaises.conhecaObj( aCtrlPaises, oPais );
   oCadastroPaises.limpaEdt;
+
+  oCadastroPaises.Caption:= 'Cadastro de País';
+
   oCadastroPaises.ShowModal;
 
   if form.salvou then
-  begin
     Self.pesquisar;      inherited;
-  end;
 
 end;
 
@@ -160,9 +164,11 @@ begin
 end;
 
 procedure Tform_consulta_paises.sair;
+var form : Tform_cadastro_paises;
 begin
   inherited;
-
+    if form.salvou then
+    Self.pesquisar;      inherited;
 end;
 
 procedure Tform_consulta_paises.setFrmCadastro(pObj: TObject);
@@ -172,7 +178,8 @@ begin
 
   //cast do objeto
   oCadastroPaises:= Tform_cadastro_paises( pObj );
-    if form.salvou then
+
+  if form.salvou then
      self.pesquisar; inherited;
 end;
 
