@@ -31,6 +31,12 @@ type
     QDepartamentosDATACAD: TSQLTimeStampField;
     QDepartamentosULTALT: TSQLTimeStampField;
     QDepartamentosCODUSUALT: TIntegerField;
+    QCores: TFDQuery;
+    DSCores: TDataSource;
+    QCoresCODCOR: TIntegerField;
+    QCoresCOR: TStringField;
+    QCoresDATACAD: TSQLTimeStampField;
+    QCoresULTALT: TSQLTimeStampField;
   private
     { Private declarations }
   public

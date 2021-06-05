@@ -27,3 +27,10 @@ create table DEPARTAMENTOS(
     ultAlt timestamp,
     codUsuAlt integer
 );
+
+CREATE TABLE CORES (
+    CODCOR   INTEGER NOT NULL PRIMARY KEY,
+    COR      VARCHAR(80) NOT NULL,
+    DATACAD  TIMESTAMP,
+    ULTALT   TIMESTAMP
+);

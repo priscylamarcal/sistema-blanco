@@ -140,6 +140,7 @@ end;
 procedure Tform_consulta_pai.FormShow(Sender: TObject);
 begin
  // prcAjustarColunasGrid (DBGrid);
+
   prcAjustaTamanhoLinha(DBGrid);
 
   tipoFiltro;

@@ -6,8 +6,10 @@ inherited form_cadastro_cores: Tform_cadastro_cores
   TextHeight = 13
   inherited pnl_fundo: TPanel
     Height = 255
+    ExplicitHeight = 255
     inherited ScrollBox1: TScrollBox
       Height = 255
+      ExplicitHeight = 255
       inherited lbl_cod_usuario: TLabel
         Top = 157
         ExplicitTop = 157
@@ -47,6 +49,7 @@ inherited form_cadastro_cores: Tform_cadastro_cores
       end
       inherited pnl_bottom: TPanel
         Top = 200
+        ExplicitTop = 200
       end
       object edt_cor: PriTEdit
         Left = 112
@@ -59,6 +62,7 @@ inherited form_cadastro_cores: Tform_cadastro_cores
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 80
         ParentFont = False
         TabOrder = 5
         MudarCor = clCream

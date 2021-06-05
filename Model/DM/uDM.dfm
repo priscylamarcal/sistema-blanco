@@ -131,4 +131,42 @@ object DM: TDM
     Left = 544
     Top = 304
   end
+  object QCores: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from cores')
+    Left = 24
+    Top = 288
+    object QCoresCODCOR: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODCOR'
+      Origin = 'CODCOR'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QCoresCOR: TStringField
+      DisplayLabel = 'Cor'
+      DisplayWidth = 220
+      FieldName = 'COR'
+      Origin = 'COR'
+      Required = True
+      Size = 80
+    end
+    object QCoresDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QCoresULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+  end
+  object DSCores: TDataSource
+    DataSet = QCores
+    Left = 80
+    Top = 288
+  end
 end
