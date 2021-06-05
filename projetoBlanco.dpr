@@ -65,7 +65,9 @@ uses
   uCadastroTiposContatos in 'View\Form Cadastros\uCadastroTiposContatos.pas' {form_cadastro_tipo_contato},
   uFilterSearch in 'Model\uFilterSearch.pas',
   uCtrlDepartamentos in 'Controller\uCtrlDepartamentos.pas',
-  uDaoDepartamentos in 'DAO\uDaoDepartamentos.pas';
+  uDaoDepartamentos in 'DAO\uDaoDepartamentos.pas',
+  uCtrlCores in 'Controller\uCtrlCores.pas',
+  uDaoCores in 'DAO\uDaoCores.pas';
 
 {$R *.res}
 
