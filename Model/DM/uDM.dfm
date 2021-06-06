@@ -14,13 +14,13 @@ object DM: TDM
       'DriverID=FB')
     Connected = True
     Transaction = Transacao
-    Left = 56
-    Top = 112
+    Left = 256
+    Top = 8
   end
   object Transacao: TFDTransaction
     Connection = Conexao
-    Left = 112
-    Top = 112
+    Left = 312
+    Top = 8
   end
   object QPaises: TFDQuery
     Active = True
@@ -28,8 +28,8 @@ object DM: TDM
     Transaction = Transacao
     SQL.Strings = (
       'select * from paises')
-    Left = 280
-    Top = 184
+    Left = 8
+    Top = 64
     object QPaisesCODPAIS: TIntegerField
       Alignment = taLeftJustify
       DisplayLabel = 'C'#243'digo'
@@ -85,16 +85,16 @@ object DM: TDM
   end
   object DSPaises: TDataSource
     DataSet = QPaises
-    Left = 368
-    Top = 184
+    Left = 56
+    Top = 64
   end
   object QDepartamentos: TFDQuery
     Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from departamentos')
-    Left = 448
-    Top = 304
+    Left = 152
+    Top = 64
     object QDepartamentosCODDEPARTAMENTO: TIntegerField
       DisplayLabel = 'C'#243'digo'
       FieldName = 'CODDEPARTAMENTO'
@@ -128,16 +128,16 @@ object DM: TDM
   end
   object DSDepartamentos: TDataSource
     DataSet = QDepartamentos
-    Left = 544
-    Top = 304
+    Left = 240
+    Top = 64
   end
   object QCores: TFDQuery
     Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from cores')
-    Left = 24
-    Top = 288
+    Left = 336
+    Top = 64
     object QCoresCODCOR: TIntegerField
       DisplayLabel = 'C'#243'digo'
       FieldName = 'CODCOR'
@@ -166,7 +166,50 @@ object DM: TDM
   end
   object DSCores: TDataSource
     DataSet = QCores
-    Left = 80
-    Top = 288
+    Left = 384
+    Top = 64
+  end
+  object QColecoes: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from COLECOES')
+    Left = 472
+    Top = 64
+    object QColecoesCODCOLECAO: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODCOLECAO'
+      Origin = 'CODCOLECAO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QColecoesCOLECAO: TStringField
+      DisplayLabel = 'Cole'#231#227'o'
+      DisplayWidth = 220
+      FieldName = 'COLECAO'
+      Origin = 'COLECAO'
+      Required = True
+      Size = 80
+    end
+    object QColecoesDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QColecoesULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QColecoesCODUSUALT: TIntegerField
+      FieldName = 'CODUSUALT'
+      Origin = 'CODUSUALT'
+      Visible = False
+    end
+  end
+  object DSColecoes: TDataSource
+    DataSet = QColecoes
+    Left = 536
+    Top = 64
   end
 end

@@ -49,14 +49,21 @@ object form_consulta_pai: Tform_consulta_pai
           Top = 21
           Width = 148
           Height = 24
+          Style = csDropDownList
           CharCase = ecUpperCase
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clWindowText
           Font.Height = -13
           Font.Name = 'Tahoma'
           Font.Style = []
+          ItemIndex = 1
           ParentFont = False
           TabOrder = 0
+          Text = 'TODOS'
+          OnChange = combobox_tipo_filtroChange
+          Items.Strings = (
+            'C'#211'DIGO'
+            'TODOS')
           MudarCor = clCream
         end
         object edt_pesquisa: PriTEdit
@@ -72,7 +79,6 @@ object form_consulta_pai: Tform_consulta_pai
           Font.Style = []
           ParentFont = False
           TabOrder = 1
-          TextHint = 'DIGITE AQUI A SUA PESQUISA!'
           MudarCor = clCream
         end
         object pnl_botao_pesquisar: TPanel
@@ -100,6 +106,7 @@ object form_consulta_pai: Tform_consulta_pai
             Align = alClient
             Caption = 'Pesquisar'
             Flat = True
+            OnClick = spb_botao_pesquisarClick
             OnMouseEnter = spb_botao_pesquisarMouseEnter
             OnMouseLeave = spb_botao_pesquisarMouseLeave
             ExplicitLeft = 48
@@ -125,7 +132,13 @@ object form_consulta_pai: Tform_consulta_pai
         Height = 40
         BevelOuter = bvNone
         Color = 16119285
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
         ParentBackground = False
+        ParentFont = False
         TabOrder = 0
         object btn_botao_sair: TSpeedButton
           Left = 0
@@ -156,7 +169,13 @@ object form_consulta_pai: Tform_consulta_pai
         Height = 40
         BevelOuter = bvNone
         Color = clRed
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
         ParentBackground = False
+        ParentFont = False
         TabOrder = 1
         object btn_botao_excluir: TSpeedButton
           Left = 0
@@ -189,7 +208,13 @@ object form_consulta_pai: Tform_consulta_pai
         Height = 40
         BevelOuter = bvNone
         Color = 4227072
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
         ParentBackground = False
+        ParentFont = False
         TabOrder = 2
         object btn_botao_novo: TSpeedButton
           Left = 0
