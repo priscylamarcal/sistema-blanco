@@ -67,7 +67,10 @@ uses
   uCtrlDepartamentos in 'Controller\uCtrlDepartamentos.pas',
   uDaoDepartamentos in 'DAO\uDaoDepartamentos.pas',
   uCtrlCores in 'Controller\uCtrlCores.pas',
-  uDaoCores in 'DAO\uDaoCores.pas';
+  uDaoCores in 'DAO\uDaoCores.pas',
+  uColecoes in 'Model\Classes\uColecoes.pas',
+  uCtrlColecoes in 'Controller\uCtrlColecoes.pas',
+  uDaoColecoes in 'DAO\uDaoColecoes.pas';
 
 {$R *.res}
 

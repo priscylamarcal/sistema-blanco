@@ -383,6 +383,7 @@
           Height = 110
           Align = alClient
           Caption = 'Vendas'
+          Enabled = False
           Flat = True
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clGray
@@ -1670,6 +1671,7 @@
           Height = 110
           Align = alClient
           Caption = 'Caixa'
+          Enabled = False
           Flat = True
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clGray
@@ -2102,6 +2104,7 @@
           Height = 110
           Align = alClient
           Caption = 'Contas a Receber'
+          Enabled = False
           Flat = True
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clGray
@@ -2532,6 +2535,7 @@
           Height = 110
           Align = alClient
           Caption = 'Contas a Pagar'
+          Enabled = False
           Flat = True
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clGray
@@ -3200,6 +3204,7 @@
           Cursor = crHandPoint
           Align = alLeft
           Caption = 'Estoque'
+          Enabled = False
           Flat = True
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clGray
@@ -4124,6 +4129,7 @@
         Cursor = crHandPoint
         Align = alTop
         Caption = 'Contas a Pagar'
+        Enabled = False
         Flat = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGray
@@ -4190,6 +4196,7 @@
         Cursor = crHandPoint
         Align = alTop
         Caption = 'Contas a Receber'
+        Enabled = False
         Flat = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGray
@@ -4212,6 +4219,7 @@
         Cursor = crHandPoint
         Align = alTop
         Caption = 'Vendas'
+        Enabled = False
         Flat = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGray

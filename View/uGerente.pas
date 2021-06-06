@@ -6,9 +6,9 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus,
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.StdCtrls, Vcl.Imaging.pngimage,
-  uPaises, uEstados, uCidades, uDepartamentos, uCores,
+  uPaises, uEstados, uCidades, uDepartamentos, uCores, uColecoes,
   uInter,
-  uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores,
+  uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores, uCtrlColecoes,
   uDM;
 
 type
@@ -128,6 +128,7 @@ type
     aCidade       : Cidades;
     oDepartamento : Departamentos;
     aCor          : Cores;
+    aColecao      : Colecoes;
 
     aInter  : Inter;
 
@@ -135,12 +136,14 @@ type
     aCtrlEstado       : ctrlEstados;
     aCtrlDepartamento : ctrlDepartamentos;
     aCtrlCor          : ctrlCores;
+    aCtrlColecao      : ctrlColecoes;
 
     aDm : TDM;
 
     procedure focar_botao( barraPainel: Tpanel; botao: TspeedButton;
       focar: boolean; local: string );
     procedure controlar_menu ( botao : TSpeedButton; ativar : Boolean );
+  protected
   public
     { Public declarations }
   end;
@@ -162,11 +165,13 @@ begin
   aCidade:= Cidades.crieObj;
   oDepartamento:= Departamentos.crieObj;
   aCor:= Cores.crieObj;
+  aColecao:= Colecoes.crieObj;
 
   aCtrlPais:= ctrlPaises.crieObj;
   aCtrlEstado:= ctrlEstados.crieObj;
   aCtrlDepartamento:= ctrlDepartamentos.crieObj;
   aCtrlCor:= ctrlCores.crieObj;
+  aCtrlColecao:= ctrlColecoes.crieObj;
 
   aDm:= TDM.Create(nil);
 
@@ -174,6 +179,7 @@ begin
   aCtrlEstado.setDM( aDm );
   aCtrlDepartamento.setDM( aDm );
   aCtrlCor.setDM( aDm );
+  aCtrlColecao.setDM( aDm );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -185,10 +191,12 @@ begin
   aCidade.destrua_se;
   oDepartamento.destrua_se;
   aCor.destrua_se;
+  aColecao.destrua_se;
 
   aCtrlPais.destrua_se;
   aCtrlDepartamento.destrua_se;
   aCtrlCor.destrua_se;
+  aCtrlColecao.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -230,7 +238,7 @@ end;
 
 procedure Tform_principal.spb_colecaoClick(Sender: TObject);
 begin
-  aInter.PDColecoes(nil, nil);
+  aInter.PDColecoes(aCtrlColecao, aColecao);
 end;
 
 procedure Tform_principal.spb_condicoes_pagamentoClick(Sender: TObject);

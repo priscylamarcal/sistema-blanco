@@ -55,7 +55,19 @@ uses
   uCadastroColecoes in 'View\Form Cadastros\uCadastroColecoes.pas' {form_cadastro_colecoes},
   uCadastroTamanhos in 'View\Form Cadastros\uCadastroTamanhos.pas' {form_cadastro_tamanhos},
   uCadastroCores in 'View\Form Cadastros\uCadastroCores.pas' {form_cadastro_cores},
-  uCadastroProdutos in 'View\Form Cadastros\uCadastroProdutos.pas' {form_cadastro_produtos};
+  uCadastroProdutos in 'View\Form Cadastros\uCadastroProdutos.pas' {form_cadastro_produtos},
+  uCadastroClientes in 'View\Form Cadastros\uCadastroClientes.pas' {form_cadastro_clientes},
+  uCadastroFornecedores in 'View\Form Cadastros\uCadastroFornecedores.pas' {form_cadastro_fornecedores},
+  uCadastroVendas in 'View\Form Cadastros\uCadastroVendas.pas' {form_cadastro_vendas},
+  uCadastroContasReceber in 'View\Form Cadastros\uCadastroContasReceber.pas' {form_cadastro_contas_receber},
+  uCadastroContasPagar in 'View\Form Cadastros\uCadastroContasPagar.pas' {form_cadastro_contas_pagar},
+  uCadastroFormasPagamentos in 'View\Form Cadastros\uCadastroFormasPagamentos.pas' {form_cadastro_formas_pagamentos},
+  uCadastroTiposContatos in 'View\Form Cadastros\uCadastroTiposContatos.pas' {form_cadastro_tipo_contato},
+  uFilterSearch in 'Model\uFilterSearch.pas',
+  uCtrlDepartamentos in 'Controller\uCtrlDepartamentos.pas',
+  uDaoDepartamentos in 'DAO\uDaoDepartamentos.pas',
+  uCtrlCores in 'Controller\uCtrlCores.pas',
+  uDaoCores in 'DAO\uDaoCores.pas';
 
 {$R *.res}
 
@@ -100,5 +112,12 @@ begin
   Application.CreateForm(Tform_cadastro_tamanhos, form_cadastro_tamanhos);
   Application.CreateForm(Tform_cadastro_cores, form_cadastro_cores);
   Application.CreateForm(Tform_cadastro_produtos, form_cadastro_produtos);
+  Application.CreateForm(Tform_cadastro_clientes, form_cadastro_clientes);
+  Application.CreateForm(Tform_cadastro_fornecedores, form_cadastro_fornecedores);
+  Application.CreateForm(Tform_cadastro_vendas, form_cadastro_vendas);
+  Application.CreateForm(Tform_cadastro_contas_receber, form_cadastro_contas_receber);
+  Application.CreateForm(Tform_cadastro_contas_pagar, form_cadastro_contas_pagar);
+  Application.CreateForm(Tform_cadastro_formas_pagamentos, form_cadastro_formas_pagamentos);
+  Application.CreateForm(Tform_cadastro_tipo_contato, form_cadastro_tipo_contato);
   Application.Run;
 end.

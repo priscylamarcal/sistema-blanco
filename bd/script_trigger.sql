@@ -32,3 +32,11 @@ BEGIN
         new.CODCOR = GEN_ID(GEN_CORES, 1);
 END ^
 set term ; ^
+
+CREATE trigger colecoes_bi for colecoes
+active before insert position 0
+AS
+begin
+    if (NEW.CODCOLECAO = 0) THEN
+        new.CODCOLECAO = GEN_ID(gen_colecoes, 1);
+end
