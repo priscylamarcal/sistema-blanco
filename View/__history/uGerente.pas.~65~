@@ -6,9 +6,9 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus,
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.StdCtrls, Vcl.Imaging.pngimage,
-  uPaises, uEstados, uCidades,
+  uPaises, uEstados, uCidades, uDepartamentos, uCores,
   uInter,
-  uCtrlPaises, uCtrlEstados,
+  uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores,
   uDM;
 
 type
@@ -117,17 +117,24 @@ type
     procedure spb_rapido_vendasClick(Sender: TObject);
     procedure spb_rapido_contas_receberClick(Sender: TObject);
     procedure spb_rapido_contas_pagarClick(Sender: TObject);
+    procedure spb_funcionáriosClick(Sender: TObject);
+    procedure spb_rapido_clientesClick(Sender: TObject);
+    procedure spb_rapido_roupaClick(Sender: TObject);
   private
     { Private declarations }
 
-    oPais   : Paises;
-    oEstado : Estados;
-    aCidade : Cidades;
+    oPais         : Paises;
+    oEstado       : Estados;
+    aCidade       : Cidades;
+    oDepartamento : Departamentos;
+    aCor          : Cores;
 
     aInter  : Inter;
 
-    aCtrlPais : ctrlPaises;
-    aCtrlEstado : ctrlEstados;
+    aCtrlPais         : ctrlPaises;
+    aCtrlEstado       : ctrlEstados;
+    aCtrlDepartamento : ctrlDepartamentos;
+    aCtrlCor          : ctrlCores;
 
     aDm : TDM;
 
@@ -153,14 +160,20 @@ begin
   oPais:= Paises.crieObj;
   oEstado:= Estados.crieObj;
   aCidade:= Cidades.crieObj;
+  oDepartamento:= Departamentos.crieObj;
+  aCor:= Cores.crieObj;
 
   aCtrlPais:= ctrlPaises.crieObj;
   aCtrlEstado:= ctrlEstados.crieObj;
+  aCtrlDepartamento:= ctrlDepartamentos.crieObj;
+  aCtrlCor:= ctrlCores.crieObj;
 
   aDm:= TDM.Create(nil);
 
   aCtrlPais.setDM( aDm );
   aCtrlEstado.setDM( aDm );
+  aCtrlDepartamento.setDM( aDm );
+  aCtrlCor.setDM( aDm );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -170,6 +183,14 @@ begin
   oPais.destrua_se;
   oEstado.destrua_se;
   aCidade.destrua_se;
+  oDepartamento.destrua_se;
+  aCor.destrua_se;
+
+  aCtrlPais.destrua_se;
+  aCtrlDepartamento.destrua_se;
+  aCtrlCor.destrua_se;
+
+  aDm.DisposeOf;
 end;
 
 procedure Tform_principal.img_logo1MouseEnter(Sender: TObject);
@@ -229,12 +250,12 @@ end;
 
 procedure Tform_principal.spb_corClick(Sender: TObject);
 begin
-  aInter.PDCores(nil, nil);
+  aInter.PDCores(aCtrlCor, aCor);
 end;
 
 procedure Tform_principal.spb_departamentosClick(Sender: TObject);
 begin
-  aInter.PDDepartamentos(nil, nil);
+  aInter.PDDepartamentos(aCtrlDepartamento, oDepartamento);
 end;
 
 procedure Tform_principal.spb_estadosClick(Sender: TObject);
@@ -250,6 +271,11 @@ end;
 procedure Tform_principal.spb_fornecedoresClick(Sender: TObject);
 begin
   aInter.PDFornecedores(nil, nil);
+end;
+
+procedure Tform_principal.spb_funcionáriosClick(Sender: TObject);
+begin
+  aInter.PDFuncionarios(nil, nil);
 end;
 
 procedure Tform_principal.spb_grupo_roupasClick(Sender: TObject);
@@ -299,6 +325,11 @@ begin
   aInter.PDRoupas(nil, nil);
 end;
 
+procedure Tform_principal.spb_rapido_clientesClick(Sender: TObject);
+begin
+  aInter.PDClientes(nil, nil);
+end;
+
 procedure Tform_principal.spb_rapido_contas_pagarClick(Sender: TObject);
 begin
   aInter.PDContasPagar(nil, nil);
@@ -307,6 +338,11 @@ end;
 procedure Tform_principal.spb_rapido_contas_receberClick(Sender: TObject);
 begin
   aInter.PDContasReceber(nil, nil);
+end;
+
+procedure Tform_principal.spb_rapido_roupaClick(Sender: TObject);
+begin
+  aInter.PDRoupas(nil, nil);
 end;
 
 procedure Tform_principal.spb_rapido_vendasClick(Sender: TObject);

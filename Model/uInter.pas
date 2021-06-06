@@ -16,9 +16,9 @@ uses uConsultaPaises, uConsultaEstados, uConsultaCidades, uConsultaCargos, uCons
      uCadastroGruposProdutos, uCadastroMarcas, uCadastroTamanhos,
      uCadastroProdutos, uCadastroFornecedores, uCadastroClientes, uCadastroTiposContatos,
 
-     uPaises, uEstados, uCidades, uCores,
+     uPaises, uEstados, uCidades, uCores, uColecoes,
 
-     uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores;
+     uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores, uCtrlColecoes;
 
 type Inter = class
   private
@@ -80,7 +80,7 @@ type Inter = class
     procedure PDVendas ( pCtrl : TObject; pObj : TObject );
     procedure PDContasReceber ( pCtrl : TObject; pObj : TObject );
     procedure PDContasPagar ( pCtrl : TObject; pObj : TObject );
-    procedure PDColecoes ( pCtrl : TObject; pObj : TObject );
+    procedure PDColecoes ( pCtrl : TObject; pObj : Colecoes );
     procedure PDCores ( pCtrl : TObject; pObj : Cores );
     procedure PDGruposProdutos ( pCtrl : TObject; pObj : TObject );
     procedure PDMarcas ( pCtrl : TObject; pObj : TObject );
@@ -228,8 +228,9 @@ begin
   aConsultaClientes.ShowModal;
 end;
 
-procedure Inter.PDColecoes(pCtrl, pObj: TObject);
+procedure Inter.PDColecoes(pCtrl: TObject; pObj: Colecoes);
 begin
+  aConsultaColecoes.conhecaObj( pCtrl, pObj );
   aConsultaColecoes.ShowModal;
 end;
 

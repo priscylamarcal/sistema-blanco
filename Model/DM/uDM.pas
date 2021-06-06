@@ -37,6 +37,13 @@ type
     QCoresCOR: TStringField;
     QCoresDATACAD: TSQLTimeStampField;
     QCoresULTALT: TSQLTimeStampField;
+    QColecoes: TFDQuery;
+    DSColecoes: TDataSource;
+    QColecoesCODCOLECAO: TIntegerField;
+    QColecoesCOLECAO: TStringField;
+    QColecoesDATACAD: TSQLTimeStampField;
+    QColecoesULTALT: TSQLTimeStampField;
+    QColecoesCODUSUALT: TIntegerField;
   private
     { Private declarations }
   public

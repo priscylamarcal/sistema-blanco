@@ -302,6 +302,9 @@
         <DCCReference Include="DAO\uDaoDepartamentos.pas"/>
         <DCCReference Include="Controller\uCtrlCores.pas"/>
         <DCCReference Include="DAO\uDaoCores.pas"/>
+        <DCCReference Include="Model\Classes\uColecoes.pas"/>
+        <DCCReference Include="Controller\uCtrlColecoes.pas"/>
+        <DCCReference Include="DAO\uDaoColecoes.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
