@@ -6,9 +6,14 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus,
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.StdCtrls, Vcl.Imaging.pngimage,
-  uPaises, uEstados, uCidades, uDepartamentos, uCores, uColecoes,
+
+  uPaises, uEstados, uCidades, uDepartamentos, uCores, uColecoes, uGruposRoupas,
+
   uInter,
+
   uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores, uCtrlColecoes,
+  uCtrlGruposRoupas,
+
   uDM;
 
 type
@@ -129,6 +134,7 @@ type
     oDepartamento : Departamentos;
     aCor          : Cores;
     aColecao      : Colecoes;
+    oGrupoRoupa   : GruposRoupas;
 
     aInter  : Inter;
 
@@ -137,6 +143,7 @@ type
     aCtrlDepartamento : ctrlDepartamentos;
     aCtrlCor          : ctrlCores;
     aCtrlColecao      : ctrlColecoes;
+    aCtrlGrupoRoupa   : ctrlGruposRoupas;
 
     aDm : TDM;
 
@@ -166,12 +173,14 @@ begin
   oDepartamento:= Departamentos.crieObj;
   aCor:= Cores.crieObj;
   aColecao:= Colecoes.crieObj;
+  oGrupoRoupa:= gruposRoupas.crieObj;
 
   aCtrlPais:= ctrlPaises.crieObj;
   aCtrlEstado:= ctrlEstados.crieObj;
   aCtrlDepartamento:= ctrlDepartamentos.crieObj;
   aCtrlCor:= ctrlCores.crieObj;
   aCtrlColecao:= ctrlColecoes.crieObj;
+  aCtrlGrupoRoupa:= ctrlGruposRoupas.crieObj;
 
   aDm:= TDM.Create(nil);
 
@@ -180,6 +189,7 @@ begin
   aCtrlDepartamento.setDM( aDm );
   aCtrlCor.setDM( aDm );
   aCtrlColecao.setDM( aDm );
+  aCtrlGrupoRoupa.setDM( aDm );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -192,11 +202,13 @@ begin
   oDepartamento.destrua_se;
   aCor.destrua_se;
   aColecao.destrua_se;
+  oGrupoRoupa.destrua_se;
 
   aCtrlPais.destrua_se;
   aCtrlDepartamento.destrua_se;
   aCtrlCor.destrua_se;
   aCtrlColecao.destrua_se;
+  aCtrlGrupoRoupa.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -288,7 +300,7 @@ end;
 
 procedure Tform_principal.spb_grupo_roupasClick(Sender: TObject);
 begin
-  aInter.PDGruposProdutos(nil, nil);
+  aInter.PDGruposProdutos( aCtrlGrupoRoupa, oGrupoRoupa );
 end;
 
 procedure Tform_principal.spb_paisesClick(Sender: TObject);

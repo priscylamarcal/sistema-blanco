@@ -1,5 +1,7 @@
 program projetoBlanco;
 
+
+
 uses
   Vcl.Forms,
   uGerente in 'View\uGerente.pas' {form_principal},
@@ -70,7 +72,10 @@ uses
   uDaoCores in 'DAO\uDaoCores.pas',
   uColecoes in 'Model\Classes\uColecoes.pas',
   uCtrlColecoes in 'Controller\uCtrlColecoes.pas',
-  uDaoColecoes in 'DAO\uDaoColecoes.pas';
+  uDaoColecoes in 'DAO\uDaoColecoes.pas',
+  uGruposRoupas in 'Model\Classes\uGruposRoupas.pas',
+  uCtrlGruposRoupas in 'Controller\uCtrlGruposRoupas.pas',
+  uDaoGruposRoupas in 'DAO\uDaoGruposRoupas.pas';
 
 {$R *.res}
 
