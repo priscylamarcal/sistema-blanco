@@ -40,3 +40,11 @@ begin
     if (NEW.CODCOLECAO = 0) THEN
         new.CODCOLECAO = GEN_ID(gen_colecoes, 1);
 end
+
+CREATE trigger grupos_roupas_bi for grupos_roupas
+active before insert position 0
+AS
+begin
+    if (NEW.codgrupo = 0) THEN
+        new.codgrupo = GEN_ID(gen_grupos_roupas, 1);
+end

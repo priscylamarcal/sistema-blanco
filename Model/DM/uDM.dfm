@@ -212,4 +212,47 @@ object DM: TDM
     Left = 536
     Top = 64
   end
+  object QGruposRoupas: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from GRUPOS_ROUPAS')
+    Left = 32
+    Top = 128
+    object QGruposRoupasCODGRUPO: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODGRUPO'
+      Origin = 'CODGRUPO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QGruposRoupasGRUPOROUPA: TStringField
+      DisplayLabel = 'Grupo de Roupa'
+      DisplayWidth = 220
+      FieldName = 'GRUPOROUPA'
+      Origin = 'GRUPOROUPA'
+      Required = True
+      Size = 80
+    end
+    object QGruposRoupasDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QGruposRoupasULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QGruposRoupasCODUSUALT: TIntegerField
+      FieldName = 'CODUSUALT'
+      Origin = 'CODUSUALT'
+      Visible = False
+    end
+  end
+  object DSGruposRoupas: TDataSource
+    DataSet = QGruposRoupas
+    Left = 120
+    Top = 128
+  end
 end

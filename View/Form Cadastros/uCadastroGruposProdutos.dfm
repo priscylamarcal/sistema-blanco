@@ -6,10 +6,10 @@ inherited form_cadastro_grupos_produtos: Tform_cadastro_grupos_produtos
   TextHeight = 13
   inherited pnl_fundo: TPanel
     Height = 195
-    ExplicitHeight = 308
+    ExplicitHeight = 195
     inherited ScrollBox1: TScrollBox
       Height = 195
-      ExplicitHeight = 308
+      ExplicitHeight = 195
       inherited lbl_cod_usuario: TLabel
         Top = 101
         ExplicitTop = 101
@@ -49,7 +49,7 @@ inherited form_cadastro_grupos_produtos: Tform_cadastro_grupos_produtos
       end
       inherited pnl_bottom: TPanel
         Top = 140
-        ExplicitTop = 253
+        ExplicitTop = 140
       end
       object edt_grupo_produto: PriTEdit
         Left = 112

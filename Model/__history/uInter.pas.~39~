@@ -14,11 +14,11 @@ uses uConsultaPaises, uConsultaEstados, uConsultaCidades, uConsultaCargos, uCons
      uCadastroCondicoesPagamentos, uCadastroVendas, uCadastroContasReceber,
      uCadastroContasPagar, uCadastroColecoes, uCadastroCores,
      uCadastroGruposProdutos, uCadastroMarcas, uCadastroTamanhos,
-     uCadastroProdutos, uCadastroFornecedores, uCadastroClientes,
+     uCadastroProdutos, uCadastroFornecedores, uCadastroClientes, uCadastroTiposContatos,
 
-     uPaises, uEstados, uCidades,
+     uPaises, uEstados, uCidades, uCores, uColecoes,
 
-     uCtrlPaises, uCtrlEstados;
+     uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores, uCtrlColecoes;
 
 type Inter = class
   private
@@ -60,6 +60,11 @@ type Inter = class
     oCadastroGruposProdutos : Tform_cadastro_grupos_produtos;
     oCadastroMarcas : Tform_cadastro_marcas;
     oCadastroTamanhos : Tform_cadastro_tamanhos;
+    oCadastroProdutos : Tform_cadastro_produtos;
+    oCadastroFornecedores : Tform_cadastro_fornecedores;
+    oCadastroClientes : Tform_cadastro_clientes;
+    oCadastroTiposContatos : Tform_cadastro_tipo_contato;
+    oCadastroCondicaoPagamento : Tform_cadastro_condicao_pagamento;
   public
     constructor crieObj;
     destructor destrua_se;
@@ -68,15 +73,15 @@ type Inter = class
     procedure PDEstados ( pCtrl : TObject; pObj : Estados );
     procedure PDCidades ( pCtrl : TObject; pObj : Cidades);
     procedure PDCargos ( pCtrl : TObject; pObj : TObject);
-    procedure PDDepartamentos ( pCtrl : TObject; pObj : TObject );
+    procedure PDDepartamentos ( pCtrl : TObject; pObj : Departamentos );
     procedure PDFuncionarios ( pCtrl : TObject; pObj : TObject );
     procedure PDFormasPagamentos ( pCtrl : TObject; pObj : TObject );
     procedure PDCondicoesPagamentos ( pCtrl : TObject; pObj : TObject );
     procedure PDVendas ( pCtrl : TObject; pObj : TObject );
     procedure PDContasReceber ( pCtrl : TObject; pObj : TObject );
     procedure PDContasPagar ( pCtrl : TObject; pObj : TObject );
-    procedure PDColecoes ( pCtrl : TObject; pObj : TObject );
-    procedure PDCores ( pCtrl : TObject; pObj : TObject );
+    procedure PDColecoes ( pCtrl : TObject; pObj : Colecoes );
+    procedure PDCores ( pCtrl : TObject; pObj : Cores );
     procedure PDGruposProdutos ( pCtrl : TObject; pObj : TObject );
     procedure PDMarcas ( pCtrl : TObject; pObj : TObject );
     procedure PDTamanhos ( pCtrl : TObject; pObj : TObject );
@@ -129,7 +134,12 @@ begin
   oCadastroCores := Tform_cadastro_cores.Create(nil);
   oCadastroGruposProdutos := Tform_cadastro_grupos_produtos.Create(nil);
   oCadastroMarcas := Tform_cadastro_marcas.Create(nil);
-  oCadastroTamanhos := Tform_cadastro_tamanhos.Create(nil);;
+  oCadastroTamanhos := Tform_cadastro_tamanhos.Create(nil);
+  oCadastroProdutos := Tform_cadastro_produtos.Create(nil);
+  oCadastroFornecedores := Tform_cadastro_fornecedores.Create(nil);
+  oCadastroClientes := Tform_cadastro_clientes.Create(nil);
+  oCadastroTiposContatos := Tform_cadastro_tipo_contato.Create(nil);
+  oCadastroCondicaoPagamento := Tform_cadastro_condicao_pagamento.Create(nil);
 
 //  oCadastroEstados.setFrmConsultaPaises( aConsultaPaises );
 //  oCadastroCidades.setFrmConsultaEstados( aConsultaEstados );
@@ -149,6 +159,11 @@ begin
   aConsultaGruposProdutos.setFrmCadastro( oCadastroGruposProdutos );
   aConsultaMarcas.setFrmCadastro( oCadastroMarcas );
   aConsultaTamanhos.setFrmCadastro( oCadastroTamanhos );
+  aConsultaRoupas.setFrmCadastro( oCadastroProdutos );
+  aConsultaFornecedores.setFrmCadastro( oCadastroFornecedores );
+  aConsultaClientes.setFrmCadastro( oCadastroClientes );
+  aConsultaTiposContatos.setFrmCadastro( oCadastroTiposContatos );
+  aConsultaCondicoesPagamentos.setFrmCadastro( oCadastroCondicaoPagamento );
 end;
 
 destructor Inter.destrua_se;
@@ -190,6 +205,11 @@ begin
   oCadastroGruposProdutos.FreeInstance;
   oCadastroMarcas.FreeInstance;
   oCadastroTamanhos.FreeInstance;
+  oCadastroProdutos.FreeInstance;
+  oCadastroFornecedores.FreeInstance;
+  oCadastroClientes.FreeInstance;
+  oCadastroTiposContatos.FreeInstance;
+  oCadastroCondicaoPagamento.FreeInstance;
 end;
 
 procedure Inter.PDCargos(pCtrl: TObject; pObj: TObject);
@@ -208,8 +228,9 @@ begin
   aConsultaClientes.ShowModal;
 end;
 
-procedure Inter.PDColecoes(pCtrl, pObj: TObject);
+procedure Inter.PDColecoes(pCtrl: TObject; pObj: Colecoes);
 begin
+  aConsultaColecoes.conhecaObj( pCtrl, pObj );
   aConsultaColecoes.ShowModal;
 end;
 
@@ -228,13 +249,15 @@ begin
   aConsultaContasReceber.ShowModal;
 end;
 
-procedure Inter.PDCores(pCtrl, pObj: TObject);
+procedure Inter.PDCores(pCtrl: TObject; pObj: Cores);
 begin
+  aConsultaCores.conhecaObj( pCtrl, pObj );
   aConsultaCores.ShowModal;
 end;
 
-procedure Inter.PDDepartamentos(pCtrl, pObj: TObject);
+procedure Inter.PDDepartamentos(pCtrl : TObject; pObj: Departamentos);
 begin
+  aConsultaDepartamentos.conhecaObj( pCtrl, pObj );
   aConsultaDepartamentos.ShowModal;
 end;
 
