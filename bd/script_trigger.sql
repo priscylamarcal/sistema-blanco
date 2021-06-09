@@ -48,3 +48,11 @@ begin
     if (NEW.codgrupo = 0) THEN
         new.codgrupo = GEN_ID(gen_grupos_roupas, 1);
 end
+
+CREATE trigger marcas_bi for marcas
+active before insert position 0
+AS
+begin
+    if (NEW.codmarca = 0) THEN
+        new.codmarca = GEN_ID(gen_marcas, 1);
+end

@@ -51,6 +51,13 @@ type
     QGruposRoupasDATACAD: TSQLTimeStampField;
     QGruposRoupasULTALT: TSQLTimeStampField;
     QGruposRoupasCODUSUALT: TIntegerField;
+    QMarcas: TFDQuery;
+    DSMarcas: TDataSource;
+    QMarcasCODMARCA: TIntegerField;
+    QMarcasMARCA: TStringField;
+    QMarcasDATACAD: TSQLTimeStampField;
+    QMarcasULTALT: TSQLTimeStampField;
+    QMarcasCODUSU: TIntegerField;
   private
     { Private declarations }
   public

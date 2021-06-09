@@ -6,9 +6,15 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus,
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.StdCtrls, Vcl.Imaging.pngimage,
-  uPaises, uEstados, uCidades, uDepartamentos,
+
+  uPaises, uEstados, uCidades, uDepartamentos, uCores, uColecoes, uGruposRoupas,
+  uMarcas,
+
   uInter,
-  uCtrlPaises, uCtrlEstados, uCtrlDepartamentos,
+
+  uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores, uCtrlColecoes,
+  uCtrlGruposRoupas, uCtrlMarcas,
+
   uDM;
 
 type
@@ -127,18 +133,27 @@ type
     oEstado       : Estados;
     aCidade       : Cidades;
     oDepartamento : Departamentos;
+    aCor          : Cores;
+    aColecao      : Colecoes;
+    oGrupoRoupa   : GruposRoupas;
+    aMarca        : Marcas;
 
     aInter  : Inter;
 
     aCtrlPais         : ctrlPaises;
     aCtrlEstado       : ctrlEstados;
     aCtrlDepartamento : ctrlDepartamentos;
+    aCtrlCor          : ctrlCores;
+    aCtrlColecao      : ctrlColecoes;
+    aCtrlGrupoRoupa   : ctrlGruposRoupas;
+    aCtrlMarca        : ctrlMarcas;
 
     aDm : TDM;
 
     procedure focar_botao( barraPainel: Tpanel; botao: TspeedButton;
       focar: boolean; local: string );
     procedure controlar_menu ( botao : TSpeedButton; ativar : Boolean );
+  protected
   public
     { Public declarations }
   end;
@@ -159,16 +174,28 @@ begin
   oEstado:= Estados.crieObj;
   aCidade:= Cidades.crieObj;
   oDepartamento:= Departamentos.crieObj;
+  aCor:= Cores.crieObj;
+  aColecao:= Colecoes.crieObj;
+  oGrupoRoupa:= gruposRoupas.crieObj;
+  aMarca:= Marcas.crieObj;
 
   aCtrlPais:= ctrlPaises.crieObj;
   aCtrlEstado:= ctrlEstados.crieObj;
   aCtrlDepartamento:= ctrlDepartamentos.crieObj;
-
+  aCtrlCor:= ctrlCores.crieObj;
+  aCtrlColecao:= ctrlColecoes.crieObj;
+  aCtrlGrupoRoupa:= ctrlGruposRoupas.crieObj;
+  aCtrlMarca:= ctrlMarcas.crieObj;
 
   aDm:= TDM.Create(nil);
 
   aCtrlPais.setDM( aDm );
   aCtrlEstado.setDM( aDm );
+  aCtrlDepartamento.setDM( aDm );
+  aCtrlCor.setDM( aDm );
+  aCtrlColecao.setDM( aDm );
+  aCtrlGrupoRoupa.setDM( aDm );
+  aCtrlMarca.setDM( aDm );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -179,9 +206,17 @@ begin
   oEstado.destrua_se;
   aCidade.destrua_se;
   oDepartamento.destrua_se;
+  aCor.destrua_se;
+  aColecao.destrua_se;
+  oGrupoRoupa.destrua_se;
+  aMarca.destrua_se;
 
   aCtrlPais.destrua_se;
   aCtrlDepartamento.destrua_se;
+  aCtrlCor.destrua_se;
+  aCtrlColecao.destrua_se;
+  aCtrlGrupoRoupa.destrua_se;
+  aCtrlMarca.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -223,7 +258,7 @@ end;
 
 procedure Tform_principal.spb_colecaoClick(Sender: TObject);
 begin
-  aInter.PDColecoes(nil, nil);
+  aInter.PDColecoes(aCtrlColecao, aColecao);
 end;
 
 procedure Tform_principal.spb_condicoes_pagamentoClick(Sender: TObject);
@@ -243,12 +278,12 @@ end;
 
 procedure Tform_principal.spb_corClick(Sender: TObject);
 begin
-  aInter.PDCores(nil, nil);
+  aInter.PDCores(aCtrlCor, aCor);
 end;
 
 procedure Tform_principal.spb_departamentosClick(Sender: TObject);
 begin
-  aInter.PDDepartamentos(nil, nil);
+  aInter.PDDepartamentos(aCtrlDepartamento, oDepartamento);
 end;
 
 procedure Tform_principal.spb_estadosClick(Sender: TObject);
@@ -273,7 +308,7 @@ end;
 
 procedure Tform_principal.spb_grupo_roupasClick(Sender: TObject);
 begin
-  aInter.PDGruposProdutos(nil, nil);
+  aInter.PDGruposProdutos( aCtrlGrupoRoupa, oGrupoRoupa );
 end;
 
 procedure Tform_principal.spb_paisesClick(Sender: TObject);
@@ -304,7 +339,7 @@ end;
 
 procedure Tform_principal.spb_marcaClick(Sender: TObject);
 begin
-  aInter.PDMarcas(nil, nil);
+  aInter.PDMarcas(aCtrlMarca, aMarca);
 end;
 
 procedure Tform_principal.spb_menu_estoqueClick(Sender: TObject);

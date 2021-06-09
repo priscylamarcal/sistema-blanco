@@ -1,5 +1,7 @@
 program projetoBlanco;
 
+
+
 uses
   Vcl.Forms,
   uGerente in 'View\uGerente.pas' {form_principal},
@@ -62,7 +64,18 @@ uses
   uCadastroContasReceber in 'View\Form Cadastros\uCadastroContasReceber.pas' {form_cadastro_contas_receber},
   uCadastroContasPagar in 'View\Form Cadastros\uCadastroContasPagar.pas' {form_cadastro_contas_pagar},
   uCadastroFormasPagamentos in 'View\Form Cadastros\uCadastroFormasPagamentos.pas' {form_cadastro_formas_pagamentos},
-  uCadastroTiposContatos in 'View\Form Cadastros\uCadastroTiposContatos.pas' {form_cadastro_tipo_contato};
+  uCadastroTiposContatos in 'View\Form Cadastros\uCadastroTiposContatos.pas' {form_cadastro_tipo_contato},
+  uFilterSearch in 'Model\uFilterSearch.pas',
+  uCtrlDepartamentos in 'Controller\uCtrlDepartamentos.pas',
+  uDaoDepartamentos in 'DAO\uDaoDepartamentos.pas',
+  uCtrlCores in 'Controller\uCtrlCores.pas',
+  uDaoCores in 'DAO\uDaoCores.pas',
+  uColecoes in 'Model\Classes\uColecoes.pas',
+  uCtrlColecoes in 'Controller\uCtrlColecoes.pas',
+  uDaoColecoes in 'DAO\uDaoColecoes.pas',
+  uGruposRoupas in 'Model\Classes\uGruposRoupas.pas',
+  uCtrlGruposRoupas in 'Controller\uCtrlGruposRoupas.pas',
+  uDaoGruposRoupas in 'DAO\uDaoGruposRoupas.pas';
 
 {$R *.res}
 

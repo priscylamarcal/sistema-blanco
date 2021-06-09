@@ -255,4 +255,47 @@ object DM: TDM
     Left = 120
     Top = 128
   end
+  object QMarcas: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from MARCAS')
+    Left = 208
+    Top = 128
+    object QMarcasCODMARCA: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODMARCA'
+      Origin = 'CODMARCA'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QMarcasMARCA: TStringField
+      DisplayLabel = 'Marca'
+      DisplayWidth = 220
+      FieldName = 'MARCA'
+      Origin = 'MARCA'
+      Required = True
+      Size = 80
+    end
+    object QMarcasDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QMarcasULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QMarcasCODUSU: TIntegerField
+      FieldName = 'CODUSU'
+      Origin = 'CODUSU'
+      Visible = False
+    end
+  end
+  object DSMarcas: TDataSource
+    DataSet = QMarcas
+    Left = 256
+    Top = 128
+  end
 end
