@@ -16,10 +16,10 @@ uses uConsultaPaises, uConsultaEstados, uConsultaCidades, uConsultaCargos, uCons
      uCadastroGruposProdutos, uCadastroMarcas, uCadastroTamanhos,
      uCadastroProdutos, uCadastroFornecedores, uCadastroClientes, uCadastroTiposContatos,
 
-     uPaises, uEstados, uCidades, uCores, uColecoes, uGruposRoupas,
+     uPaises, uEstados, uCidades, uCores, uColecoes, uGruposRoupas, uMarcas,
 
      uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores, uCtrlColecoes,
-     uCtrlGruposRoupas;
+     uCtrlGruposRoupas, uCtrlMarcas;
 
 type Inter = class
   private
@@ -84,7 +84,7 @@ type Inter = class
     procedure PDColecoes ( pCtrl : TObject; pObj : Colecoes );
     procedure PDCores ( pCtrl : TObject; pObj : Cores );
     procedure PDGruposProdutos ( pCtrl : TObject; pObj : GruposRoupas );
-    procedure PDMarcas ( pCtrl : TObject; pObj : TObject );
+    procedure PDMarcas ( pCtrl : TObject; pObj : Marcas );
     procedure PDTamanhos ( pCtrl : TObject; pObj : TObject );
     procedure PDRoupas ( pCtrl : TObject; pObj : TObject );
     procedure PDFornecedores ( pCtrl : TObject; pObj : TObject );
@@ -294,8 +294,9 @@ begin
   aConsultaGruposRoupas.ShowModal;
 end;
 
-procedure Inter.PDMarcas(pCtrl, pObj: TObject);
+procedure Inter.PDMarcas(pCtrl: TObject; pObj : Marcas);
 begin
+  aConsultaMarcas.conhecaObj( pCtrl, pObj );
   aConsultaMarcas.ShowModal;
 end;
 
