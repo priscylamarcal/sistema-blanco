@@ -1,26 +1,26 @@
 inherited form_cadastro_marcas: Tform_cadastro_marcas
   Caption = 'Cadastro de Marca'
-  ClientHeight = 274
-  ExplicitHeight = 313
+  ClientHeight = 216
+  ExplicitHeight = 255
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
-    Height = 274
+    Height = 216
     ExplicitHeight = 274
     inherited ScrollBox1: TScrollBox
-      Height = 274
+      Height = 216
       ExplicitHeight = 274
       inherited lbl_cod_usuario: TLabel
-        Top = 173
-        ExplicitTop = 173
+        Top = 117
+        ExplicitTop = 117
       end
       inherited lbl_data_cadastro: TLabel
-        Top = 173
-        ExplicitTop = 173
+        Top = 117
+        ExplicitTop = 117
       end
       inherited lbl_data_ult_alt: TLabel
-        Top = 173
-        ExplicitTop = 173
+        Top = 117
+        ExplicitTop = 117
       end
       object lbl_marca: TLabel [4]
         Left = 112
@@ -36,19 +36,19 @@ inherited form_cadastro_marcas: Tform_cadastro_marcas
         ParentFont = False
       end
       inherited edt_cod_usuario: PriTEdit
-        Top = 188
-        ExplicitTop = 188
+        Top = 132
+        ExplicitTop = 132
       end
       inherited edt_data_cadastro: PriTEdit
-        Top = 188
-        ExplicitTop = 188
+        Top = 132
+        ExplicitTop = 132
       end
       inherited edt_data_ult_alt: PriTEdit
-        Top = 188
-        ExplicitTop = 188
+        Top = 132
+        ExplicitTop = 132
       end
       inherited pnl_bottom: TPanel
-        Top = 219
+        Top = 161
         ExplicitTop = 219
       end
       object edt_marca: PriTEdit
@@ -62,6 +62,7 @@ inherited form_cadastro_marcas: Tform_cadastro_marcas
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 80
         ParentFont = False
         TabOrder = 5
         MudarCor = clCream
