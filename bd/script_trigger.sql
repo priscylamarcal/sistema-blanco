@@ -56,3 +56,11 @@ begin
     if (NEW.codmarca = 0) THEN
         new.codmarca = GEN_ID(gen_marcas, 1);
 end
+
+CREATE trigger sigla_tamanhos_bi for sigla_tamanhos
+active before insert position 0
+AS
+begin
+    if (NEW.codsigla = 0) THEN
+        new.codsigla = GEN_ID(gen_sigla_tamanhos, 1);
+end

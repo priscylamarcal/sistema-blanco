@@ -8,12 +8,12 @@ uses
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.StdCtrls, Vcl.Imaging.pngimage,
 
   uPaises, uEstados, uCidades, uDepartamentos, uCores, uColecoes, uGruposRoupas,
-  uMarcas,
+  uMarcas, uTamanhos,
 
   uInter,
 
   uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores, uCtrlColecoes,
-  uCtrlGruposRoupas, uCtrlMarcas,
+  uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos,
 
   uDM;
 
@@ -137,6 +137,7 @@ type
     aColecao      : Colecoes;
     oGrupoRoupa   : GruposRoupas;
     aMarca        : Marcas;
+    oTamanho      : Tamanhos;
 
     aInter  : Inter;
 
@@ -147,6 +148,7 @@ type
     aCtrlColecao      : ctrlColecoes;
     aCtrlGrupoRoupa   : ctrlGruposRoupas;
     aCtrlMarca        : ctrlMarcas;
+    aCtrlTamanho      : ctrlTamanhos;
 
     aDm : TDM;
 
@@ -178,6 +180,7 @@ begin
   aColecao:= Colecoes.crieObj;
   oGrupoRoupa:= gruposRoupas.crieObj;
   aMarca:= Marcas.crieObj;
+  oTamanho:= Tamanhos.crieObj;
 
   aCtrlPais:= ctrlPaises.crieObj;
   aCtrlEstado:= ctrlEstados.crieObj;
@@ -186,6 +189,7 @@ begin
   aCtrlColecao:= ctrlColecoes.crieObj;
   aCtrlGrupoRoupa:= ctrlGruposRoupas.crieObj;
   aCtrlMarca:= ctrlMarcas.crieObj;
+  aCtrlTamanho:= ctrlTamanhos.crieObj;
 
   aDm:= TDM.Create(nil);
 
@@ -196,6 +200,7 @@ begin
   aCtrlColecao.setDM( aDm );
   aCtrlGrupoRoupa.setDM( aDm );
   aCtrlMarca.setDM( aDm );
+  aCtrlTamanho.setDM( aDm );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -210,6 +215,7 @@ begin
   aColecao.destrua_se;
   oGrupoRoupa.destrua_se;
   aMarca.destrua_se;
+  oTamanho.destrua_se;
 
   aCtrlPais.destrua_se;
   aCtrlDepartamento.destrua_se;
@@ -217,6 +223,7 @@ begin
   aCtrlColecao.destrua_se;
   aCtrlGrupoRoupa.destrua_se;
   aCtrlMarca.destrua_se;
+  aCtrlTamanho.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -323,7 +330,7 @@ end;
 
 procedure Tform_principal.spb_tamanhoClick(Sender: TObject);
 begin
-  aInter.PDTamanhos(nil, nil);
+  aInter.PDTamanhos( aCtrlTamanho, oTamanho );
 end;
 
 procedure Tform_principal.spb_tipos_contatoClick(Sender: TObject);
