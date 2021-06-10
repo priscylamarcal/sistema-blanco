@@ -58,6 +58,16 @@ type
     QMarcasDATACAD: TSQLTimeStampField;
     QMarcasULTALT: TSQLTimeStampField;
     QMarcasCODUSU: TIntegerField;
+    QTamanhos: TFDQuery;
+    DSTamanhos: TDataSource;
+    QTamanhosCODSIGLA: TIntegerField;
+    QTamanhosSIGLA: TStringField;
+    QTamanhosALTURA: TStringField;
+    QTamanhosLARGURA: TStringField;
+    QTamanhosCOMPRIMENTO: TStringField;
+    QTamanhosDATACAD: TSQLTimeStampField;
+    QTamanhosULTALT: TSQLTimeStampField;
+    QTamanhosCODUSUALT: TIntegerField;
   private
     { Private declarations }
   public

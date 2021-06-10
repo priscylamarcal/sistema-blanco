@@ -298,4 +298,69 @@ object DM: TDM
     Left = 256
     Top = 128
   end
+  object QTamanhos: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from SIGLA_TAMANHOS')
+    Left = 336
+    Top = 128
+    object QTamanhosCODSIGLA: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      DisplayWidth = 10
+      FieldName = 'CODSIGLA'
+      Origin = 'CODSIGLA'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QTamanhosSIGLA: TStringField
+      DisplayLabel = 'Sigla Tamanho'
+      DisplayWidth = 80
+      FieldName = 'SIGLA'
+      Origin = 'SIGLA'
+      Required = True
+      Size = 3
+    end
+    object QTamanhosLARGURA: TStringField
+      DisplayLabel = 'Largura'
+      DisplayWidth = 50
+      FieldName = 'LARGURA'
+      Origin = 'LARGURA'
+      Size = 4
+    end
+    object QTamanhosALTURA: TStringField
+      DisplayLabel = 'Altura'
+      DisplayWidth = 50
+      FieldName = 'ALTURA'
+      Origin = 'ALTURA'
+      Size = 4
+    end
+    object QTamanhosCOMPRIMENTO: TStringField
+      DisplayLabel = 'Comprimento'
+      DisplayWidth = 50
+      FieldName = 'COMPRIMENTO'
+      Origin = 'COMPRIMENTO'
+      Size = 4
+    end
+    object QTamanhosDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QTamanhosULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QTamanhosCODUSUALT: TIntegerField
+      FieldName = 'CODUSUALT'
+      Origin = 'CODUSUALT'
+      Visible = False
+    end
+  end
+  object DSTamanhos: TDataSource
+    DataSet = QTamanhos
+    Left = 400
+    Top = 128
+  end
 end

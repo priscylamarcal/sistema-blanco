@@ -1,24 +1,27 @@
 inherited form_cadastro_tamanhos: Tform_cadastro_tamanhos
   Caption = 'Cadastro de Tamanho'
-  ClientHeight = 294
-  ExplicitHeight = 333
+  ClientHeight = 212
+  OnActivate = FormActivate
+  ExplicitHeight = 251
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
-    Height = 294
+    Height = 212
+    ExplicitHeight = 294
     inherited ScrollBox1: TScrollBox
-      Height = 294
+      Height = 212
+      ExplicitHeight = 294
       inherited lbl_cod_usuario: TLabel
-        Top = 197
-        ExplicitTop = 197
+        Top = 117
+        ExplicitTop = 117
       end
       inherited lbl_data_cadastro: TLabel
-        Top = 197
-        ExplicitTop = 197
+        Top = 117
+        ExplicitTop = 117
       end
       inherited lbl_data_ult_alt: TLabel
-        Top = 197
-        ExplicitTop = 197
+        Top = 117
+        ExplicitTop = 117
       end
       object lbl_sigla_tamanho: TLabel [4]
         Left = 112
@@ -73,19 +76,20 @@ inherited form_cadastro_tamanhos: Tform_cadastro_tamanhos
         ParentFont = False
       end
       inherited edt_cod_usuario: PriTEdit
-        Top = 212
-        ExplicitTop = 212
+        Top = 132
+        ExplicitTop = 132
       end
       inherited edt_data_cadastro: PriTEdit
-        Top = 212
-        ExplicitTop = 212
+        Top = 132
+        ExplicitTop = 132
       end
       inherited edt_data_ult_alt: PriTEdit
-        Top = 212
-        ExplicitTop = 212
+        Top = 132
+        ExplicitTop = 132
       end
       inherited pnl_bottom: TPanel
-        Top = 239
+        Top = 157
+        ExplicitTop = 239
       end
       object edt_sigla_tamanho: PriTEdit
         Left = 112
@@ -98,6 +102,7 @@ inherited form_cadastro_tamanhos: Tform_cadastro_tamanhos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 3
         ParentFont = False
         TabOrder = 5
         MudarCor = clCream
@@ -113,6 +118,7 @@ inherited form_cadastro_tamanhos: Tform_cadastro_tamanhos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         ParentFont = False
         TabOrder = 6
         MudarCor = clCream
@@ -128,6 +134,7 @@ inherited form_cadastro_tamanhos: Tform_cadastro_tamanhos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         ParentFont = False
         TabOrder = 7
         MudarCor = clCream
@@ -143,6 +150,7 @@ inherited form_cadastro_tamanhos: Tform_cadastro_tamanhos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         ParentFont = False
         TabOrder = 8
         MudarCor = clCream
