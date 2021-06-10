@@ -77,7 +77,9 @@ uses
   uCtrlGruposRoupas in 'Controller\uCtrlGruposRoupas.pas',
   uDaoGruposRoupas in 'DAO\uDaoGruposRoupas.pas',
   uCtrlMarcas in 'Controller\uCtrlMarcas.pas',
-  uDaoMarcas in 'DAO\uDaoMarcas.pas';
+  uDaoMarcas in 'DAO\uDaoMarcas.pas',
+  uDaoTamanhos in 'DAO\uDaoTamanhos.pas',
+  uCtrlTamanhos in 'Controller\uCtrlTamanhos.pas';
 
 {$R *.res}
 

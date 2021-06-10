@@ -17,9 +17,10 @@ uses uConsultaPaises, uConsultaEstados, uConsultaCidades, uConsultaCargos, uCons
      uCadastroProdutos, uCadastroFornecedores, uCadastroClientes, uCadastroTiposContatos,
 
      uPaises, uEstados, uCidades, uCores, uColecoes, uGruposRoupas, uMarcas,
+     uTamanhos,
 
      uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores, uCtrlColecoes,
-     uCtrlGruposRoupas, uCtrlMarcas;
+     uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos;
 
 type Inter = class
   private
@@ -85,7 +86,7 @@ type Inter = class
     procedure PDCores ( pCtrl : TObject; pObj : Cores );
     procedure PDGruposProdutos ( pCtrl : TObject; pObj : GruposRoupas );
     procedure PDMarcas ( pCtrl : TObject; pObj : Marcas );
-    procedure PDTamanhos ( pCtrl : TObject; pObj : TObject );
+    procedure PDTamanhos ( pCtrl : TObject; pObj : Tamanhos );
     procedure PDRoupas ( pCtrl : TObject; pObj : TObject );
     procedure PDFornecedores ( pCtrl : TObject; pObj : TObject );
     procedure PDClientes ( pCtrl : TObject; pObj : TObject );
@@ -311,8 +312,9 @@ begin
   aConsultaRoupas.ShowModal;
 end;
 
-procedure Inter.PDTamanhos(pCtrl, pObj: TObject);
+procedure Inter.PDTamanhos(pCtrl : TObject; pObj : Tamanhos);
 begin
+  aConsultaTamanhos.conhecaObj( pCtrl, pObj );
   aConsultaTamanhos.ShowModal;
 end;
 
