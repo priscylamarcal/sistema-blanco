@@ -64,3 +64,11 @@ begin
     if (NEW.codsigla = 0) THEN
         new.codsigla = GEN_ID(gen_sigla_tamanhos, 1);
 end
+
+CREATE trigger formas_pagamentos_bi for formas_pagamentos
+active before insert position 0
+AS
+begin
+    if (NEW.codforma = 0) THEN
+        new.codforma = GEN_ID(gen_formas_pagamentos, 1);
+end

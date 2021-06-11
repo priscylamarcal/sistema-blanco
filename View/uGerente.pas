@@ -8,12 +8,12 @@ uses
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.StdCtrls, Vcl.Imaging.pngimage,
 
   uPaises, uEstados, uCidades, uDepartamentos, uCores, uColecoes, uGruposRoupas,
-  uMarcas, uTamanhos,
+  uMarcas, uTamanhos, uFormaPagamento,
 
   uInter,
 
   uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores, uCtrlColecoes,
-  uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos,
+  uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
 
   uDM;
 
@@ -138,6 +138,7 @@ type
     oGrupoRoupa   : GruposRoupas;
     aMarca        : Marcas;
     oTamanho      : Tamanhos;
+    aFormaPagamento : FormasPagamentos;
 
     aInter  : Inter;
 
@@ -149,6 +150,7 @@ type
     aCtrlGrupoRoupa   : ctrlGruposRoupas;
     aCtrlMarca        : ctrlMarcas;
     aCtrlTamanho      : ctrlTamanhos;
+    aCtrlFormaPagamento : ctrlFormasPagamentos;
 
     aDm : TDM;
 
@@ -181,6 +183,7 @@ begin
   oGrupoRoupa:= gruposRoupas.crieObj;
   aMarca:= Marcas.crieObj;
   oTamanho:= Tamanhos.crieObj;
+  aFormaPagamento:= FormasPagamentos.crieObj;
 
   aCtrlPais:= ctrlPaises.crieObj;
   aCtrlEstado:= ctrlEstados.crieObj;
@@ -190,6 +193,7 @@ begin
   aCtrlGrupoRoupa:= ctrlGruposRoupas.crieObj;
   aCtrlMarca:= ctrlMarcas.crieObj;
   aCtrlTamanho:= ctrlTamanhos.crieObj;
+  aCtrlFormaPagamento:= ctrlFormasPagamentos.crieObj;
 
   aDm:= TDM.Create(nil);
 
@@ -201,6 +205,7 @@ begin
   aCtrlGrupoRoupa.setDM( aDm );
   aCtrlMarca.setDM( aDm );
   aCtrlTamanho.setDM( aDm );
+  aCtrlFormaPagamento.setDM( aDm );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -216,6 +221,7 @@ begin
   oGrupoRoupa.destrua_se;
   aMarca.destrua_se;
   oTamanho.destrua_se;
+  aFormaPagamento.destrua_se;
 
   aCtrlPais.destrua_se;
   aCtrlDepartamento.destrua_se;
@@ -224,6 +230,7 @@ begin
   aCtrlGrupoRoupa.destrua_se;
   aCtrlMarca.destrua_se;
   aCtrlTamanho.destrua_se;
+  aCtrlFormaPagamento.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -300,7 +307,7 @@ end;
 
 procedure Tform_principal.spb_formas_pagamentoClick(Sender: TObject);
 begin
-  aInter.PDFormasPagamentos(nil, nil);
+  aInter.PDFormasPagamentos(aCtrlFormaPagamento, aFormaPagamento);
 end;
 
 procedure Tform_principal.spb_fornecedoresClick(Sender: TObject);
