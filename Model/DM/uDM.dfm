@@ -1,7 +1,7 @@
 object DM: TDM
   OldCreateOrder = False
   Height = 359
-  Width = 608
+  Width = 709
   object Conexao: TFDConnection
     Params.Strings = (
       
@@ -23,7 +23,6 @@ object DM: TDM
     Top = 8
   end
   object QPaises: TFDQuery
-    Active = True
     Connection = Conexao
     Transaction = Transacao
     SQL.Strings = (
@@ -89,7 +88,6 @@ object DM: TDM
     Top = 64
   end
   object QDepartamentos: TFDQuery
-    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from departamentos')
@@ -132,7 +130,6 @@ object DM: TDM
     Top = 64
   end
   object QCores: TFDQuery
-    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from cores')
@@ -170,7 +167,6 @@ object DM: TDM
     Top = 64
   end
   object QColecoes: TFDQuery
-    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from COLECOES')
@@ -213,7 +209,6 @@ object DM: TDM
     Top = 64
   end
   object QGruposRoupas: TFDQuery
-    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from GRUPOS_ROUPAS')
@@ -256,7 +251,6 @@ object DM: TDM
     Top = 128
   end
   object QMarcas: TFDQuery
-    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from MARCAS')
@@ -299,7 +293,6 @@ object DM: TDM
     Top = 128
   end
   object QTamanhos: TFDQuery
-    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from SIGLA_TAMANHOS')
@@ -361,6 +354,49 @@ object DM: TDM
   object DSTamanhos: TDataSource
     DataSet = QTamanhos
     Left = 400
+    Top = 128
+  end
+  object QFormasPagamentos: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'SELECT * FROM FORMAS_PAGAMENTOS')
+    Left = 496
+    Top = 128
+    object QFormasPagamentosCODFORMA: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODFORMA'
+      Origin = 'CODFORMA'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QFormasPagamentosFORMA: TStringField
+      DisplayLabel = 'Forma de Pagamento'
+      DisplayWidth = 220
+      FieldName = 'FORMA'
+      Origin = 'FORMA'
+      Required = True
+      Size = 80
+    end
+    object QFormasPagamentosDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QFormasPagamentosULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QFormasPagamentosCODUSUALT: TIntegerField
+      FieldName = 'CODUSUALT'
+      Origin = 'CODUSUALT'
+      Visible = False
+    end
+  end
+  object DSFormasPagamentos: TDataSource
+    DataSet = QFormasPagamentos
+    Left = 608
     Top = 128
   end
 end
