@@ -17,10 +17,10 @@ uses uConsultaPaises, uConsultaEstados, uConsultaCidades, uConsultaCargos, uCons
      uCadastroProdutos, uCadastroFornecedores, uCadastroClientes, uCadastroTiposContatos,
 
      uPaises, uEstados, uCidades, uCores, uColecoes, uGruposRoupas, uMarcas,
-     uTamanhos,
+     uTamanhos, uFormaPagamento,
 
      uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores, uCtrlColecoes,
-     uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos;
+     uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos;
 
 type Inter = class
   private
@@ -77,7 +77,7 @@ type Inter = class
     procedure PDCargos ( pCtrl : TObject; pObj : TObject);
     procedure PDDepartamentos ( pCtrl : TObject; pObj : Departamentos );
     procedure PDFuncionarios ( pCtrl : TObject; pObj : TObject );
-    procedure PDFormasPagamentos ( pCtrl : TObject; pObj : TObject );
+    procedure PDFormasPagamentos ( pCtrl : TObject; pObj : FormasPagamentos );
     procedure PDCondicoesPagamentos ( pCtrl : TObject; pObj : TObject );
     procedure PDVendas ( pCtrl : TObject; pObj : TObject );
     procedure PDContasReceber ( pCtrl : TObject; pObj : TObject );
@@ -274,8 +274,9 @@ begin
   aConsultaEstoques.ShowModal;
 end;
 
-procedure Inter.PDFormasPagamentos(pCtrl, pObj: TObject);
+procedure Inter.PDFormasPagamentos(pCtrl : TObject; pObj : FormasPagamentos);
 begin
+  aConsultaFormasPagamentos.conhecaObj( pCtrl, pObj );
   aConsultaFormasPagamentos.ShowModal;
 end;
 

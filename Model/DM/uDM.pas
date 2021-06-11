@@ -68,6 +68,13 @@ type
     QTamanhosDATACAD: TSQLTimeStampField;
     QTamanhosULTALT: TSQLTimeStampField;
     QTamanhosCODUSUALT: TIntegerField;
+    QFormasPagamentos: TFDQuery;
+    DSFormasPagamentos: TDataSource;
+    QFormasPagamentosCODFORMA: TIntegerField;
+    QFormasPagamentosFORMA: TStringField;
+    QFormasPagamentosDATACAD: TSQLTimeStampField;
+    QFormasPagamentosULTALT: TSQLTimeStampField;
+    QFormasPagamentosCODUSUALT: TIntegerField;
   private
     { Private declarations }
   public

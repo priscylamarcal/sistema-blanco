@@ -79,7 +79,10 @@ uses
   uCtrlMarcas in 'Controller\uCtrlMarcas.pas',
   uDaoMarcas in 'DAO\uDaoMarcas.pas',
   uDaoTamanhos in 'DAO\uDaoTamanhos.pas',
-  uCtrlTamanhos in 'Controller\uCtrlTamanhos.pas';
+  uCtrlTamanhos in 'Controller\uCtrlTamanhos.pas',
+  uFormaPagamento in 'Model\Classes\uFormaPagamento.pas',
+  uCtrlFormasPagamentos in 'Controller\uCtrlFormasPagamentos.pas',
+  uDaoFormasPagamentos in 'DAO\uDaoFormasPagamentos.pas';
 
 {$R *.res}
 
