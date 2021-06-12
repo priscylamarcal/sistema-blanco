@@ -8,14 +8,15 @@ uses
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.StdCtrls, Vcl.Imaging.pngimage,
 
   uPaises, uEstados, uCidades, uDepartamentos, uCores, uColecoes, uGruposRoupas,
-  uMarcas, uTamanhos, uFormaPagamento,
+  uMarcas, uTamanhos, uFormaPagamento, uTiposContatos,
 
   uInter,
 
   uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores, uCtrlColecoes,
   uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
+  uCtrlTiposContatos,
 
-  uDM;
+  uDM ;
 
 type
   Tform_principal = class(TForm)
@@ -139,6 +140,7 @@ type
     aMarca        : Marcas;
     oTamanho      : Tamanhos;
     aFormaPagamento : FormasPagamentos;
+    oTipoContato : TiposContatos;
 
     aInter  : Inter;
 
@@ -151,6 +153,7 @@ type
     aCtrlMarca        : ctrlMarcas;
     aCtrlTamanho      : ctrlTamanhos;
     aCtrlFormaPagamento : ctrlFormasPagamentos;
+    aCtrlTipoContato : ctrlTiposContatos;
 
     aDm : TDM;
 
@@ -184,6 +187,7 @@ begin
   aMarca:= Marcas.crieObj;
   oTamanho:= Tamanhos.crieObj;
   aFormaPagamento:= FormasPagamentos.crieObj;
+  oTipoContato:= TiposContatos.crieObj;
 
   aCtrlPais:= ctrlPaises.crieObj;
   aCtrlEstado:= ctrlEstados.crieObj;
@@ -194,6 +198,7 @@ begin
   aCtrlMarca:= ctrlMarcas.crieObj;
   aCtrlTamanho:= ctrlTamanhos.crieObj;
   aCtrlFormaPagamento:= ctrlFormasPagamentos.crieObj;
+  aCtrlTipoContato:= ctrlTiposContatos.crieObj;
 
   aDm:= TDM.Create(nil);
 
@@ -206,6 +211,7 @@ begin
   aCtrlMarca.setDM( aDm );
   aCtrlTamanho.setDM( aDm );
   aCtrlFormaPagamento.setDM( aDm );
+  aCtrlTipoContato.setDM( aDm );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -222,6 +228,7 @@ begin
   aMarca.destrua_se;
   oTamanho.destrua_se;
   aFormaPagamento.destrua_se;
+  oTipoContato.destrua_se;
 
   aCtrlPais.destrua_se;
   aCtrlDepartamento.destrua_se;
@@ -231,6 +238,7 @@ begin
   aCtrlMarca.destrua_se;
   aCtrlTamanho.destrua_se;
   aCtrlFormaPagamento.destrua_se;
+  aCtrlTipoContato.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -342,7 +350,7 @@ end;
 
 procedure Tform_principal.spb_tipos_contatoClick(Sender: TObject);
 begin
-  aInter.PDTiposContatos(nil, nil);
+  aInter.PDTiposContatos( aCtrlTipoContato , oTipoContato );
 end;
 
 procedure Tform_principal.spb_vendasClick(Sender: TObject);

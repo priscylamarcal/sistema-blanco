@@ -82,7 +82,10 @@ uses
   uCtrlTamanhos in 'Controller\uCtrlTamanhos.pas',
   uFormaPagamento in 'Model\Classes\uFormaPagamento.pas',
   uCtrlFormasPagamentos in 'Controller\uCtrlFormasPagamentos.pas',
-  uDaoFormasPagamentos in 'DAO\uDaoFormasPagamentos.pas';
+  uDaoFormasPagamentos in 'DAO\uDaoFormasPagamentos.pas',
+  uTiposContatos in 'Model\Classes\uTiposContatos.pas',
+  uDaoTiposContatos in 'DAO\uDaoTiposContatos.pas',
+  uCtrlTiposContatos in 'Controller\uCtrlTiposContatos.pas';
 
 {$R *.res}
 

@@ -399,4 +399,47 @@ object DM: TDM
     Left = 608
     Top = 128
   end
+  object QTiposContatos: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from TIPOS_CONTATOS')
+    Left = 24
+    Top = 192
+    object QTiposContatosCODTIPO: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODTIPO'
+      Origin = 'CODTIPO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QTiposContatosTIPOCONTATO: TStringField
+      DisplayLabel = 'Tipo de Contato'
+      DisplayWidth = 220
+      FieldName = 'TIPOCONTATO'
+      Origin = 'TIPOCONTATO'
+      Required = True
+      Size = 80
+    end
+    object QTiposContatosDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QTiposContatosULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QTiposContatosCODUSU: TIntegerField
+      FieldName = 'CODUSU'
+      Origin = 'CODUSU'
+      Visible = False
+    end
+  end
+  object DSTiposContatos: TDataSource
+    DataSet = QTiposContatos
+    Left = 112
+    Top = 192
+  end
 end
