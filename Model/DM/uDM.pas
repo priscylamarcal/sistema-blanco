@@ -75,6 +75,13 @@ type
     QFormasPagamentosDATACAD: TSQLTimeStampField;
     QFormasPagamentosULTALT: TSQLTimeStampField;
     QFormasPagamentosCODUSUALT: TIntegerField;
+    QTiposContatos: TFDQuery;
+    DSTiposContatos: TDataSource;
+    QTiposContatosCODTIPO: TIntegerField;
+    QTiposContatosTIPOCONTATO: TStringField;
+    QTiposContatosDATACAD: TSQLTimeStampField;
+    QTiposContatosULTALT: TSQLTimeStampField;
+    QTiposContatosCODUSU: TIntegerField;
   private
     { Private declarations }
   public

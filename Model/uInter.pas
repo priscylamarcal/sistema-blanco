@@ -17,10 +17,11 @@ uses uConsultaPaises, uConsultaEstados, uConsultaCidades, uConsultaCargos, uCons
      uCadastroProdutos, uCadastroFornecedores, uCadastroClientes, uCadastroTiposContatos,
 
      uPaises, uEstados, uCidades, uCores, uColecoes, uGruposRoupas, uMarcas,
-     uTamanhos, uFormaPagamento,
+     uTamanhos, uFormaPagamento, uTiposContatos,
 
      uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores, uCtrlColecoes,
-     uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos;
+     uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
+     uCtrlTiposContatos;
 
 type Inter = class
   private
@@ -90,7 +91,7 @@ type Inter = class
     procedure PDRoupas ( pCtrl : TObject; pObj : TObject );
     procedure PDFornecedores ( pCtrl : TObject; pObj : TObject );
     procedure PDClientes ( pCtrl : TObject; pObj : TObject );
-    procedure PDTiposContatos ( pCtrl : TObject; pObj : TObject );
+    procedure PDTiposContatos ( pCtrl : TObject; pObj : TiposContatos );
     procedure PDEstoques ( pCtrl : TObject; pObj : TObject );
 end;
 
@@ -319,8 +320,9 @@ begin
   aConsultaTamanhos.ShowModal;
 end;
 
-procedure Inter.PDTiposContatos(pCtrl, pObj: TObject);
+procedure Inter.PDTiposContatos(pCtrl : TObject; pObj : TiposContatos);
 begin
+  aConsultaTiposContatos.conhecaObj( pCtrl, pObj );
   aConsultaTiposContatos.ShowModal;
 end;
 
