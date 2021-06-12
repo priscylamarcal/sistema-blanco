@@ -6,8 +6,10 @@ inherited form_cadastro_tipo_contato: Tform_cadastro_tipo_contato
   TextHeight = 13
   inherited pnl_fundo: TPanel
     Height = 264
+    ExplicitHeight = 264
     inherited ScrollBox1: TScrollBox
       Height = 264
+      ExplicitHeight = 264
       inherited lbl_cod_usuario: TLabel
         Top = 157
         ExplicitTop = 157
@@ -47,6 +49,7 @@ inherited form_cadastro_tipo_contato: Tform_cadastro_tipo_contato
       end
       inherited pnl_bottom: TPanel
         Top = 209
+        ExplicitTop = 209
       end
       object edt_tipo_contato: PriTEdit
         Left = 112
@@ -59,6 +62,7 @@ inherited form_cadastro_tipo_contato: Tform_cadastro_tipo_contato
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 80
         ParentFont = False
         TabOrder = 5
         MudarCor = clCream

@@ -69,7 +69,7 @@ end;
 procedure Tform_consulta_formas_pagamentos.FormShow(Sender: TObject);
 begin
   inherited;
-  combobox_tipo_filtro.ItemIndex:= 4;
+  combobox_tipo_filtro.ItemIndex:= 2;
   edt_pesquisa.Clear;
   self.pesquisar;   inherited;
 end;

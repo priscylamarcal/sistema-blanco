@@ -164,11 +164,10 @@ begin
 end;
 
 procedure Tform_consulta_paises.sair;
-var form : Tform_cadastro_paises;
+
 begin
   inherited;
-    if form.salvou then
-    Self.pesquisar;      inherited;
+
 end;
 
 procedure Tform_consulta_paises.setFrmCadastro(pObj: TObject);

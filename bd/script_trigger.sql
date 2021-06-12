@@ -72,3 +72,11 @@ begin
     if (NEW.codforma = 0) THEN
         new.codforma = GEN_ID(gen_formas_pagamentos, 1);
 end
+
+CREATE trigger tipos_contatos_bi for tipos_contatos
+active before insert position 0
+AS
+begin
+    if (NEW.codtipo = 0) THEN
+        new.codtipo = GEN_ID(gen_tipos_contatos, 1);
+end

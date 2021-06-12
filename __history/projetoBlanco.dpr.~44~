@@ -1,5 +1,7 @@
 program projetoBlanco;
 
+
+
 uses
   Vcl.Forms,
   uGerente in 'View\uGerente.pas' {form_principal},
@@ -65,7 +67,22 @@ uses
   uCadastroTiposContatos in 'View\Form Cadastros\uCadastroTiposContatos.pas' {form_cadastro_tipo_contato},
   uFilterSearch in 'Model\uFilterSearch.pas',
   uCtrlDepartamentos in 'Controller\uCtrlDepartamentos.pas',
-  uDaoDepartamentos in 'DAO\uDaoDepartamentos.pas';
+  uDaoDepartamentos in 'DAO\uDaoDepartamentos.pas',
+  uCtrlCores in 'Controller\uCtrlCores.pas',
+  uDaoCores in 'DAO\uDaoCores.pas',
+  uColecoes in 'Model\Classes\uColecoes.pas',
+  uCtrlColecoes in 'Controller\uCtrlColecoes.pas',
+  uDaoColecoes in 'DAO\uDaoColecoes.pas',
+  uGruposRoupas in 'Model\Classes\uGruposRoupas.pas',
+  uCtrlGruposRoupas in 'Controller\uCtrlGruposRoupas.pas',
+  uDaoGruposRoupas in 'DAO\uDaoGruposRoupas.pas',
+  uCtrlMarcas in 'Controller\uCtrlMarcas.pas',
+  uDaoMarcas in 'DAO\uDaoMarcas.pas',
+  uDaoTamanhos in 'DAO\uDaoTamanhos.pas',
+  uCtrlTamanhos in 'Controller\uCtrlTamanhos.pas',
+  uFormaPagamento in 'Model\Classes\uFormaPagamento.pas',
+  uCtrlFormasPagamentos in 'Controller\uCtrlFormasPagamentos.pas',
+  uDaoFormasPagamentos in 'DAO\uDaoFormasPagamentos.pas';
 
 {$R *.res}
 
