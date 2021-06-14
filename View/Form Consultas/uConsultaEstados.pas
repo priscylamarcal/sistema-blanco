@@ -138,7 +138,7 @@ begin
             Exit;
           end;
           VFilter.TipoConsulta := TpCPais;
-          VFilter.DDI    := Uppercase( edt_pesquisa.Text );
+          VFilter.Pais    := Uppercase( edt_pesquisa.Text );
         end;
       3:
         begin
