@@ -73,6 +73,7 @@ type
     procedure conhecaObj ( pCtrl : TObject; pObj : TObject );   virtual;
     procedure setFrmCadastro ( pObj : TObject );                virtual;
     procedure tipoFiltro;                                       virtual;
+    function retornaObj : TObject;                              virtual;
   end;
 
 var
@@ -152,6 +153,11 @@ begin
 end;
 
 procedure Tform_consulta_pai.pesquisar;
+begin
+
+end;
+
+function Tform_consulta_pai.retornaObj: TObject;
 begin
 
 end;

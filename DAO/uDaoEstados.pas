@@ -2,7 +2,7 @@ unit uDaoEstados;
 
 interface
 
-uses uDAO;
+uses uDAO, uFilterSearch;
 
 type daoEstados = class( DAO )
   private
@@ -10,6 +10,7 @@ type daoEstados = class( DAO )
   public
     constructor crieObj;                              override;
     function getDS : TObject;                         override;
+    function pesquisar ( AFilter: TFilterSearch; pChave : string ): string; override;
     function salvar ( pObj : TObject ) : string;      override;
     function excluir ( pObj : TObject ) : string;     override;
     function carregar ( pObj : TObject ) : string;    override;
@@ -37,7 +38,12 @@ end;
 
 function daoEstados.getDS: TObject;
 begin
-  Result:= aDM.DSPaises;
+//  Result:= aDM.DSEstados;
+end;
+
+function daoEstados.pesquisar(AFilter: TFilterSearch; pChave: string): string;
+begin
+
 end;
 
 function daoEstados.salvar(pObj: TObject): string;
