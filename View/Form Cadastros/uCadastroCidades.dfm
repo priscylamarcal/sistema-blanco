@@ -1,6 +1,7 @@
 inherited form_cadastro_cidades: Tform_cadastro_cidades
   Caption = 'Cadastro de Cidade'
   ClientHeight = 267
+  OnActivate = FormActivate
   ExplicitHeight = 306
   PixelsPerInch = 96
   TextHeight = 13
@@ -151,6 +152,7 @@ inherited form_cadastro_cidades: Tform_cadastro_cidades
             6767670101010F0F0F4242425858582A2A2A0101011C1C1CBABABAFFFFFFFFFF
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+          OnClick = btn_pesquisaClick
           ExplicitWidth = 65
           ExplicitHeight = 21
         end

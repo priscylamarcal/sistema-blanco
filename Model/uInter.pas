@@ -145,7 +145,7 @@ begin
   oCadastroCondicaoPagamento := Tform_cadastro_condicao_pagamento.Create(nil);
 
   oCadastroEstados.setFrmConsultaPaises( aConsultaPaises );
-//  oCadastroCidades.setFrmConsultaEstados( aConsultaEstados );
+  oCadastroCidades.setFrmConsultaEstados( aConsultaEstados );
 
   aConsultaPaises.setFrmCadastro( oCadastroPaises );
   aConsultaEstados.setFrmCadastro( oCadastroEstados );

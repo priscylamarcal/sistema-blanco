@@ -85,7 +85,9 @@ uses
   uDaoFormasPagamentos in 'DAO\uDaoFormasPagamentos.pas',
   uTiposContatos in 'Model\Classes\uTiposContatos.pas',
   uDaoTiposContatos in 'DAO\uDaoTiposContatos.pas',
-  uCtrlTiposContatos in 'Controller\uCtrlTiposContatos.pas';
+  uCtrlTiposContatos in 'Controller\uCtrlTiposContatos.pas',
+  uCtrlCidades in 'Controller\uCtrlCidades.pas',
+  uDaoCidades in 'DAO\uDaoCidades.pas';
 
 {$R *.res}
 

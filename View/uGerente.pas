@@ -14,9 +14,9 @@ uses
 
   uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores, uCtrlColecoes,
   uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
-  uCtrlTiposContatos,
+  uCtrlTiposContatos, uCtrlCidades,
 
-  uDM ;
+  uDM;
 
 type
   Tform_principal = class(TForm)
@@ -154,6 +154,7 @@ type
     aCtrlTamanho      : ctrlTamanhos;
     aCtrlFormaPagamento : ctrlFormasPagamentos;
     aCtrlTipoContato : ctrlTiposContatos;
+    aCtrlCidade       : ctrlCidades;
 
     aDm : TDM;
 
@@ -199,6 +200,7 @@ begin
   aCtrlTamanho:= ctrlTamanhos.crieObj;
   aCtrlFormaPagamento:= ctrlFormasPagamentos.crieObj;
   aCtrlTipoContato:= ctrlTiposContatos.crieObj;
+  aCtrlCidade:= ctrlCidades.crieObj;
 
   aDm:= TDM.Create(nil);
 
@@ -212,6 +214,7 @@ begin
   aCtrlTamanho.setDM( aDm );
   aCtrlFormaPagamento.setDM( aDm );
   aCtrlTipoContato.setDM( aDm );
+  aCtrlCidade.setDM( aDm );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -239,6 +242,7 @@ begin
   aCtrlTamanho.destrua_se;
   aCtrlFormaPagamento.destrua_se;
   aCtrlTipoContato.destrua_se;
+  aCtrlCidade.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -270,7 +274,7 @@ end;
 
 procedure Tform_principal.spb_cidadesClick(Sender: TObject);
 begin
-  aInter.PDCidades( nil, nil );
+  aInter.PDCidades( aCtrlCidade, aCidade );
 end;
 
 procedure Tform_principal.spb_clientesClick(Sender: TObject);

@@ -3,7 +3,7 @@ unit uFilterSearch;
 interface
 
 type
-  TTipoConsulta = ( TpCIndefinido = -1, TpCCodigo = 0, TpCParam = 1, TpCTODOS = 2, TpCCPF_CNPJ = 3, TpCDDI = 4, TpCMoeda = 5, TpCPais = 6 );
+  TTipoConsulta = ( TpCIndefinido = -1, TpCCodigo = 0, TpCParam = 1, TpCTODOS = 2, TpCCPF_CNPJ = 3, TpCDDI = 4, TpCMoeda = 5, TpCPais = 6, TpCEstado = 7 );
 
   TFilterSearch = class
   private
@@ -14,6 +14,8 @@ type
     FDDI: string;
     FMoeda: string;
     FPais: string;
+    FEstado: string;
+
     procedure SetCodigo( const Value: Integer );
     procedure SetParametro( const Value: string );
     procedure SetTipoConsulta( const Value: TTipoConsulta );
@@ -22,6 +24,7 @@ type
     procedure SetDDI(const Value: string);
     procedure SetMoeda(const Value: string);
     procedure SetPais(const Value: string);
+    procedure SetEstado(const Value: string);
 
   public
     constructor Create;
@@ -34,6 +37,7 @@ type
     property DDI: string read FDDI write SetDDI;
     property Moeda : string read FMoeda write SetMoeda;
     property Pais : string read FPais write SetPais;
+    property Estado : string read FEstado write SetEstado;
   end;
 
 implementation
@@ -49,6 +53,7 @@ begin
   FRecuperarObj := False;
   FTipoConsulta := TpCIndefinido;
   FPais         := '';
+  FEstado       := '';
 end;
 
 destructor TFilterSearch.Destroy;
@@ -70,6 +75,11 @@ end;
 procedure TFilterSearch.SetDDI(const Value: string);
 begin
   FDDI := Value;
+end;
+
+procedure TFilterSearch.SetEstado(const Value: string);
+begin
+  FEstado := Value;
 end;
 
 procedure TFilterSearch.SetMoeda(const Value: string);
