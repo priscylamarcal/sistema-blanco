@@ -16,9 +16,12 @@ uses uConsultaPaises, uConsultaEstados, uConsultaCidades, uConsultaCargos, uCons
      uCadastroGruposProdutos, uCadastroMarcas, uCadastroTamanhos,
      uCadastroProdutos, uCadastroFornecedores, uCadastroClientes, uCadastroTiposContatos,
 
-     uPaises, uEstados, uCidades,
+     uPaises, uEstados, uCidades, uCores, uColecoes, uGruposRoupas, uMarcas,
+     uTamanhos, uFormaPagamento, uTiposContatos,
 
-     uCtrlPaises, uCtrlEstados, uDepartamentos;
+     uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores, uCtrlColecoes,
+     uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
+     uCtrlTiposContatos;
 
 type Inter = class
   private
@@ -35,7 +38,7 @@ type Inter = class
     aConsultaContasPagar         : Tform_consulta_contas_pagar;
     aConsultaColecoes            : Tform_consulta_colecoes;
     aConsultaCores               : Tform_consulta_cores;
-    aConsultaGruposProdutos      : Tform_consulta_grupos_produtos;
+    aConsultaGruposRoupas      : Tform_consulta_grupos_produtos;
     aConsultaMarcas              : Tform_consulta_marcas;
     aConsultaTamanhos            : Tform_consulta_tamanhos;
     aConsultaRoupas              : Tform_consulta_roupas;
@@ -57,7 +60,7 @@ type Inter = class
     oCadastroContasPagar : Tform_cadastro_contas_pagar;
     oCadastroColecoes : Tform_cadastro_colecoes;
     oCadastroCores : Tform_cadastro_cores;
-    oCadastroGruposProdutos : Tform_cadastro_grupos_produtos;
+    oCadastroGruposRoupas : Tform_cadastro_grupos_produtos;
     oCadastroMarcas : Tform_cadastro_marcas;
     oCadastroTamanhos : Tform_cadastro_tamanhos;
     oCadastroProdutos : Tform_cadastro_produtos;
@@ -75,20 +78,20 @@ type Inter = class
     procedure PDCargos ( pCtrl : TObject; pObj : TObject);
     procedure PDDepartamentos ( pCtrl : TObject; pObj : Departamentos );
     procedure PDFuncionarios ( pCtrl : TObject; pObj : TObject );
-    procedure PDFormasPagamentos ( pCtrl : TObject; pObj : TObject );
+    procedure PDFormasPagamentos ( pCtrl : TObject; pObj : FormasPagamentos );
     procedure PDCondicoesPagamentos ( pCtrl : TObject; pObj : TObject );
     procedure PDVendas ( pCtrl : TObject; pObj : TObject );
     procedure PDContasReceber ( pCtrl : TObject; pObj : TObject );
     procedure PDContasPagar ( pCtrl : TObject; pObj : TObject );
-    procedure PDColecoes ( pCtrl : TObject; pObj : TObject );
-    procedure PDCores ( pCtrl : TObject; pObj : TObject );
-    procedure PDGruposProdutos ( pCtrl : TObject; pObj : TObject );
-    procedure PDMarcas ( pCtrl : TObject; pObj : TObject );
-    procedure PDTamanhos ( pCtrl : TObject; pObj : TObject );
+    procedure PDColecoes ( pCtrl : TObject; pObj : Colecoes );
+    procedure PDCores ( pCtrl : TObject; pObj : Cores );
+    procedure PDGruposProdutos ( pCtrl : TObject; pObj : GruposRoupas );
+    procedure PDMarcas ( pCtrl : TObject; pObj : Marcas );
+    procedure PDTamanhos ( pCtrl : TObject; pObj : Tamanhos );
     procedure PDRoupas ( pCtrl : TObject; pObj : TObject );
     procedure PDFornecedores ( pCtrl : TObject; pObj : TObject );
     procedure PDClientes ( pCtrl : TObject; pObj : TObject );
-    procedure PDTiposContatos ( pCtrl : TObject; pObj : TObject );
+    procedure PDTiposContatos ( pCtrl : TObject; pObj : TiposContatos );
     procedure PDEstoques ( pCtrl : TObject; pObj : TObject );
 end;
 
@@ -110,7 +113,7 @@ begin
   aConsultaContasPagar         := Tform_consulta_contas_pagar.Create(nil);
   aConsultaColecoes            := Tform_consulta_colecoes.Create(nil);
   aConsultaCores               := Tform_consulta_cores.Create(nil);
-  aConsultaGruposProdutos      := Tform_consulta_grupos_produtos.Create(nil);
+  aConsultaGruposRoupas      := Tform_consulta_grupos_produtos.Create(nil);
   aConsultaMarcas              := Tform_consulta_marcas.Create(nil);
   aConsultaTamanhos            := Tform_consulta_tamanhos.Create(nil);
   aConsultaRoupas              := Tform_consulta_roupas.Create(nil);
@@ -132,7 +135,7 @@ begin
   oCadastroContasPagar := Tform_cadastro_contas_pagar.Create(nil);
   oCadastroColecoes := Tform_cadastro_colecoes.Create(nil);
   oCadastroCores := Tform_cadastro_cores.Create(nil);
-  oCadastroGruposProdutos := Tform_cadastro_grupos_produtos.Create(nil);
+  oCadastroGruposRoupas := Tform_cadastro_grupos_produtos.Create(nil);
   oCadastroMarcas := Tform_cadastro_marcas.Create(nil);
   oCadastroTamanhos := Tform_cadastro_tamanhos.Create(nil);
   oCadastroProdutos := Tform_cadastro_produtos.Create(nil);
@@ -156,7 +159,7 @@ begin
   aConsultaContasPagar.setFrmCadastro( oCadastroContasPagar );
   aConsultaColecoes.setFrmCadastro( oCadastroColecoes );
   aConsultaCores.setFrmCadastro( oCadastroCores );
-  aConsultaGruposProdutos.setFrmCadastro( oCadastroGruposProdutos );
+  aConsultaGruposRoupas.setFrmCadastro( oCadastroGruposRoupas );
   aConsultaMarcas.setFrmCadastro( oCadastroMarcas );
   aConsultaTamanhos.setFrmCadastro( oCadastroTamanhos );
   aConsultaRoupas.setFrmCadastro( oCadastroProdutos );
@@ -180,7 +183,7 @@ begin
   aConsultaContasPagar.FreeInstance;
   aConsultaColecoes.FreeInstance;
   aConsultaCores.FreeInstance;
-  aConsultaGruposProdutos.FreeInstance;
+  aConsultaGruposRoupas.FreeInstance;
   aConsultaMarcas.FreeInstance;
   aConsultaTamanhos.FreeInstance;
   aConsultaRoupas.FreeInstance;
@@ -202,7 +205,7 @@ begin
   oCadastroContasPagar.FreeInstance;
   oCadastroColecoes.FreeInstance;
   oCadastroCores.FreeInstance;
-  oCadastroGruposProdutos.FreeInstance;
+  oCadastroGruposRoupas.FreeInstance;
   oCadastroMarcas.FreeInstance;
   oCadastroTamanhos.FreeInstance;
   oCadastroProdutos.FreeInstance;
@@ -228,8 +231,9 @@ begin
   aConsultaClientes.ShowModal;
 end;
 
-procedure Inter.PDColecoes(pCtrl, pObj: TObject);
+procedure Inter.PDColecoes(pCtrl: TObject; pObj: Colecoes);
 begin
+  aConsultaColecoes.conhecaObj( pCtrl, pObj );
   aConsultaColecoes.ShowModal;
 end;
 
@@ -248,8 +252,9 @@ begin
   aConsultaContasReceber.ShowModal;
 end;
 
-procedure Inter.PDCores(pCtrl, pObj: TObject);
+procedure Inter.PDCores(pCtrl: TObject; pObj: Cores);
 begin
+  aConsultaCores.conhecaObj( pCtrl, pObj );
   aConsultaCores.ShowModal;
 end;
 
@@ -270,8 +275,9 @@ begin
   aConsultaEstoques.ShowModal;
 end;
 
-procedure Inter.PDFormasPagamentos(pCtrl, pObj: TObject);
+procedure Inter.PDFormasPagamentos(pCtrl : TObject; pObj : FormasPagamentos);
 begin
+  aConsultaFormasPagamentos.conhecaObj( pCtrl, pObj );
   aConsultaFormasPagamentos.ShowModal;
 end;
 
@@ -285,13 +291,15 @@ begin
   aConsultaFuncionarios.ShowModal;
 end;
 
-procedure Inter.PDGruposProdutos(pCtrl, pObj: TObject);
+procedure Inter.PDGruposProdutos(pCtrl : TObject; pObj : GruposRoupas);
 begin
-  aConsultaGruposProdutos.ShowModal;
+  aConsultaGruposRoupas.conhecaObj( pCtrl, pObj );
+  aConsultaGruposRoupas.ShowModal;
 end;
 
-procedure Inter.PDMarcas(pCtrl, pObj: TObject);
+procedure Inter.PDMarcas(pCtrl: TObject; pObj : Marcas);
 begin
+  aConsultaMarcas.conhecaObj( pCtrl, pObj );
   aConsultaMarcas.ShowModal;
 end;
 
@@ -306,13 +314,15 @@ begin
   aConsultaRoupas.ShowModal;
 end;
 
-procedure Inter.PDTamanhos(pCtrl, pObj: TObject);
+procedure Inter.PDTamanhos(pCtrl : TObject; pObj : Tamanhos);
 begin
+  aConsultaTamanhos.conhecaObj( pCtrl, pObj );
   aConsultaTamanhos.ShowModal;
 end;
 
-procedure Inter.PDTiposContatos(pCtrl, pObj: TObject);
+procedure Inter.PDTiposContatos(pCtrl : TObject; pObj : TiposContatos);
 begin
+  aConsultaTiposContatos.conhecaObj( pCtrl, pObj );
   aConsultaTiposContatos.ShowModal;
 end;
 

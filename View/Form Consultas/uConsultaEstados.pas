@@ -8,10 +8,12 @@ uses
   Vcl.DBGrids, Vcl.Buttons, Vcl.StdCtrls, campoEdit, ComboBox, Vcl.ExtCtrls,
   uCadastroEstados,
   uCtrlEstados,
-  uEstados;
+  uEstados, uFilterSearch;
 
 type
   Tform_consulta_estados = class(Tform_consulta_pai)
+    procedure FormShow(Sender: TObject);
+    procedure spb_botao_pesquisarClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -28,6 +30,7 @@ type
     procedure pesquisar;                                      override;
     procedure conhecaObj ( pCtrl : TObject; pObj : TObject ); override;
     procedure setFrmCadastro ( pObj : TObject );                  override;
+    procedure tipoFiltro;                                     override;
   end;
 
 var
@@ -40,8 +43,18 @@ implementation
 { Tform_consulta_estados }
 
 procedure Tform_consulta_estados.alterar;
+var form : Tform_cadastro_estados;
 begin
   inherited;
+  aCtrlEstados.carregar( oEstado );
+  oCadastroEstados.conhecaObj( aCtrlEstados, oEstado );
+
+  oCadastroEstados.Caption:= 'Alteração de Estado';
+
+  oCadastroEstados.ShowModal;
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
 
 end;
 
@@ -50,7 +63,8 @@ begin
   inherited;
   oEstado:= Estados( pobj );
   aCtrlEstados:= ctrlEstados( pCtrl );
-  Self.DBGrid.DataSource:= TDataSource( aCtrlEstados.getDS );
+
+ // Self.DBGrid.DataSource:= TDataSource( aCtrlEstados.getDS );
 end;
 
 procedure Tform_consulta_estados.excluir;
@@ -59,16 +73,87 @@ begin
 
 end;
 
-procedure Tform_consulta_estados.novo;
+procedure Tform_consulta_estados.FormShow(Sender: TObject);
 begin
   inherited;
+  combobox_tipo_filtro.ItemIndex:= 3;
+  edt_pesquisa.Clear;
+  self.pesquisar;   inherited;
+end;
+
+procedure Tform_consulta_estados.novo;
+var form : Tform_cadastro_estados;
+begin
+  inherited;
+  oCadastroEstados.conhecaObj( aCtrlEstados, oEstado );
+  oCadastroEstados.limpaEdt;
+
+  oCadastroEstados.Caption:= 'Cadastro de Estado';
+
   oCadastroEstados.ShowModal;
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
 end;
 
 procedure Tform_consulta_estados.pesquisar;
+var vFilter : TFilterSearch;
+    pchave : string;
 begin
-  inherited;
+  //inherited;
+  VFilter   := TFilterSearch.Create;
 
+  try
+    Try
+     case combobox_tipo_filtro.ItemIndex of
+      0:
+        begin
+          if edt_pesquisa.Text = '' then
+          begin
+            MessageDlg( 'Campo do filtro não pode ser vazio!', MtInformation, [ MbOK ], 0 );
+            edt_pesquisa.SetFocus;
+           Exit;
+          end;
+
+          vFilter.TipoConsulta:= TpCCodigo;
+          vFilter.Codigo:= StrToInt(edt_pesquisa.Text);
+        end;
+    1:
+        begin
+          if Length( edt_pesquisa.Text ) < 3 then
+          begin
+            MessageDlg( 'Digite ao menos 3 caracteres para consulta!', MtInformation, [ MbOK ], 0 );
+            edt_pesquisa.SetFocus;
+            Exit;
+          end;
+          VFilter.TipoConsulta := TpCParam;
+          VFilter.Parametro    := Uppercase( edt_pesquisa.Text );
+        end;
+    2:
+        begin
+          if Length( edt_pesquisa.Text ) < 3 then
+          begin
+            MessageDlg( 'Digite ao menos 3 caracteres para consulta!', MtInformation, [ MbOK ], 0 );
+            edt_pesquisa.SetFocus;
+            Exit;
+          end;
+          VFilter.TipoConsulta := TpCPais;
+          VFilter.DDI    := Uppercase( edt_pesquisa.Text );
+        end;
+      3:
+        begin
+          VFilter.TipoConsulta := TpCTODOS;
+        end;
+    end;
+
+  finally
+    aCtrlEstados.pesquisar(VFilter, pchave);
+    VFilter.Free;
+  end;
+    Except
+//    on e: exception do
+//    ShowMessage(e.ClassName +'asdfasdfasdf');
+    End;
 end;
 
 procedure Tform_consulta_estados.sair;
@@ -78,9 +163,53 @@ begin
 end;
 
 procedure Tform_consulta_estados.setFrmCadastro(pObj: TObject);
+var form : Tform_cadastro_estados;
 begin
   inherited;
   oCadastroEstados:= Tform_cadastro_estados ( pObj );
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
+end;
+
+procedure Tform_consulta_estados.spb_botao_pesquisarClick(Sender: TObject);
+begin
+  pesquisar;
+  inherited;
+end;
+
+procedure Tform_consulta_estados.tipoFiltro;
+begin
+  inherited;
+  case combobox_tipo_filtro.ItemIndex of
+    0:  //código
+      begin
+        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR CÓDIGO!';
+        edt_pesquisa.NumbersOnly:= true;
+        edt_pesquisa.Enabled:= true;
+        edt_pesquisa.Clear;
+      end;
+    1:  //país
+      begin
+        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR PAÍS!';
+        edt_pesquisa.NumbersOnly:= false;
+        edt_pesquisa.Enabled:= true;
+        edt_pesquisa.Clear;
+      end;
+    2:  //estado
+      begin
+        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR ESTADO!';
+        edt_pesquisa.NumbersOnly:= false;
+        edt_pesquisa.Enabled:= true;
+        edt_pesquisa.Clear;
+      end;
+    3: //todos
+      begin
+        edt_pesquisa.NumbersOnly:= false;
+        edt_pesquisa.Enabled:= false;
+        edt_pesquisa.Clear;
+      end;
+  end;
 end;
 
 end.

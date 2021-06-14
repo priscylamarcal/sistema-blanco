@@ -3850,8 +3850,8 @@
         OnClick = spb_cidadesClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
-        ExplicitTop = 0
-        ExplicitWidth = 116
+        ExplicitLeft = 5
+        ExplicitTop = 35
       end
       object spb_estados: TSpeedButton
         Left = 0
@@ -3872,6 +3872,7 @@
         OnClick = spb_estadosClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
+        ExplicitLeft = -8
         ExplicitTop = 35
       end
       object spb_paises: TSpeedButton

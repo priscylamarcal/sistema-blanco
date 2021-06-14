@@ -778,6 +778,7 @@
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphTop
           ParentFont = False
+          OnClick = spb_rapido_vendasClick
           OnMouseEnter = spb_rapido_vendasMouseEnter
           OnMouseLeave = spb_rapido_vendasMouseLeave
           ExplicitTop = 50
@@ -1205,6 +1206,7 @@
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphTop
           ParentFont = False
+          OnClick = spb_rapido_clientesClick
           OnMouseEnter = spb_rapido_vendasMouseEnter
           OnMouseLeave = spb_rapido_vendasMouseLeave
         end
@@ -1630,6 +1632,7 @@
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphTop
           ParentFont = False
+          OnClick = spb_rapido_roupaClick
           OnMouseEnter = spb_rapido_vendasMouseEnter
           OnMouseLeave = spb_rapido_vendasMouseLeave
           ExplicitLeft = 48
@@ -2494,6 +2497,7 @@
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphTop
           ParentFont = False
+          OnClick = spb_rapido_contas_receberClick
           OnMouseEnter = spb_rapido_vendasMouseEnter
           OnMouseLeave = spb_rapido_vendasMouseLeave
           ExplicitLeft = 48
@@ -2923,6 +2927,7 @@
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           Layout = blGlyphTop
           ParentFont = False
+          OnClick = spb_rapido_contas_pagarClick
           OnMouseEnter = spb_rapido_vendasMouseEnter
           OnMouseLeave = spb_rapido_vendasMouseLeave
           ExplicitHeight = 111
@@ -2951,7 +2956,7 @@
         OnMouseEnter = pnl_topoMouseEnter
         object spb_menu_financeiro: TSpeedButton
           Tag = 3
-          Left = 300
+          Left = 600
           Top = 0
           Width = 170
           Height = 34
@@ -3066,10 +3071,11 @@
           ParentFont = False
           OnMouseEnter = spb_menu_localidadeMouseEnter
           OnMouseLeave = spb_menu_localidadeMouseLeave
+          ExplicitLeft = 300
         end
         object spb_menu_roupas: TSpeedButton
           Tag = 4
-          Left = 470
+          Left = 300
           Top = 0
           Width = 150
           Height = 34
@@ -3184,7 +3190,8 @@
           ParentFont = False
           OnMouseEnter = spb_menu_localidadeMouseEnter
           OnMouseLeave = spb_menu_localidadeMouseLeave
-          ExplicitLeft = 450
+          ExplicitLeft = 294
+          ExplicitTop = 1
         end
         object spb_menu_estoque: TSpeedButton
           Tag = 6
@@ -3308,7 +3315,7 @@
         end
         object spb_menu_funcionarios: TSpeedButton
           Tag = 2
-          Left = 150
+          Left = 450
           Top = 0
           Width = 150
           Height = 34
@@ -3423,10 +3430,11 @@
           ParentFont = False
           OnMouseEnter = spb_menu_localidadeMouseEnter
           OnMouseLeave = spb_menu_localidadeMouseLeave
+          ExplicitLeft = 150
         end
         object spb_menu_localidade: TSpeedButton
           Tag = 1
-          Left = 0
+          Left = 150
           Top = 0
           Width = 150
           Height = 34
@@ -3541,10 +3549,11 @@
           ParentFont = False
           OnMouseEnter = spb_menu_localidadeMouseEnter
           OnMouseLeave = spb_menu_localidadeMouseLeave
+          ExplicitLeft = 0
         end
         object spb_menu_cadastros_basicos: TSpeedButton
           Tag = 5
-          Left = 620
+          Left = 0
           Top = 0
           Width = 150
           Height = 34
@@ -3659,7 +3668,8 @@
           ParentFont = False
           OnMouseEnter = spb_menu_localidadeMouseEnter
           OnMouseLeave = spb_menu_localidadeMouseLeave
-          ExplicitLeft = 600
+          ExplicitLeft = -6
+          ExplicitTop = -3
         end
       end
       object pnl_barra_topo_menu: TPanel
@@ -3812,7 +3822,7 @@
     end
     object pnl_menu_localidades: TPanel
       Tag = 1
-      Left = 0
+      Left = 157
       Top = 76
       Width = 150
       Height = 125
@@ -3823,7 +3833,7 @@
       OnMouseEnter = spb_menu_localidadeMouseEnter
       object spb_cidades: TSpeedButton
         Left = 0
-        Top = 82
+        Top = 41
         Width = 146
         Height = 41
         Cursor = crHandPoint
@@ -3840,12 +3850,12 @@
         OnClick = spb_cidadesClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
-        ExplicitTop = 0
-        ExplicitWidth = 116
+        ExplicitLeft = 5
+        ExplicitTop = 35
       end
       object spb_estados: TSpeedButton
         Left = 0
-        Top = 41
+        Top = 82
         Width = 146
         Height = 41
         Cursor = crHandPoint
@@ -3883,13 +3893,13 @@
         OnClick = spb_paisesClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
-        ExplicitTop = 8
-        ExplicitWidth = 116
+        ExplicitLeft = 2
+        ExplicitTop = 3
       end
     end
     object pnl_menu_produtos: TPanel
       Tag = 4
-      Left = 450
+      Left = 314
       Top = 76
       Width = 150
       Height = 245
@@ -4028,7 +4038,7 @@
     end
     object pnl_funcionarios: TPanel
       Tag = 2
-      Left = 154
+      Left = 458
       Top = 76
       Width = 150
       Height = 125
@@ -4038,7 +4048,7 @@
       Visible = False
       object spb_departamentos: TSpeedButton
         Left = 0
-        Top = 41
+        Top = 0
         Width = 146
         Height = 41
         Cursor = crHandPoint
@@ -4055,11 +4065,12 @@
         OnClick = spb_departamentosClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
-        ExplicitTop = 35
+        ExplicitLeft = -2
+        ExplicitTop = 3
       end
       object spb_cargos: TSpeedButton
         Left = 0
-        Top = 0
+        Top = 41
         Width = 146
         Height = 41
         Cursor = crHandPoint
@@ -4076,8 +4087,7 @@
         OnClick = spb_cargosClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
-        ExplicitLeft = 39
-        ExplicitTop = -4
+        ExplicitTop = 56
       end
       object spb_funcionários: TSpeedButton
         Left = 0
@@ -4103,7 +4113,7 @@
     end
     object pnl_financeiro: TPanel
       Tag = 3
-      Left = 298
+      Left = 610
       Top = 76
       Width = 170
       Height = 207
@@ -4119,6 +4129,7 @@
         Cursor = crHandPoint
         Align = alTop
         Caption = 'Contas a Pagar'
+        Enabled = False
         Flat = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGray
@@ -4185,6 +4196,7 @@
         Cursor = crHandPoint
         Align = alTop
         Caption = 'Contas a Receber'
+        Enabled = False
         Flat = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGray
@@ -4207,6 +4219,7 @@
         Cursor = crHandPoint
         Align = alTop
         Caption = 'Vendas'
+        Enabled = False
         Flat = True
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clGray
@@ -4224,7 +4237,7 @@
     end
     object pnl_cadastros_basicos: TPanel
       Tag = 5
-      Left = 604
+      Left = 4
       Top = 76
       Width = 150
       Height = 125
@@ -4234,7 +4247,7 @@
       Visible = False
       object spb_clientes: TSpeedButton
         Left = 0
-        Top = 41
+        Top = 82
         Width = 146
         Height = 41
         Cursor = crHandPoint
@@ -4278,7 +4291,7 @@
       end
       object spb_tipos_contato: TSpeedButton
         Left = 0
-        Top = 82
+        Top = 41
         Width = 146
         Height = 41
         Cursor = crHandPoint
@@ -4295,7 +4308,7 @@
         OnClick = spb_tipos_contatoClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
-        ExplicitTop = 90
+        ExplicitLeft = -1
       end
     end
   end

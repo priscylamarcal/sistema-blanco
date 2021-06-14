@@ -1,4 +1,4 @@
-unit uConsultaPaises;
+unit uConsultaEstados;
 
 interface
 
@@ -6,20 +6,21 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uConsultaPai, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.Buttons, Vcl.StdCtrls, campoEdit, ComboBox, Vcl.ExtCtrls,
-  uCadastroPaises,
-  uPaises,
-  uCtrlPaises, uFilterSearch;
+  uCadastroEstados,
+  uCtrlEstados,
+  uEstados, uFilterSearch;
 
 type
-  Tform_consulta_paises = class(Tform_consulta_pai)
-    procedure spb_botao_pesquisarClick(Sender: TObject);
+  Tform_consulta_estados = class(Tform_consulta_pai)
     procedure FormShow(Sender: TObject);
+    procedure spb_botao_pesquisarClick(Sender: TObject);
+
   private
     { Private declarations }
-    oCadastroPaises : Tform_cadastro_paises;
+    oCadastroEstados : Tform_cadastro_estados;
 
-    oPais : Paises;
-    aCtrlPaises : ctrlPaises;
+    oEstado : Estados;
+    aCtrlEstados : ctrlEstados;
   public
     { Public declarations }
     procedure novo;                                           override;
@@ -28,66 +29,74 @@ type
     procedure sair;                                           override;
     procedure pesquisar;                                      override;
     procedure conhecaObj ( pCtrl : TObject; pObj : TObject ); override;
-    procedure setFrmCadastro ( pObj : TObject );              override;
+    procedure setFrmCadastro ( pObj : TObject );                  override;
     procedure tipoFiltro;                                     override;
   end;
 
 var
-  form_consulta_paises: Tform_consulta_paises;
+  form_consulta_estados: Tform_consulta_estados;
 
 implementation
 
 {$R *.dfm}
 
-{ Tform_consulta_paises }
+{ Tform_consulta_estados }
 
-procedure Tform_consulta_paises.alterar;
+procedure Tform_consulta_estados.alterar;
+var form : Tform_cadastro_estados;
 begin
   inherited;
-  aCtrlPaises.carregar(oPais);
-  oCadastroPaises.conhecaObj( aCtrlPaises, oPais );
-  oCadastroPaises.ShowModal;
-end;
+  aCtrlEstados.carregar( oEstado );
+  oCadastroEstados.conhecaObj( aCtrlEstados, oEstado );
 
-procedure Tform_consulta_paises.conhecaObj(pCtrl, pObj: TObject);
-begin
-  inherited;
-  oPais:= Paises( pObj );
-  aCtrlPaises:= ctrlPaises( pCtrl );
+  oCadastroEstados.Caption:= 'Alteração de Estado';
 
-  Self.DBGrid.DataSource:= TDataSource( aCtrlPaises.getDS );
-end;
-
-procedure Tform_consulta_paises.excluir;
-begin
-  inherited;
-
-end;
-
-procedure Tform_consulta_paises.FormShow(Sender: TObject);
-begin
-  inherited;
-  combobox_tipo_filtro.ItemIndex:= 4;
-  edt_pesquisa.Clear;
-  pesquisar;   inherited;
-end;
-
-procedure Tform_consulta_paises.novo;
-var form : Tform_cadastro_paises;
-begin
-  inherited;
-  oCadastroPaises.conhecaObj( aCtrlPaises, oPais );
-  oCadastroPaises.limpaEdt;
-  oCadastroPaises.ShowModal;
+  oCadastroEstados.ShowModal;
 
   if form.salvou then
-  begin
     Self.pesquisar;      inherited;
-  end;
 
 end;
 
-procedure Tform_consulta_paises.pesquisar;
+procedure Tform_consulta_estados.conhecaObj(pCtrl, pObj: TObject);
+begin
+  inherited;
+  oEstado:= Estados( pobj );
+  aCtrlEstados:= ctrlEstados( pCtrl );
+
+  Self.DBGrid.DataSource:= TDataSource( aCtrlEstados.getDS );
+end;
+
+procedure Tform_consulta_estados.excluir;
+begin
+  inherited;
+
+end;
+
+procedure Tform_consulta_estados.FormShow(Sender: TObject);
+begin
+  inherited;
+  combobox_tipo_filtro.ItemIndex:= 3;
+  edt_pesquisa.Clear;
+  self.pesquisar;   inherited;
+end;
+
+procedure Tform_consulta_estados.novo;
+var form : Tform_cadastro_estados;
+begin
+  inherited;
+  oCadastroEstados.conhecaObj( aCtrlEstados, oEstado );
+  oCadastroEstados.limpaEdt;
+
+  oCadastroEstados.Caption:= 'Cadastro de Estado';
+
+  oCadastroEstados.ShowModal;
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
+end;
+
+procedure Tform_consulta_estados.pesquisar;
 var vFilter : TFilterSearch;
     pchave : string;
 begin
@@ -109,7 +118,6 @@ begin
           vFilter.TipoConsulta:= TpCCodigo;
           vFilter.Codigo:= StrToInt(edt_pesquisa.Text);
         end;
-
     1:
         begin
           if Length( edt_pesquisa.Text ) < 3 then
@@ -123,34 +131,23 @@ begin
         end;
     2:
         begin
-          if edt_pesquisa.Text = '' then
+          if Length( edt_pesquisa.Text ) < 3 then
           begin
-            MessageDlg( 'Campo do filtro não pode ser vazio!', MtInformation, [ MbOK ], 0 );
+            MessageDlg( 'Digite ao menos 3 caracteres para consulta!', MtInformation, [ MbOK ], 0 );
             edt_pesquisa.SetFocus;
             Exit;
           end;
-          VFilter.TipoConsulta := TpCDDI;
+          VFilter.TipoConsulta := TpCPais;
           VFilter.DDI    := Uppercase( edt_pesquisa.Text );
         end;
-    3:
-        begin
-          if edt_pesquisa.Text = '' then
-          begin
-            MessageDlg( 'Campo do filtro não pode ser vazio!', MtInformation, [ MbOK ], 0 );
-            edt_pesquisa.SetFocus;
-            Exit;
-          end;
-          VFilter.TipoConsulta := TpCMoeda;
-          VFilter.Moeda    := Uppercase( edt_pesquisa.Text );
-        end;
-      4:
+      3:
         begin
           VFilter.TipoConsulta := TpCTODOS;
         end;
     end;
 
   finally
-    aCtrlPaises.pesquisar(VFilter, pchave);
+    aCtrlEstados.pesquisar(VFilter, pchave);
     VFilter.Free;
   end;
     Except
@@ -159,30 +156,29 @@ begin
     End;
 end;
 
-procedure Tform_consulta_paises.sair;
+procedure Tform_consulta_estados.sair;
 begin
   inherited;
 
 end;
 
-procedure Tform_consulta_paises.setFrmCadastro(pObj: TObject);
-var form : Tform_cadastro_paises;
+procedure Tform_consulta_estados.setFrmCadastro(pObj: TObject);
+var form : Tform_cadastro_estados;
 begin
   inherited;
+  oCadastroEstados:= Tform_cadastro_estados ( pObj );
 
-  //cast do objeto
-  oCadastroPaises:= Tform_cadastro_paises( pObj );
-    if form.salvou then
-     self.pesquisar; inherited;
+  if form.salvou then
+    Self.pesquisar;      inherited;
 end;
 
-procedure Tform_consulta_paises.spb_botao_pesquisarClick(Sender: TObject);
+procedure Tform_consulta_estados.spb_botao_pesquisarClick(Sender: TObject);
 begin
   pesquisar;
   inherited;
 end;
 
-procedure Tform_consulta_paises.tipoFiltro;
+procedure Tform_consulta_estados.tipoFiltro;
 begin
   inherited;
   case combobox_tipo_filtro.ItemIndex of
@@ -200,21 +196,14 @@ begin
         edt_pesquisa.Enabled:= true;
         edt_pesquisa.Clear;
       end;
-    2:  //ddi
+    2:  //estado
       begin
-        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR DDI!';
+        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR ESTADO!';
         edt_pesquisa.NumbersOnly:= false;
         edt_pesquisa.Enabled:= true;
         edt_pesquisa.Clear;
       end;
-    3:  //moeda
-      begin
-        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR MOEDA!';
-        edt_pesquisa.NumbersOnly:= false;
-        edt_pesquisa.Enabled:= true;
-        edt_pesquisa.Clear;
-      end;
-    4: //todos
+    3: //todos
       begin
         edt_pesquisa.NumbersOnly:= false;
         edt_pesquisa.Enabled:= false;
