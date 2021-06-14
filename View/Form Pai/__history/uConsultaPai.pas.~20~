@@ -47,7 +47,9 @@ type
 
     procedure DBGridDrawColumnCell(Sender: TObject; const Rect: TRect;
   DataCol: Integer; Column: TColumn; State: TGridDrawState);
+
     procedure FormShow(Sender: TObject);
+
     procedure btn_botao_novoClick(Sender: TObject);
     procedure btn_botao_alterarClick(Sender: TObject);
     procedure btn_botao_excluirClick(Sender: TObject);
@@ -68,9 +70,10 @@ type
     procedure excluir;                                          virtual;
     procedure sair;                                             virtual;
     procedure pesquisar;                                        virtual;
-    procedure conhecaObj ( pObj : TObject; pCtrl : TObject );   virtual;
+    procedure conhecaObj ( pCtrl : TObject; pObj : TObject );   virtual;
     procedure setFrmCadastro ( pObj : TObject );                virtual;
     procedure tipoFiltro;                                       virtual;
+    function retornaObj : TObject;                              virtual;
   end;
 
 var
@@ -101,7 +104,7 @@ begin
   tipoFiltro;
 end;
 
-procedure Tform_consulta_pai.conhecaObj(pObj, pCtrl: TObject);
+procedure Tform_consulta_pai.conhecaObj(pCtrl, pObj: TObject);
 begin
 
 end;
@@ -138,6 +141,7 @@ end;
 procedure Tform_consulta_pai.FormShow(Sender: TObject);
 begin
  // prcAjustarColunasGrid (DBGrid);
+
   prcAjustaTamanhoLinha(DBGrid);
 
   tipoFiltro;
@@ -150,7 +154,7 @@ end;
 
 procedure Tform_consulta_pai.pesquisar;
 begin
-  pesquisar;
+
 end;
 
 procedure Tform_consulta_pai.btn_botao_excluirClick(Sender: TObject);
@@ -176,6 +180,7 @@ end;
 procedure Tform_consulta_pai.btn_botao_alterarClick(Sender: TObject);
 begin
   alterar;
+  prcAjustaTamanhoLinha(DBGrid);
 end;
 
 procedure Tform_consulta_pai.btn_botao_alterarMouseEnter(Sender: TObject);
@@ -191,6 +196,7 @@ end;
 procedure Tform_consulta_pai.btn_botao_novoClick(Sender: TObject);
 begin
   novo;
+  prcAjustaTamanhoLinha(DBGrid);
 end;
 
 procedure Tform_consulta_pai.btn_botao_novoMouseEnter(Sender: TObject);
@@ -210,12 +216,12 @@ end;
 
 procedure Tform_consulta_pai.setFrmCadastro(pObj: TObject);
 begin
-
+  prcAjustaTamanhoLinha(DBGrid);
 end;
 
 procedure Tform_consulta_pai.spb_botao_pesquisarClick(Sender: TObject);
 begin
-prcAjustaTamanhoLinha(DBGrid);
+  prcAjustaTamanhoLinha(DBGrid);
 end;
 
 procedure Tform_consulta_pai.spb_botao_pesquisarMouseEnter(Sender: TObject);
