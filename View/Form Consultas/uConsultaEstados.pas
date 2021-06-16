@@ -64,7 +64,7 @@ begin
   oEstado:= Estados( pobj );
   aCtrlEstados:= ctrlEstados( pCtrl );
 
- // Self.DBGrid.DataSource:= TDataSource( aCtrlEstados.getDS );
+  self.DBGrid.DataSource:= TDataSource( aCtrlEstados.getDS );
 end;
 
 procedure Tform_consulta_estados.excluir;

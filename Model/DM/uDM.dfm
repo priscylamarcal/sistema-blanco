@@ -442,4 +442,58 @@ object DM: TDM
     Left = 112
     Top = 192
   end
+  object QEstados: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from ESTADOS')
+    Left = 200
+    Top = 192
+    object QEstadosCODESTADO: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODESTADO'
+      Origin = 'CODESTADO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QEstadosESTADO: TStringField
+      DisplayLabel = 'Estado'
+      DisplayWidth = 200
+      FieldName = 'ESTADO'
+      Origin = 'ESTADO'
+      Required = True
+      Size = 80
+    end
+    object QEstadosUF: TStringField
+      DisplayWidth = 10
+      FieldName = 'UF'
+      Origin = 'UF'
+      Size = 3
+    end
+    object QEstadosDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QEstadosULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QEstadosCODUSU: TIntegerField
+      FieldName = 'CODUSU'
+      Origin = 'CODUSU'
+      Visible = False
+    end
+    object QEstadosCODPAIS: TIntegerField
+      FieldName = 'CODPAIS'
+      Origin = 'CODPAIS'
+      Required = True
+    end
+  end
+  object DSEstados: TDataSource
+    DataSet = QEstados
+    Left = 256
+    Top = 192
+  end
 end

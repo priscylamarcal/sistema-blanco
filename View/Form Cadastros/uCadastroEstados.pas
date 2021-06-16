@@ -5,7 +5,11 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroPai, Vcl.StdCtrls, campoEdit,
-  Vcl.Buttons, Vcl.ExtCtrls, uEstados, uCtrlEstados, uConsultaPaises, uPaises,
+  Vcl.Buttons, Vcl.ExtCtrls,
+  uEstados,
+  uCtrlEstados,
+  uConsultaPaises,
+  uPaises,
   uCtrlPaises;
 
 type
@@ -26,6 +30,7 @@ type
     { Private declarations }
     oEstado : Estados;
     aCtrlEstados : ctrlEstados;
+
     aConsultaPaises : Tform_consulta_paises;
   public
     { Public declarations }
@@ -37,7 +42,7 @@ type
     procedure bloqueiaEdt;    override;
     procedure desbloqueiaEdt; override;
     function validaFormulario : Boolean; override;
-    procedure setFrmConsultaPaises ( PObj: TObject );
+    procedure setFrmConsultaPaises ( pConsulta : TObject );
   end;
 
 var
@@ -59,9 +64,16 @@ begin
 end;
 
 procedure Tform_cadastro_estados.btn_pesquisaClick(Sender: TObject);
+var aux : string;
 begin
-  inherited;
+ // inherited;
+  aux := aConsultaPaises.btn_botao_sair.Caption;
+  aConsultaPaises.btn_botao_sair.Caption:= 'Selecionar';
+  aConsultaPaises.conhecaObj( aCtrlEstados.getCtrlPaises, oEstado.getoPais );
   aConsultaPaises.ShowModal;
+  aConsultaPaises.btn_botao_sair.Caption:= aux;
+  self.edt_cod_pais.Text:= IntToStr( oEstado.getoPais.getCodigo );
+  self.edt_pesquisar_pais_estado.Text:= oEstado.getoPais.getPais;
 end;
 
 procedure Tform_cadastro_estados.carregaEdt;
@@ -144,9 +156,9 @@ begin
   end;
 end;
 
-procedure Tform_cadastro_estados.setFrmConsultaPaises(PObj: TObject);
+procedure Tform_cadastro_estados.setFrmConsultaPaises(pConsulta : TObject);
 begin
-  aConsultaPaises:= Tform_consulta_paises( PObj );
+  aConsultaPaises:= Tform_consulta_paises( pConsulta );
 end;
 
 function Tform_cadastro_estados.validaFormulario: Boolean;
