@@ -243,6 +243,7 @@ begin
   aCtrlFormaPagamento.destrua_se;
   aCtrlTipoContato.destrua_se;
   aCtrlCidade.destrua_se;
+  aCtrlEstado.destrua_se;
 
   aDm.DisposeOf;
 end;

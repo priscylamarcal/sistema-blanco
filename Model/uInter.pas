@@ -144,9 +144,6 @@ begin
   oCadastroTiposContatos := Tform_cadastro_tipo_contato.Create(nil);
   oCadastroCondicaoPagamento := Tform_cadastro_condicao_pagamento.Create(nil);
 
-  oCadastroEstados.setFrmConsultaPaises( aConsultaPaises );
-  oCadastroCidades.setFrmConsultaEstados( aConsultaEstados );
-
   aConsultaPaises.setFrmCadastro( oCadastroPaises );
   aConsultaEstados.setFrmCadastro( oCadastroEstados );
   aConsultaCidades.setFrmCadastro( oCadastroCidades );
@@ -167,6 +164,9 @@ begin
   aConsultaClientes.setFrmCadastro( oCadastroClientes );
   aConsultaTiposContatos.setFrmCadastro( oCadastroTiposContatos );
   aConsultaCondicoesPagamentos.setFrmCadastro( oCadastroCondicaoPagamento );
+
+  oCadastroEstados.setFrmConsultaPaises( aConsultaPaises );
+  oCadastroCidades.setFrmConsultaEstados( aConsultaEstados );
 end;
 
 destructor Inter.destrua_se;

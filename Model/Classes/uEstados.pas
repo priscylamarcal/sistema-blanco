@@ -8,8 +8,8 @@ uses Classes, SysUtils,
 type Estados = class(Pai)
   private
   protected
-    estado : string[50];
-    UF     : string[2];
+    estado : string[80];
+    UF     : string[3];
     umPais : Paises;
   public
     constructor crieObj;

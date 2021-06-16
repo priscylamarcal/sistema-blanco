@@ -124,6 +124,7 @@ inherited form_cadastro_estados: Tform_cadastro_estados
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 80
         ParentFont = False
         TabOrder = 1
         MudarCor = clCream
@@ -154,6 +155,7 @@ inherited form_cadastro_estados: Tform_cadastro_estados
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 3
         ParentFont = False
         TabOrder = 2
         MudarCor = clCream

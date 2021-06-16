@@ -9,17 +9,6 @@ create table PAISES(
     codUsuAlt integer
 );
 
-create table ESTADOS(
-    codEstado integer not null primary key,
-    estado varchar(50) not null,
-    uf varchar(2) not null,
-    codPais integer not null,
-    dataCad timestamp,
-    ultAlt timestamp,
-    codUsuAlt integer,
-	constraint fk_Estado_Pais foreign key (codPais) references PAISES (codPais)
-);
-
 create table DEPARTAMENTOS(
     codDepartamento integer not null primary key,
     depatamento varchar(80) not null,
@@ -85,4 +74,15 @@ CREATE TABLE TIPOS_CONTATOS (
     DATACAD      TIMESTAMP,
     ULTALT       TIMESTAMP,
     CODUSU       INTEGER
+);
+
+CREATE TABLE ESTADOS (
+    CODESTADO  INTEGER NOT NULL PRIMARY KEY,
+    ESTADO     VARCHAR(80) NOT NULL,
+    UF         VARCHAR(3),
+    DATACAD    TIMESTAMP,
+    ULTALT     TIMESTAMP,
+    CODUSU     INTEGER,
+    CODPAIS    INTEGER NOT NULL,
+    FOREIGN KEY (CODPAIS) REFERENCES PAISES(CODPAIS)
 );

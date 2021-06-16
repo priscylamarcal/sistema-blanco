@@ -82,6 +82,15 @@ type
     QTiposContatosDATACAD: TSQLTimeStampField;
     QTiposContatosULTALT: TSQLTimeStampField;
     QTiposContatosCODUSU: TIntegerField;
+    QEstados: TFDQuery;
+    DSEstados: TDataSource;
+    QEstadosCODESTADO: TIntegerField;
+    QEstadosESTADO: TStringField;
+    QEstadosUF: TStringField;
+    QEstadosDATACAD: TSQLTimeStampField;
+    QEstadosULTALT: TSQLTimeStampField;
+    QEstadosCODUSU: TIntegerField;
+    QEstadosCODPAIS: TIntegerField;
   private
     { Private declarations }
   public

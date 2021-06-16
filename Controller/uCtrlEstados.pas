@@ -19,7 +19,6 @@ type ctrlEstados = class( Ctrl )
     function excluir ( pObj : TObject ) : string;     override;
     function carregar ( pObj : TObject ) : string;    override;
     function getCtrlPaises: TObject;
-    procedure setCtrlPaises(pCtrlPaises: TObject);
 end;
 
 implementation
@@ -33,12 +32,18 @@ end;
 
 constructor ctrlEstados.crieObj;
 begin
-  aDaoEstados:= daoEstados.crieObj;
+    aDaoEstados:= daoEstados.crieObj;
+//  aCtrlPaises:= ctrlPaises.crieObj;
+
+
 end;
 
 destructor ctrlEstados.destrua_se;
 begin
-  aDaoEstados.destrua_se;
+    aDaoEstados.destrua_se;
+//  aCtrlPaises.destrua_se;
+
+
 end;
 
 function ctrlEstados.excluir(pObj: TObject): string;
@@ -53,7 +58,10 @@ end;
 
 function ctrlEstados.getDS: TObject;
 begin
-  Result:= aDaoEstados.getDS;
+   Result:= aDaoEstados.getDS;
+ // Result:= aCtrlPaises.getDS;
+
+
 end;
 
 function ctrlEstados.pesquisar(AFilter: TFilterSearch; pChave: string): string;
@@ -64,11 +72,6 @@ end;
 function ctrlEstados.salvar(pObj: TObject): string;
 begin
   aDaoEstados.salvar( pObj );
-end;
-
-procedure ctrlEstados.setCtrlPaises(pCtrlPaises: TObject);
-begin
-  aCtrlPaises:= ctrlPaises( pCtrlPaises );
 end;
 
 procedure ctrlEstados.setDM(pDM: TObject);

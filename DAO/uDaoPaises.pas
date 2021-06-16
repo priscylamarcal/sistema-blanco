@@ -30,7 +30,7 @@ begin
   mPais.setDDI( aDM.QPaises.FieldByName('DDI').AsString );
   mPais.setSigla( aDM.QPaises.FieldByName('SIGLA').AsString );
   mPais.setDataCad( aDM.QPaises.FieldByName('DATACAD').AsDateTime );
-  mPais.setUltAlt( aDM.QPaises.FieldByName('ULTALT').AsDateTime );
+   mPais.setUltAlt( aDM.QPaises.FieldByName('ULTALT').AsDateTime );
 end;
 
 constructor daoPaises.crieObj;

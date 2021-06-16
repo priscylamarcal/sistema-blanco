@@ -6,9 +6,16 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus,
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.StdCtrls, Vcl.Imaging.pngimage,
-  uPaises, uEstados, uCidades, uDepartamentos, uCores, uColecoes,
+
+  uPaises, uEstados, uCidades, uDepartamentos, uCores, uColecoes, uGruposRoupas,
+  uMarcas, uTamanhos, uFormaPagamento, uTiposContatos,
+
   uInter,
-  uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores,
+
+  uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores, uCtrlColecoes,
+  uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
+  uCtrlTiposContatos, uCtrlCidades,
+
   uDM;
 
 type
@@ -129,6 +136,11 @@ type
     oDepartamento : Departamentos;
     aCor          : Cores;
     aColecao      : Colecoes;
+    oGrupoRoupa   : GruposRoupas;
+    aMarca        : Marcas;
+    oTamanho      : Tamanhos;
+    aFormaPagamento : FormasPagamentos;
+    oTipoContato : TiposContatos;
 
     aInter  : Inter;
 
@@ -136,12 +148,20 @@ type
     aCtrlEstado       : ctrlEstados;
     aCtrlDepartamento : ctrlDepartamentos;
     aCtrlCor          : ctrlCores;
+    aCtrlColecao      : ctrlColecoes;
+    aCtrlGrupoRoupa   : ctrlGruposRoupas;
+    aCtrlMarca        : ctrlMarcas;
+    aCtrlTamanho      : ctrlTamanhos;
+    aCtrlFormaPagamento : ctrlFormasPagamentos;
+    aCtrlTipoContato : ctrlTiposContatos;
+    aCtrlCidade       : ctrlCidades;
 
     aDm : TDM;
 
     procedure focar_botao( barraPainel: Tpanel; botao: TspeedButton;
       focar: boolean; local: string );
     procedure controlar_menu ( botao : TSpeedButton; ativar : Boolean );
+  protected
   public
     { Public declarations }
   end;
@@ -164,11 +184,23 @@ begin
   oDepartamento:= Departamentos.crieObj;
   aCor:= Cores.crieObj;
   aColecao:= Colecoes.crieObj;
+  oGrupoRoupa:= gruposRoupas.crieObj;
+  aMarca:= Marcas.crieObj;
+  oTamanho:= Tamanhos.crieObj;
+  aFormaPagamento:= FormasPagamentos.crieObj;
+  oTipoContato:= TiposContatos.crieObj;
 
   aCtrlPais:= ctrlPaises.crieObj;
   aCtrlEstado:= ctrlEstados.crieObj;
   aCtrlDepartamento:= ctrlDepartamentos.crieObj;
   aCtrlCor:= ctrlCores.crieObj;
+  aCtrlColecao:= ctrlColecoes.crieObj;
+  aCtrlGrupoRoupa:= ctrlGruposRoupas.crieObj;
+  aCtrlMarca:= ctrlMarcas.crieObj;
+  aCtrlTamanho:= ctrlTamanhos.crieObj;
+  aCtrlFormaPagamento:= ctrlFormasPagamentos.crieObj;
+  aCtrlTipoContato:= ctrlTiposContatos.crieObj;
+  aCtrlCidade:= ctrlCidades.crieObj;
 
   aDm:= TDM.Create(nil);
 
@@ -176,6 +208,13 @@ begin
   aCtrlEstado.setDM( aDm );
   aCtrlDepartamento.setDM( aDm );
   aCtrlCor.setDM( aDm );
+  aCtrlColecao.setDM( aDm );
+  aCtrlGrupoRoupa.setDM( aDm );
+  aCtrlMarca.setDM( aDm );
+  aCtrlTamanho.setDM( aDm );
+  aCtrlFormaPagamento.setDM( aDm );
+  aCtrlTipoContato.setDM( aDm );
+  aCtrlCidade.setDM( aDm );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -188,10 +227,22 @@ begin
   oDepartamento.destrua_se;
   aCor.destrua_se;
   aColecao.destrua_se;
+  oGrupoRoupa.destrua_se;
+  aMarca.destrua_se;
+  oTamanho.destrua_se;
+  aFormaPagamento.destrua_se;
+  oTipoContato.destrua_se;
 
   aCtrlPais.destrua_se;
   aCtrlDepartamento.destrua_se;
   aCtrlCor.destrua_se;
+  aCtrlColecao.destrua_se;
+  aCtrlGrupoRoupa.destrua_se;
+  aCtrlMarca.destrua_se;
+  aCtrlTamanho.destrua_se;
+  aCtrlFormaPagamento.destrua_se;
+  aCtrlTipoContato.destrua_se;
+  aCtrlCidade.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -223,7 +274,7 @@ end;
 
 procedure Tform_principal.spb_cidadesClick(Sender: TObject);
 begin
-  aInter.PDCidades( nil, nil );
+  aInter.PDCidades( aCtrlCidade, aCidade );
 end;
 
 procedure Tform_principal.spb_clientesClick(Sender: TObject);
@@ -233,7 +284,7 @@ end;
 
 procedure Tform_principal.spb_colecaoClick(Sender: TObject);
 begin
-  aInter.PDColecoes(nil, nil);
+  aInter.PDColecoes(aCtrlColecao, aColecao);
 end;
 
 procedure Tform_principal.spb_condicoes_pagamentoClick(Sender: TObject);
@@ -268,7 +319,7 @@ end;
 
 procedure Tform_principal.spb_formas_pagamentoClick(Sender: TObject);
 begin
-  aInter.PDFormasPagamentos(nil, nil);
+  aInter.PDFormasPagamentos(aCtrlFormaPagamento, aFormaPagamento);
 end;
 
 procedure Tform_principal.spb_fornecedoresClick(Sender: TObject);
@@ -283,7 +334,7 @@ end;
 
 procedure Tform_principal.spb_grupo_roupasClick(Sender: TObject);
 begin
-  aInter.PDGruposProdutos(nil, nil);
+  aInter.PDGruposProdutos( aCtrlGrupoRoupa, oGrupoRoupa );
 end;
 
 procedure Tform_principal.spb_paisesClick(Sender: TObject);
@@ -298,12 +349,12 @@ end;
 
 procedure Tform_principal.spb_tamanhoClick(Sender: TObject);
 begin
-  aInter.PDTamanhos(nil, nil);
+  aInter.PDTamanhos( aCtrlTamanho, oTamanho );
 end;
 
 procedure Tform_principal.spb_tipos_contatoClick(Sender: TObject);
 begin
-  aInter.PDTiposContatos(nil, nil);
+  aInter.PDTiposContatos( aCtrlTipoContato , oTipoContato );
 end;
 
 procedure Tform_principal.spb_vendasClick(Sender: TObject);
@@ -314,7 +365,7 @@ end;
 
 procedure Tform_principal.spb_marcaClick(Sender: TObject);
 begin
-  aInter.PDMarcas(nil, nil);
+  aInter.PDMarcas( aCtrlMarca, aMarca );
 end;
 
 procedure Tform_principal.spb_menu_estoqueClick(Sender: TObject);
