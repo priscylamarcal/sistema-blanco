@@ -23,6 +23,7 @@ object DM: TDM
     Top = 8
   end
   object QPaises: TFDQuery
+    Active = True
     Connection = Conexao
     Transaction = Transacao
     SQL.Strings = (
@@ -88,6 +89,7 @@ object DM: TDM
     Top = 64
   end
   object QDepartamentos: TFDQuery
+    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from departamentos')
@@ -130,6 +132,7 @@ object DM: TDM
     Top = 64
   end
   object QCores: TFDQuery
+    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from cores')
@@ -167,6 +170,7 @@ object DM: TDM
     Top = 64
   end
   object QColecoes: TFDQuery
+    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from COLECOES')
@@ -209,6 +213,7 @@ object DM: TDM
     Top = 64
   end
   object QGruposRoupas: TFDQuery
+    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from GRUPOS_ROUPAS')
@@ -251,6 +256,7 @@ object DM: TDM
     Top = 128
   end
   object QMarcas: TFDQuery
+    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from MARCAS')
@@ -293,6 +299,7 @@ object DM: TDM
     Top = 128
   end
   object QTamanhos: TFDQuery
+    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from SIGLA_TAMANHOS')
@@ -458,7 +465,7 @@ object DM: TDM
     end
     object QEstadosESTADO: TStringField
       DisplayLabel = 'Estado'
-      DisplayWidth = 200
+      DisplayWidth = 150
       FieldName = 'ESTADO'
       Origin = 'ESTADO'
       Required = True
@@ -489,6 +496,17 @@ object DM: TDM
       FieldName = 'CODPAIS'
       Origin = 'CODPAIS'
       Required = True
+    end
+    object QEstadosNOMEPAIS: TStringField
+      DisplayWidth = 50
+      FieldKind = fkLookup
+      FieldName = 'NOMEPAIS'
+      LookupDataSet = QPaises
+      LookupKeyFields = 'CODPAIS'
+      LookupResultField = 'PAIS'
+      KeyFields = 'CODPAIS'
+      Size = 80
+      Lookup = True
     end
   end
   object DSEstados: TDataSource

@@ -122,24 +122,25 @@ begin
         begin
           if Length( edt_pesquisa.Text ) < 3 then
           begin
-            MessageDlg( 'Digite ao menos 3 caracteres para consulta!', MtInformation, [ MbOK ], 0 );
-            edt_pesquisa.SetFocus;
-            Exit;
-          end;
-          VFilter.TipoConsulta := TpCParam;
-          VFilter.Parametro    := Uppercase( edt_pesquisa.Text );
-        end;
-    2:
-        begin
-          if Length( edt_pesquisa.Text ) < 3 then
-          begin
-            MessageDlg( 'Digite ao menos 3 caracteres para consulta!', MtInformation, [ MbOK ], 0 );
+            MessageDlg( 'EM ESPERA!', MtInformation, [ MbOK ], 0 );
             edt_pesquisa.SetFocus;
             Exit;
           end;
           VFilter.TipoConsulta := TpCPais;
           VFilter.Pais    := Uppercase( edt_pesquisa.Text );
         end;
+    2:
+        begin
+          if edt_pesquisa.Text = '' then
+          begin
+            MessageDlg( 'Campo do filtro não pode ser vazio!', MtInformation, [ MbOK ], 0 );
+            edt_pesquisa.SetFocus;
+            Exit;
+          end;
+          VFilter.TipoConsulta := TpCParam;
+          VFilter.Parametro    := Uppercase( edt_pesquisa.Text );
+        end;
+
       3:
         begin
           VFilter.TipoConsulta := TpCTODOS;

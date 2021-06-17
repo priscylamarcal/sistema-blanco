@@ -215,6 +215,8 @@ begin
   aCtrlFormaPagamento.setDM( aDm );
   aCtrlTipoContato.setDM( aDm );
   aCtrlCidade.setDM( aDm );
+
+  aCtrlEstado.setCtrlPaises( aCtrlPais );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
