@@ -102,10 +102,10 @@ begin
        aDM.QPaises.Edit;
 
     aDM.QPaises.FieldByName('CODPAIS').AsInteger:= mPais.getCodigo;
-    aDM.QPaises.FieldByName('PAIS').AsAnsiString:= mPais.getPais;
-    aDM.QPaises.FieldByName('DDI').AsAnsiString:= mPais.getDDI;
-    aDM.QPaises.FieldByName('SIGLA').AsAnsiString:= mPais.getSigla;
-    aDM.QPaises.FieldByName('MOEDA').AsAnsiString:= mPais.getMoeda;
+    aDM.QPaises.FieldByName('PAIS').AsString:= mPais.getPais;
+    aDM.QPaises.FieldByName('DDI').AsString:= mPais.getDDI;
+    aDM.QPaises.FieldByName('SIGLA').AsString:= mPais.getSigla;
+    aDM.QPaises.FieldByName('MOEDA').AsString:= mPais.getMoeda;
     aDM.QPaises.FieldByName('DATACAD').AsDateTime:= mPais.getDataCad;
     //aDM.QPaises.FieldByName('ULTALT').AsDateTime:= mPais.getUltAlt;
 

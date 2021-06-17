@@ -164,10 +164,19 @@ begin
 end;
 
 procedure Tform_consulta_paises.sair;
-
+var mPais : Paises;
 begin
-  inherited;
+  if self.btn_botao_sair.Caption= 'Selecionar' then
+  begin
+    mPais:= Paises.crieObj;
+    aCtrlPaises.carregar( TObject( mPais) );
+    oPais.setCodigo( mPais.getCodigo );
+    oPais.setPais( mPais.getPais );
 
+    inherited sair;
+  end
+  else
+    inherited sair;
 end;
 
 procedure Tform_consulta_paises.setFrmCadastro(pObj: TObject);
