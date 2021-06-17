@@ -30,6 +30,7 @@ begin
   mPais.setDDI( aDM.QPaises.FieldByName('DDI').AsString );
   mPais.setSigla( aDM.QPaises.FieldByName('SIGLA').AsString );
   mPais.setDataCad( aDM.QPaises.FieldByName('DATACAD').AsDateTime );
+   mPais.setUltAlt( aDM.QPaises.FieldByName('ULTALT').AsDateTime );
 end;
 
 constructor daoPaises.crieObj;
@@ -77,7 +78,7 @@ begin
 
      TpCTODOS:
      begin
-       msql:= 'SELECT * FROM PAISES';
+       msql:= 'SELECT * FROM PAISES ORDER BY CODPAIS';
      end;
 
     end;
@@ -86,6 +87,11 @@ begin
     aDM.QPaises.SQL.Text:=msql;
     aDM.QPaises.Open;
     result:= '';
+
+    if aDM.QPaises.FieldByName('PAIS').AsString = pChave then
+       Result:= 'SIM'
+    else
+       Result:= 'NAO';
 
 end;
 
@@ -101,14 +107,17 @@ begin
        aDM.QPaises.Edit;
 
     aDM.QPaises.FieldByName('CODPAIS').AsInteger:= mPais.getCodigo;
-    aDM.QPaises.FieldByName('PAIS').AsAnsiString:= mPais.getPais;
-    aDM.QPaises.FieldByName('DDI').AsAnsiString:= mPais.getDDI;
-    aDM.QPaises.FieldByName('SIGLA').AsAnsiString:= mPais.getSigla;
+    aDM.QPaises.FieldByName('PAIS').AsString:= mPais.getPais;
+    aDM.QPaises.FieldByName('DDI').AsString:= mPais.getDDI;
+    aDM.QPaises.FieldByName('SIGLA').AsString:= mPais.getSigla;
+    aDM.QPaises.FieldByName('MOEDA').AsString:= mPais.getMoeda;
     aDM.QPaises.FieldByName('DATACAD').AsDateTime:= mPais.getDataCad;
+    //aDM.QPaises.FieldByName('ULTALT').AsDateTime:= mPais.getUltAlt;
 
     aDM.QPaises.Post;
 
     aDM.Transacao.Commit;
+
   except
     aDM.Transacao.Rollback;
   end;

@@ -2,7 +2,7 @@ unit uDaoEstados;
 
 interface
 
-uses uDAO, uFilterSearch, uEstados;
+uses uDAO, uFilterSearch, uEstados, uPaises;
 
 type daoEstados = class( DAO )
   private
@@ -24,15 +24,17 @@ uses
 { daoEstados }
 
 function daoEstados.carregar(pObj: TObject): string;
-var mEstado : Estados;
+var mEstado : Estados; mPais : Paises;
 begin
   mEstado:= Estados( pObj );
+  mPais:= mEstado.getoPais;
 
   mEstado.setCodigo( aDM.QEstados.FieldByName('CODESTADO').Value );
   mEstado.setEstado( aDM.QEstados.FieldByName('ESTADO').AsString );
   mEstado.setUF( aDM.QEstados.FieldByName('UF').AsString );
-  mEstado.getoPais.setCodigo( aDM.QEstados.FieldByName('CODPAIS').Value );
-  mEstado.getoPais.setPais( aDM.QEstados.FieldByName('PAIS').AsString );
+
+  mPais.setCodigo( aDM.QEstados.FieldByName('CODPAIS').Value );
+
   mEstado.setDataCad( aDM.QEstados.FieldByName('DATACAD').AsDateTime );
 end;
 
@@ -69,10 +71,10 @@ begin
        msql:= ( 'SELECT * FROM ESTADOS WHERE ESTADO LIKE  ' + QuotedStr( '%' + AFilter.Parametro + '%' ) );
      end;
 
-     TpCPais:
-     begin
-       msql:= ( 'SELECT CODPAIS FROM ESTADOS INNER JOIN PAISES ON ESTADOS.CODPAIS = PAIS.CODPAIS ' + QuotedStr( '%' + AFilter.Pais + '%' ) );
-     end;
+//     TpCPais:
+//     begin
+//       msql:= ( 'SELECT CODPAIS FROM ESTADOS INNER JOIN PAISES ON ESTADOS.CODPAIS = PAIS.CODPAIS =' + ( AFilter.Pais ) );
+//     end;
 
      TpCTODOS:
      begin
@@ -85,11 +87,34 @@ begin
     aDM.QEstados.SQL.Text:=msql;
     aDM.QEstados.Open;
     result:= '';
+
 end;
 
 function daoEstados.salvar(pObj: TObject): string;
+var mEstado : Estados; mPais : Paises;
 begin
+  mEstado:= Estados( pObj );
+  mPais:= mEstado.getoPais;
+  aDM.Transacao.StartTransaction;
+  try
+    if mEstado.getCodigo = 0 then
+       aDM.QEstados.Insert
+    else
+       aDM.QEstados.Edit;
 
+    aDM.QEstados.FieldByName('CODESTADO').AsInteger:= mEstado.getCodigo;
+    aDM.QEstados.FieldByName('ESTADO').AsString:= mEstado.getEstado;
+    aDM.QEstados.FieldByName('UF').AsString:= mEstado.getUF;
+    aDM.QEstados.FieldByName('CODPAIS').AsInteger:= mPais.getCodigo;
+    aDM.QEstados.FieldByName('DATACAD').AsDateTime:= mEstado.getDataCad;
+
+    aDM.QEstados.Post;
+
+    aDM.Transacao.Commit;
+
+  except
+    aDM.Transacao.Rollback;
+  end;
 end;
 
 end.

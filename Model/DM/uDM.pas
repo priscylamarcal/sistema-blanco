@@ -91,6 +91,7 @@ type
     QEstadosULTALT: TSQLTimeStampField;
     QEstadosCODUSU: TIntegerField;
     QEstadosCODPAIS: TIntegerField;
+    QEstadosNOMEPAIS: TStringField;
   private
     { Private declarations }
   public

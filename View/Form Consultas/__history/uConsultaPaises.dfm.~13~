@@ -5,10 +5,14 @@ inherited form_consulta_paises: Tform_consulta_paises
   inherited pnl_fundo: TPanel
     inherited pnl_topo: TPanel
       inherited pnl_dentro_topo: TPanel
-        inherited pnl_botao_pesquisar: TPanel
-          inherited spb_botao_pesquisar: TSpeedButton
-            OnClick = spb_botao_pesquisarClick
-          end
+        inherited combobox_tipo_filtro: TComboBox1
+          ItemIndex = 4
+          Items.Strings = (
+            'C'#211'DIGO'
+            'PA'#205'S'
+            'DDI'
+            'MOEDA'
+            'TODOS')
         end
       end
     end
