@@ -68,6 +68,48 @@ type
     QTamanhosDATACAD: TSQLTimeStampField;
     QTamanhosULTALT: TSQLTimeStampField;
     QTamanhosCODUSUALT: TIntegerField;
+    QFormasPagamentos: TFDQuery;
+    DSFormasPagamentos: TDataSource;
+    QFormasPagamentosCODFORMA: TIntegerField;
+    QFormasPagamentosFORMA: TStringField;
+    QFormasPagamentosDATACAD: TSQLTimeStampField;
+    QFormasPagamentosULTALT: TSQLTimeStampField;
+    QFormasPagamentosCODUSUALT: TIntegerField;
+    QTiposContatos: TFDQuery;
+    DSTiposContatos: TDataSource;
+    QTiposContatosCODTIPO: TIntegerField;
+    QTiposContatosTIPOCONTATO: TStringField;
+    QTiposContatosDATACAD: TSQLTimeStampField;
+    QTiposContatosULTALT: TSQLTimeStampField;
+    QTiposContatosCODUSU: TIntegerField;
+    QEstados: TFDQuery;
+    DSEstados: TDataSource;
+    QEstadosCODESTADO: TIntegerField;
+    QEstadosESTADO: TStringField;
+    QEstadosUF: TStringField;
+    QEstadosDATACAD: TSQLTimeStampField;
+    QEstadosULTALT: TSQLTimeStampField;
+    QEstadosCODUSU: TIntegerField;
+    QEstadosCODPAIS: TIntegerField;
+    QEstadosNOMEPAIS: TStringField;
+    QCidades: TFDQuery;
+    DSCidades: TDataSource;
+    QCidadesCODCIDADE: TIntegerField;
+    QCidadesCIDADE: TStringField;
+    QCidadesSIGLA: TStringField;
+    QCidadesDDD: TStringField;
+    QCidadesCODESTADO: TIntegerField;
+    QCidadesDATACAD: TSQLTimeStampField;
+    QCidadesULTALT: TSQLTimeStampField;
+    QCidadesCODUSU: TIntegerField;
+    QCargos: TFDQuery;
+    DSCargos: TDataSource;
+    QCargosCODCARGO: TIntegerField;
+    QCargosCARGO: TStringField;
+    QCargosCODDEPARTAMENTO: TIntegerField;
+    QCargosDATACAD: TSQLTimeStampField;
+    QCargosULTALT: TSQLTimeStampField;
+    QCargosCODUSU: TIntegerField;
   private
     { Private declarations }
   public

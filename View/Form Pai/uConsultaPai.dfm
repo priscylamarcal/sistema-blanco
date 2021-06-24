@@ -77,6 +77,7 @@ object form_consulta_pai: Tform_consulta_pai
           Font.Height = -13
           Font.Name = 'Tahoma'
           Font.Style = []
+          MaxLength = 100
           ParentFont = False
           TabOrder = 1
           MudarCor = clCream

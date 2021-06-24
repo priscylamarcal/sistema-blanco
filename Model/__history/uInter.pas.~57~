@@ -2,33 +2,33 @@ unit uInter;
 
 interface
 
-uses uConsultaPaises, uConsultaEstados, uConsultaCidades, uConsultaCargos, uConsultaClientes,
-     uConsultaColecoes, uConsultaCondicoesPagamentos, uConsultaContasPagar,
-     uConsultaContasReceber, uConsultaCores, uConsultaDepartamentos,
-     uConsultaFormasPagamentos, uConsultaFornecedores, uConsultaFuncionarios,
-     uConsultaGruposProdutos, uConsultaMarcas, uConsultaRoupas, uConsultaTamanhos,
-     uConsultaTiposContatos, uConsultaVendas, uConsultaEstoques,
+uses uConsulta_Paises, uConsulta_Estados, uConsulta_Cargos, uConsulta_Clientes,
+     uConsulta_Colecoes, uConsulta_CondicoesPagamentos, uConsulta_ContasPagar,
+     uConsulta_ContasReceber, uConsulta_Cores, uConsulta_Departamentos,
+     uConsulta_FormasPagamentos, uConsulta_Fornecedores, uConsulta_Funcionarios,
+     uConsulta_GruposProdutos, uConsulta_Marcas, uConsulta_Roupas, uConsulta_Tamanhos,
+     uConsulta_TiposContatos, uConsulta_Vendas, uConsulta_Estoques, uConsulta_Cidades,
 
-     uCadastroPaises, uCadastroEstados, uCadastroCidades, uCadastroFuncionarios,
+     uCadastroPaises, uCadastroEstados, uCadastroFuncionarios,
      uCadastroCargos, uCadastroDepartamentos, uCadastroFormasPagamentos,
      uCadastroCondicoesPagamentos, uCadastroVendas, uCadastroContasReceber,
      uCadastroContasPagar, uCadastroColecoes, uCadastroCores,
      uCadastroGruposProdutos, uCadastroMarcas, uCadastroTamanhos,
      uCadastroProdutos, uCadastroFornecedores, uCadastroClientes, uCadastroTiposContatos,
+     uCadastro_Cidades,
 
-     uPaises, uEstados, uCidades, uCores, uColecoes, uGruposRoupas, uMarcas,
-     uTamanhos, uFormaPagamento, uTiposContatos,
+     uPaises, uEstados, uCores, uColecoes, uGruposRoupas, uMarcas,
+     uTamanhos, uFormaPagamento, uTiposContatos, uCidades,
 
      uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores, uCtrlColecoes,
      uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
-     uCtrlTiposContatos;
+     uCtrlTiposContatos, uCtrlCidades;
 
 type Inter = class
   private
   protected
     aConsultaPaises              : Tform_consulta_paises;
     aConsultaEstados             : Tform_consulta_estados;
-    aConsultaCidades             : Tform_consulta_cidades;
     aConsultaCargos              : Tform_consulta_cargos;
     aConsultaDepartamentos       : Tform_consulta_departamentos;
     aConsultaFormasPagamentos    : Tform_consulta_formas_pagamentos;
@@ -47,10 +47,10 @@ type Inter = class
     aConsultaTiposContatos       : Tform_consulta_tipos_contatos;
     aConsultaEstoques            : Tform_consulta_estoques;
     aConsultaFuncionarios        : Tform_consulta_funcionarios;
+    aConsultaCidades             : Tform_consulta_cidades;
 
     oCadastroPaises       : Tform_cadastro_paises;
     oCadastroEstados      : Tform_cadastro_estados;
-    oCadastroCidades      : Tform_cadastro_cidades;
     oCadastroFuncionarios : Tform_cadastro_funcionario;
     oCadastroCargos       : Tform_cadastro_cargos;
     oCadastroDepartamentos : Tform_cadastro_departamento;
@@ -68,13 +68,13 @@ type Inter = class
     oCadastroClientes : Tform_cadastro_clientes;
     oCadastroTiposContatos : Tform_cadastro_tipo_contato;
     oCadastroCondicaoPagamento : Tform_cadastro_condicao_pagamento;
+    oCadastroCidade             : Tform_cadastro_cidades;
   public
     constructor crieObj;
     destructor destrua_se;
 
     procedure PDPaises ( pCtrl : TObject; pObj : Paises );
     procedure PDEstados ( pCtrl : TObject; pObj : Estados );
-    procedure PDCidades ( pCtrl : TObject; pObj : Cidades);
     procedure PDCargos ( pCtrl : TObject; pObj : TObject);
     procedure PDDepartamentos ( pCtrl : TObject; pObj : Departamentos );
     procedure PDFuncionarios ( pCtrl : TObject; pObj : TObject );
@@ -93,6 +93,7 @@ type Inter = class
     procedure PDClientes ( pCtrl : TObject; pObj : TObject );
     procedure PDTiposContatos ( pCtrl : TObject; pObj : TiposContatos );
     procedure PDEstoques ( pCtrl : TObject; pObj : TObject );
+    procedure PDCidades ( pCtrl : TObject; pObj : Cidades );
 end;
 
 implementation
@@ -103,7 +104,6 @@ constructor Inter.crieObj;
 begin
   aConsultaPaises              := Tform_consulta_paises.Create(nil);
   aConsultaEstados             := Tform_consulta_estados.Create(nil);
-  aConsultaCidades             := Tform_consulta_cidades.Create(nil);
   aConsultaCargos              := Tform_consulta_cargos.Create(nil);
   aConsultaDepartamentos       := Tform_consulta_departamentos.Create(nil);
   aConsultaFormasPagamentos    := Tform_consulta_formas_pagamentos.Create(nil);
@@ -122,10 +122,10 @@ begin
   aConsultaTiposContatos       := Tform_consulta_tipos_contatos.Create(nil);
   aConsultaEstoques            := Tform_consulta_estoques.Create(nil);
   aConsultaFuncionarios        := Tform_consulta_funcionarios.Create(nil);
+  aConsultaCidades             := Tform_consulta_cidades.Create(nil);
 
   oCadastroPaises       := Tform_cadastro_paises.Create(nil);
   oCadastroEstados      := Tform_cadastro_estados.Create(nil);
-  oCadastroCidades      := Tform_cadastro_cidades.Create(nil);
   oCadastroFuncionarios := Tform_cadastro_funcionario.Create(nil);
   oCadastroCargos       := Tform_cadastro_cargos.Create(nil);
   oCadastroDepartamentos:= Tform_cadastro_departamento.Create(nil);
@@ -143,13 +143,10 @@ begin
   oCadastroClientes := Tform_cadastro_clientes.Create(nil);
   oCadastroTiposContatos := Tform_cadastro_tipo_contato.Create(nil);
   oCadastroCondicaoPagamento := Tform_cadastro_condicao_pagamento.Create(nil);
-
-  oCadastroEstados.setFrmConsultaPaises( aConsultaPaises );
-  oCadastroCidades.setFrmConsultaEstados( aConsultaEstados );
+  oCadastroCidade            := Tform_cadastro_cidades.Create(nil);
 
   aConsultaPaises.setFrmCadastro( oCadastroPaises );
   aConsultaEstados.setFrmCadastro( oCadastroEstados );
-  aConsultaCidades.setFrmCadastro( oCadastroCidades );
   aConsultaFuncionarios.setFrmCadastro( oCadastroFuncionarios );
   aConsultaCargos.setFrmCadastro( oCadastroCargos );
   aConsultaDepartamentos.setFrmCadastro( oCadastroDepartamentos );
@@ -167,13 +164,16 @@ begin
   aConsultaClientes.setFrmCadastro( oCadastroClientes );
   aConsultaTiposContatos.setFrmCadastro( oCadastroTiposContatos );
   aConsultaCondicoesPagamentos.setFrmCadastro( oCadastroCondicaoPagamento );
+  aConsultaCidades.setFrmCadastro( oCadastroCidade );
+
+  oCadastroEstados.setFrmConsultaPaises( aConsultaPaises );
+  oCadastroCidade.setFrmConsultaEstados( aConsultaEstados );
 end;
 
 destructor Inter.destrua_se;
 begin
   aConsultaPaises.FreeInstance;
   aConsultaEstados.FreeInstance;
-  aConsultaCidades.FreeInstance;
   aConsultaCargos.FreeInstance;
   aConsultaDepartamentos.FreeInstance;
   aConsultaFormasPagamentos.FreeInstance;
@@ -192,10 +192,10 @@ begin
   aConsultaTiposContatos.FreeInstance;
   aConsultaEstoques.FreeInstance;
   aConsultaFuncionarios.FreeInstance;
+  aConsultaCidades.FreeInstance;
 
   oCadastroPaises.FreeInstance;
   oCadastroEstados.FreeInstance;
-  oCadastroCidades.FreeInstance;
   oCadastroFuncionarios.FreeInstance;
   oCadastroCargos.FreeInstance;
   oCadastroDepartamentos.FreeInstance;
@@ -213,6 +213,7 @@ begin
   oCadastroClientes.FreeInstance;
   oCadastroTiposContatos.FreeInstance;
   oCadastroCondicaoPagamento.FreeInstance;
+  oCadastroCidade.FreeInstance;
 end;
 
 procedure Inter.PDCargos(pCtrl: TObject; pObj: TObject);
@@ -220,7 +221,7 @@ begin
   aConsultaCargos.ShowModal;
 end;
 
-procedure Inter.PDCidades ( pCtrl : TObject; pObj : Cidades);
+procedure Inter.PDCidades(pCtrl: TObject; pObj: Cidades);
 begin
   aConsultaCidades.conhecaObj( pCtrl, pObj );
   aConsultaCidades.ShowModal;

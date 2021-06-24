@@ -62,6 +62,7 @@ inherited form_cadastro_grupos_produtos: Tform_cadastro_grupos_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 80
         ParentFont = False
         TabOrder = 5
         MudarCor = clCream

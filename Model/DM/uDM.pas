@@ -102,6 +102,15 @@ type
     QCidadesDATACAD: TSQLTimeStampField;
     QCidadesULTALT: TSQLTimeStampField;
     QCidadesCODUSU: TIntegerField;
+    QCargos: TFDQuery;
+    DSCargos: TDataSource;
+    QCargosCODCARGO: TIntegerField;
+    QCargosCARGO: TStringField;
+    QCargosCODDEPARTAMENTO: TIntegerField;
+    QCargosDATACAD: TSQLTimeStampField;
+    QCargosULTALT: TSQLTimeStampField;
+    QCargosCODUSU: TIntegerField;
+    QCargosNOMEDEPART: TStringField;
   private
     { Private declarations }
   public

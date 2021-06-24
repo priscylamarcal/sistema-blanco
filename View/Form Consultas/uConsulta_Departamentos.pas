@@ -144,9 +144,19 @@ begin
 end;
 
 procedure Tform_consulta_departamentos.sair;
+var mDepartamento : Departamentos;
 begin
-  inherited;
+  if self.btn_botao_sair.Caption = 'Selecionar' then
+  begin
+    mDepartamento:= Departamentos.crieObj;
+    aCtrlDepartamentos.carregar( TObject( mDepartamento ) );
+    oDepartamento.setCodigo( mDepartamento.getCodigo );
+    oDepartamento.setDepartamento( mDepartamento.getDepartamento );
 
+    inherited sair;
+  end
+  else
+    inherited sair;
 end;
 
 procedure Tform_consulta_departamentos.setFrmCadastro(pObj: TObject);

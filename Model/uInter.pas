@@ -18,11 +18,11 @@ uses uConsulta_Paises, uConsulta_Estados, uConsulta_Cargos, uConsulta_Clientes,
      uCadastro_Cidades,
 
      uPaises, uEstados, uCores, uColecoes, uGruposRoupas, uMarcas,
-     uTamanhos, uFormaPagamento, uTiposContatos, uCidades,
+     uTamanhos, uFormaPagamento, uTiposContatos, uCidades, uCargos,
 
      uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores, uCtrlColecoes,
      uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
-     uCtrlTiposContatos, uCtrlCidades;
+     uCtrlTiposContatos, uCtrlCidades,uCtrlCargos;
 
 type Inter = class
   private
@@ -38,7 +38,7 @@ type Inter = class
     aConsultaContasPagar         : Tform_consulta_contas_pagar;
     aConsultaColecoes            : Tform_consulta_colecoes;
     aConsultaCores               : Tform_consulta_cores;
-    aConsultaGruposRoupas      : Tform_consulta_grupos_produtos;
+    aConsultaGruposRoupas        : Tform_consulta_grupos_produtos;
     aConsultaMarcas              : Tform_consulta_marcas;
     aConsultaTamanhos            : Tform_consulta_tamanhos;
     aConsultaRoupas              : Tform_consulta_roupas;
@@ -49,25 +49,25 @@ type Inter = class
     aConsultaFuncionarios        : Tform_consulta_funcionarios;
     aConsultaCidades             : Tform_consulta_cidades;
 
-    oCadastroPaises       : Tform_cadastro_paises;
-    oCadastroEstados      : Tform_cadastro_estados;
-    oCadastroFuncionarios : Tform_cadastro_funcionario;
-    oCadastroCargos       : Tform_cadastro_cargos;
-    oCadastroDepartamentos : Tform_cadastro_departamento;
-    oCadastroFormasPagamentos : Tform_cadastro_formas_pagamentos;
-    oCadastroVendas : Tform_cadastro_vendas;
-    oCadastroContasReceber : Tform_cadastro_contas_receber;
-    oCadastroContasPagar : Tform_cadastro_contas_pagar;
-    oCadastroColecoes : Tform_cadastro_colecoes;
-    oCadastroCores : Tform_cadastro_cores;
-    oCadastroGruposRoupas : Tform_cadastro_grupos_produtos;
-    oCadastroMarcas : Tform_cadastro_marcas;
-    oCadastroTamanhos : Tform_cadastro_tamanhos;
-    oCadastroProdutos : Tform_cadastro_produtos;
-    oCadastroFornecedores : Tform_cadastro_fornecedores;
-    oCadastroClientes : Tform_cadastro_clientes;
-    oCadastroTiposContatos : Tform_cadastro_tipo_contato;
-    oCadastroCondicaoPagamento : Tform_cadastro_condicao_pagamento;
+    oCadastroPaises             : Tform_cadastro_paises;
+    oCadastroEstados            : Tform_cadastro_estados;
+    oCadastroFuncionarios       : Tform_cadastro_funcionario;
+    oCadastroCargos             : Tform_cadastro_cargos;
+    oCadastroDepartamentos      : Tform_cadastro_departamento;
+    oCadastroFormasPagamentos   : Tform_cadastro_formas_pagamentos;
+    oCadastroVendas             : Tform_cadastro_vendas;
+    oCadastroContasReceber      : Tform_cadastro_contas_receber;
+    oCadastroContasPagar        : Tform_cadastro_contas_pagar;
+    oCadastroColecoes           : Tform_cadastro_colecoes;
+    oCadastroCores              : Tform_cadastro_cores;
+    oCadastroGruposRoupas       : Tform_cadastro_grupos_produtos;
+    oCadastroMarcas             : Tform_cadastro_marcas;
+    oCadastroTamanhos           : Tform_cadastro_tamanhos;
+    oCadastroProdutos           : Tform_cadastro_produtos;
+    oCadastroFornecedores       : Tform_cadastro_fornecedores;
+    oCadastroClientes           : Tform_cadastro_clientes;
+    oCadastroTiposContatos      : Tform_cadastro_tipo_contato;
+    oCadastroCondicaoPagamento  : Tform_cadastro_condicao_pagamento;
     oCadastroCidade             : Tform_cadastro_cidades;
   public
     constructor crieObj;
@@ -75,7 +75,7 @@ type Inter = class
 
     procedure PDPaises ( pCtrl : TObject; pObj : Paises );
     procedure PDEstados ( pCtrl : TObject; pObj : Estados );
-    procedure PDCargos ( pCtrl : TObject; pObj : TObject);
+    procedure PDCargos ( pCtrl : TObject; pObj : Cargos);
     procedure PDDepartamentos ( pCtrl : TObject; pObj : Departamentos );
     procedure PDFuncionarios ( pCtrl : TObject; pObj : TObject );
     procedure PDFormasPagamentos ( pCtrl : TObject; pObj : FormasPagamentos );
@@ -113,7 +113,7 @@ begin
   aConsultaContasPagar         := Tform_consulta_contas_pagar.Create(nil);
   aConsultaColecoes            := Tform_consulta_colecoes.Create(nil);
   aConsultaCores               := Tform_consulta_cores.Create(nil);
-  aConsultaGruposRoupas      := Tform_consulta_grupos_produtos.Create(nil);
+  aConsultaGruposRoupas        := Tform_consulta_grupos_produtos.Create(nil);
   aConsultaMarcas              := Tform_consulta_marcas.Create(nil);
   aConsultaTamanhos            := Tform_consulta_tamanhos.Create(nil);
   aConsultaRoupas              := Tform_consulta_roupas.Create(nil);
@@ -124,26 +124,26 @@ begin
   aConsultaFuncionarios        := Tform_consulta_funcionarios.Create(nil);
   aConsultaCidades             := Tform_consulta_cidades.Create(nil);
 
-  oCadastroPaises       := Tform_cadastro_paises.Create(nil);
-  oCadastroEstados      := Tform_cadastro_estados.Create(nil);
-  oCadastroFuncionarios := Tform_cadastro_funcionario.Create(nil);
-  oCadastroCargos       := Tform_cadastro_cargos.Create(nil);
-  oCadastroDepartamentos:= Tform_cadastro_departamento.Create(nil);
-  oCadastroFormasPagamentos:= Tform_cadastro_formas_pagamentos.Create(nil);
-  oCadastroVendas:= Tform_cadastro_vendas.Create(nil);
-  oCadastroContasReceber := Tform_cadastro_contas_receber.Create(nil);
-  oCadastroContasPagar := Tform_cadastro_contas_pagar.Create(nil);
-  oCadastroColecoes := Tform_cadastro_colecoes.Create(nil);
-  oCadastroCores := Tform_cadastro_cores.Create(nil);
-  oCadastroGruposRoupas := Tform_cadastro_grupos_produtos.Create(nil);
-  oCadastroMarcas := Tform_cadastro_marcas.Create(nil);
-  oCadastroTamanhos := Tform_cadastro_tamanhos.Create(nil);
-  oCadastroProdutos := Tform_cadastro_produtos.Create(nil);
-  oCadastroFornecedores := Tform_cadastro_fornecedores.Create(nil);
-  oCadastroClientes := Tform_cadastro_clientes.Create(nil);
-  oCadastroTiposContatos := Tform_cadastro_tipo_contato.Create(nil);
-  oCadastroCondicaoPagamento := Tform_cadastro_condicao_pagamento.Create(nil);
-  oCadastroCidade            := Tform_cadastro_cidades.Create(nil);
+  oCadastroPaises               := Tform_cadastro_paises.Create(nil);
+  oCadastroEstados              := Tform_cadastro_estados.Create(nil);
+  oCadastroFuncionarios         := Tform_cadastro_funcionario.Create(nil);
+  oCadastroCargos               := Tform_cadastro_cargos.Create(nil);
+  oCadastroDepartamentos        := Tform_cadastro_departamento.Create(nil);
+  oCadastroFormasPagamentos     := Tform_cadastro_formas_pagamentos.Create(nil);
+  oCadastroVendas               := Tform_cadastro_vendas.Create(nil);
+  oCadastroContasReceber        := Tform_cadastro_contas_receber.Create(nil);
+  oCadastroContasPagar          := Tform_cadastro_contas_pagar.Create(nil);
+  oCadastroColecoes             := Tform_cadastro_colecoes.Create(nil);
+  oCadastroCores                := Tform_cadastro_cores.Create(nil);
+  oCadastroGruposRoupas         := Tform_cadastro_grupos_produtos.Create(nil);
+  oCadastroMarcas               := Tform_cadastro_marcas.Create(nil);
+  oCadastroTamanhos             := Tform_cadastro_tamanhos.Create(nil);
+  oCadastroProdutos             := Tform_cadastro_produtos.Create(nil);
+  oCadastroFornecedores         := Tform_cadastro_fornecedores.Create(nil);
+  oCadastroClientes             := Tform_cadastro_clientes.Create(nil);
+  oCadastroTiposContatos        := Tform_cadastro_tipo_contato.Create(nil);
+  oCadastroCondicaoPagamento    := Tform_cadastro_condicao_pagamento.Create(nil);
+  oCadastroCidade               := Tform_cadastro_cidades.Create(nil);
 
   aConsultaPaises.setFrmCadastro( oCadastroPaises );
   aConsultaEstados.setFrmCadastro( oCadastroEstados );
@@ -168,6 +168,7 @@ begin
 
   oCadastroEstados.setFrmConsultaPaises( aConsultaPaises );
   oCadastroCidade.setFrmConsultaEstados( aConsultaEstados );
+  oCadastroCargos.setFrmConsultaDepartamentos( aConsultaDepartamentos );
 end;
 
 destructor Inter.destrua_se;
@@ -216,8 +217,9 @@ begin
   oCadastroCidade.FreeInstance;
 end;
 
-procedure Inter.PDCargos(pCtrl: TObject; pObj: TObject);
+procedure Inter.PDCargos(pCtrl: TObject; pObj: Cargos);
 begin
+  aConsultaCargos.conhecaObj( pCtrl, pObj );
   aConsultaCargos.ShowModal;
 end;
 
