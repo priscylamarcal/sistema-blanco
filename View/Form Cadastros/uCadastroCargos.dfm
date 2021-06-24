@@ -1,13 +1,16 @@
 inherited form_cadastro_cargos: Tform_cadastro_cargos
   Caption = 'Cadastro de Cargo'
   ClientHeight = 277
+  OnActivate = FormActivate
   ExplicitHeight = 316
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
     Height = 277
+    ExplicitHeight = 277
     inherited ScrollBox1: TScrollBox
       Height = 277
+      ExplicitHeight = 277
       inherited lbl_cod_usuario: TLabel
         Top = 181
         ExplicitTop = 181
@@ -64,21 +67,22 @@ inherited form_cadastro_cargos: Tform_cadastro_cargos
         ExplicitTop = 196
       end
       inherited edt_codigo: PriTEdit
-        TabOrder = 3
+        TabOrder = 4
       end
       inherited edt_data_cadastro: PriTEdit
-        Top = 196
-        TabOrder = 4
-        ExplicitTop = 196
-      end
-      inherited edt_data_ult_alt: PriTEdit
         Top = 196
         TabOrder = 5
         ExplicitTop = 196
       end
+      inherited edt_data_ult_alt: PriTEdit
+        Top = 196
+        TabOrder = 6
+        ExplicitTop = 196
+      end
       inherited pnl_bottom: TPanel
         Top = 222
-        TabOrder = 6
+        TabOrder = 7
+        ExplicitTop = 222
       end
       object edt_pesquisar_departamento_cargo: PriTEdit
         Left = 112
@@ -92,7 +96,8 @@ inherited form_cadastro_cargos: Tform_cadastro_cargos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 2
+        ReadOnly = True
+        TabOrder = 3
         MudarCor = clCream
       end
       object pnl_btn_pesquisa: TPanel
@@ -101,7 +106,7 @@ inherited form_cadastro_cargos: Tform_cadastro_cargos
         Width = 35
         Height = 22
         BevelOuter = bvNone
-        TabOrder = 7
+        TabOrder = 8
         object btn_pesquisa: TSpeedButton
           Left = 0
           Top = 0
@@ -137,11 +142,12 @@ inherited form_cadastro_cargos: Tform_cadastro_cargos
             6767670101010F0F0F4242425858582A2A2A0101011C1C1CBABABAFFFFFFFFFF
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+          OnClick = btn_pesquisaClick
           ExplicitWidth = 65
           ExplicitHeight = 21
         end
       end
-      object edt_departamento: PriTEdit
+      object edt_cargo: PriTEdit
         Left = 112
         Top = 35
         Width = 566
@@ -152,6 +158,7 @@ inherited form_cadastro_cargos: Tform_cadastro_cargos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 80
         ParentFont = False
         TabOrder = 1
         MudarCor = clCream
@@ -166,9 +173,10 @@ inherited form_cadastro_cargos: Tform_cadastro_cargos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 8
+        TabOrder = 2
         MudarCor = clCream
       end
     end

@@ -120,6 +120,7 @@ inherited form_cadastro_cidades: Tform_cadastro_cidades
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 80
         ParentFont = False
         TabOrder = 1
         MudarCor = clCream
@@ -134,6 +135,7 @@ inherited form_cadastro_cidades: Tform_cadastro_cidades
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 3
         ParentFont = False
         TabOrder = 2
         MudarCor = clCream
@@ -148,6 +150,7 @@ inherited form_cadastro_cidades: Tform_cadastro_cidades
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 5
         ParentFont = False
         TabOrder = 3
         MudarCor = clCream
@@ -163,6 +166,7 @@ inherited form_cadastro_cidades: Tform_cadastro_cidades
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
+        ReadOnly = True
         TabOrder = 5
         MudarCor = clCream
       end
@@ -228,6 +232,7 @@ inherited form_cadastro_cidades: Tform_cadastro_cidades
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         ParentFont = False
         TabOrder = 4
         MudarCor = clCream
