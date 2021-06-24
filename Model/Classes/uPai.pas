@@ -20,11 +20,21 @@ type Pai = class
     function getDataCad : TDateTime;
     function getUltAlt : TDateTime;
     function getCodUsu : integer;
+    function clone : Pai;
 end;
 
 implementation
 
 { pai }
+
+function Pai.clone: Pai;
+begin
+  Result:= Pai.crieObj;
+  result.setCodigo( codigo );
+  result.setDataCad( dataCad );
+  Result.setUltAlt( ultAlt );
+  Result.setCodUsu( codUsu );
+end;
 
 constructor Pai.crieObj;
 begin

@@ -3,7 +3,7 @@ unit uCtrlPaises;
 interface
 
 uses uController,
-     uDaoPaises, uFilterSearch;
+     uDaoPaises, uFilterSearch, uPaises;
 
 type ctrlPaises = class( Ctrl )
   private
@@ -21,6 +21,9 @@ type ctrlPaises = class( Ctrl )
 end;
 
 implementation
+
+uses
+  System.SysUtils;
 
 { ctrlPaises }
 

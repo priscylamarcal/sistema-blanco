@@ -67,7 +67,6 @@ begin
   Self.edt_ddi.Text:= oPais.getDDI;
   Self.edt_moeda.Text:= oPais.getMoeda;
  Self.edt_data_cadastro.Text:= DateToStr( oPais.getDataCad);
- //self.edt_data_cadastro.Text:= DateToStr(date);
  self.edt_data_ult_alt.Text:= DateToStr(oPais.getUltAlt);
 end;
 

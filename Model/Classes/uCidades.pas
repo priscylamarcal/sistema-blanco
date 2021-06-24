@@ -2,18 +2,18 @@ unit uCidades;
 
 interface
 
-uses Classes, SysUtils,
-     uPai, uEstados;
+uses uEstados, uPai;
 
-type Cidades = class(Pai)
+type Cidades = class( Pai )
   private
   protected
-    cidade  : string[50];
-    sigla   : string[3];
-    DDD     : string[3];
-    oEstado : Estados;
+    cidade : string[80];
+    sigla  : string[3];
+    ddd    : string[5];
+    umEstado : Estados;
   public
     constructor crieObj;
+    constructor crieInit ( pCodigo : integer; pCidade : string; pSigla : string; pDDD : string; pDataCad : TDateTime; pUltAlt : TDateTime; pCodUsu : integer; poEstado : Estados );
     destructor destrua_se;
     procedure setCidade ( pCidade : string );
     procedure setSigla ( pSigla : string );
@@ -30,18 +30,31 @@ implementation
 
 { Cidades }
 
+constructor Cidades.crieInit(pCodigo: integer; pCidade, pSigla, pDDD: string;
+  pDataCad, pUltAlt: TDateTime; pCodUsu: integer; poEstado : Estados);
+begin
+  codigo:= pCodigo;
+  cidade:= pCidade;
+  sigla:= pSigla;
+  ddd:= pDDD;
+  dataCad := pDataCad;
+  ultAlt  := pUltAlt;
+  codUsu  := pCodUsu;
+  umEstado:= poEstado;
+end;
+
 constructor Cidades.crieObj;
 begin
   inherited;
   cidade:= '';
   sigla:= '';
-  DDD:= '';
-  oEstado:= Estados.crieObj;
+  ddd:= '';
+  umEstado:= Estados.crieObj;
 end;
 
 destructor Cidades.destrua_se;
 begin
-  oEstado.destrua_se;
+  umEstado.destrua_se;
 end;
 
 function Cidades.getCidade: string;
@@ -51,12 +64,12 @@ end;
 
 function Cidades.getDDD: string;
 begin
-  Result:= DDD;
+  Result:= ddd;
 end;
 
 function Cidades.getoEstado: Estados;
 begin
-  Result:= oEstado;
+  Result:= umEstado;
 end;
 
 function Cidades.getSigla: string;
@@ -71,12 +84,12 @@ end;
 
 procedure Cidades.setDDD(pDDD: string);
 begin
-  DDD:= pDDD;
+  ddd:= pDDD;
 end;
 
 procedure Cidades.setoEstado(poEstado: Estados);
 begin
-  oEstado:= poEstado;
+  umEstado:= poEstado;
 end;
 
 procedure Cidades.setSigla(pSigla: string);
@@ -87,11 +100,11 @@ end;
 function Cidades.clone: Cidades;
 begin
   Result:= Cidades.crieObj;
-  Result.setCodigo(codigo);
-  Result.setCidade(cidade);
-  Result.setDDD(DDD);
-  Result.setSigla(sigla);
-  Result.setoEstado( oEstado.clone );
+  Result.setCodigo( codigo );
+  Result.setCidade( cidade );
+  Result.setSigla( sigla );
+  Result.setDDD( ddd );
+  Result.setoEstado( umEstado.clone );
   Result.setDataCad(dataCad);
   Result.setUltAlt(ultAlt);
   Result.setCodUsu(codUsu);
