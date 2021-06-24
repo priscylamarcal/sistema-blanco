@@ -85,3 +85,19 @@ begin
     if (NEW.codestado = 0) THEN
         new.codestado = GEN_ID(gen_estados, 1);
 end
+
+CREATE OR ALTER TRIGGER CIDADES_BI FOR CIDADES
+ACTIVE BEFORE INSERT POSITION 0
+AS
+begin
+    if (NEW.codcidade = 0) THEN
+        new.codcidade = GEN_ID(gen_cidades, 1);
+end
+
+CREATE OR ALTER TRIGGER CARGOS_BI FOR CARGOS
+ACTIVE BEFORE INSERT POSITION 0
+AS
+begin
+    if (NEW.codcargo = 0) THEN
+        new.codcargo = GEN_ID(gen_cargos, 1);
+end
