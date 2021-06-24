@@ -92,6 +92,16 @@ type
     QEstadosCODUSU: TIntegerField;
     QEstadosCODPAIS: TIntegerField;
     QEstadosNOMEPAIS: TStringField;
+    QCidades: TFDQuery;
+    DSCidades: TDataSource;
+    QCidadesCODCIDADE: TIntegerField;
+    QCidadesCIDADE: TStringField;
+    QCidadesSIGLA: TStringField;
+    QCidadesDDD: TStringField;
+    QCidadesCODESTADO: TIntegerField;
+    QCidadesDATACAD: TSQLTimeStampField;
+    QCidadesULTALT: TSQLTimeStampField;
+    QCidadesCODUSU: TIntegerField;
   private
     { Private declarations }
   public

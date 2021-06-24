@@ -112,18 +112,13 @@
         <DCCReference Include="Model\Classes\uPai.pas"/>
         <DCCReference Include="Model\Classes\uPaises.pas"/>
         <DCCReference Include="Model\Classes\uEstados.pas"/>
-        <DCCReference Include="Model\Classes\uCidades.pas"/>
         <DCCReference Include="Model\uInter.pas"/>
-        <DCCReference Include="View\Form Consultas\uConsultaPaises.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Paises.pas">
             <Form>form_consulta_paises</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaEstados.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Estados.pas">
             <Form>form_consulta_estados</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaCidades.pas">
-            <Form>form_consulta_cidades</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="View\Form Cadastros\uCadastroPaises.pas">
@@ -132,10 +127,6 @@
         </DCCReference>
         <DCCReference Include="View\Form Cadastros\uCadastroEstados.pas">
             <Form>form_cadastro_estados</Form>
-            <FormType>dfm</FormType>
-        </DCCReference>
-        <DCCReference Include="View\Form Cadastros\uCadastroCidades.pas">
-            <Form>form_cadastro_cidades</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Controller\uController.pas"/>
@@ -150,71 +141,71 @@
         <DCCReference Include="DAO\uDaoPaises.pas"/>
         <DCCReference Include="DAO\uDaoEstados.pas"/>
         <DCCReference Include="Model\uFuncoes_Sistema.pas"/>
-        <DCCReference Include="View\Form Consultas\uConsultaCargos.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Cargos.pas">
             <Form>form_consulta_cargos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaDepartamentos.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Departamentos.pas">
             <Form>form_consulta_departamentos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaFormasPagamentos.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_FormasPagamentos.pas">
             <Form>form_consulta_formas_pagamentos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaCondicoesPagamentos.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_CondicoesPagamentos.pas">
             <Form>form_consulta_condicoes_pagamentos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaVendas.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Vendas.pas">
             <Form>form_consulta_vendas</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaContasReceber.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_ContasReceber.pas">
             <Form>form_consulta_contas_receber</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaContasPagar.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_ContasPagar.pas">
             <Form>form_consulta_contas_pagar</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaColecoes.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Colecoes.pas">
             <Form>form_consulta_colecoes</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaCores.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Cores.pas">
             <Form>form_consulta_cores</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaGruposProdutos.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_GruposProdutos.pas">
             <Form>form_consulta_grupos_produtos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaMarcas.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Marcas.pas">
             <Form>form_consulta_marcas</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaTamanhos.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Tamanhos.pas">
             <Form>form_consulta_tamanhos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaRoupas.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Roupas.pas">
             <Form>form_consulta_roupas</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaFornecedores.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Fornecedores.pas">
             <Form>form_consulta_fornecedores</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaClientes.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Clientes.pas">
             <Form>form_consulta_clientes</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaTiposContatos.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_TiposContatos.pas">
             <Form>form_consulta_tipos_contatos</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaEstoques.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Estoques.pas">
             <Form>form_consulta_estoques</Form>
             <FormType>dfm</FormType>
         </DCCReference>
@@ -230,7 +221,7 @@
             <Form>form_cadastro_departamento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="View\Form Consultas\uConsultaFuncionarios.pas">
+        <DCCReference Include="View\Form Consultas\uConsulta_Funcionarios.pas">
             <Form>form_consulta_funcionarios</Form>
             <FormType>dfm</FormType>
         </DCCReference>
@@ -319,8 +310,17 @@
         <DCCReference Include="Model\Classes\uTiposContatos.pas"/>
         <DCCReference Include="DAO\uDaoTiposContatos.pas"/>
         <DCCReference Include="Controller\uCtrlTiposContatos.pas"/>
-        <DCCReference Include="Controller\uCtrlCidades.pas"/>
+        <DCCReference Include="View\Form Consultas\uConsulta_Cidades.pas">
+            <Form>form_consulta_cidades</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Model\Classes\uCidades.pas"/>
+        <DCCReference Include="View\Form Cadastros\uCadastro_Cidades.pas">
+            <Form>form_cadastro_cidades</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <DCCReference Include="DAO\uDaoCidades.pas"/>
+        <DCCReference Include="Controller\uCtrlCidades.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

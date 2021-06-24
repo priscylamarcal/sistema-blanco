@@ -13,6 +13,7 @@ type Estados = class(Pai)
     umPais : Paises;
   public
     constructor crieObj;
+    constructor crieInit ( pCodigo: integer; pUf : string; pDataCad : TDateTime; pUltAlt : TDateTime; pCodUsu : integer; pPais : Paises );
     destructor destrua_se;
     procedure setEstado ( pEstado : string );
     procedure setUF ( pUF : string );
@@ -26,6 +27,17 @@ end;
 implementation
 
 { Estados }
+
+constructor Estados.crieInit(pCodigo: integer; pUf: string; pDataCad,
+  pUltAlt: TDateTime; pCodUsu: integer; pPais: Paises);
+begin
+  codigo:= pCodigo;
+  UF:= pUf;
+  dataCad := pDataCad;
+  ultAlt  := pUltAlt;
+  codUsu  := pCodUsu;
+  umPais:= pPais;
+end;
 
 constructor Estados.crieObj;
 begin
