@@ -8,7 +8,7 @@ uses
   Vcl.Buttons, Vcl.ExtCtrls,
   uEstados,
   uCtrlEstados,
-  uConsultaPaises,
+  uConsulta_Paises,
   uPaises,
   uCtrlPaises;
 
@@ -85,8 +85,10 @@ begin
 
   self.edt_estado.Text:= oEstado.getEstado;
   self.edt_uf.Text:= oEstado.getUF;
+
   self.edt_cod_pais.Text:= IntToStr( oEstado.getoPais.getCodigo );
   self.edt_pesquisar_pais_estado.Text:= oEstado.getoPais.getPais;
+
   self.edt_data_cadastro.Text:= DateToStr( oEstado.getDataCad);
   self.edt_data_ult_alt.Text:= DateToStr(oEstado.getUltAlt);
 end;

@@ -493,11 +493,13 @@ object DM: TDM
       Visible = False
     end
     object QEstadosCODPAIS: TIntegerField
+      DisplayLabel = 'Cod Pa'#237's'
       FieldName = 'CODPAIS'
       Origin = 'CODPAIS'
       Required = True
     end
     object QEstadosNOMEPAIS: TStringField
+      DisplayLabel = 'Pa'#237's'
       DisplayWidth = 50
       FieldKind = fkLookup
       FieldName = 'NOMEPAIS'
@@ -512,6 +514,69 @@ object DM: TDM
   object DSEstados: TDataSource
     DataSet = QEstados
     Left = 256
+    Top = 192
+  end
+  object QCidades: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from cidades')
+    Left = 336
+    Top = 192
+    object QCidadesCODCIDADE: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODCIDADE'
+      Origin = 'CODCIDADE'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QCidadesCIDADE: TStringField
+      DisplayLabel = 'Cidade'
+      DisplayWidth = 150
+      FieldName = 'CIDADE'
+      Origin = 'CIDADE'
+      Required = True
+      Size = 80
+    end
+    object QCidadesSIGLA: TStringField
+      DisplayLabel = 'Sigla'
+      DisplayWidth = 10
+      FieldName = 'SIGLA'
+      Origin = 'SIGLA'
+      Size = 3
+    end
+    object QCidadesDDD: TStringField
+      DisplayWidth = 10
+      FieldName = 'DDD'
+      Origin = 'DDD'
+      Size = 5
+    end
+    object QCidadesCODESTADO: TIntegerField
+      DisplayLabel = 'C'#243'd Estado'
+      DisplayWidth = 15
+      FieldName = 'CODESTADO'
+      Origin = 'CODESTADO'
+      Required = True
+    end
+    object QCidadesDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QCidadesULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QCidadesCODUSU: TIntegerField
+      FieldName = 'CODUSU'
+      Origin = 'CODUSU'
+      Visible = False
+    end
+  end
+  object DSCidades: TDataSource
+    DataSet = QCidades
+    Left = 400
     Top = 192
   end
 end

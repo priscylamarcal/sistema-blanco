@@ -2,7 +2,7 @@ unit uDaoCidades;
 
 interface
 
-uses uDAO, uFilterSearch, uCidades;
+uses uCidades, uEstados, uFilterSearch, uDAO, uPaises;
 
 type daoCidades = class( DAO )
   private
@@ -18,11 +18,25 @@ end;
 
 implementation
 
+uses
+  System.SysUtils;
+
 { daoCidades }
 
 function daoCidades.carregar(pObj: TObject): string;
+var mCidade : Cidades; mEstado : Estados; mPais : Paises;
 begin
+  mCidade:= Cidades( pObj );
+  mEstado:= mCidade.getoEstado;
 
+  mEstado.setCodigo( aDM.QEstados.FieldByName('CODESTADO').Value );
+  mEstado.setEstado( aDM.QEstados.FieldByName('ESTADO').AsString );
+  mEstado.setUF( aDM.QEstados.FieldByName('UF').AsString );
+
+  mPais.setCodigo( aDM.QEstados.FieldByName('CODPAIS').Value );
+  mPais.setPais( aDM.QPaises.FieldByName('PAIS').AsString );
+  mPais.setDDI( aDM.QPaises.FieldByName('DDI').AsString );
+  mPais.setSigla( aDM.QPaises.FieldByName('SIGLA').AsString );
 end;
 
 constructor daoCidades.crieObj;
@@ -38,10 +52,11 @@ end;
 
 function daoCidades.getDS: TObject;
 begin
-
+  Result:= aDM.DSCidades;
 end;
 
 function daoCidades.pesquisar(AFilter: TFilterSearch; pChave: string): string;
+var msql : string;
 begin
 
 end;
