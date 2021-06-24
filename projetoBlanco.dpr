@@ -87,7 +87,10 @@ uses
   uCidades in 'Model\Classes\uCidades.pas',
   uCadastro_Cidades in 'View\Form Cadastros\uCadastro_Cidades.pas' {form_cadastro_cidades},
   uDaoCidades in 'DAO\uDaoCidades.pas',
-  uCtrlCidades in 'Controller\uCtrlCidades.pas';
+  uCtrlCidades in 'Controller\uCtrlCidades.pas',
+  uCargos in 'Model\Classes\uCargos.pas',
+  uDaoCargos in 'DAO\uDaoCargos.pas',
+  uCtrlCargos in 'Controller\uCtrlCargos.pas';
 
 {$R *.res}
 

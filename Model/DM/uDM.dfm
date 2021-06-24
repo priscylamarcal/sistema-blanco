@@ -579,4 +579,65 @@ object DM: TDM
     Left = 400
     Top = 192
   end
+  object QCargos: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from cargos')
+    Left = 488
+    Top = 192
+    object QCargosCODCARGO: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODCARGO'
+      Origin = 'CODCARGO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QCargosCARGO: TStringField
+      DisplayLabel = 'Cargo'
+      DisplayWidth = 150
+      FieldName = 'CARGO'
+      Origin = 'CARGO'
+      Required = True
+      Size = 80
+    end
+    object QCargosCODDEPARTAMENTO: TIntegerField
+      DisplayLabel = 'C'#243'd Departamento'
+      DisplayWidth = 20
+      FieldName = 'CODDEPARTAMENTO'
+      Origin = 'CODDEPARTAMENTO'
+      Required = True
+    end
+    object QCargosDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QCargosULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QCargosCODUSU: TIntegerField
+      FieldName = 'CODUSU'
+      Origin = 'CODUSU'
+      Visible = False
+    end
+    object QCargosNOMEDEPART: TStringField
+      DisplayLabel = 'Departamento'
+      DisplayWidth = 60
+      FieldKind = fkLookup
+      FieldName = 'NOMEDEPART'
+      LookupDataSet = QDepartamentos
+      LookupKeyFields = 'CODDEPARTAMENTO'
+      LookupResultField = 'DEPARTAMENTO'
+      KeyFields = 'CODDEPARTAMENTO'
+      Lookup = True
+    end
+  end
+  object DSCargos: TDataSource
+    DataSet = QCargos
+    Left = 576
+    Top = 192
+  end
 end
