@@ -90,7 +90,10 @@ uses
   uCtrlCidades in 'Controller\uCtrlCidades.pas',
   uCargos in 'Model\Classes\uCargos.pas',
   uDaoCargos in 'DAO\uDaoCargos.pas',
-  uCtrlCargos in 'Controller\uCtrlCargos.pas';
+  uCtrlCargos in 'Controller\uCtrlCargos.pas',
+  uCondicoesPagamentos in 'Model\Classes\uCondicoesPagamentos.pas',
+  uDaoCondicoesPagamentos in 'DAO\uDaoCondicoesPagamentos.pas',
+  uCtrlCondicoesPagamentos in 'Controller\uCtrlCondicoesPagamentos.pas';
 
 {$R *.res}
 

@@ -9,12 +9,13 @@ uses
 
   uPaises, uEstados, uDepartamentos, uCores, uColecoes, uGruposRoupas,
   uMarcas, uTamanhos, uFormaPagamento, uTiposContatos, uCidades, uCargos,
+  uCondicoesPagamentos,
 
   uInter,
 
   uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores, uCtrlColecoes,
   uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
-  uCtrlTiposContatos, uCtrlCidades, uCtrlCargos,
+  uCtrlTiposContatos, uCtrlCidades, uCtrlCargos, uCtrlCondicoesPagamentos,
 
   uDM;
 
@@ -142,6 +143,7 @@ type
     oTipoContato        : TiposContatos;
     aCidade             : Cidades;
     oCargo              : Cargos;
+    aCondicao           : CondicoesPagamentos;
 
     aInter  : Inter;
 
@@ -157,6 +159,7 @@ type
     aCtrlTipoContato    : ctrlTiposContatos;
     aCtrlCidade         : ctrlCidades;
     aCtrlCargos         : ctrlCargos;
+    aCtrlCondicoes      : ctrlCondicoesPagamentos;
 
     aDm : TDM;
 
@@ -192,6 +195,7 @@ begin
   oTipoContato          := TiposContatos.crieObj;
   aCidade               := Cidades.crieObj;
   oCargo                := Cargos.crieObj;
+  aCondicao             := CondicoesPagamentos.crieObj;
 
   aCtrlPais             := ctrlPaises.crieObj;
   aCtrlEstado           := ctrlEstados.crieObj;
@@ -205,6 +209,7 @@ begin
   aCtrlTipoContato      := ctrlTiposContatos.crieObj;
   aCtrlCidade           := ctrlCidades.crieObj;
   aCtrlCargos           := ctrlCargos.crieObj;
+  aCtrlCondicoes        := ctrlCondicoesPagamentos.crieObj;
 
   aDm:= TDM.Create(nil);
 
@@ -220,10 +225,12 @@ begin
   aCtrlTipoContato.setDM( aDm );
   aCtrlCidade.setDM( aDm );
   aCtrlCargos.setDM( aDm );
+  aCtrlCondicoes.setDM( aDm );
 
   aCtrlEstado.setCtrlPaises( aCtrlPais );
   aCtrlCidade.setCtrlEstados( aCtrlEstado );
   aCtrlCargos.setCtrlDepartamentos( aCtrlDepartamento );
+  aCtrlCondicoes.setCtrlFormas( aCtrlFormaPagamento );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -242,6 +249,7 @@ begin
   oTipoContato.destrua_se;
   aCidade.destrua_se;
   oCargo.destrua_se;
+  aCondicao.destrua_se;
 
   aCtrlPais.destrua_se;
   aCtrlDepartamento.destrua_se;
@@ -255,6 +263,7 @@ begin
   aCtrlEstado.destrua_se;
   aCtrlCidade.destrua_se;
   aCtrlCargos.destrua_se;
+  aCtrlCondicoes.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -301,7 +310,7 @@ end;
 
 procedure Tform_principal.spb_condicoes_pagamentoClick(Sender: TObject);
 begin
-  aInter.PDCondicoesPagamentos(nil, nil);
+  aInter.PDCondicoesPagamentos(aCtrlCondicoes, aCondicao);
 end;
 
 procedure Tform_principal.spb_contas_pagarClick(Sender: TObject);
