@@ -326,12 +326,12 @@
     <Transaction>2021/06/24 13:43:45.000.133,D:\Desenvolvimento\Projetos\sistema-blanco\DAO\uDaoCargos.pas=D:\Desenvolvimento\Projetos\sistema-blanco\Unit1.pas</Transaction>
     <Transaction>2021/06/24 13:43:48.000.879,=D:\Desenvolvimento\Projetos\sistema-blanco\Unit1.pas</Transaction>
     <Transaction>2021/06/24 13:47:05.000.209,D:\Desenvolvimento\Projetos\sistema-blanco\Controller\uCtrlCargos.pas=D:\Desenvolvimento\Projetos\sistema-blanco\Unit1.pas</Transaction>
-    <Transaction>2021/06/24 23:11:04.288,=D:\Desenvolvimento\Projetos\sistema-blanco\Unit1.pas</Transaction>
-    <Transaction>2021/06/24 23:34:55.537,D:\Desenvolvimento\Projetos\sistema-blanco\Model\Classes\uCondicoesPagamentos.pas=D:\Desenvolvimento\Projetos\sistema-blanco\Unit1.pas</Transaction>
-    <Transaction>2021/06/24 23:42:20.020,=D:\Desenvolvimento\Projetos\sistema-blanco\Unit2.pas</Transaction>
-    <Transaction>2021/06/24 23:43:45.617,D:\Desenvolvimento\Projetos\sistema-blanco\DAO\uDaoCondicoesPagamentos.pas=D:\Desenvolvimento\Projetos\sistema-blanco\Unit2.pas</Transaction>
-    <Transaction>2021/06/24 23:43:51.377,=D:\Desenvolvimento\Projetos\sistema-blanco\Unit2.pas</Transaction>
-    <Transaction>2021/06/24 23:46:53.157,D:\Desenvolvimento\Projetos\sistema-blanco\Controller\uCtrlCondicoesPagamentos.pas=D:\Desenvolvimento\Projetos\sistema-blanco\Unit2.pas</Transaction>
+    <Transaction>2021/06/24 23:11:04.000.288,=D:\Desenvolvimento\Projetos\sistema-blanco\Unit1.pas</Transaction>
+    <Transaction>2021/06/24 23:34:55.000.537,D:\Desenvolvimento\Projetos\sistema-blanco\Model\Classes\uCondicoesPagamentos.pas=D:\Desenvolvimento\Projetos\sistema-blanco\Unit1.pas</Transaction>
+    <Transaction>2021/06/24 23:42:20.000.020,=D:\Desenvolvimento\Projetos\sistema-blanco\Unit2.pas</Transaction>
+    <Transaction>2021/06/24 23:43:45.000.617,D:\Desenvolvimento\Projetos\sistema-blanco\DAO\uDaoCondicoesPagamentos.pas=D:\Desenvolvimento\Projetos\sistema-blanco\Unit2.pas</Transaction>
+    <Transaction>2021/06/24 23:43:51.000.377,=D:\Desenvolvimento\Projetos\sistema-blanco\Unit2.pas</Transaction>
+    <Transaction>2021/06/24 23:46:53.000.157,D:\Desenvolvimento\Projetos\sistema-blanco\Controller\uCtrlCondicoesPagamentos.pas=D:\Desenvolvimento\Projetos\sistema-blanco\Unit2.pas</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="Controller"/>

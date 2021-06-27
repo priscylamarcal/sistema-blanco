@@ -26,23 +26,29 @@ end;
 
 implementation
 
+uses
+  System.SysUtils;
+
 { ctrlCondicoesPagamentos }
 
 function ctrlCondicoesPagamentos.carregar(pObj: TObject): string;
+var mFormas : FormasPagamentos; AFilter : TFilterSearch;
 begin
+  aDaoCondicoes.carregar( pObj );
 
+  mFormas:= CondicoesPagamentos( pObj ).getaFormaPagamento;
+  aCtrlFormas.pesquisar( AFilter, IntToStr ( mFormas.getCodigo  ) );
+  aCtrlFormas.carregar( TObject ( mFormas ) );
 end;
 
 constructor ctrlCondicoesPagamentos.crieObj;
 begin
-  inherited;
-
+  aDaoCondicoes:= daoCondicoesPagamentos.crieObj;
 end;
 
 destructor ctrlCondicoesPagamentos.destrua_se;
 begin
-
-  inherited;
+  aDaoCondicoes.destrua_se;
 end;
 
 function ctrlCondicoesPagamentos.excluir(pObj: TObject): string;
@@ -52,34 +58,34 @@ end;
 
 function ctrlCondicoesPagamentos.getCtrlFormas: ctrlFormasPagamentos;
 begin
-
+  Result:= aCtrlFormas;
 end;
 
 function ctrlCondicoesPagamentos.getDS: TObject;
 begin
-
+  Result:= aDaoCondicoes.getDS;
 end;
 
 function ctrlCondicoesPagamentos.pesquisar(AFilter: TFilterSearch;
   pChave: string): string;
 begin
-
+  Result:= aDaoCondicoes.pesquisar( AFilter, pChave );
 end;
 
 function ctrlCondicoesPagamentos.salvar(pObj: TObject): string;
 begin
-
+  aDaoCondicoes.salvar( pObj );
 end;
 
 procedure ctrlCondicoesPagamentos.setCtrlFormas(pCtrl: ctrlFormasPagamentos);
 begin
-
+  aCtrlFormas:= pCtrl;
 end;
 
 procedure ctrlCondicoesPagamentos.setDM(pDM: TObject);
 begin
   inherited;
-
+  aDaoCondicoes.setDM( pDM );
 end;
 
 end.

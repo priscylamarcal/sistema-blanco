@@ -101,3 +101,11 @@ begin
     if (NEW.codcargo = 0) THEN
         new.codcargo = GEN_ID(gen_cargos, 1);
 end
+
+CREATE OR ALTER TRIGGER CONDICOES_PAGAMENTOS_BI FOR CONDICOES_PAGAMENTOS
+ACTIVE BEFORE INSERT POSITION 0
+AS
+begin
+    if (NEW.codcondicao = 0) THEN
+        new.codcondicao = GEN_ID(gen_condicoes_pagamentos, 1);
+end

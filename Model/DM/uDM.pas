@@ -111,6 +111,21 @@ type
     QCargosULTALT: TSQLTimeStampField;
     QCargosCODUSU: TIntegerField;
     QCargosNOMEDEPART: TStringField;
+    QCondicoes: TFDQuery;
+    DSCondicoes: TDataSource;
+    QCondicoesCODCONDICAO: TIntegerField;
+    QCondicoesCONDICAO: TStringField;
+    QCondicoesDATACAD: TSQLTimeStampField;
+    QCondicoesULTALT: TSQLTimeStampField;
+    QCondicoesCODUSU: TIntegerField;
+    QCondicoesPARCELAS: TIntegerField;
+    QCondicoesJUROS: TSingleField;
+    QCondicoesDESCONTO: TSingleField;
+    QCondicoesMULTA: TSingleField;
+    QCondicoesCODFORMA: TIntegerField;
+    QCondicoesDIAS: TIntegerField;
+    QCondicoesPORCENTAGEM: TSingleField;
+    QCondicoesFORMA: TStringField;
   private
     { Private declarations }
   public

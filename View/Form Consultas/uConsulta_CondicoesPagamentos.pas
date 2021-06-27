@@ -60,6 +60,8 @@ begin
   inherited;
   aCondicaoPagamento:= CondicoesPagamentos( pObj );
   aCtrlCondicoes:= ctrlCondicoesPagamentos( pCtrl );
+
+  self.DBGrid.DataSource:= TDataSource( aCtrlCondicoes.getDS );
 end;
 
 procedure Tform_consulta_condicoes_pagamentos.excluir;
@@ -83,6 +85,7 @@ begin
   oCadastroCondicaoPagamento.conhecaObj( aCtrlCondicoes, aCondicaoPagamento );
   oCadastroCondicaoPagamento.ListView_condicao_pagamento.Clear;
   oCadastroCondicaoPagamento.limpaEdt;
+  oCadastroCondicaoPagamento.limparItens;
   oCadastroCondicaoPagamento.lbl_total_porc.Caption:= '0';
 
   oCadastroCondicaoPagamento.btn_remover_item.Enabled:= False;

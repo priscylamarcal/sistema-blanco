@@ -139,9 +139,19 @@ begin
 end;
 
 procedure Tform_consulta_formas_pagamentos.sair;
+var mFormas : FormasPagamentos;
 begin
-  inherited;
+  if self.btn_botao_sair.Caption= 'Selecionar' then
+  begin
+    mFormas:= FormasPagamentos.crieObj;
+    aCtrlFormasPagamentos.carregar( TObject ( mFormas ) );
+    aFormaPagamento.setCodigo( mFormas.getCodigo );
+    aFormaPagamento.setFormaPagamento( mFormas.getFormaPagamento );
 
+    inherited sair;
+  end
+  else
+    inherited sair;
 end;
 
 procedure Tform_consulta_formas_pagamentos.setFrmCadastro(pObj: TObject);
