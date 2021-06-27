@@ -640,4 +640,90 @@ object DM: TDM
     Left = 576
     Top = 192
   end
+  object QCondicoes: TFDQuery
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from CONDICOES_PAGAMENTOS')
+    Left = 16
+    Top = 256
+    object QCondicoesCODCONDICAO: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODCONDICAO'
+      Origin = 'CODCONDICAO'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QCondicoesCONDICAO: TStringField
+      DisplayLabel = 'Condi'#231#227'o'
+      FieldName = 'CONDICAO'
+      Origin = 'CONDICAO'
+      Required = True
+      Size = 80
+    end
+    object QCondicoesDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QCondicoesULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QCondicoesCODUSU: TIntegerField
+      FieldName = 'CODUSU'
+      Origin = 'CODUSU'
+      Visible = False
+    end
+    object QCondicoesPARCELAS: TIntegerField
+      FieldName = 'PARCELAS'
+      Origin = 'PARCELAS'
+      Visible = False
+    end
+    object QCondicoesJUROS: TSingleField
+      FieldName = 'JUROS'
+      Origin = 'JUROS'
+      Visible = False
+    end
+    object QCondicoesDESCONTO: TSingleField
+      FieldName = 'DESCONTO'
+      Origin = 'DESCONTO'
+      Visible = False
+    end
+    object QCondicoesMULTA: TSingleField
+      FieldName = 'MULTA'
+      Origin = 'MULTA'
+      Visible = False
+    end
+    object QCondicoesCODFORMA: TIntegerField
+      DisplayLabel = 'C'#243'd Forma'
+      FieldName = 'CODFORMA'
+      Origin = 'CODFORMA'
+    end
+    object QCondicoesDIAS: TIntegerField
+      FieldName = 'DIAS'
+      Origin = 'DIAS'
+      Visible = False
+    end
+    object QCondicoesPORCENTAGEM: TSingleField
+      FieldName = 'PORCENTAGEM'
+      Origin = 'PORCENTAGEM'
+      Visible = False
+    end
+    object QCondicoesFORMA: TStringField
+      DisplayLabel = 'Forma de Pagamento'
+      FieldKind = fkLookup
+      FieldName = 'FORMA'
+      LookupDataSet = QFormasPagamentos
+      LookupKeyFields = 'CODFORMA'
+      LookupResultField = 'FORMA'
+      KeyFields = 'CODFORMA'
+      Lookup = True
+    end
+  end
+  object DSCondicoes: TDataSource
+    DataSet = QCondicoes
+    Left = 104
+    Top = 256
+  end
 end

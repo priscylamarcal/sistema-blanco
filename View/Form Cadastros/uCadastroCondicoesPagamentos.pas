@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroPai, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.Buttons, Vcl.StdCtrls, campoEdit, Vcl.ExtCtrls, Vcl.ComCtrls,
-  uCondicoesPagamentos, uCtrlCondicoesPagamentos;
+  uCondicoesPagamentos, uCtrlCondicoesPagamentos, uConsulta_FormasPagamentos;
 
 type
   Tform_cadastro_condicao_pagamento = class(Tform_cadastro_pai)
@@ -35,6 +35,12 @@ type
     btn_limpar_grid: TSpeedButton;
     lbl_totais: TLabel;
     lbl_total_porc: TLabel;
+    edt_pesquisar_registro: PriTEdit;
+    pnl_btn_pesquisa: TPanel;
+    btn_pesquisa: TSpeedButton;
+    edt_cod_forma: PriTEdit;
+    lbl_codigo_forma: TLabel;
+    Label2: TLabel;
 
     procedure btn_adicionar_contatoMouseEnter(
   Sender: TObject);
@@ -50,12 +56,15 @@ type
     procedure ListView_condicao_pagamentoSelectItem(Sender: TObject;
       Item: TListItem; Selected: Boolean);
     procedure btn_botao_alterar_itemClick(Sender: TObject);
+    procedure btn_pesquisaClick(Sender: TObject);
 
   private
     { Private declarations }
 
     aCondicao : CondicoesPagamentos;
     aCtrlCondicoes : ctrlCondicoesPagamentos;
+
+    aConsultaFormas : Tform_consulta_formas_pagamentos;
   public
     { Public declarations }
     procedure conhecaObj ( pCtrl, pObj : TObject );  override;
@@ -66,6 +75,7 @@ type
     procedure bloqueiaEdt;    override;
     procedure desbloqueiaEdt; override;
     function validaFormulario : Boolean; override;
+    procedure setFrmConsultaFormas ( pConsulta : TObject );
 
     procedure adicionarItens;
     procedure limparItens;
@@ -101,6 +111,7 @@ begin
       item.SubItems.Add(edt_desconto.Text);
       item.SubItems.Add(edt_juros.Text);
       item.SubItems.Add(edt_multa.Text);
+      item.SubItems.Add(edt_pesquisar_registro.Text);
 
       edt_num_parcelas.Text:= IntToStr( StrToInt ( edt_num_parcelas.Text) + 1 );
 
@@ -117,6 +128,7 @@ begin
     item.SubItems.Add(edt_desconto.Text);
     item.SubItems.Add(edt_juros.Text);
     item.SubItems.Add(edt_multa.Text);
+    item.SubItems.Add(edt_pesquisar_registro.Text);
     
     edt_num_parcelas.Text:= IntToStr( StrToInt ( edt_num_parcelas.Text) + 1 );
 
@@ -135,6 +147,7 @@ begin
   self.edt_desconto.Enabled:= False;
   self.edt_juros.Enabled:= False;
   self.edt_multa.Enabled:= False;
+  self.edt_cod_forma.Enabled:= False;
 end;
 
 procedure Tform_cadastro_condicao_pagamento.btn_adicionar_contatoClick(
@@ -158,6 +171,9 @@ begin
   self.edt_condicao_pagamento.Text:= aCondicao.getCondicao;
   self.edt_data_cadastro.Text:= DateToStr( aCondicao.getDataCad);
   self.edt_data_ult_alt.Text:= DateToStr(aCondicao.getUltAlt);
+
+  self.edt_cod_forma.Text:=  IntToStr (aCondicao.getaFormaPagamento.getCodigo);
+  self.edt_pesquisar_registro.Text:= aCondicao.getaFormaPagamento.getFormaPagamento;
 end;
 
 procedure Tform_cadastro_condicao_pagamento.conhecaObj(pCtrl, pObj: TObject);
@@ -181,6 +197,7 @@ begin
   self.edt_desconto.Enabled:= True;
   self.edt_juros.Enabled:= True;
   self.edt_multa.Enabled:= True;
+  self.edt_cod_forma.Enabled:= True;
 end;
 
 procedure Tform_cadastro_condicao_pagamento.FormShow(Sender: TObject);
@@ -206,6 +223,8 @@ begin
   self.edt_desconto.Clear;
   self.edt_juros.Clear;
   self.edt_multa.Clear;
+  self.edt_cod_forma.Clear;
+  self.edt_pesquisar_registro.Clear;
 end;
 
 procedure Tform_cadastro_condicao_pagamento.ListView_condicao_pagamentoSelectItem(
@@ -237,6 +256,7 @@ begin
   begin
     aCondicao.setCodigo( StrToInt ( self.edt_codigo.Text ) );
     aCondicao.setCondicao( self.edt_condicao_pagamento.Text );
+    aCondicao.setTotalParcelas( self.ListView_condicao_pagamento.ItemIndex );
     aCondicao.setDataCad( Date );
     aCondicao.setUltAlt( Date );
     aCondicao.setCodUsu( StrToInt ( Self.edt_cod_usuario.Text ) );
@@ -248,6 +268,12 @@ begin
 
     self.sair;
   end;
+end;
+
+procedure Tform_cadastro_condicao_pagamento.setFrmConsultaFormas(
+  pConsulta: TObject);
+begin
+  aConsultaFormas:= Tform_consulta_formas_pagamentos ( pConsulta );
 end;
 
 function Tform_cadastro_condicao_pagamento.validaFormulario: Boolean;
@@ -310,6 +336,13 @@ begin
     Exit;
   end;
 
+  if Self.edt_pesquisar_registro.Text = '' then
+  begin
+    MessageDlg( 'A forma de pagamento é obrigatória!', MtInformation, [ MbOK ], 0 );
+    edt_pesquisar_registro.SetFocus;
+    Exit;
+  end;
+
  Result:= true;
 end;
 
@@ -335,6 +368,20 @@ begin
   edt_num_parcelas.Text:= '1';
 end;
 
+procedure Tform_cadastro_condicao_pagamento.btn_pesquisaClick(Sender: TObject);
+var aux : string;
+begin
+ // inherited;
+  aConsultaFormas.conhecaObj( aCtrlCondicoes.getCtrlFormas, aCondicao.getaFormaPagamento );
+  aux:= aConsultaFormas.btn_botao_sair.Caption;
+  aConsultaFormas.btn_botao_sair.Caption:= 'Selecionar';
+  aConsultaFormas.ShowModal;
+  aConsultaFormas.btn_botao_sair.Caption:= aux;
+
+  self.edt_cod_forma.Text:= IntToStr( aCondicao.getaFormaPagamento.getCodigo );
+  self.edt_pesquisar_registro.Text:= aCondicao.getaFormaPagamento.getFormaPagamento;
+end;
+
 procedure Tform_cadastro_condicao_pagamento.btn_botao_alterar_itemClick(
   Sender: TObject);
 var item : TListItem;
@@ -344,6 +391,7 @@ begin
   edt_desconto.Text:= ListView_condicao_pagamento.Selected.SubItems[2];
   edt_juros.Text:= ListView_condicao_pagamento.Selected.SubItems[3];
   edt_multa.Text:= ListView_condicao_pagamento.Selected.SubItems[4];
+  edt_pesquisar_registro.Text:= ListView_condicao_pagamento.Selected.SubItems[5];
 end;
 
 //---------------------ESTILOS BOTÕES---------------------//

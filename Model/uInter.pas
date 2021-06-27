@@ -169,6 +169,7 @@ begin
   oCadastroEstados.setFrmConsultaPaises( aConsultaPaises );
   oCadastroCidade.setFrmConsultaEstados( aConsultaEstados );
   oCadastroCargos.setFrmConsultaDepartamentos( aConsultaDepartamentos );
+  oCadastroCondicaoPagamento.setFrmConsultaFormas( aConsultaFormasPagamentos );
 end;
 
 destructor Inter.destrua_se;
