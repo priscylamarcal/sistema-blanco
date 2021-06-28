@@ -142,8 +142,19 @@ begin
 end;
 
 procedure Tform_consulta_tipos_contatos.sair;
+var mContato : TiposContatos;
 begin
-  inherited;
+  if btn_botao_sair.Caption= 'Selecionar' then
+  begin
+    mContato:= TiposContatos.crieObj;
+    aCtrlTiposContatos.carregar( TObject ( mContato ) );
+    oTipoContato.setCodigo( mContato.getCodigo );
+    oTipoContato.setTipoContato( mContato.getTipoContato );
+
+    inherited sair;
+  end
+  else
+    inherited sair;
 
 end;
 

@@ -93,7 +93,13 @@ uses
   uCtrlCargos in 'Controller\uCtrlCargos.pas',
   uCondicoesPagamentos in 'Model\Classes\uCondicoesPagamentos.pas',
   uDaoCondicoesPagamentos in 'DAO\uDaoCondicoesPagamentos.pas',
-  uCtrlCondicoesPagamentos in 'Controller\uCtrlCondicoesPagamentos.pas';
+  uCtrlCondicoesPagamentos in 'Controller\uCtrlCondicoesPagamentos.pas',
+  uPessoas in 'Model\Classes\uPessoas.pas',
+  uFornecedores in 'Model\Classes\uFornecedores.pas',
+  uFuncionarios in 'Model\Classes\uFuncionarios.pas',
+  uClientes in 'Model\Classes\uClientes.pas',
+  uDaoFornecedores in 'DAO\uDaoFornecedores.pas',
+  uCtrlFornecedores in 'Controller\uCtrlFornecedores.pas';
 
 {$R *.res}
 

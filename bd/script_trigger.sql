@@ -109,3 +109,13 @@ begin
     if (NEW.codcondicao = 0) THEN
         new.codcondicao = GEN_ID(gen_condicoes_pagamentos, 1);
 end
+
+CREATE OR ALTER TRIGGER FORNECEDORES_BI0 FOR FORNECEDORES
+ACTIVE BEFORE INSERT POSITION 0
+AS
+begin
+    if (NEW.codforn = 0) THEN
+        new.codforn = GEN_ID(gen_fornecedores, 1);
+end
+^
+SET TERM ; ^

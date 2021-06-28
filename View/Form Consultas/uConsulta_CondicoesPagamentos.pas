@@ -149,9 +149,19 @@ begin
 end;
 
 procedure Tform_consulta_condicoes_pagamentos.sair;
+var mCondicao : CondicoesPagamentos;
 begin
-  inherited;
+  if btn_botao_sair.Caption= 'Selecionar' then
+  begin
+    mCondicao:= CondicoesPagamentos.crieObj;
+    aCtrlCondicoes.carregar( TObject ( mCondicao ) );
+    aCondicaoPagamento.setCodigo( mCondicao.getCodigo );
+    aCondicaoPagamento.setCondicao( mCondicao.getCondicao );
 
+    inherited sair;
+  end
+  else
+    inherited sair;
 end;
 
 procedure Tform_consulta_condicoes_pagamentos.setFrmCadastro(pObj: TObject);

@@ -9,13 +9,14 @@ uses
 
   uPaises, uEstados, uDepartamentos, uCores, uColecoes, uGruposRoupas,
   uMarcas, uTamanhos, uFormaPagamento, uTiposContatos, uCidades, uCargos,
-  uCondicoesPagamentos,
+  uCondicoesPagamentos, uFornecedores,
 
   uInter,
 
   uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores, uCtrlColecoes,
   uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
   uCtrlTiposContatos, uCtrlCidades, uCtrlCargos, uCtrlCondicoesPagamentos,
+  uCtrlFornecedores,
 
   uDM;
 
@@ -144,6 +145,7 @@ type
     aCidade             : Cidades;
     oCargo              : Cargos;
     aCondicao           : CondicoesPagamentos;
+    oFornecedor        : Fornecedores;
 
     aInter  : Inter;
 
@@ -160,6 +162,7 @@ type
     aCtrlCidade         : ctrlCidades;
     aCtrlCargos         : ctrlCargos;
     aCtrlCondicoes      : ctrlCondicoesPagamentos;
+    aCtrlFornecedores   : ctrlFornecedores;
 
     aDm : TDM;
 
@@ -196,6 +199,7 @@ begin
   aCidade               := Cidades.crieObj;
   oCargo                := Cargos.crieObj;
   aCondicao             := CondicoesPagamentos.crieObj;
+  oFornecedor           := Fornecedores.crieObj;
 
   aCtrlPais             := ctrlPaises.crieObj;
   aCtrlEstado           := ctrlEstados.crieObj;
@@ -210,6 +214,7 @@ begin
   aCtrlCidade           := ctrlCidades.crieObj;
   aCtrlCargos           := ctrlCargos.crieObj;
   aCtrlCondicoes        := ctrlCondicoesPagamentos.crieObj;
+  aCtrlFornecedores     := ctrlFornecedores.crieObj;
 
   aDm:= TDM.Create(nil);
 
@@ -226,11 +231,15 @@ begin
   aCtrlCidade.setDM( aDm );
   aCtrlCargos.setDM( aDm );
   aCtrlCondicoes.setDM( aDm );
+  aCtrlFornecedores.setDM( aDm );
 
   aCtrlEstado.setCtrlPaises( aCtrlPais );
   aCtrlCidade.setCtrlEstados( aCtrlEstado );
   aCtrlCargos.setCtrlDepartamentos( aCtrlDepartamento );
   aCtrlCondicoes.setCtrlFormas( aCtrlFormaPagamento );
+  aCtrlFornecedores.setCtrlCidades( aCtrlCidade );
+  aCtrlFornecedores.setCtrlTiposContatos( aCtrlTipoContato );
+  aCtrlFornecedores.setCtrlCondicoes( aCtrlCondicoes );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -250,6 +259,7 @@ begin
   aCidade.destrua_se;
   oCargo.destrua_se;
   aCondicao.destrua_se;
+  oFornecedor.destrua_se;
 
   aCtrlPais.destrua_se;
   aCtrlDepartamento.destrua_se;
@@ -264,6 +274,7 @@ begin
   aCtrlCidade.destrua_se;
   aCtrlCargos.destrua_se;
   aCtrlCondicoes.destrua_se;
+  aCtrlFornecedores.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -345,7 +356,7 @@ end;
 
 procedure Tform_principal.spb_fornecedoresClick(Sender: TObject);
 begin
-  aInter.PDFornecedores(nil, nil);
+  aInter.PDFornecedores(aCtrlFornecedores, oFornecedor);
 end;
 
 procedure Tform_principal.spb_funcionáriosClick(Sender: TObject);
