@@ -327,6 +327,12 @@
         <DCCReference Include="Model\Classes\uCondicoesPagamentos.pas"/>
         <DCCReference Include="DAO\uDaoCondicoesPagamentos.pas"/>
         <DCCReference Include="Controller\uCtrlCondicoesPagamentos.pas"/>
+        <DCCReference Include="Model\Classes\uPessoas.pas"/>
+        <DCCReference Include="Model\Classes\uFornecedores.pas"/>
+        <DCCReference Include="Model\Classes\uFuncionarios.pas"/>
+        <DCCReference Include="Model\Classes\uClientes.pas"/>
+        <DCCReference Include="DAO\uDaoFornecedores.pas"/>
+        <DCCReference Include="Controller\uCtrlFornecedores.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -31,13 +31,14 @@ uses
 { ctrlCidades }
 
 function ctrlCidades.carregar(pObj: TObject): string;
-var mEstado : Estados; AFilter : TFilterSearch;
+var mEstado : Estados; AFilter : TFilterSearch; pChave: string;
 begin
+  mEstado:= Cidades( pObj ).getoEstado;
+  aCtrlEstados.pesquisar( AFilter, pChave );
+  aCtrlEstados.carregar( mEstado );
   aDaoCidades.carregar( pObj );
 
-  mEstado:= Cidades( pObj ).getoEstado;
-  aCtrlEstados.pesquisar( AFilter, IntToStr( mEstado.getCodigo ) );
-  aCtrlEstados.carregar( mEstado );
+
 end;
 
 constructor ctrlCidades.crieObj;

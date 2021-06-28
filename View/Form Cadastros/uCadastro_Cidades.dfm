@@ -115,6 +115,7 @@ inherited form_cadastro_cidades: Tform_cadastro_cidades
         Top = 35
         Width = 521
         Height = 24
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
@@ -130,6 +131,7 @@ inherited form_cadastro_cidades: Tform_cadastro_cidades
         Top = 35
         Width = 80
         Height = 24
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
@@ -145,6 +147,7 @@ inherited form_cadastro_cidades: Tform_cadastro_cidades
         Top = 35
         Width = 80
         Height = 24
+        CharCase = ecUpperCase
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13

@@ -126,6 +126,27 @@ type
     QCondicoesDIAS: TIntegerField;
     QCondicoesPORCENTAGEM: TSingleField;
     QCondicoesFORMA: TStringField;
+    QFornecedores: TFDQuery;
+    DSFornecedores: TDataSource;
+    QFornecedoresCODFORN: TIntegerField;
+    QFornecedoresDATACAD: TSQLTimeStampField;
+    QFornecedoresULTALT: TSQLTimeStampField;
+    QFornecedoresCODUSU: TIntegerField;
+    QFornecedoresNOME_RAZAO_SOCIAL: TStringField;
+    QFornecedoresTIPO_FORN: TStringField;
+    QFornecedoresAPELIDO_FANTASIA: TStringField;
+    QFornecedoresENDERECO: TStringField;
+    QFornecedoresNUMERO: TStringField;
+    QFornecedoresCOMPLEMENTO: TStringField;
+    QFornecedoresBAIRRO: TStringField;
+    QFornecedoresCEP: TStringField;
+    QFornecedoresCODCIDADE: TIntegerField;
+    QFornecedoresCODCONTATO: TIntegerField;
+    QFornecedoresCONTATO_AUX1: TStringField;
+    QFornecedoresCONTATO_AUX2: TStringField;
+    QFornecedoresCNPJ_CPF: TStringField;
+    QFornecedoresIE_RG: TStringField;
+    QFornecedoresCODCONDICAO: TIntegerField;
   private
     { Private declarations }
   public

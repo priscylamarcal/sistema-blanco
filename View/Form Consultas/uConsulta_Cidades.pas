@@ -145,8 +145,26 @@ begin
 end;
 
 procedure Tform_consulta_cidades.sair;
+var mCidade : Cidades;
 begin
-  inherited;
+  if Self.btn_botao_sair.Caption= 'Selecionar' then
+  begin
+    mCidade:= Cidades.crieObj;
+    aCtrlCidades.carregar( TObject( mCidade ) );
+    aCidade.setCodigo( mCidade.getCodigo );
+    aCidade.setCidade( mCidade.getCidade );
+    aCidade.setSigla( mCidade.getSigla );
+    aCidade.setDDD( mCidade.getDDD );
+//    aCidade.getoEstado.setCodigo( mCidade.getoEstado.getCodigo );
+//    aCidade.getoEstado.setEstado( mCidade.getoEstado.getEstado );
+//    aCidade.setDataCad( mCidade.getDataCad );
+//    aCidade.setUltAlt( mCidade.getUltAlt );
+
+    inherited sair;
+
+  end
+  else
+     inherited sair;
 
 end;
 
