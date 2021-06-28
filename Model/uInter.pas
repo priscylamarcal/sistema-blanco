@@ -18,11 +18,12 @@ uses uConsulta_Paises, uConsulta_Estados, uConsulta_Cargos, uConsulta_Clientes,
      uCadastro_Cidades, uCondicoesPagamentos,
 
      uPaises, uEstados, uCores, uColecoes, uGruposRoupas, uMarcas,
-     uTamanhos, uFormaPagamento, uTiposContatos, uCidades, uCargos,
+     uTamanhos, uFormaPagamento, uTiposContatos, uCidades, uCargos, uFornecedores,
 
      uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores, uCtrlColecoes,
      uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
-     uCtrlTiposContatos, uCtrlCidades,uCtrlCargos, uCtrlCondicoesPagamentos;
+     uCtrlTiposContatos, uCtrlCidades,uCtrlCargos, uCtrlCondicoesPagamentos,
+     uCtrlFornecedores;
 
 type Inter = class
   private
@@ -89,7 +90,7 @@ type Inter = class
     procedure PDMarcas ( pCtrl : TObject; pObj : Marcas );
     procedure PDTamanhos ( pCtrl : TObject; pObj : Tamanhos );
     procedure PDRoupas ( pCtrl : TObject; pObj : TObject );
-    procedure PDFornecedores ( pCtrl : TObject; pObj : TObject );
+    procedure PDFornecedores ( pCtrl : TObject; pObj : Fornecedores );
     procedure PDClientes ( pCtrl : TObject; pObj : TObject );
     procedure PDTiposContatos ( pCtrl : TObject; pObj : TiposContatos );
     procedure PDEstoques ( pCtrl : TObject; pObj : TObject );
@@ -170,6 +171,9 @@ begin
   oCadastroCidade.setFrmConsultaEstados( aConsultaEstados );
   oCadastroCargos.setFrmConsultaDepartamentos( aConsultaDepartamentos );
   oCadastroCondicaoPagamento.setFrmConsultaFormas( aConsultaFormasPagamentos );
+  oCadastroFornecedores.setFrmConsultaCidade( aConsultaCidades );
+  oCadastroFornecedores.setFrmConsultaContatos( aConsultaTiposContatos );
+  oCadastroFornecedores.setFrmConsultaCondicaoPagamento( aConsultaCondicoesPagamentos );
 end;
 
 destructor Inter.destrua_se;
@@ -286,8 +290,9 @@ begin
   aConsultaFormasPagamentos.ShowModal;
 end;
 
-procedure Inter.PDFornecedores(pCtrl, pObj: TObject);
+procedure Inter.PDFornecedores(pCtrl : TObject; pObj : Fornecedores);
 begin
+  aConsultaFornecedores.conhecaObj( pCtrl, pObj );
   aConsultaFornecedores.ShowModal;
 end;
 

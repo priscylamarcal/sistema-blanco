@@ -726,4 +726,130 @@ object DM: TDM
     Left = 104
     Top = 256
   end
+  object QFornecedores: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from fornecedores')
+    Left = 200
+    Top = 256
+    object QFornecedoresCODFORN: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODFORN'
+      Origin = 'CODFORN'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QFornecedoresDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QFornecedoresULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QFornecedoresCODUSU: TIntegerField
+      FieldName = 'CODUSU'
+      Origin = 'CODUSU'
+      Visible = False
+    end
+    object QFornecedoresNOME_RAZAO_SOCIAL: TStringField
+      DisplayLabel = 'Fornecedor'
+      FieldName = 'NOME_RAZAO_SOCIAL'
+      Origin = 'NOME_RAZAO_SOCIAL'
+      Size = 80
+    end
+    object QFornecedoresTIPO_FORN: TStringField
+      DisplayLabel = 'Tipo'
+      DisplayWidth = 20
+      FieldName = 'TIPO_FORN'
+      Origin = 'TIPO_FORN'
+      Size = 50
+    end
+    object QFornecedoresAPELIDO_FANTASIA: TStringField
+      DisplayLabel = 'Apelido/Fantasia'
+      DisplayWidth = 60
+      FieldName = 'APELIDO_FANTASIA'
+      Origin = 'APELIDO_FANTASIA'
+      Size = 80
+    end
+    object QFornecedoresENDERECO: TStringField
+      FieldName = 'ENDERECO'
+      Origin = 'ENDERECO'
+      Visible = False
+      Size = 60
+    end
+    object QFornecedoresNUMERO: TStringField
+      FieldName = 'NUMERO'
+      Origin = 'NUMERO'
+      Visible = False
+      Size = 8
+    end
+    object QFornecedoresCOMPLEMENTO: TStringField
+      FieldName = 'COMPLEMENTO'
+      Origin = 'COMPLEMENTO'
+      Visible = False
+      Size = 60
+    end
+    object QFornecedoresBAIRRO: TStringField
+      FieldName = 'BAIRRO'
+      Origin = 'BAIRRO'
+      Visible = False
+      Size = 60
+    end
+    object QFornecedoresCEP: TStringField
+      FieldName = 'CEP'
+      Origin = 'CEP'
+      Visible = False
+      Size = 8
+    end
+    object QFornecedoresCODCIDADE: TIntegerField
+      DisplayLabel = 'C'#243'd Cidade'
+      FieldName = 'CODCIDADE'
+      Origin = 'CODCIDADE'
+    end
+    object QFornecedoresCODCONTATO: TIntegerField
+      DisplayLabel = 'C'#243'd Contato'
+      FieldName = 'CODCONTATO'
+      Origin = 'CODCONTATO'
+      Visible = False
+    end
+    object QFornecedoresCONTATO_AUX1: TStringField
+      FieldName = 'CONTATO_AUX1'
+      Origin = 'CONTATO_AUX1'
+      Visible = False
+      Size = 50
+    end
+    object QFornecedoresCONTATO_AUX2: TStringField
+      FieldName = 'CONTATO_AUX2'
+      Origin = 'CONTATO_AUX2'
+      Visible = False
+      Size = 50
+    end
+    object QFornecedoresCNPJ_CPF: TStringField
+      DisplayLabel = 'CNPJ/CPF'
+      FieldName = 'CNPJ_CPF'
+      Origin = 'CNPJ_CPF'
+      Size = 14
+    end
+    object QFornecedoresIE_RG: TStringField
+      DisplayLabel = 'IE/RG'
+      FieldName = 'IE_RG'
+      Origin = 'IE_RG'
+      Size = 14
+    end
+    object QFornecedoresCODCONDICAO: TIntegerField
+      DisplayLabel = 'C'#243'd Condi'#231#227'o'
+      FieldName = 'CODCONDICAO'
+      Origin = 'CODCONDICAO'
+      Visible = False
+    end
+  end
+  object DSFornecedores: TDataSource
+    DataSet = QFornecedores
+    Left = 280
+    Top = 256
+  end
 end

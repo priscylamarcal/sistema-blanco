@@ -4270,7 +4270,7 @@
       end
       object spb_fornecedores: TSpeedButton
         Left = 0
-        Top = 0
+        Top = 41
         Width = 146
         Height = 41
         Cursor = crHandPoint
@@ -4292,7 +4292,7 @@
       end
       object spb_tipos_contato: TSpeedButton
         Left = 0
-        Top = 41
+        Top = 0
         Width = 146
         Height = 41
         Cursor = crHandPoint
@@ -4309,7 +4309,8 @@
         OnClick = spb_tipos_contatoClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
-        ExplicitLeft = -1
+        ExplicitLeft = 1
+        ExplicitTop = -6
       end
     end
   end
