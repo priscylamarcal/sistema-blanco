@@ -33,13 +33,13 @@ uses
 { ctrlEstados }
 
 function ctrlEstados.carregar(pObj: TObject): string;
-var mPais : Paises; AFilter: TFilterSearch; tipoConsulta : TTipoConsulta;
+var mPais : Paises; AFilter: TFilterSearch; tipoConsulta : TTipoConsulta; pChave : string;
 begin
   aDaoEstados.carregar( pObj );
 
   mPais:= Estados( pObj ).getoPais;
-  aCtrlPaises.pesquisar(AFilter, IntToStr(mPais.getCodigo));
-  aCtrlPaises.carregar( oEstado.getoPais );
+  aCtrlPaises.pesquisar(AFilter, pChave);
+ // aCtrlPaises.carregar( TObject(mPais) );
 end;
 
 constructor ctrlEstados.crieObj;
