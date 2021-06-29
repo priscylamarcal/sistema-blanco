@@ -33,10 +33,8 @@ begin
   mEstado.setEstado( aDM.QEstados.FieldByName('ESTADO').AsString );
   mEstado.setUF( aDM.QEstados.FieldByName('UF').AsString );
 
-  mPais.setCodigo( aDM.QEstados.FieldByName('CODPAIS').Value );
-  mPais.setPais( aDM.QPaises.FieldByName('PAIS').AsString );
-  mPais.setDDI( aDM.QPaises.FieldByName('DDI').AsString );
-  mPais.setSigla( aDM.QPaises.FieldByName('SIGLA').AsString );
+  mEstado.getoPais.setCodigo(aDM.QEstados.FieldByName('CODPAIS').Value);
+  mEstado.getoPais.setPais( aDM.QEstados.FieldByName('NOMEPAIS').AsString );
 
   mEstado.setDataCad( aDM.QEstados.FieldByName('DATACAD').AsDateTime );
 end;
@@ -60,7 +58,7 @@ end;
 function daoEstados.pesquisar(AFilter: TFilterSearch; pChave: string): string;
 var msql : string;
 begin
-    msql:= '';
+    msql:= 'SELECT * FROM ESTADOS';
 
     case AFilter.TipoConsulta of
 

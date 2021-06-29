@@ -46,6 +46,7 @@ procedure Tform_consulta_estados.alterar;
 var form : Tform_cadastro_estados;
 begin
   inherited;
+  oCadastroEstados.limpaEdt;
   aCtrlEstados.carregar( oEstado );
   oCadastroEstados.conhecaObj( aCtrlEstados, oEstado );
 

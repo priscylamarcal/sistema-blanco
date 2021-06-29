@@ -52,7 +52,7 @@ end;
 function daoPaises.pesquisar(AFilter: TFilterSearch; pChave: string): string;
 var msql : string;
 begin
-    msql:= '';
+    msql:= 'SELECT * FROM PAISES';
 
     case AFilter.TipoConsulta of
 
@@ -85,8 +85,10 @@ begin
 
     aDM.QPaises.Active:= false;
     aDM.QPaises.SQL.Text:=msql;
+//    aDM.QPaises.SQL.SaveToFile('d:\teste.txt');
     aDM.QPaises.Open;
     result:= '';
+
 end;
 
 function daoPaises.salvar(pObj: TObject): string;
@@ -96,17 +98,29 @@ begin
   aDM.Transacao.StartTransaction;
   try
     if mPais.getCodigo = 0 then
-       aDM.QPaises.Insert
+    begin
+       aDM.QPaises.Insert;
+        aDM.QPaises.FieldByName('CODPAIS').AsInteger:= mPais.getCodigo;
+        aDM.QPaises.FieldByName('PAIS').AsString:= mPais.getPais;
+        aDM.QPaises.FieldByName('DDI').AsString:= mPais.getDDI;
+        aDM.QPaises.FieldByName('SIGLA').AsString:= mPais.getSigla;
+        aDM.QPaises.FieldByName('MOEDA').AsString:= mPais.getMoeda;
+        aDM.QPaises.FieldByName('DATACAD').AsDateTime:= mPais.getDataCad;
+
+    end
+
     else
+    begin
        aDM.QPaises.Edit;
 
-    aDM.QPaises.FieldByName('CODPAIS').AsInteger:= mPais.getCodigo;
-    aDM.QPaises.FieldByName('PAIS').AsString:= mPais.getPais;
-    aDM.QPaises.FieldByName('DDI').AsString:= mPais.getDDI;
-    aDM.QPaises.FieldByName('SIGLA').AsString:= mPais.getSigla;
-    aDM.QPaises.FieldByName('MOEDA').AsString:= mPais.getMoeda;
-    aDM.QPaises.FieldByName('DATACAD').AsDateTime:= mPais.getDataCad;
-    //aDM.QPaises.FieldByName('ULTALT').AsDateTime:= mPais.getUltAlt;
+      aDM.QPaises.FieldByName('CODPAIS').AsInteger:= mPais.getCodigo;
+      aDM.QPaises.FieldByName('PAIS').AsString:= mPais.getPais;
+      aDM.QPaises.FieldByName('DDI').AsString:= mPais.getDDI;
+      aDM.QPaises.FieldByName('SIGLA').AsString:= mPais.getSigla;
+      aDM.QPaises.FieldByName('MOEDA').AsString:= mPais.getMoeda;
+      aDM.QPaises.FieldByName('DATACAD').AsDateTime:= mPais.getDataCad;
+      aDM.QPaises.FieldByName('ULTALT').AsDateTime:= mPais.getUltAlt;
+    end;
 
     aDM.QPaises.Post;
 
