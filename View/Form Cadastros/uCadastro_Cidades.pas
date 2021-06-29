@@ -87,8 +87,10 @@ begin
   self.edt_cidade.Text:= aCidade.getCidade;
   self.edt_sigla.Text:= aCidade.getSigla;
   self.edt_ddd.Text:= aCidade.getDDD;
+
   self.edt_codigo_estado.Text:= IntToStr( aCidade.getoEstado.getCodigo );
   self.edt_pesquisar_estado_cidade.Text:= aCidade.getoEstado.getEstado;
+
   self.edt_data_cadastro.Text:= DateToStr( aCidade.getDataCad);
   self.edt_data_ult_alt.Text:= DateToStr(aCidade.getUltAlt);
 end;
@@ -144,6 +146,7 @@ begin
   if validaFormulario then
   begin
     aCidade.setCodigo( StrToInt ( self.edt_codigo.Text ) );
+    aCidade.setCidade( self.edt_cidade.Text );
     aCidade.setSigla( self.edt_sigla.Text );
     aCidade.setDDD( self.edt_ddd.Text );
     aCidade.getoEstado.setCodigo( StrToInt ( self.edt_codigo_estado.text ) );

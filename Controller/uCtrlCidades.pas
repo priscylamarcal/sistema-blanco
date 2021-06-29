@@ -33,12 +33,12 @@ uses
 function ctrlCidades.carregar(pObj: TObject): string;
 var mEstado : Estados; AFilter : TFilterSearch; pChave: string;
 begin
-  mEstado:= Cidades( pObj ).getoEstado;
-  aCtrlEstados.pesquisar( AFilter, pChave );
-  aCtrlEstados.carregar( mEstado );
   aDaoCidades.carregar( pObj );
 
-
+  mEstado:= Cidades( pObj ).getoEstado;
+  aCtrlEstados.pesquisar( AFilter, pChave );
+//  aCtrlEstados.carregar( mEstado );
+//  aDaoCidades.carregar( pObj );
 end;
 
 constructor ctrlCidades.crieObj;
