@@ -46,6 +46,7 @@ procedure Tform_consulta_cidades.alterar;
 var form : Tform_cadastro_cidades;
 begin
   inherited;
+  oCadastroCidades.limpaEdt;
   aCtrlCidades.carregar( aCidade );
   oCadastroCidades.conhecaObj( aCtrlCidades, aCidade );
 

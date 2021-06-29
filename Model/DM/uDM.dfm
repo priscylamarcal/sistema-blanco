@@ -517,7 +517,6 @@ object DM: TDM
     Top = 192
   end
   object QCidades: TFDQuery
-    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from cidades')
@@ -572,6 +571,17 @@ object DM: TDM
       FieldName = 'CODUSU'
       Origin = 'CODUSU'
       Visible = False
+    end
+    object QCidadesESTADO: TStringField
+      DisplayLabel = 'Estado'
+      DisplayWidth = 40
+      FieldKind = fkLookup
+      FieldName = 'ESTADO'
+      LookupDataSet = QEstados
+      LookupKeyFields = 'CODESTADO'
+      LookupResultField = 'ESTADO'
+      KeyFields = 'CODESTADO'
+      Lookup = True
     end
   end
   object DSCidades: TDataSource

@@ -147,6 +147,7 @@ type
     QFornecedoresCNPJ_CPF: TStringField;
     QFornecedoresIE_RG: TStringField;
     QFornecedoresCODCONDICAO: TIntegerField;
+    QCidadesESTADO: TStringField;
   private
     { Private declarations }
   public

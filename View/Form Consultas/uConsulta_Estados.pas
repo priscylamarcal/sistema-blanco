@@ -155,12 +155,13 @@ begin
        aCtrlEstados.carregar(TObject(mEstado));
        oEstado.setCodigo(mEstado.getCodigo);
        oEstado.setEstado(mEstado.getEstado);
+
 //       mPais.setCodigo( mEstado.getoPais.getCodigo );
 //       mPais.setPais( mEstado.getoPais.getPais );
          //  aCtrlPaises.carregar( TObject( mPais) );
-         aCtrlEstados.carregar(TObject(mEstado.getoPais));
-    mPais.setCodigo( mPais.getCodigo );
-    mPais.setPais( mPais.getPais );
+//         aCtrlEstados.carregar(TObject(mEstado.getoPais));
+//    mPais.setCodigo( mPais.getCodigo );
+//    mPais.setPais( mPais.getPais );
      //  oEstado.getoPais.setCodigo( mEstado.getoPais );
       // oEstado.setoPais(mEstado.getoPais.clone.getCodigo);
 //       oEstado.set( mEstado.GetCodigo,
