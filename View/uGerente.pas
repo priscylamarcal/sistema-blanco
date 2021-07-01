@@ -9,16 +9,16 @@ uses
 
   uPaises, uEstados, uDepartamentos, uCores, uColecoes, uGruposRoupas,
   uMarcas, uTamanhos, uFormaPagamento, uTiposContatos, uCidades, uCargos,
-  uCondicoesPagamentos, uFornecedores,
+  uCondicoesPagamentos, uFornecedores, uFuncionarios, uClientes, uRoupas,
 
   uInter,
 
   uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores, uCtrlColecoes,
   uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
   uCtrlTiposContatos, uCtrlCidades, uCtrlCargos, uCtrlCondicoesPagamentos,
-  uCtrlFornecedores,
+  uCtrlFornecedores, uCtrlFuncionarios, uCtrlClientes, uCtrlRoupas,
 
-  uDM;
+  uDM ;
 
 type
   Tform_principal = class(TForm)
@@ -145,7 +145,10 @@ type
     aCidade             : Cidades;
     oCargo              : Cargos;
     aCondicao           : CondicoesPagamentos;
-    oFornecedor        : Fornecedores;
+    oFornecedor         : Fornecedores;
+    oFuncionario        : Funcionarios;
+    oCliente            : Clientes;
+    aRoupa              : Roupas;
 
     aInter  : Inter;
 
@@ -163,6 +166,9 @@ type
     aCtrlCargos         : ctrlCargos;
     aCtrlCondicoes      : ctrlCondicoesPagamentos;
     aCtrlFornecedores   : ctrlFornecedores;
+    aCtrlFuncionarios   : ctrlFuncionarios;
+    aCtrlClientes       : ctrlClientes;
+    aCtrlRoupas         : ctrlRoupas;
 
     aDm : TDM;
 
@@ -200,6 +206,9 @@ begin
   oCargo                := Cargos.crieObj;
   aCondicao             := CondicoesPagamentos.crieObj;
   oFornecedor           := Fornecedores.crieObj;
+  oFuncionario          := Funcionarios.crieObj;
+  oCliente              := Clientes.crieObj;
+  aRoupa                := Roupas.crieObj;
 
   aCtrlPais             := ctrlPaises.crieObj;
   aCtrlEstado           := ctrlEstados.crieObj;
@@ -215,6 +224,9 @@ begin
   aCtrlCargos           := ctrlCargos.crieObj;
   aCtrlCondicoes        := ctrlCondicoesPagamentos.crieObj;
   aCtrlFornecedores     := ctrlFornecedores.crieObj;
+  aCtrlFuncionarios     := ctrlFuncionarios.crieObj;
+  aCtrlClientes         := ctrlClientes.crieObj;
+  aCtrlRoupas           := ctrlRoupas.crieObj;
 
   aDm:= TDM.Create(nil);
 
@@ -232,6 +244,9 @@ begin
   aCtrlCargos.setDM( aDm );
   aCtrlCondicoes.setDM( aDm );
   aCtrlFornecedores.setDM( aDm );
+  aCtrlFuncionarios.setDM( aDm );
+  aCtrlClientes.setDM( aDm );
+  aCtrlRoupas.setDM( aDm );
 
   aCtrlEstado.setCtrlPaises( aCtrlPais );
   aCtrlCidade.setCtrlEstados( aCtrlEstado );
@@ -260,6 +275,9 @@ begin
   oCargo.destrua_se;
   aCondicao.destrua_se;
   oFornecedor.destrua_se;
+  oFuncionario.destrua_se;
+  oCliente.destrua_se;
+  aRoupa.destrua_se;
 
   aCtrlPais.destrua_se;
   aCtrlDepartamento.destrua_se;
@@ -275,6 +293,9 @@ begin
   aCtrlCargos.destrua_se;
   aCtrlCondicoes.destrua_se;
   aCtrlFornecedores.destrua_se;
+  aCtrlFuncionarios.destrua_se;
+  aCtrlClientes.destrua_se;
+  aCtrlRoupas.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -311,7 +332,7 @@ end;
 
 procedure Tform_principal.spb_clientesClick(Sender: TObject);
 begin
-  aInter.PDClientes(nil, nil);
+  aInter.PDClientes( aCtrlClientes, oCliente );
 end;
 
 procedure Tform_principal.spb_colecaoClick(Sender: TObject);
@@ -361,7 +382,7 @@ end;
 
 procedure Tform_principal.spb_funcionáriosClick(Sender: TObject);
 begin
-  aInter.PDFuncionarios(nil, nil);
+  aInter.PDFuncionarios(aCtrlFuncionarios, oFuncionario);
 end;
 
 procedure Tform_principal.spb_grupo_roupasClick(Sender: TObject);
@@ -401,37 +422,37 @@ end;
 
 procedure Tform_principal.spb_menu_estoqueClick(Sender: TObject);
 begin
-  aInter.PDEstoques(nil, nil);
+//  aInter.PDEstoques(nil, nil);
 end;
 
 procedure Tform_principal.spb_roupasClick(Sender: TObject);
 begin
-  aInter.PDRoupas(nil, nil);
+  aInter.PDRoupas( aCtrlRoupas , aRoupa );
 end;
 
 procedure Tform_principal.spb_rapido_clientesClick(Sender: TObject);
 begin
-  aInter.PDClientes(nil, nil);
+//  aInter.PDClientes(nil, nil);
 end;
 
 procedure Tform_principal.spb_rapido_contas_pagarClick(Sender: TObject);
 begin
-  aInter.PDContasPagar(nil, nil);
+//  aInter.PDContasPagar(nil, nil);
 end;
 
 procedure Tform_principal.spb_rapido_contas_receberClick(Sender: TObject);
 begin
-  aInter.PDContasReceber(nil, nil);
+//  aInter.PDContasReceber(nil, nil);
 end;
 
 procedure Tform_principal.spb_rapido_roupaClick(Sender: TObject);
 begin
-  aInter.PDRoupas(nil, nil);
+//  aInter.PDRoupas(nil, nil);
 end;
 
 procedure Tform_principal.spb_rapido_vendasClick(Sender: TObject);
 begin
-  aInter.PDVendas(nil, nil);
+//  aInter.PDVendas(nil, nil);
 end;
 
 //---------------------FUNÇÕES---------------------//

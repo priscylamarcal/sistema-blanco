@@ -99,7 +99,14 @@ uses
   uFuncionarios in 'Model\Classes\uFuncionarios.pas',
   uClientes in 'Model\Classes\uClientes.pas',
   uDaoFornecedores in 'DAO\uDaoFornecedores.pas',
-  uCtrlFornecedores in 'Controller\uCtrlFornecedores.pas';
+  uCtrlFornecedores in 'Controller\uCtrlFornecedores.pas',
+  uDaoFuncionarios in 'DAO\uDaoFuncionarios.pas',
+  uCtrlFuncionarios in 'Controller\uCtrlFuncionarios.pas',
+  uDaoClientes in 'DAO\uDaoClientes.pas',
+  uCtrlClientes in 'Controller\uCtrlClientes.pas',
+  uDaoRoupas in 'DAO\uDaoRoupas.pas',
+  uCtrlRoupas in 'Controller\uCtrlRoupas.pas',
+  uRoupas in 'Model\Classes\uRoupas.pas';
 
 {$R *.res}
 
