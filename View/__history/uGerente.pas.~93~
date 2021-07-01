@@ -8,13 +8,15 @@ uses
   Vcl.ExtCtrls, Vcl.Buttons, Vcl.StdCtrls, Vcl.Imaging.pngimage,
 
   uPaises, uEstados, uDepartamentos, uCores, uColecoes, uGruposRoupas,
-  uMarcas, uTamanhos, uFormaPagamento, uTiposContatos, uCidades,
+  uMarcas, uTamanhos, uFormaPagamento, uTiposContatos, uCidades, uCargos,
+  uCondicoesPagamentos, uFornecedores, uFuncionarios, uClientes,
 
   uInter,
 
   uCtrlPaises, uCtrlEstados, uCtrlDepartamentos, uCtrlCores, uCtrlColecoes,
   uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
-  uCtrlTiposContatos,
+  uCtrlTiposContatos, uCtrlCidades, uCtrlCargos, uCtrlCondicoesPagamentos,
+  uCtrlFornecedores, uCtrlFuncionarios, uCtrlClientes,
 
   uDM;
 
@@ -103,8 +105,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure FormResize(Sender: TObject);
-    procedure spb_departamentosClick(Sender: TObject);
 
+    procedure spb_departamentosClick(Sender: TObject);
     procedure spb_formas_pagamentoClick(Sender: TObject);
     procedure spb_condicoes_pagamentoClick(Sender: TObject);
     procedure spb_vendasClick(Sender: TObject);
@@ -130,30 +132,41 @@ type
   private
     { Private declarations }
 
-    oPais         : Paises;
-    oEstado       : Estados;
-    oDepartamento : Departamentos;
-    aCor          : Cores;
-    aColecao      : Colecoes;
-    oGrupoRoupa   : GruposRoupas;
-    aMarca        : Marcas;
-    oTamanho      : Tamanhos;
-    aFormaPagamento : FormasPagamentos;
-    oTipoContato : TiposContatos;
-    aCidade       : Cidades;
+    oPais               : Paises;
+    oEstado             : Estados;
+    oDepartamento       : Departamentos;
+    aCor                : Cores;
+    aColecao            : Colecoes;
+    oGrupoRoupa         : GruposRoupas;
+    aMarca              : Marcas;
+    oTamanho            : Tamanhos;
+    aFormaPagamento     : FormasPagamentos;
+    oTipoContato        : TiposContatos;
+    aCidade             : Cidades;
+    oCargo              : Cargos;
+    aCondicao           : CondicoesPagamentos;
+    oFornecedor        : Fornecedores;
+    oFuncionario        : Funcionarios;
+    oCliente            : Clientes;
 
     aInter  : Inter;
 
-    aCtrlPais         : ctrlPaises;
-    aCtrlEstado       : ctrlEstados;
-    aCtrlDepartamento : ctrlDepartamentos;
-    aCtrlCor          : ctrlCores;
-    aCtrlColecao      : ctrlColecoes;
-    aCtrlGrupoRoupa   : ctrlGruposRoupas;
-    aCtrlMarca        : ctrlMarcas;
-    aCtrlTamanho      : ctrlTamanhos;
+    aCtrlPais           : ctrlPaises;
+    aCtrlEstado         : ctrlEstados;
+    aCtrlDepartamento   : ctrlDepartamentos;
+    aCtrlCor            : ctrlCores;
+    aCtrlColecao        : ctrlColecoes;
+    aCtrlGrupoRoupa     : ctrlGruposRoupas;
+    aCtrlMarca          : ctrlMarcas;
+    aCtrlTamanho        : ctrlTamanhos;
     aCtrlFormaPagamento : ctrlFormasPagamentos;
-    aCtrlTipoContato : ctrlTiposContatos;
+    aCtrlTipoContato    : ctrlTiposContatos;
+    aCtrlCidade         : ctrlCidades;
+    aCtrlCargos         : ctrlCargos;
+    aCtrlCondicoes      : ctrlCondicoesPagamentos;
+    aCtrlFornecedores   : ctrlFornecedores;
+    aCtrlFuncionarios   : ctrlFuncionarios;
+    aCtrlClientes       : ctrlClientes;
 
     aDm : TDM;
 
@@ -175,30 +188,41 @@ implementation
 
 procedure Tform_principal.FormCreate(Sender: TObject);
 begin
-  aInter:= Inter.crieObj;
+  aInter := Inter.crieObj;
 
-  oPais:= Paises.crieObj;
-  oEstado:= Estados.crieObj;
-  oDepartamento:= Departamentos.crieObj;
-  aCor:= Cores.crieObj;
-  aColecao:= Colecoes.crieObj;
-  oGrupoRoupa:= gruposRoupas.crieObj;
-  aMarca:= Marcas.crieObj;
-  oTamanho:= Tamanhos.crieObj;
-  aFormaPagamento:= FormasPagamentos.crieObj;
-  oTipoContato:= TiposContatos.crieObj;
-  aCidade:= Cidades.crieObj;
+  oPais                 := Paises.crieObj;
+  oEstado               := Estados.crieObj;
+  oDepartamento         := Departamentos.crieObj;
+  aCor                  := Cores.crieObj;
+  aColecao              := Colecoes.crieObj;
+  oGrupoRoupa           := gruposRoupas.crieObj;
+  aMarca                := Marcas.crieObj;
+  oTamanho              := Tamanhos.crieObj;
+  aFormaPagamento       := FormasPagamentos.crieObj;
+  oTipoContato          := TiposContatos.crieObj;
+  aCidade               := Cidades.crieObj;
+  oCargo                := Cargos.crieObj;
+  aCondicao             := CondicoesPagamentos.crieObj;
+  oFornecedor           := Fornecedores.crieObj;
+  oFuncionario          := Funcionarios.crieObj;
+  oCliente              := Clientes.crieObj;
 
-  aCtrlPais:= ctrlPaises.crieObj;
-  aCtrlEstado:= ctrlEstados.crieObj;
-  aCtrlDepartamento:= ctrlDepartamentos.crieObj;
-  aCtrlCor:= ctrlCores.crieObj;
-  aCtrlColecao:= ctrlColecoes.crieObj;
-  aCtrlGrupoRoupa:= ctrlGruposRoupas.crieObj;
-  aCtrlMarca:= ctrlMarcas.crieObj;
-  aCtrlTamanho:= ctrlTamanhos.crieObj;
-  aCtrlFormaPagamento:= ctrlFormasPagamentos.crieObj;
-  aCtrlTipoContato:= ctrlTiposContatos.crieObj;
+  aCtrlPais             := ctrlPaises.crieObj;
+  aCtrlEstado           := ctrlEstados.crieObj;
+  aCtrlDepartamento     := ctrlDepartamentos.crieObj;
+  aCtrlCor              := ctrlCores.crieObj;
+  aCtrlColecao          := ctrlColecoes.crieObj;
+  aCtrlGrupoRoupa       := ctrlGruposRoupas.crieObj;
+  aCtrlMarca            := ctrlMarcas.crieObj;
+  aCtrlTamanho          := ctrlTamanhos.crieObj;
+  aCtrlFormaPagamento   := ctrlFormasPagamentos.crieObj;
+  aCtrlTipoContato      := ctrlTiposContatos.crieObj;
+  aCtrlCidade           := ctrlCidades.crieObj;
+  aCtrlCargos           := ctrlCargos.crieObj;
+  aCtrlCondicoes        := ctrlCondicoesPagamentos.crieObj;
+  aCtrlFornecedores     := ctrlFornecedores.crieObj;
+  aCtrlFuncionarios     := ctrlFuncionarios.crieObj;
+  aCtrlClientes         := ctrlClientes.crieObj;
 
   aDm:= TDM.Create(nil);
 
@@ -212,8 +236,20 @@ begin
   aCtrlTamanho.setDM( aDm );
   aCtrlFormaPagamento.setDM( aDm );
   aCtrlTipoContato.setDM( aDm );
+  aCtrlCidade.setDM( aDm );
+  aCtrlCargos.setDM( aDm );
+  aCtrlCondicoes.setDM( aDm );
+  aCtrlFornecedores.setDM( aDm );
+  aCtrlFuncionarios.setDM( aDm );
+  aCtrlClientes.setDM( aDm );
 
   aCtrlEstado.setCtrlPaises( aCtrlPais );
+  aCtrlCidade.setCtrlEstados( aCtrlEstado );
+  aCtrlCargos.setCtrlDepartamentos( aCtrlDepartamento );
+  aCtrlCondicoes.setCtrlFormas( aCtrlFormaPagamento );
+  aCtrlFornecedores.setCtrlCidades( aCtrlCidade );
+  aCtrlFornecedores.setCtrlTiposContatos( aCtrlTipoContato );
+  aCtrlFornecedores.setCtrlCondicoes( aCtrlCondicoes );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);
@@ -231,6 +267,11 @@ begin
   aFormaPagamento.destrua_se;
   oTipoContato.destrua_se;
   aCidade.destrua_se;
+  oCargo.destrua_se;
+  aCondicao.destrua_se;
+  oFornecedor.destrua_se;
+  oFuncionario.destrua_se;
+  oCliente.destrua_se;
 
   aCtrlPais.destrua_se;
   aCtrlDepartamento.destrua_se;
@@ -242,6 +283,12 @@ begin
   aCtrlFormaPagamento.destrua_se;
   aCtrlTipoContato.destrua_se;
   aCtrlEstado.destrua_se;
+  aCtrlCidade.destrua_se;
+  aCtrlCargos.destrua_se;
+  aCtrlCondicoes.destrua_se;
+  aCtrlFornecedores.destrua_se;
+  aCtrlFuncionarios.destrua_se;
+  aCtrlClientes.destrua_se;
 
   aDm.DisposeOf;
 end;
@@ -268,17 +315,17 @@ end;
 
 procedure Tform_principal.spb_cargosClick(Sender: TObject);
 begin
-  aInter.PDCargos( nil, nil );
+  aInter.PDCargos( aCtrlCargos, oCargo );
 end;
 
 procedure Tform_principal.spb_cidadesClick(Sender: TObject);
 begin
-  aInter.PDCidades( nil, nil );
+  aInter.PDCidades( aCtrlCidade, aCidade );
 end;
 
 procedure Tform_principal.spb_clientesClick(Sender: TObject);
 begin
-  aInter.PDClientes(nil, nil);
+  aInter.PDClientes( aCtrlClientes, oCliente );
 end;
 
 procedure Tform_principal.spb_colecaoClick(Sender: TObject);
@@ -288,7 +335,7 @@ end;
 
 procedure Tform_principal.spb_condicoes_pagamentoClick(Sender: TObject);
 begin
-  aInter.PDCondicoesPagamentos(nil, nil);
+  aInter.PDCondicoesPagamentos(aCtrlCondicoes, aCondicao);
 end;
 
 procedure Tform_principal.spb_contas_pagarClick(Sender: TObject);
@@ -323,12 +370,12 @@ end;
 
 procedure Tform_principal.spb_fornecedoresClick(Sender: TObject);
 begin
-  aInter.PDFornecedores(nil, nil);
+  aInter.PDFornecedores(aCtrlFornecedores, oFornecedor);
 end;
 
 procedure Tform_principal.spb_funcionáriosClick(Sender: TObject);
 begin
-  aInter.PDFuncionarios(nil, nil);
+  aInter.PDFuncionarios(aCtrlFuncionarios, oFuncionario);
 end;
 
 procedure Tform_principal.spb_grupo_roupasClick(Sender: TObject);

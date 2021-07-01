@@ -333,6 +333,13 @@
         <DCCReference Include="Model\Classes\uClientes.pas"/>
         <DCCReference Include="DAO\uDaoFornecedores.pas"/>
         <DCCReference Include="Controller\uCtrlFornecedores.pas"/>
+        <DCCReference Include="DAO\uDaoFuncionarios.pas"/>
+        <DCCReference Include="Controller\uCtrlFuncionarios.pas"/>
+        <DCCReference Include="DAO\uDaoClientes.pas"/>
+        <DCCReference Include="Controller\uCtrlClientes.pas"/>
+        <DCCReference Include="DAO\uDaoRoupas.pas"/>
+        <DCCReference Include="Controller\uCtrlRoupas.pas"/>
+        <DCCReference Include="Model\Classes\uRoupas.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
