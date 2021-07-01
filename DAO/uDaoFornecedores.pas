@@ -19,6 +19,9 @@ end;
 
 implementation
 
+uses
+  System.SysUtils;
+
 { daoFornecedores }
 
 function daoFornecedores.carregar(pObj: TObject): string;
@@ -44,8 +47,33 @@ end;
 
 function daoFornecedores.pesquisar(AFilter: TFilterSearch;
   pChave: string): string;
+var msql : string;
 begin
+    msql:= 'SELECT * FROM FORNECEDORES';
 
+    case AFilter.TipoConsulta of
+
+     TpCCodigo:
+     begin
+       msql:= 'SELECT * FROM FORNECEDORES WHERE CODFORN =' + IntToStr( AFilter.Codigo );
+     end;
+
+     TpCParam:
+     begin
+       msql:= ( 'SELECT * FROM FORNECEDORES WHERE NOME_RAZAO_SOCIAL LIKE  ' + QuotedStr( '%' + AFilter.Parametro + '%' ) );
+     end;
+
+     TpCTODOS:
+     begin
+       msql:= 'SELECT * FROM FORNECEDORES ORDER BY CODFORN';
+     end;
+
+    end;
+
+    aDM.QFornecedores.Active:= false;
+    aDM.QFornecedores.SQL.Text:=msql;
+    aDM.QFornecedores.Open;
+    result:= '';
 end;
 
 function daoFornecedores.salvar(pObj: TObject): string;

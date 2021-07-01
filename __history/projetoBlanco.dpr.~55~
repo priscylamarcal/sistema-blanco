@@ -9,14 +9,11 @@ uses
   uPai in 'Model\Classes\uPai.pas',
   uPaises in 'Model\Classes\uPaises.pas',
   uEstados in 'Model\Classes\uEstados.pas',
-  uCidades in 'Model\Classes\uCidades.pas',
   uInter in 'Model\uInter.pas',
-  uConsultaPaises in 'View\Form Consultas\uConsultaPaises.pas' {form_consulta_paises},
-  uConsultaEstados in 'View\Form Consultas\uConsultaEstados.pas' {form_consulta_estados},
-  uConsultaCidades in 'View\Form Consultas\uConsultaCidades.pas' {form_consulta_cidades},
+  uConsulta_Paises in 'View\Form Consultas\uConsulta_Paises.pas' {form_consulta_paises},
+  uConsulta_Estados in 'View\Form Consultas\uConsulta_Estados.pas' {form_consulta_estados},
   uCadastroPaises in 'View\Form Cadastros\uCadastroPaises.pas' {form_cadastro_paises},
   uCadastroEstados in 'View\Form Cadastros\uCadastroEstados.pas' {form_cadastro_estados},
-  uCadastroCidades in 'View\Form Cadastros\uCadastroCidades.pas' {form_cadastro_cidades},
   uController in 'Controller\uController.pas',
   uDM in 'Model\DM\uDM.pas' {DM: TDataModule},
   uCtrlPaises in 'Controller\uCtrlPaises.pas',
@@ -25,30 +22,30 @@ uses
   uDaoPaises in 'DAO\uDaoPaises.pas',
   uDaoEstados in 'DAO\uDaoEstados.pas',
   uFuncoes_Sistema in 'Model\uFuncoes_Sistema.pas',
-  uConsultaCargos in 'View\Form Consultas\uConsultaCargos.pas' {form_consulta_cargos},
-  uConsultaDepartamentos in 'View\Form Consultas\uConsultaDepartamentos.pas' {form_consulta_departamentos},
-  uConsultaFormasPagamentos in 'View\Form Consultas\uConsultaFormasPagamentos.pas' {form_consulta_formas_pagamentos},
-  uConsultaCondicoesPagamentos in 'View\Form Consultas\uConsultaCondicoesPagamentos.pas' {form_consulta_condicoes_pagamentos},
-  uConsultaVendas in 'View\Form Consultas\uConsultaVendas.pas' {form_consulta_vendas},
-  uConsultaContasReceber in 'View\Form Consultas\uConsultaContasReceber.pas' {form_consulta_contas_receber},
-  uConsultaContasPagar in 'View\Form Consultas\uConsultaContasPagar.pas' {form_consulta_contas_pagar},
-  uConsultaColecoes in 'View\Form Consultas\uConsultaColecoes.pas' {form_consulta_colecoes},
-  uConsultaCores in 'View\Form Consultas\uConsultaCores.pas' {form_consulta_cores},
-  uConsultaGruposProdutos in 'View\Form Consultas\uConsultaGruposProdutos.pas' {form_consulta_grupos_produtos},
-  uConsultaMarcas in 'View\Form Consultas\uConsultaMarcas.pas' {form_consulta_marcas},
-  uConsultaTamanhos in 'View\Form Consultas\uConsultaTamanhos.pas' {form_consulta_tamanhos},
-  uConsultaRoupas in 'View\Form Consultas\uConsultaRoupas.pas' {form_consulta_roupas},
-  uConsultaFornecedores in 'View\Form Consultas\uConsultaFornecedores.pas' {form_consulta_fornecedores},
-  uConsultaClientes in 'View\Form Consultas\uConsultaClientes.pas' {form_consulta_clientes},
-  uConsultaTiposContatos in 'View\Form Consultas\uConsultaTiposContatos.pas' {form_consulta_tipos_contatos},
-  uConsultaEstoques in 'View\Form Consultas\uConsultaEstoques.pas' {form_consulta_estoques},
+  uConsulta_Cargos in 'View\Form Consultas\uConsulta_Cargos.pas' {form_consulta_cargos},
+  uConsulta_Departamentos in 'View\Form Consultas\uConsulta_Departamentos.pas' {form_consulta_departamentos},
+  uConsulta_FormasPagamentos in 'View\Form Consultas\uConsulta_FormasPagamentos.pas' {form_consulta_formas_pagamentos},
+  uConsulta_CondicoesPagamentos in 'View\Form Consultas\uConsulta_CondicoesPagamentos.pas' {form_consulta_condicoes_pagamentos},
+  uConsulta_Vendas in 'View\Form Consultas\uConsulta_Vendas.pas' {form_consulta_vendas},
+  uConsulta_ContasReceber in 'View\Form Consultas\uConsulta_ContasReceber.pas' {form_consulta_contas_receber},
+  uConsulta_ContasPagar in 'View\Form Consultas\uConsulta_ContasPagar.pas' {form_consulta_contas_pagar},
+  uConsulta_Colecoes in 'View\Form Consultas\uConsulta_Colecoes.pas' {form_consulta_colecoes},
+  uConsulta_Cores in 'View\Form Consultas\uConsulta_Cores.pas' {form_consulta_cores},
+  uConsulta_GruposProdutos in 'View\Form Consultas\uConsulta_GruposProdutos.pas' {form_consulta_grupos_produtos},
+  uConsulta_Marcas in 'View\Form Consultas\uConsulta_Marcas.pas' {form_consulta_marcas},
+  uConsulta_Tamanhos in 'View\Form Consultas\uConsulta_Tamanhos.pas' {form_consulta_tamanhos},
+  uConsulta_Roupas in 'View\Form Consultas\uConsulta_Roupas.pas' {form_consulta_roupas},
+  uConsulta_Fornecedores in 'View\Form Consultas\uConsulta_Fornecedores.pas' {form_consulta_fornecedores},
+  uConsulta_Clientes in 'View\Form Consultas\uConsulta_Clientes.pas' {form_consulta_clientes},
+  uConsulta_TiposContatos in 'View\Form Consultas\uConsulta_TiposContatos.pas' {form_consulta_tipos_contatos},
+  uConsulta_Estoques in 'View\Form Consultas\uConsulta_Estoques.pas' {form_consulta_estoques},
   uDepartamentos in 'Model\Classes\uDepartamentos.pas',
   uMarcas in 'Model\Classes\uMarcas.pas',
   uTamanhos in 'Model\Classes\uTamanhos.pas',
   uCores in 'Model\Classes\uCores.pas',
   uCadastroCargos in 'View\Form Cadastros\uCadastroCargos.pas' {form_cadastro_cargos},
   uCadastroDepartamentos in 'View\Form Cadastros\uCadastroDepartamentos.pas' {form_cadastro_departamento},
-  uConsultaFuncionarios in 'View\Form Consultas\uConsultaFuncionarios.pas' {form_consulta_funcionarios},
+  uConsulta_Funcionarios in 'View\Form Consultas\uConsulta_Funcionarios.pas' {form_consulta_funcionarios},
   uCadastroFuncionarios in 'View\Form Cadastros\uCadastroFuncionarios.pas' {form_cadastro_funcionario},
   uConsultaPai in 'View\Form Pai\uConsultaPai.pas' {form_consulta_pai},
   uCadastroCondicoesPagamentos in 'View\Form Cadastros\uCadastroCondicoesPagamentos.pas' {form_cadastro_condicao_pagamento},
@@ -82,7 +79,31 @@ uses
   uCtrlTamanhos in 'Controller\uCtrlTamanhos.pas',
   uFormaPagamento in 'Model\Classes\uFormaPagamento.pas',
   uCtrlFormasPagamentos in 'Controller\uCtrlFormasPagamentos.pas',
-  uDaoFormasPagamentos in 'DAO\uDaoFormasPagamentos.pas';
+  uDaoFormasPagamentos in 'DAO\uDaoFormasPagamentos.pas',
+  uTiposContatos in 'Model\Classes\uTiposContatos.pas',
+  uDaoTiposContatos in 'DAO\uDaoTiposContatos.pas',
+  uCtrlTiposContatos in 'Controller\uCtrlTiposContatos.pas',
+  uConsulta_Cidades in 'View\Form Consultas\uConsulta_Cidades.pas' {form_consulta_cidades},
+  uCidades in 'Model\Classes\uCidades.pas',
+  uCadastro_Cidades in 'View\Form Cadastros\uCadastro_Cidades.pas' {form_cadastro_cidades},
+  uDaoCidades in 'DAO\uDaoCidades.pas',
+  uCtrlCidades in 'Controller\uCtrlCidades.pas',
+  uCargos in 'Model\Classes\uCargos.pas',
+  uDaoCargos in 'DAO\uDaoCargos.pas',
+  uCtrlCargos in 'Controller\uCtrlCargos.pas',
+  uCondicoesPagamentos in 'Model\Classes\uCondicoesPagamentos.pas',
+  uDaoCondicoesPagamentos in 'DAO\uDaoCondicoesPagamentos.pas',
+  uCtrlCondicoesPagamentos in 'Controller\uCtrlCondicoesPagamentos.pas',
+  uPessoas in 'Model\Classes\uPessoas.pas',
+  uFornecedores in 'Model\Classes\uFornecedores.pas',
+  uFuncionarios in 'Model\Classes\uFuncionarios.pas',
+  uClientes in 'Model\Classes\uClientes.pas',
+  uDaoFornecedores in 'DAO\uDaoFornecedores.pas',
+  uCtrlFornecedores in 'Controller\uCtrlFornecedores.pas',
+  uDaoFuncionarios in 'DAO\uDaoFuncionarios.pas',
+  uCtrlFuncionarios in 'Controller\uCtrlFuncionarios.pas',
+  uDaoClientes in 'DAO\uDaoClientes.pas',
+  uCtrlClientes in 'Controller\uCtrlClientes.pas';
 
 {$R *.res}
 
@@ -94,10 +115,8 @@ begin
   Application.CreateForm(Tform_cadastro_pai, form_cadastro_pai);
   Application.CreateForm(Tform_consulta_paises, form_consulta_paises);
   Application.CreateForm(Tform_consulta_estados, form_consulta_estados);
-  Application.CreateForm(Tform_consulta_cidades, form_consulta_cidades);
   Application.CreateForm(Tform_cadastro_paises, form_cadastro_paises);
   Application.CreateForm(Tform_cadastro_estados, form_cadastro_estados);
-  Application.CreateForm(Tform_cadastro_cidades, form_cadastro_cidades);
   Application.CreateForm(TDM, DM);
   Application.CreateForm(Tform_consulta_cargos, form_consulta_cargos);
   Application.CreateForm(Tform_consulta_departamentos, form_consulta_departamentos);
@@ -134,5 +153,7 @@ begin
   Application.CreateForm(Tform_cadastro_contas_pagar, form_cadastro_contas_pagar);
   Application.CreateForm(Tform_cadastro_formas_pagamentos, form_cadastro_formas_pagamentos);
   Application.CreateForm(Tform_cadastro_tipo_contato, form_cadastro_tipo_contato);
+  Application.CreateForm(Tform_consulta_cidades, form_consulta_cidades);
+  Application.CreateForm(Tform_cadastro_cidades, form_cadastro_cidades);
   Application.Run;
 end.
