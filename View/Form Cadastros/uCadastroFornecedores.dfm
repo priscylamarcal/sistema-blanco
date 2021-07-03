@@ -3,7 +3,6 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
   ClientHeight = 845
   ClientWidth = 924
   OnActivate = FormActivate
-  ExplicitTop = -242
   ExplicitWidth = 940
   ExplicitHeight = 884
   PixelsPerInch = 96

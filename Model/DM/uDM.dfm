@@ -760,6 +760,7 @@ object DM: TDM
     Left = 200
     Top = 256
     object QFornecedoresCODFORN: TIntegerField
+      Alignment = taLeftJustify
       DisplayLabel = 'C'#243'digo'
       FieldName = 'CODFORN'
       Origin = 'CODFORN'
@@ -829,7 +830,7 @@ object DM: TDM
       FieldName = 'CEP'
       Origin = 'CEP'
       Visible = False
-      Size = 8
+      Size = 10
     end
     object QFornecedoresCODCIDADE: TIntegerField
       DisplayLabel = 'C'#243'd Cidade'
@@ -860,7 +861,7 @@ object DM: TDM
       DisplayWidth = 20
       FieldName = 'CNPJ_CPF'
       Origin = 'CNPJ_CPF'
-      Size = 14
+      Size = 18
     end
     object QFornecedoresIE_RG: TStringField
       DisplayLabel = 'IE/RG'
@@ -1254,7 +1255,6 @@ object DM: TDM
     Top = 256
   end
   object QRoupas: TFDQuery
-    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from ROUPAS')

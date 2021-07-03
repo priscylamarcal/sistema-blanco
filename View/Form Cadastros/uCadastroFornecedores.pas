@@ -256,6 +256,7 @@ begin
   self.edt_pesquisar_cidade.Text:= oFornecedor.getaCidade.getCidade;
   self.edt_uf.Text:= oFornecedor.getaCidade.getoEstado.getUF;
   self.edt_cod_contato.Text:= IntToStr ( oFornecedor.getoContato.getCodigo );
+  self.edt_tipo_contato.Text:= oFornecedor.getoContato.getTipoContato;
   self.edt_nome_tipo_selecionado.Text:= oFornecedor.getContatoAux1;
   self.edt_algo.Text:= oFornecedor.getContatoAux2;
   self.edt_cpf_cnpj.Text:= oFornecedor.getCnpjCpf;
