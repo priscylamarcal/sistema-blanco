@@ -586,6 +586,16 @@ object DM: TDM
       KeyFields = 'CODESTADO'
       Lookup = True
     end
+    object QCidadesUF: TStringField
+      FieldKind = fkLookup
+      FieldName = 'UF'
+      LookupDataSet = QEstados
+      LookupKeyFields = 'CODESTADO'
+      LookupResultField = 'UF'
+      KeyFields = 'CODESTADO'
+      Visible = False
+      Lookup = True
+    end
   end
   object DSCidades: TDataSource
     DataSet = QCidades
@@ -655,6 +665,7 @@ object DM: TDM
     Top = 192
   end
   object QCondicoes: TFDQuery
+    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from CONDICOES_PAGAMENTOS')
@@ -785,7 +796,7 @@ object DM: TDM
     end
     object QFornecedoresAPELIDO_FANTASIA: TStringField
       DisplayLabel = 'Apelido/Fantasia'
-      DisplayWidth = 60
+      DisplayWidth = 40
       FieldName = 'APELIDO_FANTASIA'
       Origin = 'APELIDO_FANTASIA'
       Size = 80
@@ -846,6 +857,7 @@ object DM: TDM
     end
     object QFornecedoresCNPJ_CPF: TStringField
       DisplayLabel = 'CNPJ/CPF'
+      DisplayWidth = 20
       FieldName = 'CNPJ_CPF'
       Origin = 'CNPJ_CPF'
       Size = 14
@@ -869,6 +881,35 @@ object DM: TDM
       LookupKeyFields = 'CODCIDADE'
       LookupResultField = 'CIDADE'
       KeyFields = 'CODCIDADE'
+      Lookup = True
+    end
+    object QFornecedoresUF: TStringField
+      FieldKind = fkLookup
+      FieldName = 'UF'
+      LookupDataSet = QCidades
+      LookupKeyFields = 'CODESTADO'
+      LookupResultField = 'UF'
+      KeyFields = 'CODCIDADE'
+      Lookup = True
+    end
+    object QFornecedoresCONTATO: TStringField
+      FieldKind = fkLookup
+      FieldName = 'CONTATO'
+      LookupDataSet = QTiposContatos
+      LookupKeyFields = 'CODTIPO'
+      LookupResultField = 'TIPOCONTATO'
+      KeyFields = 'CODCONTATO'
+      Visible = False
+      Lookup = True
+    end
+    object QFornecedoresCONDICAO: TStringField
+      FieldKind = fkLookup
+      FieldName = 'CONDICAO'
+      LookupDataSet = QCondicoes
+      LookupKeyFields = 'CODCONDICAO'
+      LookupResultField = 'CONDICAO'
+      KeyFields = 'CODCONDICAO'
+      Visible = False
       Lookup = True
     end
   end

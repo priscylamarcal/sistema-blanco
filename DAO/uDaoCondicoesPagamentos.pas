@@ -65,7 +65,7 @@ function daoCondicoesPagamentos.pesquisar(AFilter: TFilterSearch;
   pChave: string): string;
 var msql : string;
 begin
-    msql:= '';
+    msql:= 'SELECT * FROM CONDICOES_PAGAMENTOS';
 
     case AFilter.TipoConsulta of
 

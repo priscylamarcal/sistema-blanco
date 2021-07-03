@@ -157,6 +157,7 @@ begin
     aCtrlCondicoes.carregar( TObject ( mCondicao ) );
     aCondicaoPagamento.setCodigo( mCondicao.getCodigo );
     aCondicaoPagamento.setCondicao( mCondicao.getCondicao );
+    aCondicaoPagamento.setaFormaPagamento( mCondicao.getaFormaPagamento );
 
     inherited sair;
   end

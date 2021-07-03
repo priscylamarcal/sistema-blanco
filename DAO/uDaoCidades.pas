@@ -35,6 +35,7 @@ begin
   mCidade.setDDD( aDM.QCidades.FieldByName('DDD').AsString );
   mCidade.getoEstado.setCodigo( aDM.QCidades.FieldByName('CODESTADO').Value );
   mCidade.getoEstado.setEstado( aDM.QCidades.FieldByName('ESTADO').AsString );
+  mCidade.getoEstado.setUF( aDM.QCidades.FieldByName('UF').AsString );
 
   mCidade.setDataCad( aDM.QCidades.FieldByName('DATACAD').AsDateTime );
 
@@ -83,7 +84,7 @@ begin
 
      TpCTODOS:
      begin
-       msql:= 'SELECT * FROM CIDADES';
+       msql:= 'SELECT * FROM CIDADES ORDER BY CODCIDADE';
      end;
 
     end;
@@ -115,6 +116,7 @@ begin
     aDM.QCidades.FieldByName('CODESTADO').AsInteger:= mCidade.getoEstado.getCodigo;
     aDM.QCidades.FieldByName('ESTADO').AsString:= mCidade.getoEstado.getEstado;
     aDM.QCidades.FieldByName('DATACAD').AsDateTime:= mCidade.getDataCad;
+    aDM.QCidades.FieldByName('UF').AsString:= mCidade.getoEstado.getUF;
 
     aDM.QCidades.Post;
 

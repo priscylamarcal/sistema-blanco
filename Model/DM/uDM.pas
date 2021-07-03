@@ -226,6 +226,10 @@ type
     QRoupasMARCA: TStringField;
     QRoupasFORNECEDOR: TStringField;
     QRoupasCOLECAO: TStringField;
+    QCidadesUF: TStringField;
+    QFornecedoresUF: TStringField;
+    QFornecedoresCONTATO: TStringField;
+    QFornecedoresCONDICAO: TStringField;
   private
     { Private declarations }
   public

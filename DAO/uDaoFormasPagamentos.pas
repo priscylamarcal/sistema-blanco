@@ -53,7 +53,7 @@ function daoFormasPagamentos.pesquisar(AFilter: TFilterSearch;
   pChave: string): string;
 var msql : string;
 begin
-    msql:= '';
+    msql:= 'SELECT * FROM FORMAS_PAGAMENTOS';
 
     case AFilter.TipoConsulta of
 
