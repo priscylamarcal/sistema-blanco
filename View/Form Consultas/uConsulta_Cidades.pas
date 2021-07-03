@@ -156,6 +156,8 @@ begin
     aCidade.setCidade( mCidade.getCidade );
     aCidade.setSigla( mCidade.getSigla );
     aCidade.setDDD( mCidade.getDDD );
+    aCidade.getoEstado.setUF( mCidade.getoEstado.getUF );
+
 //    aCidade.getoEstado.setCodigo( mCidade.getoEstado.getCodigo );
 //    aCidade.getoEstado.setEstado( mCidade.getoEstado.getEstado );
 //    aCidade.setDataCad( mCidade.getDataCad );

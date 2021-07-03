@@ -155,6 +155,7 @@ begin
        aCtrlEstados.carregar(TObject(mEstado));
        oEstado.setCodigo(mEstado.getCodigo);
        oEstado.setEstado(mEstado.getEstado);
+       oEstado.setUF( mEstado.getUF );
 
 //       mPais.setCodigo( mEstado.getoPais.getCodigo );
 //       mPais.setPais( mEstado.getoPais.getPais );

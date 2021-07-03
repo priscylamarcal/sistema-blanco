@@ -202,6 +202,7 @@ begin
 
   self.edt_cod_cidade.Text:= IntToStr( oFornecedor.getaCidade.getCodigo );
   self.edt_pesquisar_cidade.Text:= oFornecedor.getaCidade.getCidade;
+  self.edt_uf.Text:= oFornecedor.getaCidade.getoEstado.getUF;
 end;
 
 procedure Tform_cadastro_fornecedores.btn_pesquisa_condicao_pagamentoClick(
@@ -263,6 +264,8 @@ begin
   self.edt_pesquisa_condicao_pagamento.Text:= oFornecedor.getaCondicao.getCondicao;
   self.edt_data_cadastro.Text:= DateToStr( oFornecedor.getDataCad);
   self.edt_data_ult_alt.Text:= DateToStr(oFornecedor.getUltAlt);
+  self.edt_uf.Text:= oFornecedor.getaCidade.getoEstado.getUF;
+  self.ComboBox_tipo_fornecedor.Text:= oFornecedor.getTipoForn;
 end;
 
 procedure Tform_cadastro_fornecedores.ComboBox_tipo_fornecedorChange(
@@ -378,6 +381,35 @@ begin
   inherited;
   if validaFormulario then
   begin
+    oFornecedor.setCodigo( StrToInt ( self.edt_codigo.Text ) );
+    oFornecedor.setNomeRazaoSocial( self.edt_nome_razao_social.Text );
+    oFornecedor.setApelidoFantasia( self.edt_apelido_nome_fantasia.Text );
+    oFornecedor.setEndereco( self.edt_endereco.Text );
+    oFornecedor.setNumero( self.edt_numero.Text );
+    oFornecedor.setComplemento( self.edt_complemento.Text );
+    oFornecedor.setBairro( self.edt_bairro.Text );
+    oFornecedor.setCep( self.edt_cep.Text );
+    oFornecedor.getaCidade.setCodigo( StrToInt ( self.edt_cod_cidade.Text ) );
+    oFornecedor.getaCidade.setCidade( self.edt_pesquisar_cidade.Text );
+    oFornecedor.getaCidade.getoEstado.setUF( self.edt_uf.Text );
+    oFornecedor.getoContato.setCodigo( StrToInt ( self.edt_cod_contato.Text ) );
+    oFornecedor.getoContato.setTipoContato( self.edt_tipo_contato.Text );
+    oFornecedor.setContatoAux1( self.edt_nome_tipo_selecionado.Text );
+    oFornecedor.setContatoAux2( self.edt_algo.Text );
+    oFornecedor.setCnpjCpf( self.edt_cpf_cnpj.Text );
+    oFornecedor.setIeRg( self.edt_rg_ie.Text );
+    oFornecedor.getaCondicao.setCodigo( StrToInt ( self.edt_cod_condicao_pagamento.Text ) );
+    oFornecedor.getaCondicao.setCondicao( self.edt_pesquisa_condicao_pagamento.Text );
+    oFornecedor.setDataCad( Date );
+    oFornecedor.setUltAlt( Date );
+    oFornecedor.setCodUsu( StrToInt ( Self.edt_cod_usuario.Text ) );
+    oFornecedor.setTipoForn( self.ComboBox_tipo_fornecedor.Text);
+
+    if Self.btn_botao_salvar.Caption = 'Salvar' then // INCLUIR-ALTERAR
+       aCtrlFornecedores.salvar( oFornecedor.clone )
+    else //EXCLUIR
+       aCtrlFornecedores.excluir( oFornecedor.clone );
+
     self.sair;
   end;
 end;

@@ -8,11 +8,14 @@ type Fornecedores = class ( Pessoas )
   private
   protected
     umaCondicao: CondicoesPagamentos;
+    tipo_forn : string[20];
   public
     constructor crieObj;
     destructor destrua_se;
     procedure setaCondicao ( pCondicao : CondicoesPagamentos );
+    procedure setTipoForn ( pTipoForn : string );
     function getaCondicao : CondicoesPagamentos;
+    function getTipoForn : string;
     function clone : Fornecedores;
 end;
 
@@ -36,9 +39,19 @@ begin
   Result:= umaCondicao;
 end;
 
+function Fornecedores.getTipoForn: string;
+begin
+  Result:= tipo_forn;
+end;
+
 procedure Fornecedores.setaCondicao(pCondicao: CondicoesPagamentos);
 begin
   umaCondicao:= pCondicao;
+end;
+
+procedure Fornecedores.setTipoForn(pTipoForn: string);
+begin
+  tipo_forn:= pTipoForn;
 end;
 
 function Fornecedores.clone: Fornecedores;
