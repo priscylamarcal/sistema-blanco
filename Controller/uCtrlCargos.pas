@@ -34,13 +34,13 @@ uses
 { ctrlCargos }
 
 function ctrlCargos.carregar(pObj: TObject): string;
-var mDepartamento : Departamentos; AFilter : TFilterSearch;
+var mDepartamento : Departamentos; AFilter : TFilterSearch; pChave : string;
 begin
   aDaoCargos.carregar( pObj );
 
-  mDepartamento:= oCargo.getoDepartamento;
-  aCtrlDepartamentos.pesquisar( AFilter, IntToStr( mDepartamento.getCodigo ) );
-  aCtrlDepartamentos.carregar( oCargo.getoDepartamento );
+  mDepartamento:= Cargos( pObj ).getoDepartamento;
+  aCtrlDepartamentos.pesquisar( AFilter, pChave );
+  aCtrlDepartamentos.carregar( TObject ( mDepartamento ) );
 end;
 
 constructor ctrlCargos.crieObj;

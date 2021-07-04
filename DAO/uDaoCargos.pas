@@ -59,7 +59,7 @@ end;
 function daoCargos.pesquisar(AFilter: TFilterSearch; pChave: string): string;
 var msql : string;
 begin
-    msql:= '';
+    msql:= 'SELECT * FROM CARGOS';
 
     case AFilter.TipoConsulta of
 

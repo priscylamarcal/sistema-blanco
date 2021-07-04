@@ -175,8 +175,6 @@ type
     QFuncionariosSALARIO: TSingleField;
     QFuncionariosCOMISSAO: TSingleField;
     QFuncionariosOBS: TStringField;
-    QFuncionariosCIDADE: TStringField;
-    QFuncionariosCARGO: TStringField;
     QClientes: TFDQuery;
     DSClientes: TDataSource;
     QClientesCODCLIENTE: TIntegerField;
@@ -230,6 +228,8 @@ type
     QFornecedoresUF: TStringField;
     QFornecedoresCONTATO: TStringField;
     QFornecedoresCONDICAO: TStringField;
+    QFuncionariosCARGO: TStringField;
+    QFuncionariosCIDADE_NOME: TStringField;
   private
     { Private declarations }
   public

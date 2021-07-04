@@ -54,7 +54,7 @@ function daoDepartamentos.pesquisar(AFilter: TFilterSearch;
   pChave: string): string;
 var msql : string;
 begin
-    msql:= '';
+    msql:= 'SELECT * FROM DEPARTAMENTOS';
 
     case AFilter.TipoConsulta of
 
@@ -93,7 +93,7 @@ begin
        aDM.QDepartamentos.Edit;
 
     aDM.QDepartamentos.FieldByName('CODDEPARTAMENTO').AsInteger:= mDepartamento.getCodigo;
-    aDM.QDepartamentos.FieldByName('DEPARTAMENTO').AsAnsiString:= mDepartamento.getDepartamento;
+    aDM.QDepartamentos.FieldByName('DEPARTAMENTO').AsString:= mDepartamento.getDepartamento;
     aDM.QDepartamentos.FieldByName('DATACAD').AsDateTime:= mDepartamento.getDataCad;
 
     aDM.QDepartamentos.Post;

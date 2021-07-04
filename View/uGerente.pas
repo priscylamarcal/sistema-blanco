@@ -255,6 +255,9 @@ begin
   aCtrlFornecedores.setCtrlCidades( aCtrlCidade );
   aCtrlFornecedores.setCtrlTiposContatos( aCtrlTipoContato );
   aCtrlFornecedores.setCtrlCondicoes( aCtrlCondicoes );
+  aCtrlFuncionarios.setCtrlCidades( aCtrlCidade );
+  aCtrlFuncionarios.setCtrlTiposContatos( aCtrlTipoContato );
+  aCtrlFuncionarios.setCtrlCargos( aCtrlCargos );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);

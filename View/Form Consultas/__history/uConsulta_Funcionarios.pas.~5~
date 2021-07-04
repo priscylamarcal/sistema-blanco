@@ -1,4 +1,4 @@
-Ôªøunit uConsulta_CondicoesPagamentos;
+unit uConsulta_Funcionarios;
 
 interface
 
@@ -6,19 +6,18 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uConsultaPai, Data.DB, Vcl.Grids,
   Vcl.DBGrids, Vcl.StdCtrls, ComboBox, campoEdit, Vcl.Buttons, Vcl.ExtCtrls,
-  uCadastroCondicoesPagamentos, uCondicoesPagamentos, uCtrlCondicoesPagamentos,
-  uFilterSearch;
+  uCadastroFuncionarios, uCtrlFuncionarios, uFuncionarios, uFilterSearch;
 
 type
-  Tform_consulta_condicoes_pagamentos = class(Tform_consulta_pai)
-    procedure FormShow(Sender: TObject);
+  Tform_consulta_funcionarios = class(Tform_consulta_pai)
     procedure spb_botao_pesquisarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
-    oCadastroCondicaoPagamento : Tform_cadastro_condicao_pagamento;
+    oCadastroFuncionarios : Tform_cadastro_funcionario;
 
-    aCondicaoPagamento : CondicoesPagamentos;
-    aCtrlCondicoes : ctrlCondicoesPagamentos;
+    oFuncionario : Funcionarios;
+    aCtrlFuncionarios : ctrlFuncionarios;
   public
     { Public declarations }
     procedure novo;                                           override;
@@ -32,66 +31,79 @@ type
   end;
 
 var
-  form_consulta_condicoes_pagamentos: Tform_consulta_condicoes_pagamentos;
+  form_consulta_funcionarios: Tform_consulta_funcionarios;
 
 implementation
 
 {$R *.dfm}
 
-{ Tform_consulta_condicoes_pagamentos }
+{ Tform_consulta_funcionarios }
 
-procedure Tform_consulta_condicoes_pagamentos.alterar;
-var form : Tform_cadastro_condicao_pagamento;
+procedure Tform_consulta_funcionarios.alterar;
+var form : Tform_cadastro_funcionario;
 begin
   inherited;
-  aCtrlCondicoes.carregar( aCondicaoPagamento );
-  oCadastroCondicaoPagamento.conhecaObj( aCtrlCondicoes, aCondicaoPagamento );
+  aCtrlFuncionarios.carregar( oFuncionario );
+  oCadastroFuncionarios.conhecaObj( aCtrlFuncionarios, oFuncionario );
 
-  oCadastroCondicaoPagamento.Caption:= 'Altera√ß√£o de Condi√ß√£o de Pagamento';
+  oCadastroFuncionarios.btn_remover_item.Enabled:= False;
+  oCadastroFuncionarios.btn_botao_alterar_item.Enabled:= False;
 
-  oCadastroCondicaoPagamento.ShowModal;
+  oCadastroFuncionarios.Caption:= 'AlteraÁ„o de Funcion·rio';
+
+  oCadastroFuncionarios.ShowModal;
 
   if form.salvou then
     Self.pesquisar;      inherited;
+
 end;
 
-procedure Tform_consulta_condicoes_pagamentos.conhecaObj(pCtrl, pObj: TObject);
+procedure Tform_consulta_funcionarios.conhecaObj(pCtrl, pObj: TObject);
 begin
   inherited;
-  aCondicaoPagamento:= CondicoesPagamentos( pObj );
-  aCtrlCondicoes:= ctrlCondicoesPagamentos( pCtrl );
+  oFuncionario:= Funcionarios( pObj );
+  aCtrlFuncionarios:= ctrlFuncionarios( pCtrl );
+
+  self.DBGrid.DataSource:= TDataSource( aCtrlFuncionarios.getDS );
 end;
 
-procedure Tform_consulta_condicoes_pagamentos.excluir;
+procedure Tform_consulta_funcionarios.excluir;
 begin
   inherited;
 
 end;
 
-procedure Tform_consulta_condicoes_pagamentos.FormShow(Sender: TObject);
+procedure Tform_consulta_funcionarios.FormShow(Sender: TObject);
 begin
   inherited;
   combobox_tipo_filtro.ItemIndex:= 2;
   edt_pesquisa.Clear;
-  self.pesquisar;   inherited;
+  self.pesquisar; inherited;
 end;
 
-procedure Tform_consulta_condicoes_pagamentos.novo;
-var form : Tform_cadastro_condicao_pagamento;
+procedure Tform_consulta_funcionarios.novo;
+var form : Tform_cadastro_funcionario;
 begin
   inherited;
-  oCadastroCondicaoPagamento.conhecaObj( aCtrlCondicoes, aCondicaoPagamento );
-  oCadastroCondicaoPagamento.limpaEdt;
+  oCadastroFuncionarios.conhecaObj( aCtrlFuncionarios, oFuncionario );
+  oCadastroFuncionarios.ListView1.Clear;
+  oCadastroFuncionarios.limpaEdt;
+  oCadastroFuncionarios.limparItens;
 
-  oCadastroCondicaoPagamento.Caption:= 'Altera√ß√£o de Condi√ß√£o de Pagamento';
+  oCadastroFuncionarios.lbl_nome_tipo.Caption:= '';
+  oCadastroFuncionarios.btn_remover_item.Enabled:= False;
+  oCadastroFuncionarios.btn_botao_alterar_item.Enabled:= False;
 
-  oCadastroCondicaoPagamento.ShowModal;
+  oCadastroFuncionarios.Caption:= 'Cadastro de Funcion·rio';
+
+  oCadastroFuncionarios.ShowModal;
 
   if form.salvou then
     Self.pesquisar;      inherited;
+
 end;
 
-procedure Tform_consulta_condicoes_pagamentos.pesquisar;
+procedure Tform_consulta_funcionarios.pesquisar;
 var vFilter : TFilterSearch;
     pchave : string;
 begin
@@ -105,7 +117,7 @@ begin
         begin
           if edt_pesquisa.Text = '' then
           begin
-            MessageDlg( 'Campo do filtro n√£o pode ser vazio!', MtInformation, [ MbOK ], 0 );
+            MessageDlg( 'Campo do filtro n„o pode ser vazio!', MtInformation, [ MbOK ], 0 );
             edt_pesquisa.SetFocus;
            Exit;
           end;
@@ -113,11 +125,11 @@ begin
           vFilter.TipoConsulta:= TpCCodigo;
           vFilter.Codigo:= StrToInt(edt_pesquisa.Text);
         end;
-      1:
+    1:
         begin
           if edt_pesquisa.Text = '' then
           begin
-            MessageDlg( 'Campo do filtro n√£o pode ser vazio!', MtInformation, [ MbOK ], 0 );
+            MessageDlg( 'Campo do filtro n„o pode ser vazio!', MtInformation, [ MbOK ], 0 );
             edt_pesquisa.SetFocus;
             Exit;
           end;
@@ -131,7 +143,7 @@ begin
     end;
 
   finally
-    aCtrlCondicoes.pesquisar(VFilter, pchave);
+    aCtrlFuncionarios.pesquisar(VFilter, pchave);
     VFilter.Free;
   end;
     Except
@@ -140,39 +152,38 @@ begin
     End;
 end;
 
-procedure Tform_consulta_condicoes_pagamentos.sair;
+procedure Tform_consulta_funcionarios.sair;
 begin
   inherited;
 
 end;
 
-procedure Tform_consulta_condicoes_pagamentos.setFrmCadastro(pObj: TObject);
+procedure Tform_consulta_funcionarios.setFrmCadastro(pObj: TObject);
 begin
   inherited;
-  oCadastroCondicaoPagamento := Tform_cadastro_condicao_pagamento( pObj );
+  oCadastroFuncionarios:= Tform_cadastro_funcionario( pObj );
 end;
 
-procedure Tform_consulta_condicoes_pagamentos.spb_botao_pesquisarClick(
-  Sender: TObject);
+procedure Tform_consulta_funcionarios.spb_botao_pesquisarClick(Sender: TObject);
 begin
   pesquisar;
   inherited;
 end;
 
-procedure Tform_consulta_condicoes_pagamentos.tipoFiltro;
+procedure Tform_consulta_funcionarios.tipoFiltro;
 begin
   inherited;
   case combobox_tipo_filtro.ItemIndex of
-    0:  //cÔøΩdigo
+    0:  //cÛdigo
       begin
-        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR C√ìDIGO!';
+        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR C”DIGO!';
         edt_pesquisa.NumbersOnly:= true;
         edt_pesquisa.Enabled:= true;
         edt_pesquisa.Clear;
       end;
-    1:  //condi√ß√£o
+    1:  //funcionario
       begin
-        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR CONDI√á√ÉO DE PAGAMENTO!';
+        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR FUNCION¡RIO!';
         edt_pesquisa.NumbersOnly:= false;
         edt_pesquisa.Enabled:= true;
         edt_pesquisa.Clear;

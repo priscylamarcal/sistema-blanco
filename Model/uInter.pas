@@ -175,6 +175,9 @@ begin
   oCadastroFornecedores.setFrmConsultaCidade( aConsultaCidades );
   oCadastroFornecedores.setFrmConsultaContatos( aConsultaTiposContatos );
   oCadastroFornecedores.setFrmConsultaCondicaoPagamento( aConsultaCondicoesPagamentos );
+  oCadastroFuncionarios.setFrmConsultaCidades( aConsultaCidades );
+  oCadastroFuncionarios.setFrmConsultaContatos( aConsultaTiposContatos );
+  oCadastroFuncionarios.setFrmConsultaCargos( aConsultaCargos );
 end;
 
 destructor Inter.destrua_se;

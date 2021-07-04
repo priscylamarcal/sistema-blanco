@@ -920,7 +920,6 @@ object DM: TDM
     Top = 256
   end
   object QFuncionarios: TFDQuery
-    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from FUNCIONARIOS')
@@ -989,7 +988,7 @@ object DM: TDM
       FieldName = 'CEP'
       Origin = 'CEP'
       Visible = False
-      Size = 8
+      Size = 10
     end
     object QFuncionariosCODCIDADE: TIntegerField
       FieldName = 'CODCIDADE'
@@ -1014,6 +1013,7 @@ object DM: TDM
       Size = 50
     end
     object QFuncionariosCPF: TStringField
+      DisplayWidth = 20
       FieldName = 'CPF'
       Origin = 'CPF'
       Required = True
@@ -1061,27 +1061,27 @@ object DM: TDM
       Visible = False
       Size = 250
     end
-    object QFuncionariosCIDADE: TStringField
-      DisplayLabel = 'Cidade'
-      DisplayWidth = 50
-      FieldKind = fkLookup
-      FieldName = 'CIDADE'
-      LookupDataSet = QCidades
-      LookupKeyFields = 'CODCIDADE'
-      LookupResultField = 'CIDADE'
-      KeyFields = 'CODCIDADE'
-      Lookup = True
-    end
     object QFuncionariosCARGO: TStringField
       DisplayLabel = 'Cargo'
-      DisplayWidth = 50
+      DisplayWidth = 40
       FieldKind = fkLookup
       FieldName = 'CARGO'
       LookupDataSet = QCargos
       LookupKeyFields = 'CODCARGO'
       LookupResultField = 'CARGO'
       KeyFields = 'CODCARGO'
-      Size = 30
+      Size = 40
+      Lookup = True
+    end
+    object QFuncionariosCIDADE_NOME: TStringField
+      DisplayLabel = 'Cidade'
+      DisplayWidth = 40
+      FieldKind = fkLookup
+      FieldName = 'CIDADE_NOME'
+      LookupDataSet = QCidades
+      LookupKeyFields = 'CODCIDADE'
+      LookupResultField = 'CIDADE'
+      KeyFields = 'CODCIDADE'
       Lookup = True
     end
   end

@@ -143,9 +143,19 @@ begin
 end;
 
 procedure Tform_consulta_cargos.sair;
+var mCargo : Cargos;
 begin
-  inherited;
+  if btn_botao_sair.Caption= 'Selecionar' then
+  begin
+    mCargo:= Cargos.crieObj;
+    aCtrlCargos.carregar( TObject ( mCargo ) );
+    oCargo.setCodigo( mCargo.getCodigo );
+    oCargo.setCargo( mCargo.getCargo );
 
+    inherited sair;
+  end
+  else
+    inherited sair;
 end;
 
 procedure Tform_consulta_cargos.setFrmCadastro(pObj: TObject);

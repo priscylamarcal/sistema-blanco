@@ -93,6 +93,8 @@ begin
   oCadastroFornecedores.limpaEdt;
   oCadastroFornecedores.limparItens;
 
+  oCadastroFornecedores.lbl_nome_tipo.Caption:= '';
+
   oCadastroFornecedores.ComboBox_tipo_fornecedor.Enabled:= True;
   oCadastroFornecedores.edt_cpf_cnpj.Enabled:= True;
   oCadastroFornecedores.edt_rg_ie.Enabled:= True;

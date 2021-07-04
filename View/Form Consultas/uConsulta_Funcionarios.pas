@@ -40,8 +40,21 @@ implementation
 { Tform_consulta_funcionarios }
 
 procedure Tform_consulta_funcionarios.alterar;
+var form : Tform_cadastro_funcionario;
 begin
   inherited;
+  aCtrlFuncionarios.carregar( oFuncionario );
+  oCadastroFuncionarios.conhecaObj( aCtrlFuncionarios, oFuncionario );
+
+  oCadastroFuncionarios.btn_remover_item.Enabled:= False;
+  oCadastroFuncionarios.btn_botao_alterar_item.Enabled:= False;
+
+  oCadastroFuncionarios.Caption:= 'Alteração de Funcionário';
+
+  oCadastroFuncionarios.ShowModal;
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
 
 end;
 
@@ -69,9 +82,26 @@ begin
 end;
 
 procedure Tform_consulta_funcionarios.novo;
+var form : Tform_cadastro_funcionario;
 begin
   inherited;
+  oCadastroFuncionarios.conhecaObj( aCtrlFuncionarios, oFuncionario );
+  oCadastroFuncionarios.ListView1.Clear;
+  oCadastroFuncionarios.limpaEdt;
+  oCadastroFuncionarios.limparItens;
+
+  oCadastroFuncionarios.lbl_nome_tipo.Caption:= '';
+
+  oCadastroFuncionarios.btn_remover_item.Enabled:= False;
+  oCadastroFuncionarios.btn_botao_alterar_item.Enabled:= False;
+
+  oCadastroFuncionarios.Caption:= 'Cadastro de Funcionário';
+
   oCadastroFuncionarios.ShowModal;
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
+
 end;
 
 procedure Tform_consulta_funcionarios.pesquisar;

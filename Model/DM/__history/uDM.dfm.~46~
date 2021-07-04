@@ -1,6 +1,6 @@
 object DM: TDM
   OldCreateOrder = False
-  Height = 359
+  Height = 456
   Width = 709
   object Conexao: TFDConnection
     Params.Strings = (
@@ -497,6 +497,7 @@ object DM: TDM
       FieldName = 'CODPAIS'
       Origin = 'CODPAIS'
       Required = True
+      Visible = False
     end
     object QEstadosNOMEPAIS: TStringField
       DisplayLabel = 'Pa'#237's'
@@ -557,6 +558,7 @@ object DM: TDM
       FieldName = 'CODESTADO'
       Origin = 'CODESTADO'
       Required = True
+      Visible = False
     end
     object QCidadesDATACAD: TSQLTimeStampField
       FieldName = 'DATACAD'
@@ -584,6 +586,16 @@ object DM: TDM
       KeyFields = 'CODESTADO'
       Lookup = True
     end
+    object QCidadesUF: TStringField
+      FieldKind = fkLookup
+      FieldName = 'UF'
+      LookupDataSet = QEstados
+      LookupKeyFields = 'CODESTADO'
+      LookupResultField = 'UF'
+      KeyFields = 'CODESTADO'
+      Visible = False
+      Lookup = True
+    end
   end
   object DSCidades: TDataSource
     DataSet = QCidades
@@ -595,7 +607,7 @@ object DM: TDM
     Connection = Conexao
     SQL.Strings = (
       'select * from cargos')
-    Left = 488
+    Left = 512
     Top = 192
     object QCargosCODCARGO: TIntegerField
       DisplayLabel = 'C'#243'digo'
@@ -618,6 +630,7 @@ object DM: TDM
       FieldName = 'CODDEPARTAMENTO'
       Origin = 'CODDEPARTAMENTO'
       Required = True
+      Visible = False
     end
     object QCargosDATACAD: TSQLTimeStampField
       FieldName = 'DATACAD'
@@ -652,6 +665,7 @@ object DM: TDM
     Top = 192
   end
   object QCondicoes: TFDQuery
+    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from CONDICOES_PAGAMENTOS')
@@ -710,6 +724,7 @@ object DM: TDM
       DisplayLabel = 'C'#243'd Forma'
       FieldName = 'CODFORMA'
       Origin = 'CODFORMA'
+      Visible = False
     end
     object QCondicoesDIAS: TIntegerField
       FieldName = 'DIAS'
@@ -745,6 +760,7 @@ object DM: TDM
     Left = 200
     Top = 256
     object QFornecedoresCODFORN: TIntegerField
+      Alignment = taLeftJustify
       DisplayLabel = 'C'#243'digo'
       FieldName = 'CODFORN'
       Origin = 'CODFORN'
@@ -781,7 +797,7 @@ object DM: TDM
     end
     object QFornecedoresAPELIDO_FANTASIA: TStringField
       DisplayLabel = 'Apelido/Fantasia'
-      DisplayWidth = 60
+      DisplayWidth = 40
       FieldName = 'APELIDO_FANTASIA'
       Origin = 'APELIDO_FANTASIA'
       Size = 80
@@ -814,12 +830,13 @@ object DM: TDM
       FieldName = 'CEP'
       Origin = 'CEP'
       Visible = False
-      Size = 8
+      Size = 10
     end
     object QFornecedoresCODCIDADE: TIntegerField
       DisplayLabel = 'C'#243'd Cidade'
       FieldName = 'CODCIDADE'
       Origin = 'CODCIDADE'
+      Visible = False
     end
     object QFornecedoresCODCONTATO: TIntegerField
       DisplayLabel = 'C'#243'd Contato'
@@ -841,9 +858,10 @@ object DM: TDM
     end
     object QFornecedoresCNPJ_CPF: TStringField
       DisplayLabel = 'CNPJ/CPF'
+      DisplayWidth = 20
       FieldName = 'CNPJ_CPF'
       Origin = 'CNPJ_CPF'
-      Size = 14
+      Size = 18
     end
     object QFornecedoresIE_RG: TStringField
       DisplayLabel = 'IE/RG'
@@ -866,10 +884,519 @@ object DM: TDM
       KeyFields = 'CODCIDADE'
       Lookup = True
     end
+    object QFornecedoresUF: TStringField
+      FieldKind = fkLookup
+      FieldName = 'UF'
+      LookupDataSet = QCidades
+      LookupKeyFields = 'CODESTADO'
+      LookupResultField = 'UF'
+      KeyFields = 'CODCIDADE'
+      Lookup = True
+    end
+    object QFornecedoresCONTATO: TStringField
+      FieldKind = fkLookup
+      FieldName = 'CONTATO'
+      LookupDataSet = QTiposContatos
+      LookupKeyFields = 'CODTIPO'
+      LookupResultField = 'TIPOCONTATO'
+      KeyFields = 'CODCONTATO'
+      Visible = False
+      Lookup = True
+    end
+    object QFornecedoresCONDICAO: TStringField
+      FieldKind = fkLookup
+      FieldName = 'CONDICAO'
+      LookupDataSet = QCondicoes
+      LookupKeyFields = 'CODCONDICAO'
+      LookupResultField = 'CONDICAO'
+      KeyFields = 'CODCONDICAO'
+      Visible = False
+      Lookup = True
+    end
   end
   object DSFornecedores: TDataSource
     DataSet = QFornecedores
     Left = 280
     Top = 256
+  end
+  object QFuncionarios: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from FUNCIONARIOS')
+    Left = 368
+    Top = 256
+    object QFuncionariosCODFUNC: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODFUNC'
+      Origin = 'CODFUNC'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QFuncionariosDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QFuncionariosULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QFuncionariosCODUSU: TIntegerField
+      FieldName = 'CODUSU'
+      Origin = 'CODUSU'
+      Visible = False
+    end
+    object QFuncionariosFUNCIONARIO: TStringField
+      DisplayLabel = 'Funcion'#225'rio'
+      FieldName = 'FUNCIONARIO'
+      Origin = 'FUNCIONARIO'
+      Required = True
+      Size = 80
+    end
+    object QFuncionariosSEXO: TStringField
+      FieldName = 'SEXO'
+      Origin = 'SEXO'
+      Visible = False
+      Size = 1
+    end
+    object QFuncionariosENDERECO: TStringField
+      FieldName = 'ENDERECO'
+      Origin = 'ENDERECO'
+      Visible = False
+      Size = 60
+    end
+    object QFuncionariosNUMERO: TStringField
+      FieldName = 'NUMERO'
+      Origin = 'NUMERO'
+      Visible = False
+      Size = 8
+    end
+    object QFuncionariosCOMPLEMENTO: TStringField
+      FieldName = 'COMPLEMENTO'
+      Origin = 'COMPLEMENTO'
+      Visible = False
+      Size = 60
+    end
+    object QFuncionariosBAIRRO: TStringField
+      FieldName = 'BAIRRO'
+      Origin = 'BAIRRO'
+      Visible = False
+      Size = 60
+    end
+    object QFuncionariosCEP: TStringField
+      FieldName = 'CEP'
+      Origin = 'CEP'
+      Visible = False
+      Size = 8
+    end
+    object QFuncionariosCODCIDADE: TIntegerField
+      FieldName = 'CODCIDADE'
+      Origin = 'CODCIDADE'
+      Visible = False
+    end
+    object QFuncionariosCODCONTATO: TIntegerField
+      FieldName = 'CODCONTATO'
+      Origin = 'CODCONTATO'
+      Visible = False
+    end
+    object QFuncionariosCONTATO_AUX1: TStringField
+      FieldName = 'CONTATO_AUX1'
+      Origin = 'CONTATO_AUX1'
+      Visible = False
+      Size = 50
+    end
+    object QFuncionariosCONTATO_AUX2: TStringField
+      FieldName = 'CONTATO_AUX2'
+      Origin = 'CONTATO_AUX2'
+      Visible = False
+      Size = 50
+    end
+    object QFuncionariosCPF: TStringField
+      FieldName = 'CPF'
+      Origin = 'CPF'
+      Required = True
+      Size = 14
+    end
+    object QFuncionariosRG: TStringField
+      FieldName = 'RG'
+      Origin = 'RG'
+      Visible = False
+      Size = 14
+    end
+    object QFuncionariosDATA_NASC: TSQLTimeStampField
+      FieldName = 'DATA_NASC'
+      Origin = 'DATA_NASC'
+      Visible = False
+    end
+    object QFuncionariosCODCARGO: TIntegerField
+      FieldName = 'CODCARGO'
+      Origin = 'CODCARGO'
+      Visible = False
+    end
+    object QFuncionariosDATA_ADMISSAO: TSQLTimeStampField
+      FieldName = 'DATA_ADMISSAO'
+      Origin = 'DATA_ADMISSAO'
+      Visible = False
+    end
+    object QFuncionariosDATA_DEMISSAO: TSQLTimeStampField
+      FieldName = 'DATA_DEMISSAO'
+      Origin = 'DATA_DEMISSAO'
+      Visible = False
+    end
+    object QFuncionariosSALARIO: TSingleField
+      FieldName = 'SALARIO'
+      Origin = 'SALARIO'
+      Visible = False
+    end
+    object QFuncionariosCOMISSAO: TSingleField
+      FieldName = 'COMISSAO'
+      Origin = 'COMISSAO'
+      Visible = False
+    end
+    object QFuncionariosOBS: TStringField
+      FieldName = 'OBS'
+      Origin = 'OBS'
+      Visible = False
+      Size = 250
+    end
+    object QFuncionariosCIDADE: TStringField
+      DisplayLabel = 'Cidade'
+      DisplayWidth = 50
+      FieldKind = fkLookup
+      FieldName = 'CIDADE'
+      LookupDataSet = QCidades
+      LookupKeyFields = 'CODCIDADE'
+      LookupResultField = 'CIDADE'
+      KeyFields = 'CODCIDADE'
+      Lookup = True
+    end
+    object QFuncionariosCARGO: TStringField
+      DisplayLabel = 'Cargo'
+      DisplayWidth = 50
+      FieldKind = fkLookup
+      FieldName = 'CARGO'
+      LookupDataSet = QCargos
+      LookupKeyFields = 'CODCARGO'
+      LookupResultField = 'CARGO'
+      KeyFields = 'CODCARGO'
+      Size = 30
+      Lookup = True
+    end
+  end
+  object DSFuncionarios: TDataSource
+    DataSet = QFuncionarios
+    Left = 456
+    Top = 256
+  end
+  object QClientes: TFDQuery
+    Active = True
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from clientes')
+    Left = 584
+    Top = 256
+    object QClientesCODCLIENTE: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODCLIENTE'
+      Origin = 'CODCLIENTE'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QClientesDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QClientesULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QClientesCODUSU: TIntegerField
+      FieldName = 'CODUSU'
+      Origin = 'CODUSU'
+      Visible = False
+    end
+    object QClientesRAZAO_SOCIAL: TStringField
+      DisplayLabel = 'Raz'#227'o Social'
+      DisplayWidth = 60
+      FieldName = 'RAZAO_SOCIAL'
+      Origin = 'RAZAO_SOCIAL'
+      Required = True
+      Size = 80
+    end
+    object QClientesTIPO_FORN: TStringField
+      FieldName = 'TIPO_FORN'
+      Origin = 'TIPO_FORN'
+      Visible = False
+      Size = 50
+    end
+    object QClientesFANTASIA: TStringField
+      DisplayLabel = 'Fantasia'
+      DisplayWidth = 60
+      FieldName = 'FANTASIA'
+      Origin = 'FANTASIA'
+      Required = True
+      Size = 80
+    end
+    object QClientesENDERECO: TStringField
+      FieldName = 'ENDERECO'
+      Origin = 'ENDERECO'
+      Visible = False
+      Size = 60
+    end
+    object QClientesNUMERO: TStringField
+      FieldName = 'NUMERO'
+      Origin = 'NUMERO'
+      Visible = False
+      Size = 8
+    end
+    object QClientesCOMPLEMENTO: TStringField
+      FieldName = 'COMPLEMENTO'
+      Origin = 'COMPLEMENTO'
+      Visible = False
+      Size = 60
+    end
+    object QClientesBAIRRO: TStringField
+      FieldName = 'BAIRRO'
+      Origin = 'BAIRRO'
+      Visible = False
+      Size = 60
+    end
+    object QClientesCEP: TStringField
+      FieldName = 'CEP'
+      Origin = 'CEP'
+      Visible = False
+      Size = 8
+    end
+    object QClientesCODCIDADE: TIntegerField
+      FieldName = 'CODCIDADE'
+      Origin = 'CODCIDADE'
+      Required = True
+      Visible = False
+    end
+    object QClientesCODCONTATO: TIntegerField
+      FieldName = 'CODCONTATO'
+      Origin = 'CODCONTATO'
+      Visible = False
+    end
+    object QClientesCONTATO_AUX1: TStringField
+      FieldName = 'CONTATO_AUX1'
+      Origin = 'CONTATO_AUX1'
+      Visible = False
+      Size = 50
+    end
+    object QClientesCONTATO_AUX2: TStringField
+      FieldName = 'CONTATO_AUX2'
+      Origin = 'CONTATO_AUX2'
+      Visible = False
+      Size = 50
+    end
+    object QClientesCODFUNC: TIntegerField
+      FieldName = 'CODFUNC'
+      Origin = 'CODFUNC'
+      Visible = False
+    end
+    object QClientesCNPJ: TStringField
+      FieldName = 'CNPJ'
+      Origin = 'CNPJ'
+      Required = True
+      Size = 14
+    end
+    object QClientesIE: TStringField
+      FieldName = 'IE'
+      Origin = 'IE'
+      Size = 14
+    end
+    object QClientesLIMITE_CREDITO: TSingleField
+      FieldName = 'LIMITE_CREDITO'
+      Origin = 'LIMITE_CREDITO'
+      Visible = False
+    end
+    object QClientesCODCONDICAO: TIntegerField
+      FieldName = 'CODCONDICAO'
+      Origin = 'CODCONDICAO'
+      Visible = False
+    end
+    object QClientesOBS: TStringField
+      FieldName = 'OBS'
+      Origin = 'OBS'
+      Visible = False
+      Size = 250
+    end
+    object QClientesCIDADE: TStringField
+      DisplayLabel = 'Cidade'
+      DisplayWidth = 40
+      FieldKind = fkLookup
+      FieldName = 'CIDADE'
+      LookupDataSet = QCidades
+      LookupKeyFields = 'CODCIDADE'
+      LookupResultField = 'CIDADE'
+      KeyFields = 'CODCIDADE'
+      Lookup = True
+    end
+    object QClientesFUNCIONARIO: TStringField
+      DisplayLabel = 'Funcion'#225'rio'
+      DisplayWidth = 40
+      FieldKind = fkLookup
+      FieldName = 'FUNCIONARIO'
+      LookupDataSet = QFuncionarios
+      LookupKeyFields = 'CODFUNC'
+      LookupResultField = 'FUNCIONARIO'
+      KeyFields = 'CODFUNC'
+      Lookup = True
+    end
+  end
+  object DSClientes: TDataSource
+    DataSet = QClientes
+    Left = 648
+    Top = 256
+  end
+  object QRoupas: TFDQuery
+    Connection = Conexao
+    SQL.Strings = (
+      'select * from ROUPAS')
+    Left = 16
+    Top = 328
+    object QRoupasCOD_ROUPA: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'COD_ROUPA'
+      Origin = 'COD_ROUPA'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object QRoupasDATACAD: TSQLTimeStampField
+      FieldName = 'DATACAD'
+      Origin = 'DATACAD'
+      Visible = False
+    end
+    object QRoupasULTALT: TSQLTimeStampField
+      FieldName = 'ULTALT'
+      Origin = 'ULTALT'
+      Visible = False
+    end
+    object QRoupasCODUSU: TIntegerField
+      FieldName = 'CODUSU'
+      Origin = 'CODUSU'
+      Visible = False
+    end
+    object QRoupasDESCRICAO_ROUPA: TStringField
+      DisplayLabel = 'Descri'#231#227'o Roupa'
+      FieldName = 'DESCRICAO_ROUPA'
+      Origin = 'DESCRICAO_ROUPA'
+      Required = True
+      Size = 80
+    end
+    object QRoupasCOD_BARRA: TStringField
+      DisplayLabel = 'C'#243'digo de Barra'
+      FieldName = 'COD_BARRA'
+      Origin = 'COD_BARRA'
+      Size = 50
+    end
+    object QRoupasREFERENCIA: TStringField
+      FieldName = 'REFERENCIA'
+      Origin = 'REFERENCIA'
+      Visible = False
+      Size = 50
+    end
+    object QRoupasCODGRUPOROUPA: TIntegerField
+      FieldName = 'CODGRUPOROUPA'
+      Origin = 'CODGRUPOROUPA'
+      Visible = False
+    end
+    object QRoupasCODMARCA: TIntegerField
+      FieldName = 'CODMARCA'
+      Origin = 'CODMARCA'
+      Visible = False
+    end
+    object QRoupasVALOR_CUSTO: TSingleField
+      FieldName = 'VALOR_CUSTO'
+      Origin = 'VALOR_CUSTO'
+      Visible = False
+    end
+    object QRoupasLUCRO: TSingleField
+      FieldName = 'LUCRO'
+      Origin = 'LUCRO'
+      Visible = False
+    end
+    object QRoupasVALOR_VENDA: TSingleField
+      FieldName = 'VALOR_VENDA'
+      Origin = 'VALOR_VENDA'
+      Visible = False
+    end
+    object QRoupasCODCOR: TIntegerField
+      FieldName = 'CODCOR'
+      Origin = 'CODCOR'
+      Visible = False
+    end
+    object QRoupasCODTAMANHO: TIntegerField
+      FieldName = 'CODTAMANHO'
+      Origin = 'CODTAMANHO'
+      Visible = False
+    end
+    object QRoupasCODFORNECEDOR: TIntegerField
+      FieldName = 'CODFORNECEDOR'
+      Origin = 'CODFORNECEDOR'
+      Visible = False
+    end
+    object QRoupasCODCOLECAO: TIntegerField
+      FieldName = 'CODCOLECAO'
+      Origin = 'CODCOLECAO'
+      Visible = False
+    end
+    object QRoupasOBS: TStringField
+      FieldName = 'OBS'
+      Origin = 'OBS'
+      Visible = False
+      Size = 250
+    end
+    object QRoupasGRUPO_ROUPA: TStringField
+      DisplayLabel = 'Grupo da Roupa'
+      FieldKind = fkLookup
+      FieldName = 'GRUPO_ROUPA'
+      LookupDataSet = QGruposRoupas
+      LookupKeyFields = 'CODGRUPO'
+      LookupResultField = 'GRUPOROUPA'
+      KeyFields = 'CODGRUPOROUPA'
+      Lookup = True
+    end
+    object QRoupasMARCA: TStringField
+      DisplayLabel = 'Marca'
+      FieldKind = fkLookup
+      FieldName = 'MARCA'
+      LookupDataSet = QMarcas
+      LookupKeyFields = 'CODMARCA'
+      LookupResultField = 'MARCA'
+      KeyFields = 'CODMARCA'
+      Lookup = True
+    end
+    object QRoupasFORNECEDOR: TStringField
+      DisplayLabel = 'Fornecedor'
+      FieldKind = fkLookup
+      FieldName = 'FORNECEDOR'
+      LookupDataSet = QFornecedores
+      LookupKeyFields = 'CODFORN'
+      LookupResultField = 'NOME_RAZAO_SOCIAL'
+      KeyFields = 'CODFORNECEDOR'
+      Lookup = True
+    end
+    object QRoupasCOLECAO: TStringField
+      DisplayLabel = 'Cole'#231#227'o'
+      DisplayWidth = 40
+      FieldKind = fkLookup
+      FieldName = 'COLECAO'
+      LookupDataSet = QColecoes
+      LookupKeyFields = 'CODCOLECAO'
+      LookupResultField = 'COLECAO'
+      KeyFields = 'CODCOLECAO'
+      Lookup = True
+    end
+  end
+  object DSRoupas: TDataSource
+    DataSet = QRoupas
+    Left = 96
+    Top = 328
   end
 end

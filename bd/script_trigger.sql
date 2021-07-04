@@ -110,12 +110,24 @@ begin
         new.codcondicao = GEN_ID(gen_condicoes_pagamentos, 1);
 end
 
-CREATE OR ALTER TRIGGER FORNECEDORES_BI0 FOR FORNECEDORES
+CREATE OR ALTER TRIGGER FORNECEDORES_BI FOR FORNECEDORES
 ACTIVE BEFORE INSERT POSITION 0
 AS
 begin
     if (NEW.codforn = 0) THEN
         new.codforn = GEN_ID(gen_fornecedores, 1);
+end
+^
+SET TERM ; ^
+
+SET TERM ^ ;
+
+CREATE OR ALTER TRIGGER FUNCIONARIOS_BI FOR FUNCIONARIOS
+ACTIVE BEFORE INSERT POSITION 0
+AS
+begin
+    if (NEW.codfunc = 0) THEN
+        new.codfunc = GEN_ID(gen_funcionarios, 1);
 end
 ^
 SET TERM ; ^
