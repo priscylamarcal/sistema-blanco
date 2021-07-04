@@ -2,7 +2,7 @@ unit uDaoFuncionarios;
 
 interface
 
-uses uDAO, uFilterSearch;
+uses uDAO, uFilterSearch, uCidades, uTiposContatos, uCargos, uFuncionarios;
 
 type daoFuncionarios = class( DAO )
   private
@@ -24,8 +24,45 @@ uses
 { daoFuncionarios }
 
 function daoFuncionarios.carregar(pObj: TObject): string;
+var mFuncionario : Funcionarios; mCidade : Cidades; mContato : TiposContatos;
+    mCargo : Cargos;
 begin
+  mFuncionario:= Funcionarios( pObj );
 
+  mCidade:= mFuncionario.getaCidade;
+  mContato:= mFuncionario.getoContato;
+  mCargo:= mFuncionario.getoCargo;
+
+  mFuncionario.setCodigo( aDM.QFuncionarios.FieldByName('CODFUNC').Value );
+  mFuncionario.setDataCad( aDM.QFuncionarios.FieldByName('DATACAD').AsDateTime );
+  mFuncionario.setUltAlt( aDM.QFuncionarios.FieldByName('ULTALT').AsDateTime );
+  mFuncionario.setCodUsu( aDM.QFuncionarios.FieldByName('CODUSU').Value );
+  mFuncionario.setNomeRazaoSocial( aDM.QFuncionarios.FieldByName('FUNCIONARIO').AsString );
+  mFuncionario.setEndereco( aDM.QFuncionarios.FieldByName('ENDERECO').AsString );
+  mFuncionario.setNumero( aDM.QFuncionarios.FieldByName('NUMERO').AsString );
+  mFuncionario.setComplemento( aDM.QFuncionarios.FieldByName('COMPLEMENTO').AsString );
+  mFuncionario.setBairro( aDM.QFuncionarios.FieldByName('BAIRRO').AsString );
+  mFuncionario.setCep( aDM.QFuncionarios.FieldByName('CEP').AsString );
+  mFuncionario.setContatoAux1( aDM.QFuncionarios.FieldByName('CONTATO_AUX1').AsString );
+  mFuncionario.setContatoAux2( aDM.QFuncionarios.FieldByName('CONTATO_AUX2').AsString );
+  mFuncionario.setCnpjCpf( aDM.QFuncionarios.FieldByName('CPF').AsString );
+  mFuncionario.setIeRg( aDM.QFuncionarios.FieldByName('RG').AsString );
+  mFuncionario.setDataNasc( aDM.QFuncionarios.FieldByName('DATA_NASC').AsDateTime );
+  mFuncionario.setDataAdmissao( aDM.QFuncionarios.FieldByName('DATA_ADMISSAO').AsDateTime );
+  mFuncionario.setDataDemis( aDM.QFuncionarios.FieldByName('DATA_DEMISSAO').AsDateTime );
+  mFuncionario.setSalario( aDM.QFuncionarios.FieldByName('SALARIO').Value );
+  mFuncionario.setComissao( aDM.QFuncionarios.FieldByName('COMISSAO').Value );
+  mFuncionario.setObs( aDM.QFuncionarios.FieldByName('OBS').AsString );
+
+  mFuncionario.getaCidade.setCodigo(aDM.QFuncionarios.FieldByName('CODCIDADE').Value );
+  mFuncionario.getaCidade.setCidade(aDM.QFuncionarios.FieldByName('CIDADE_NOME').AsString );
+ // mFuncionario.getaCidade.getoEstado.setUF(aDM.QFuncionarios.FieldByName('UF').AsString );
+
+  mFuncionario.getoContato.setCodigo(aDM.QFuncionarios.FieldByName('CODCONTATO').Value );
+  //mFuncionario.getoContato.setTipoContato(aDM.QFuncionarios.FieldByName('CONTATO').AsString );
+
+  mFuncionario.getoCargo.setCodigo(aDM.QFuncionarios.FieldByName('CODCARGO').Value );
+  mFuncionario.getoCargo.setCargo(aDM.QFuncionarios.FieldByName('CARGO').AsString );
 end;
 
 constructor daoFuncionarios.crieObj;
@@ -76,8 +113,60 @@ begin
 end;
 
 function daoFuncionarios.salvar(pObj: TObject): string;
+var mFuncionario : Funcionarios; mCidade : Cidades; mContato : TiposContatos;
+    mCargo : Cargos;
 begin
+  mFuncionario:= Funcionarios( pObj );
 
+  mCidade:= mFuncionario.getaCidade;
+  mContato:= mFuncionario.getoContato;
+  mCargo:= mFuncionario.getoCargo;
+
+  aDM.Transacao.StartTransaction;
+  try
+    if mFuncionario.getCodigo = 0 then
+       aDM.QFuncionarios.Insert
+    else
+       aDM.QFuncionarios.Edit;
+
+  aDM.QFuncionarios.FieldByName('CODFUNC').AsInteger:= mFuncionario.getCodigo;
+  aDM.QFuncionarios.FieldByName('DATACAD').AsDateTime:= mFuncionario.getDataCad;
+  aDM.QFuncionarios.FieldByName('ULTALT').AsDateTime:= mFuncionario.getUltAlt;
+  aDM.QFuncionarios.FieldByName('CODUSU').AsInteger:= mFuncionario.getCodUsu;
+  aDM.QFuncionarios.FieldByName('FUNCIONARIO').AsString:= mFuncionario.getNomeRazaoSocial;
+  aDM.QFuncionarios.FieldByName('ENDERECO').AsString:= mFuncionario.getEndereco;
+  aDM.QFuncionarios.FieldByName('NUMERO').AsString:= mFuncionario.getNumero;
+  aDM.QFuncionarios.FieldByName('COMPLEMENTO').AsString:= mFuncionario.getComplemento;
+  aDM.QFuncionarios.FieldByName('BAIRRO').AsString:= mFuncionario.getBairro;
+  aDM.QFuncionarios.FieldByName('CEP').AsString:= mFuncionario.getCep;
+  aDM.QFuncionarios.FieldByName('CONTATO_AUX1').AsString:= mFuncionario.getContatoAux1;
+  aDM.QFuncionarios.FieldByName('CONTATO_AUX2').AsString:= mFuncionario.getContatoAux2;
+  aDM.QFuncionarios.FieldByName('CPF').AsString:= mFuncionario.getCnpjCpf;
+  aDM.QFuncionarios.FieldByName('RG').AsString:= mFuncionario.getIeRg;
+  aDM.QFuncionarios.FieldByName('DATA_NASC').AsDateTime:= mFuncionario.getDataNasc;
+  aDM.QFuncionarios.FieldByName('DATA_ADMISSAO').AsDateTime:= mFuncionario.getDataAdmissao;
+  aDM.QFuncionarios.FieldByName('DATA_DEMISSAO').AsDateTime:= mFuncionario.getDataDemis;
+  aDM.QFuncionarios.FieldByName('SALARIO').Value:= mFuncionario.getSalario;
+  aDM.QFuncionarios.FieldByName('COMISSAO').Value:= mFuncionario.getComissao;
+  aDM.QFuncionarios.FieldByName('OBS').AsString:= mFuncionario.getObs;
+
+  aDM.QFuncionarios.FieldByName('CODCIDADE').AsInteger:= mCidade.getCodigo;
+  aDM.QFuncionarios.FieldByName('CIDADE_NOME').AsString:= mCidade.getCidade;
+ // aDM.QFuncionarios.FieldByName('UF').AsString:= mCidade.getoEstado.getUF;
+
+  aDM.QFuncionarios.FieldByName('CODCONTATO').AsInteger:= mContato.getCodigo;
+ // aDM.QFuncionarios.FieldByName('CONTATO').AsString:= mContato.getTipoContato;
+
+  aDM.QFuncionarios.FieldByName('CODCARGO').AsInteger:= mCargo.getCodigo;
+  aDM.QFuncionarios.FieldByName('CARGO').AsString:= mCargo.getCargo;
+
+  aDM.QFuncionarios.Post;
+
+  aDM.Transacao.Commit;
+
+  except
+    aDM.Transacao.Rollback;
+  end;
 end;
 
 end.

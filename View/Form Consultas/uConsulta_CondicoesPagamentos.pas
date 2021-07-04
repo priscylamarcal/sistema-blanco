@@ -49,6 +49,9 @@ begin
 
   oCadastroCondicaoPagamento.Caption:= 'Alteração de Condição de Pagamento';
 
+  oCadastroCondicaoPagamento.btn_remover_item.Enabled:= False;
+  oCadastroCondicaoPagamento.btn_botao_alterar_item.Enabled:= False;
+
   oCadastroCondicaoPagamento.ShowModal;
 
   if form.salvou then

@@ -53,7 +53,7 @@ function daoTiposContatos.pesquisar(AFilter: TFilterSearch;
   pChave: string): string;
 var msql : string;
 begin
-    msql:= '';
+    msql:= 'SELECT * FROM TIPOS_CONTATOS';
 
     case AFilter.TipoConsulta of
 

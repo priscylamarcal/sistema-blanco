@@ -52,7 +52,6 @@ begin
   mFornecedor.setIeRg( aDM.QFornecedores.FieldByName('IE_RG').AsString );
   mFornecedor.setTipoForn( aDM.QFornecedores.FieldByName('TIPO_FORN').AsString );
 
-
   mFornecedor.getaCidade.setCodigo(aDM.QFornecedores.FieldByName('CODCIDADE').Value );
   mFornecedor.getaCidade.setCidade(aDM.QFornecedores.FieldByName('CIDADE').AsString );
   mFornecedor.getaCidade.getoEstado.setUF(aDM.QFornecedores.FieldByName('UF').AsString );

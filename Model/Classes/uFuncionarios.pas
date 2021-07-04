@@ -27,7 +27,7 @@ type Funcionarios = class ( Pessoas )
     procedure setComissao ( pComissao : Real );
     procedure setObs ( pObs : string );
 
-    function getCargo : Cargos;
+    function getoCargo : Cargos;
     function getSexo : Char;
     function getDataNasc : TDateTime;
     function getDataAdmissao : TDateTime;
@@ -59,7 +59,7 @@ begin
   umCargo.destrua_se;
 end;
 
-function Funcionarios.getCargo: Cargos;
+function Funcionarios.getoCargo: Cargos;
 begin
   Result:= umCargo;
 end;

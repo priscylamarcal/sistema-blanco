@@ -45,15 +45,15 @@ begin
 
   mCidade:= Fornecedores( pObj ).getaCidade;
   aCtrlCidades.pesquisar( AFilter, pchave );
-  aCtrlCidades.carregar( TObject ( mCidade ) );
+ // aCtrlCidades.carregar( TObject ( mCidade ) );
 
   mContato:= Fornecedores( pObj ).getoContato;
   aCtrlTiposContatos.pesquisar( AFilter, pchave );
-  aCtrlTiposContatos.carregar( TObject ( mContato ) );
+ // aCtrlTiposContatos.carregar( TObject ( mContato ) );
 
   mCondicao:= Fornecedores( pObj ).getaCondicao;
   aCtrlCondicoes.pesquisar( AFilter, pchave );
-  aCtrlCondicoes.carregar( TObject ( mCondicao ) );
+ // aCtrlCondicoes.carregar( TObject ( mCondicao ) );
 end;
 
 constructor ctrlFornecedores.crieObj;

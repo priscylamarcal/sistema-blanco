@@ -18,12 +18,12 @@ type
     numero              : string[8];
     complemento         : string[60];
     bairro              : string[60];
-    cep                 : string[8];
+    cep                 : string[10];
     umaCidade           : Cidades;
     umContato           : TiposContatos;
     contato_aux1        : string[50];
     contato_aux2        : string[50];
-    cnpj_cpf            : string[14];
+    cnpj_cpf            : string[18];
     ie_rg               : string[14];
   public
     constructor crieObj;

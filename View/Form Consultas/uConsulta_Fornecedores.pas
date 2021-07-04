@@ -46,6 +46,13 @@ begin
   aCtrlFornecedores.carregar( oFornecedor );
   oCadastroFornecedores.conhecaObj( aCtrlFornecedores, oFornecedor );
 
+  oCadastroFornecedores.ComboBox_tipo_fornecedor.Enabled:= False;
+  oCadastroFornecedores.edt_cpf_cnpj.Enabled:= False;
+  oCadastroFornecedores.edt_rg_ie.Enabled:= False;
+
+  oCadastroFornecedores.btn_botao_alterar_item.Enabled:= False;
+  oCadastroFornecedores.btn_botao_excluir_item.Enabled:= False;
+
   oCadastroFornecedores.Caption:= 'Alteração de Fornecedor';
 
   oCadastroFornecedores.ShowModal;
@@ -85,6 +92,12 @@ begin
   oCadastroFornecedores.ListView_contatos.Clear;
   oCadastroFornecedores.limpaEdt;
   oCadastroFornecedores.limparItens;
+
+  oCadastroFornecedores.lbl_nome_tipo.Caption:= '';
+
+  oCadastroFornecedores.ComboBox_tipo_fornecedor.Enabled:= True;
+  oCadastroFornecedores.edt_cpf_cnpj.Enabled:= True;
+  oCadastroFornecedores.edt_rg_ie.Enabled:= True;
 
   oCadastroFornecedores.btn_botao_alterar_item.Enabled:= False;
   oCadastroFornecedores.btn_botao_excluir_item.Enabled:= False;
