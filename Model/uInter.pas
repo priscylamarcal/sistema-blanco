@@ -169,15 +169,25 @@ begin
   aConsultaCidades.setFrmCadastro( oCadastroCidade );
 
   oCadastroEstados.setFrmConsultaPaises( aConsultaPaises );
+
   oCadastroCidade.setFrmConsultaEstados( aConsultaEstados );
+
   oCadastroCargos.setFrmConsultaDepartamentos( aConsultaDepartamentos );
+
   oCadastroCondicaoPagamento.setFrmConsultaFormas( aConsultaFormasPagamentos );
+
   oCadastroFornecedores.setFrmConsultaCidade( aConsultaCidades );
   oCadastroFornecedores.setFrmConsultaContatos( aConsultaTiposContatos );
   oCadastroFornecedores.setFrmConsultaCondicaoPagamento( aConsultaCondicoesPagamentos );
+
   oCadastroFuncionarios.setFrmConsultaCidades( aConsultaCidades );
   oCadastroFuncionarios.setFrmConsultaContatos( aConsultaTiposContatos );
   oCadastroFuncionarios.setFrmConsultaCargos( aConsultaCargos );
+
+  oCadastroClientes.setFrmConsultaCidade( aConsultaCidades );
+  oCadastroClientes.setFrmConsultaContatos( aConsultaTiposContatos );
+  oCadastroClientes.setFrmConsultaFuncionarios( aConsultaFuncionarios );
+  oCadastroClientes.setFrmConsultaCondicaoPagamento( aConsultaCondicoesPagamentos );
 end;
 
 destructor Inter.destrua_se;

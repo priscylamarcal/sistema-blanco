@@ -920,6 +920,7 @@ object DM: TDM
     Top = 256
   end
   object QFuncionarios: TFDQuery
+    Active = True
     Connection = Conexao
     SQL.Strings = (
       'select * from FUNCIONARIOS')
@@ -1127,12 +1128,6 @@ object DM: TDM
       Required = True
       Size = 80
     end
-    object QClientesTIPO_FORN: TStringField
-      FieldName = 'TIPO_FORN'
-      Origin = 'TIPO_FORN'
-      Visible = False
-      Size = 50
-    end
     object QClientesFANTASIA: TStringField
       DisplayLabel = 'Fantasia'
       DisplayWidth = 60
@@ -1169,7 +1164,7 @@ object DM: TDM
       FieldName = 'CEP'
       Origin = 'CEP'
       Visible = False
-      Size = 8
+      Size = 10
     end
     object QClientesCODCIDADE: TIntegerField
       FieldName = 'CODCIDADE'
@@ -1200,12 +1195,14 @@ object DM: TDM
       Visible = False
     end
     object QClientesCNPJ: TStringField
+      DisplayWidth = 25
       FieldName = 'CNPJ'
       Origin = 'CNPJ'
       Required = True
-      Size = 14
+      Size = 18
     end
     object QClientesIE: TStringField
+      DisplayWidth = 20
       FieldName = 'IE'
       Origin = 'IE'
       Size = 14
@@ -1225,28 +1222,6 @@ object DM: TDM
       Origin = 'OBS'
       Visible = False
       Size = 250
-    end
-    object QClientesCIDADE: TStringField
-      DisplayLabel = 'Cidade'
-      DisplayWidth = 40
-      FieldKind = fkLookup
-      FieldName = 'CIDADE'
-      LookupDataSet = QCidades
-      LookupKeyFields = 'CODCIDADE'
-      LookupResultField = 'CIDADE'
-      KeyFields = 'CODCIDADE'
-      Lookup = True
-    end
-    object QClientesFUNCIONARIO: TStringField
-      DisplayLabel = 'Funcion'#225'rio'
-      DisplayWidth = 40
-      FieldKind = fkLookup
-      FieldName = 'FUNCIONARIO'
-      LookupDataSet = QFuncionarios
-      LookupKeyFields = 'CODFUNC'
-      LookupResultField = 'FUNCIONARIO'
-      KeyFields = 'CODFUNC'
-      Lookup = True
     end
   end
   object DSClientes: TDataSource

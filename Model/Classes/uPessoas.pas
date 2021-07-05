@@ -64,7 +64,7 @@ type
     function getContatoAux2  : string;
     function getCnpjCpf : string;
     function getIeRg : string;
-    function clone: Pessoas;
+//    function clone: Pessoas;
   end;
 
 implementation
@@ -269,26 +269,26 @@ begin
   ultAlt:= pUltAlt;
 end;
 
-function Pessoas.clone: Pessoas;
-begin
-  Result:= Pessoas.crieObj;
-  Result.setCodigo( codigo );
-  Result.setDataCad(dataCad);
-  Result.setUltAlt(ultAlt);
-  Result.setCodUsu(codUsu);
-  Result.setNomeRazaoSocial( nome_razao_social );
-  Result.setApelidoFantasia( apelido_fantasia );
-  Result.setEndereco( endereco );
-  Result.setNumero( numero );
-  Result.setComplemento( complemento );
-  Result.setBairro( bairro );
-  Result.setCep( cep );
-  Result.setaCidade( umaCidade.clone  );
-  Result.setoContato( umContato.clone );
-  Result.setContatoAux1( contato_aux1 );
-  Result.setContatoAux2( contato_aux2 );
-  Result.setCnpjCpf( cnpj_cpf );
-  Result.setIeRg( ie_rg );
-end;
+//function Pessoas.clone: Pessoas;
+//begin
+//  Result:= Pessoas.crieObj;
+//  Result.setCodigo( codigo );
+//  Result.setDataCad(dataCad);
+//  Result.setUltAlt(ultAlt);
+//  Result.setCodUsu(codUsu);
+//  Result.setNomeRazaoSocial( nome_razao_social );
+//  Result.setApelidoFantasia( apelido_fantasia );
+//  Result.setEndereco( endereco );
+//  Result.setNumero( numero );
+//  Result.setComplemento( complemento );
+//  Result.setBairro( bairro );
+//  Result.setCep( cep );
+//  Result.setaCidade( umaCidade.clone  );
+//  Result.setoContato( umContato.clone );
+//  Result.setContatoAux1( contato_aux1 );
+//  Result.setContatoAux2( contato_aux2 );
+//  Result.setCnpjCpf( cnpj_cpf );
+//  Result.setIeRg( ie_rg );
+//end;
 
 end.

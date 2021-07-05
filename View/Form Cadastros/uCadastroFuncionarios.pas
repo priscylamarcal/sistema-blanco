@@ -182,7 +182,7 @@ end;
 
 procedure Tform_cadastro_funcionario.carregaEdt;
 begin
-  inherited;
+  //inherited;
 
   if oFuncionario.getCodigo <> 0 then
      self.edt_codigo.Text:= IntToStr( oFuncionario.getCodigo );
@@ -529,7 +529,7 @@ var aux : string;
 begin
   //inherited;
   aConsultaCargos.conhecaObj( aCtrlFuncionarios.getCtrlCargos, oFuncionario.getoCargo );
-  aux:= aConsultacidades.btn_botao_sair.Caption;
+  aux:= aConsultaCargos.btn_botao_sair.Caption;
   aConsultaCargos.btn_botao_sair.Caption:= 'Selecionar';
   aConsultaCargos.ShowModal;
   aConsultaCargos.btn_botao_sair.Caption:= aux;
