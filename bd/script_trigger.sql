@@ -131,3 +131,15 @@ begin
 end
 ^
 SET TERM ; ^
+
+SET TERM ^ ;
+
+CREATE OR ALTER TRIGGER CLIENTES_BI FOR CLIENTES
+ACTIVE BEFORE INSERT POSITION 0
+AS
+begin
+  if (new.codcliente = 0) then
+     new.codcliente = gen_id( gen_clientes, 1 );
+end
+^
+SET TERM ; ^

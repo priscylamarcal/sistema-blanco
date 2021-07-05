@@ -249,15 +249,25 @@ begin
   aCtrlRoupas.setDM( aDm );
 
   aCtrlEstado.setCtrlPaises( aCtrlPais );
+
   aCtrlCidade.setCtrlEstados( aCtrlEstado );
+
   aCtrlCargos.setCtrlDepartamentos( aCtrlDepartamento );
+
   aCtrlCondicoes.setCtrlFormas( aCtrlFormaPagamento );
+
   aCtrlFornecedores.setCtrlCidades( aCtrlCidade );
   aCtrlFornecedores.setCtrlTiposContatos( aCtrlTipoContato );
   aCtrlFornecedores.setCtrlCondicoes( aCtrlCondicoes );
+
   aCtrlFuncionarios.setCtrlCidades( aCtrlCidade );
   aCtrlFuncionarios.setCtrlTiposContatos( aCtrlTipoContato );
   aCtrlFuncionarios.setCtrlCargos( aCtrlCargos );
+
+  aCtrlClientes.setCtrlCidades( aCtrlCidade );
+  aCtrlClientes.setCtrlTiposContatos( aCtrlTipoContato );
+  aCtrlClientes.setCtrlFuncionarios( aCtrlFuncionarios );
+  aCtrlClientes.setCtrlCondicoes( aCtrlCondicoes );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);

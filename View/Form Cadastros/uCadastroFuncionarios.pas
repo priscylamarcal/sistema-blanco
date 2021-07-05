@@ -121,6 +121,7 @@ type
     procedure bloqueiaEdt;    override;
     procedure desbloqueiaEdt; override;
     function validaFormulario : Boolean; override;
+
     procedure setFrmConsultaCidades ( pConsulta : TObject );
     procedure setFrmConsultaContatos ( pConsulta : TObject );
     procedure setFrmConsultaCargos ( pConsulta : TObject );
@@ -182,7 +183,7 @@ end;
 
 procedure Tform_cadastro_funcionario.carregaEdt;
 begin
-  inherited;
+  //inherited;
 
   if oFuncionario.getCodigo <> 0 then
      self.edt_codigo.Text:= IntToStr( oFuncionario.getCodigo );
@@ -344,7 +345,7 @@ begin
     oFuncionario.getoCargo.setCodigo( StrToInt ( self.edt_cod_cargo.Text ) );
     oFuncionario.getoCargo.setCargo( self.edt_cargo.Text );
     oFuncionario.setDataCad( Date );
-    oFuncionario.setUltAlt( Date );
+    //oFuncionario.setUltAlt( Date );
     oFuncionario.setCodUsu( StrToInt ( Self.edt_cod_usuario.Text ) );
     oFuncionario.setDataNasc( Date );
     oFuncionario.setDataAdmissao( Date );
@@ -529,7 +530,7 @@ var aux : string;
 begin
   //inherited;
   aConsultaCargos.conhecaObj( aCtrlFuncionarios.getCtrlCargos, oFuncionario.getoCargo );
-  aux:= aConsultacidades.btn_botao_sair.Caption;
+  aux:= aConsultaCargos.btn_botao_sair.Caption;
   aConsultaCargos.btn_botao_sair.Caption:= 'Selecionar';
   aConsultaCargos.ShowModal;
   aConsultaCargos.btn_botao_sair.Caption:= aux;
