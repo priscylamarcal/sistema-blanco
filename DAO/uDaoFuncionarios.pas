@@ -35,7 +35,7 @@ begin
 
   mFuncionario.setCodigo( aDM.QFuncionarios.FieldByName('CODFUNC').Value );
   mFuncionario.setDataCad( aDM.QFuncionarios.FieldByName('DATACAD').AsDateTime );
-  mFuncionario.setUltAlt( aDM.QFuncionarios.FieldByName('ULTALT').AsDateTime );
+  //mFuncionario.setUltAlt( aDM.QFuncionarios.FieldByName('ULTALT').AsDateTime );
   mFuncionario.setCodUsu( aDM.QFuncionarios.FieldByName('CODUSU').Value );
   mFuncionario.setNomeRazaoSocial( aDM.QFuncionarios.FieldByName('FUNCIONARIO').AsString );
   mFuncionario.setEndereco( aDM.QFuncionarios.FieldByName('ENDERECO').AsString );
@@ -131,7 +131,7 @@ begin
 
   aDM.QFuncionarios.FieldByName('CODFUNC').AsInteger:= mFuncionario.getCodigo;
   aDM.QFuncionarios.FieldByName('DATACAD').AsDateTime:= mFuncionario.getDataCad;
-  aDM.QFuncionarios.FieldByName('ULTALT').AsDateTime:= mFuncionario.getUltAlt;
+  //aDM.QFuncionarios.FieldByName('ULTALT').AsDateTime:= mFuncionario.getUltAlt;
   aDM.QFuncionarios.FieldByName('CODUSU').AsInteger:= mFuncionario.getCodUsu;
   aDM.QFuncionarios.FieldByName('FUNCIONARIO').AsString:= mFuncionario.getNomeRazaoSocial;
   aDM.QFuncionarios.FieldByName('ENDERECO').AsString:= mFuncionario.getEndereco;

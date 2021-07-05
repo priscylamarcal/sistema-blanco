@@ -43,6 +43,7 @@ procedure Tform_consulta_funcionarios.alterar;
 var form : Tform_cadastro_funcionario;
 begin
   inherited;
+  oCadastroFuncionarios.limpaEdt;
   aCtrlFuncionarios.carregar( oFuncionario );
   oCadastroFuncionarios.conhecaObj( aCtrlFuncionarios, oFuncionario );
 
@@ -154,9 +155,21 @@ begin
 end;
 
 procedure Tform_consulta_funcionarios.sair;
+var mFuncionario : Funcionarios;
 begin
-  inherited;
+  if self.btn_botao_sair.Caption='Selecionar' then
+  begin
+    mFuncionario:= Funcionarios.crieObj;
+    aCtrlFuncionarios.carregar( TObject( mFuncionario ) );
 
+    oFuncionario.setCodigo( mFuncionario.getCodigo );
+    oFuncionario.setNomeRazaoSocial( mFuncionario.getNomeRazaoSocial );
+
+    inherited sair;
+
+  end
+  else
+    inherited sair;
 end;
 
 procedure Tform_consulta_funcionarios.setFrmCadastro(pObj: TObject);

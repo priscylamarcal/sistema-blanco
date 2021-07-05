@@ -182,7 +182,6 @@ type
     QClientesULTALT: TSQLTimeStampField;
     QClientesCODUSU: TIntegerField;
     QClientesRAZAO_SOCIAL: TStringField;
-    QClientesTIPO_FORN: TStringField;
     QClientesFANTASIA: TStringField;
     QClientesENDERECO: TStringField;
     QClientesNUMERO: TStringField;
@@ -199,8 +198,6 @@ type
     QClientesLIMITE_CREDITO: TSingleField;
     QClientesCODCONDICAO: TIntegerField;
     QClientesOBS: TStringField;
-    QClientesCIDADE: TStringField;
-    QClientesFUNCIONARIO: TStringField;
     QRoupas: TFDQuery;
     DSRoupas: TDataSource;
     QRoupasCOD_ROUPA: TIntegerField;

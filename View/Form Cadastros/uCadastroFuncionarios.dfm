@@ -2,6 +2,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
   Caption = 'Cadastro de Funcion'#225'rio'
   ClientHeight = 938
   ClientWidth = 1068
+  ExplicitTop = -335
   ExplicitWidth = 1084
   ExplicitHeight = 977
   PixelsPerInch = 96
@@ -14,30 +15,29 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
     inherited ScrollBox1: TScrollBox
       Width = 1068
       Height = 938
-      VertScrollBar.Position = 150
       Font.Height = -13
       ParentFont = False
       ExplicitWidth = 1068
       ExplicitHeight = 938
       inherited lbl_cod_usuario: TLabel
-        Top = 945
+        Top = 1095
         ExplicitTop = 967
       end
       inherited lbl_codigo: TLabel
-        Top = -109
+        Top = 41
         ExplicitTop = 41
       end
       inherited lbl_data_cadastro: TLabel
-        Top = 945
+        Top = 1095
         ExplicitTop = 959
       end
       inherited lbl_data_ult_alt: TLabel
-        Top = 945
+        Top = 1095
         ExplicitTop = 959
       end
       object lbl_titulo_dados_gerais: TLabel [4]
         Left = 16
-        Top = -134
+        Top = 16
         Width = 116
         Height = 18
         Caption = 'DADOS GERAIS'
@@ -50,7 +50,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_funcionario: TLabel [5]
         Left = 112
-        Top = -109
+        Top = 41
         Width = 78
         Height = 16
         Caption = 'Funcion'#225'rio *'
@@ -63,7 +63,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_sexo: TLabel [6]
         Left = 603
-        Top = -109
+        Top = 41
         Width = 40
         Height = 16
         Caption = 'Sexo *'
@@ -76,7 +76,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_titulo_endereco: TLabel [7]
         Left = 16
-        Top = -44
+        Top = 106
         Width = 83
         Height = 18
         Caption = 'ENDERE'#199'O'
@@ -89,7 +89,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_endereco: TLabel [8]
         Left = 8
-        Top = -18
+        Top = 132
         Width = 65
         Height = 16
         Caption = 'Endere'#231'o *'
@@ -102,7 +102,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_numero: TLabel [9]
         Left = 8
-        Top = 44
+        Top = 194
         Width = 57
         Height = 16
         Caption = 'N'#250'mero *'
@@ -115,14 +115,14 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_bairro: TLabel [10]
         Left = 96
-        Top = 44
+        Top = 194
         Width = 46
         Height = 16
         Caption = 'Bairro *'
       end
       object lbl_cep: TLabel [11]
         Left = 547
-        Top = 44
+        Top = 194
         Width = 22
         Height = 16
         Caption = 'CEP'
@@ -135,28 +135,28 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_codigo_cidade: TLabel [12]
         Left = 8
-        Top = 116
+        Top = 266
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
       end
       object lbl_cidade: TLabel [13]
         Left = 96
-        Top = 117
+        Top = 267
         Width = 51
         Height = 16
         Caption = 'Cidade *'
       end
       object lbl_uf: TLabel [14]
         Left = 547
-        Top = 116
+        Top = 266
         Width = 15
         Height = 16
         Caption = 'UF'
       end
       object lbl_contatos: TLabel [15]
         Left = 16
-        Top = 220
+        Top = 370
         Width = 84
         Height = 18
         Caption = 'CONTATOS'
@@ -169,7 +169,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_tipo_contato: TLabel [16]
         Left = 96
-        Top = 245
+        Top = 395
         Width = 91
         Height = 16
         Caption = 'Tipo de Contato'
@@ -182,7 +182,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_nome_tipo: TLabel [17]
         Left = 316
-        Top = 245
+        Top = 395
         Width = 147
         Height = 16
         Caption = 'Nome do tipo selecionado'
@@ -195,7 +195,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_algo_contato: TLabel [18]
         Left = 579
-        Top = 245
+        Top = 395
         Width = 103
         Height = 16
         Caption = 'Campo em aberto'
@@ -208,7 +208,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_obs: TLabel [19]
         Left = 16
-        Top = 753
+        Top = 903
         Width = 113
         Height = 18
         Caption = 'OBSERVA'#199#213'ES'
@@ -221,14 +221,14 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_cod_contato: TLabel [20]
         Left = 8
-        Top = 247
+        Top = 397
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
       end
       object lbl_titulo_trabalho: TLabel [21]
         Left = 16
-        Top = 606
+        Top = 756
         Width = 82
         Height = 18
         Caption = 'TRABALHO'
@@ -241,14 +241,14 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_cod_cargo: TLabel [22]
         Left = 8
-        Top = 630
+        Top = 780
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
       end
       object lbl_salario: TLabel [23]
         Left = 8
-        Top = 686
+        Top = 836
         Width = 52
         Height = 16
         Caption = 'Sal'#225'rio *'
@@ -261,7 +261,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_cargo: TLabel [24]
         Left = 96
-        Top = 630
+        Top = 780
         Width = 46
         Height = 16
         Caption = 'Cargo *'
@@ -274,7 +274,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_data_admissao: TLabel [25]
         Left = 438
-        Top = 630
+        Top = 780
         Width = 103
         Height = 16
         Caption = 'Data de Admiss'#227'o'
@@ -287,7 +287,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_data_demissao: TLabel [26]
         Left = 577
-        Top = 630
+        Top = 780
         Width = 103
         Height = 16
         Caption = 'Data de Demiss'#227'o'
@@ -300,7 +300,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_comissao: TLabel [27]
         Left = 168
-        Top = 686
+        Top = 836
         Width = 93
         Height = 16
         Caption = 'Comiss'#227'o (%) *'
@@ -313,7 +313,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_cpf: TLabel [28]
         Left = 8
-        Top = 537
+        Top = 687
         Width = 34
         Height = 16
         Caption = 'CPF *'
@@ -326,7 +326,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_rg: TLabel [29]
         Left = 135
-        Top = 537
+        Top = 687
         Width = 28
         Height = 16
         Caption = 'RG *'
@@ -339,7 +339,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_data_nascimento: TLabel [30]
         Left = 295
-        Top = 537
+        Top = 687
         Width = 126
         Height = 16
         Caption = 'Data de Nascimento *'
@@ -352,7 +352,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object lbl_complemento: TLabel [31]
         Left = 416
-        Top = -18
+        Top = 132
         Width = 79
         Height = 16
         Caption = 'Complemento'
@@ -364,30 +364,30 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
         ParentFont = False
       end
       inherited edt_cod_usuario: PriTEdit
-        Top = 960
+        Top = 1110
         TabOrder = 1
-        ExplicitTop = 960
+        ExplicitTop = 1110
       end
       inherited edt_codigo: PriTEdit
-        Top = -90
+        Top = 60
         TabOrder = 26
-        ExplicitTop = -90
+        ExplicitTop = 60
       end
       inherited edt_data_cadastro: PriTEdit
-        Top = 960
+        Top = 1110
         TabOrder = 27
-        ExplicitTop = 960
+        ExplicitTop = 1110
       end
       inherited edt_data_ult_alt: PriTEdit
-        Top = 960
+        Top = 1110
         TabOrder = 28
-        ExplicitTop = 960
+        ExplicitTop = 1110
       end
       inherited pnl_bottom: TPanel
-        Top = 984
+        Top = 1134
         Width = 1051
         TabOrder = 29
-        ExplicitTop = 984
+        ExplicitTop = 1134
         ExplicitWidth = 1051
         inherited pnl_botao_salvar: TPanel
           Left = 728
@@ -400,7 +400,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_nome: PriTEdit
         Left = 112
-        Top = -90
+        Top = 60
         Width = 461
         Height = 24
         CharCase = ecUpperCase
@@ -416,7 +416,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_endereco: PriTEdit
         Left = 8
-        Top = 4
+        Top = 154
         Width = 393
         Height = 24
         CharCase = ecUpperCase
@@ -432,7 +432,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_numero: PriTEdit
         Left = 8
-        Top = 66
+        Top = 216
         Width = 65
         Height = 24
         CharCase = ecUpperCase
@@ -448,7 +448,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_bairro: PriTEdit
         Left = 96
-        Top = 66
+        Top = 216
         Width = 393
         Height = 24
         CharCase = ecUpperCase
@@ -464,7 +464,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_uf: PriTEdit
         Left = 547
-        Top = 138
+        Top = 288
         Width = 80
         Height = 24
         CharCase = ecUpperCase
@@ -474,7 +474,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_cep: PriTMaskEdit
         Left = 547
-        Top = 66
+        Top = 216
         Width = 80
         Height = 24
         EditMask = '99.999-999;1;_'
@@ -492,7 +492,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_pesquisar_cidade: PriTEdit
         Left = 95
-        Top = 138
+        Top = 288
         Width = 389
         Height = 24
         CharCase = ecUpperCase
@@ -508,7 +508,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object pnl_adicionar_cidade: TPanel
         Left = 490
-        Top = 140
+        Top = 290
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -561,7 +561,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_nome_tipo_selecionado: PriTEdit
         Left = 316
-        Top = 267
+        Top = 417
         Width = 220
         Height = 24
         CharCase = ecUpperCase
@@ -571,7 +571,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_algo: PriTEdit
         Left = 579
-        Top = 267
+        Top = 417
         Width = 180
         Height = 24
         CharCase = ecUpperCase
@@ -581,7 +581,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_tipo_contato: PriTEdit
         Left = 96
-        Top = 267
+        Top = 417
         Width = 166
         Height = 24
         CharCase = ecUpperCase
@@ -597,7 +597,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object pnl_pesquisa_tipo_contato: TPanel
         Left = 266
-        Top = 269
+        Top = 419
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -650,7 +650,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object memo_obs: TMemo
         Left = 8
-        Top = 777
+        Top = 927
         Width = 1038
         Height = 130
         MaxLength = 250
@@ -659,7 +659,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object rb_mas: TRadioButton
         Left = 603
-        Top = -87
+        Top = 63
         Width = 74
         Height = 17
         Caption = 'Masculino'
@@ -668,7 +668,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object rb_fem: TRadioButton
         Left = 604
-        Top = -64
+        Top = 86
         Width = 70
         Height = 17
         Caption = 'Feminino'
@@ -678,7 +678,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_cod_cidade: PriTEdit
         Left = 8
-        Top = 138
+        Top = 288
         Width = 80
         Height = 24
         MaxLength = 4
@@ -688,7 +688,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object pnl_btn_selecionar_foto: TPanel
         Left = 896
-        Top = 169
+        Top = 319
         Width = 150
         Height = 40
         BevelOuter = bvNone
@@ -720,7 +720,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object pnl_img: TPanel
         Left = 699
-        Top = -137
+        Top = 13
         Width = 349
         Height = 300
         BevelInner = bvSpace
@@ -1318,7 +1318,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_cod_contato: PriTEdit
         Left = 8
-        Top = 267
+        Top = 417
         Width = 80
         Height = 24
         MaxLength = 4
@@ -1328,17 +1328,30 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object ListView1: TListView
         Left = 8
-        Top = 357
+        Top = 507
         Width = 921
         Height = 162
-        Columns = <>
+        Columns = <
+          item
+            Caption = 'Tipo de Contato'
+            Width = 180
+          end
+          item
+            Width = 180
+          end
+          item
+            Caption = 'Observa'#231#227'o'
+            Width = 180
+          end>
+        RowSelect = True
         TabOrder = 34
         TabStop = False
+        ViewStyle = vsReport
         OnSelectItem = ListView1SelectItem
       end
       object edt_cod_cargo: PriTEdit
         Left = 8
-        Top = 650
+        Top = 800
         Width = 80
         Height = 24
         MaxLength = 4
@@ -1348,7 +1361,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_salario: PriTEdit
         Left = 8
-        Top = 707
+        Top = 857
         Width = 121
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1364,7 +1377,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_comissao: PriTEdit
         Left = 168
-        Top = 707
+        Top = 857
         Width = 121
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1380,7 +1393,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_cargo: PriTEdit
         Left = 96
-        Top = 650
+        Top = 800
         Width = 280
         Height = 24
         CharCase = ecUpperCase
@@ -1396,7 +1409,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object date_data_admissao: TDateTimePicker
         Left = 438
-        Top = 650
+        Top = 800
         Width = 103
         Height = 24
         Date = 44318.000000000000000000
@@ -1411,7 +1424,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object date_data_demissao: TDateTimePicker
         Left = 577
-        Top = 650
+        Top = 800
         Width = 103
         Height = 24
         Date = 44318.000000000000000000
@@ -1426,7 +1439,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object pnl_btn_pesquisa: TPanel
         Left = 379
-        Top = 652
+        Top = 802
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -1479,7 +1492,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_mask_cpf: PriTMaskEdit
         Left = 8
-        Top = 559
+        Top = 709
         Width = 97
         Height = 24
         EditMask = '999.999.999-99;1;_'
@@ -1497,7 +1510,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_rg: PriTEdit
         Left = 135
-        Top = 559
+        Top = 709
         Width = 121
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1512,7 +1525,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object date_data_nasc: TDateTimePicker
         Left = 295
-        Top = 559
+        Top = 709
         Width = 114
         Height = 24
         Date = 44318.000000000000000000
@@ -1527,7 +1540,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object edt_complemento: PriTEdit
         Left = 416
-        Top = 4
+        Top = 154
         Width = 277
         Height = 24
         CharCase = ecUpperCase
@@ -1543,7 +1556,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object pnl_adicionar_contato: TPanel
         Left = 424
-        Top = 306
+        Top = 456
         Width = 100
         Height = 40
         BevelOuter = bvNone
@@ -1573,7 +1586,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object pnl_botao_alterar_item: TPanel
         Left = 560
-        Top = 306
+        Top = 456
         Width = 100
         Height = 40
         Cursor = crHandPoint
@@ -1609,7 +1622,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object pnl_remover_item: TPanel
         Left = 696
-        Top = 306
+        Top = 456
         Width = 100
         Height = 40
         Cursor = crHandPoint
@@ -1647,7 +1660,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       object pbl_limpar_grid: TPanel
         Left = 829
-        Top = 306
+        Top = 456
         Width = 100
         Height = 40
         BevelOuter = bvNone

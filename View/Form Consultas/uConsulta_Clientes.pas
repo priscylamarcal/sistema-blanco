@@ -40,9 +40,28 @@ implementation
 { Tform_consulta_clientes }
 
 procedure Tform_consulta_clientes.alterar;
+var form :  Tform_cadastro_clientes;
 begin
   inherited;
 
+  oCadastroClientes.limpaEdt;
+
+  aCtrlClientes.carregar( oCliente );
+
+  oCadastroClientes.conhecaObj( aCtrlClientes, oCliente );
+
+  oCadastroClientes.edt_cnpj.Enabled:= False;
+  oCadastroClientes.edt_ie.Enabled:= False;
+
+  oCadastroClientes.btn_botao_alterar_item.Enabled:= False;
+  oCadastroClientes.btn_botao_excluir_item.Enabled:= False;
+
+  oCadastroClientes.Caption:= 'Alteração de Cliente';
+
+  oCadastroClientes.ShowModal;
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
 end;
 
 procedure Tform_consulta_clientes.conhecaObj(pCtrl, pObj: TObject);
@@ -69,9 +88,29 @@ begin
 end;
 
 procedure Tform_consulta_clientes.novo;
+var form :  Tform_cadastro_clientes;
 begin
   inherited;
+
+  oCadastroClientes.conhecaObj( aCtrlClientes, oCliente );
+  oCadastroClientes.ListView1.Clear;
+  oCadastroClientes.limpaEdt;
+  oCadastroClientes.limparItens;
+
+  oCadastroClientes.lbl_nome_tipo.Caption:= '';
+
+  oCadastroClientes.edt_cnpj.Enabled:= True;
+  oCadastroClientes.edt_ie.Enabled:= True;
+
+  oCadastroClientes.btn_botao_alterar_item.Enabled:= False;
+  oCadastroClientes.btn_botao_excluir_item.Enabled:= False;
+
+  oCadastroClientes.Caption:= 'Cadastro de Cliente';
+
   oCadastroClientes.ShowModal;
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
 end;
 
 procedure Tform_consulta_clientes.pesquisar;
@@ -130,9 +169,13 @@ begin
 end;
 
 procedure Tform_consulta_clientes.setFrmCadastro(pObj: TObject);
+var form :  Tform_cadastro_clientes;
 begin
   inherited;
   oCadastroClientes := Tform_cadastro_clientes( pObj );
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
 end;
 
 procedure Tform_consulta_clientes.spb_botao_pesquisarClick(Sender: TObject);
