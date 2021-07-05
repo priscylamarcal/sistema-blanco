@@ -2,6 +2,7 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
   Caption = 'Cadastro de Funcion'#225'rio'
   ClientHeight = 938
   ClientWidth = 1068
+  ExplicitTop = -335
   ExplicitWidth = 1084
   ExplicitHeight = 977
   PixelsPerInch = 96

@@ -121,6 +121,7 @@ type
     procedure bloqueiaEdt;    override;
     procedure desbloqueiaEdt; override;
     function validaFormulario : Boolean; override;
+
     procedure setFrmConsultaCidades ( pConsulta : TObject );
     procedure setFrmConsultaContatos ( pConsulta : TObject );
     procedure setFrmConsultaCargos ( pConsulta : TObject );
@@ -344,7 +345,7 @@ begin
     oFuncionario.getoCargo.setCodigo( StrToInt ( self.edt_cod_cargo.Text ) );
     oFuncionario.getoCargo.setCargo( self.edt_cargo.Text );
     oFuncionario.setDataCad( Date );
-    oFuncionario.setUltAlt( Date );
+    //oFuncionario.setUltAlt( Date );
     oFuncionario.setCodUsu( StrToInt ( Self.edt_cod_usuario.Text ) );
     oFuncionario.setDataNasc( Date );
     oFuncionario.setDataAdmissao( Date );

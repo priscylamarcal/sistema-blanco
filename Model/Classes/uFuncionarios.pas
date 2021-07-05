@@ -56,6 +56,7 @@ end;
 
 destructor Funcionarios.destrua_se;
 begin
+  inherited;
   umCargo.destrua_se;
 end;
 
