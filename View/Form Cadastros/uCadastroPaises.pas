@@ -91,7 +91,7 @@ end;
 procedure Tform_cadastro_paises.FormActivate(Sender: TObject);
 begin
   inherited;
-  edt_pais.SetFocus;
+  //edt_pais.SetFocus;
 end;
 
 procedure Tform_cadastro_paises.limpaEdt;

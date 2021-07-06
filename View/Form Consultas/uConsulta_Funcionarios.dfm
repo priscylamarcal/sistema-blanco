@@ -1,7 +1,5 @@
 inherited form_consulta_funcionarios: Tform_consulta_funcionarios
   Caption = 'Consulta de Funcion'#225'rios'
-  ExplicitLeft = 2
-  ExplicitTop = 2
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel

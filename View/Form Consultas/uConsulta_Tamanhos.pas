@@ -62,9 +62,25 @@ begin
 end;
 
 procedure Tform_consulta_tamanhos.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlTamanhos.carregar(oTamanho);
 
+  mCaption := oCadastroTamanhos.btn_botao_salvar.caption;
+  oCadastroTamanhos.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroTamanhos.conhecaObj( aCtrlTamanhos, oTamanho );
+
+  oCadastroTamanhos.Caption:= 'Exclusão de Cargo';
+
+  oCadastroTamanhos.bloqueiaEdt;
+
+  oCadastroTamanhos.ShowModal;
+
+  oCadastroTamanhos.btn_botao_salvar.caption := mCaption;
+
+  oCadastroTamanhos.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_tamanhos.FormShow(Sender: TObject);

@@ -69,9 +69,25 @@ begin
 end;
 
 procedure Tform_consulta_estados.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlEstados.carregar(oEstado);
 
+  mCaption := oCadastroEstados.btn_botao_salvar.caption;
+  oCadastroEstados.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroEstados.conhecaObj( aCtrlEstados, oEstado );
+
+  oCadastroEstados.Caption:= 'Exclusão de Cargo';
+
+  oCadastroEstados.bloqueiaEdt;
+
+  oCadastroEstados.ShowModal;
+
+  oCadastroEstados.btn_botao_salvar.caption := mCaption;
+
+  oCadastroEstados.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_estados.FormShow(Sender: TObject);
@@ -156,20 +172,6 @@ begin
        oEstado.setCodigo(mEstado.getCodigo);
        oEstado.setEstado(mEstado.getEstado);
        oEstado.setUF( mEstado.getUF );
-
-//       mPais.setCodigo( mEstado.getoPais.getCodigo );
-//       mPais.setPais( mEstado.getoPais.getPais );
-         //  aCtrlPaises.carregar( TObject( mPais) );
-//         aCtrlEstados.carregar(TObject(mEstado.getoPais));
-//    mPais.setCodigo( mPais.getCodigo );
-//    mPais.setPais( mPais.getPais );
-     //  oEstado.getoPais.setCodigo( mEstado.getoPais );
-      // oEstado.setoPais(mEstado.getoPais.clone.getCodigo);
-//       oEstado.set( mEstado.GetCodigo,
-//                             mEstado.GetCodUsu,
-//                             mEstado.GetDataCad(false),
-//                             mEstado.GetUltAlt(false));
-
 
        inherited Sair;
   end

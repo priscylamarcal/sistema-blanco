@@ -40,7 +40,7 @@ object DM: TDM
     end
     object QPaisesPAIS: TStringField
       DisplayLabel = 'Pa'#237's'
-      DisplayWidth = 193
+      DisplayWidth = 100
       FieldName = 'PAIS'
       Origin = 'PAIS'
       Required = True
@@ -104,7 +104,7 @@ object DM: TDM
     end
     object QDepartamentosDEPARTAMENTO: TStringField
       DisplayLabel = 'Departamento'
-      DisplayWidth = 220
+      DisplayWidth = 100
       FieldName = 'DEPARTAMENTO'
       Origin = 'DEPARTAMENTO'
       Required = True
@@ -147,7 +147,7 @@ object DM: TDM
     end
     object QCoresCOR: TStringField
       DisplayLabel = 'Cor'
-      DisplayWidth = 220
+      DisplayWidth = 100
       FieldName = 'COR'
       Origin = 'COR'
       Required = True
@@ -185,7 +185,7 @@ object DM: TDM
     end
     object QColecoesCOLECAO: TStringField
       DisplayLabel = 'Cole'#231#227'o'
-      DisplayWidth = 220
+      DisplayWidth = 100
       FieldName = 'COLECAO'
       Origin = 'COLECAO'
       Required = True
@@ -228,7 +228,7 @@ object DM: TDM
     end
     object QGruposRoupasGRUPOROUPA: TStringField
       DisplayLabel = 'Grupo de Roupa'
-      DisplayWidth = 220
+      DisplayWidth = 100
       FieldName = 'GRUPOROUPA'
       Origin = 'GRUPOROUPA'
       Required = True
@@ -271,7 +271,7 @@ object DM: TDM
     end
     object QMarcasMARCA: TStringField
       DisplayLabel = 'Marca'
-      DisplayWidth = 220
+      DisplayWidth = 100
       FieldName = 'MARCA'
       Origin = 'MARCA'
       Required = True
@@ -323,21 +323,21 @@ object DM: TDM
     end
     object QTamanhosLARGURA: TStringField
       DisplayLabel = 'Largura'
-      DisplayWidth = 50
+      DisplayWidth = 40
       FieldName = 'LARGURA'
       Origin = 'LARGURA'
       Size = 4
     end
     object QTamanhosALTURA: TStringField
       DisplayLabel = 'Altura'
-      DisplayWidth = 50
+      DisplayWidth = 40
       FieldName = 'ALTURA'
       Origin = 'ALTURA'
       Size = 4
     end
     object QTamanhosCOMPRIMENTO: TStringField
       DisplayLabel = 'Comprimento'
-      DisplayWidth = 50
+      DisplayWidth = 40
       FieldName = 'COMPRIMENTO'
       Origin = 'COMPRIMENTO'
       Size = 4
@@ -379,7 +379,7 @@ object DM: TDM
     end
     object QFormasPagamentosFORMA: TStringField
       DisplayLabel = 'Forma de Pagamento'
-      DisplayWidth = 220
+      DisplayWidth = 100
       FieldName = 'FORMA'
       Origin = 'FORMA'
       Required = True
@@ -422,7 +422,7 @@ object DM: TDM
     end
     object QTiposContatosTIPOCONTATO: TStringField
       DisplayLabel = 'Tipo de Contato'
-      DisplayWidth = 220
+      DisplayWidth = 150
       FieldName = 'TIPOCONTATO'
       Origin = 'TIPOCONTATO'
       Required = True
@@ -465,7 +465,7 @@ object DM: TDM
     end
     object QEstadosESTADO: TStringField
       DisplayLabel = 'Estado'
-      DisplayWidth = 150
+      DisplayWidth = 100
       FieldName = 'ESTADO'
       Origin = 'ESTADO'
       Required = True
@@ -533,7 +533,7 @@ object DM: TDM
     end
     object QCidadesCIDADE: TStringField
       DisplayLabel = 'Cidade'
-      DisplayWidth = 150
+      DisplayWidth = 100
       FieldName = 'CIDADE'
       Origin = 'CIDADE'
       Required = True
@@ -618,7 +618,7 @@ object DM: TDM
     end
     object QCargosCARGO: TStringField
       DisplayLabel = 'Cargo'
-      DisplayWidth = 150
+      DisplayWidth = 100
       FieldName = 'CARGO'
       Origin = 'CARGO'
       Required = True
@@ -784,6 +784,7 @@ object DM: TDM
     end
     object QFornecedoresNOME_RAZAO_SOCIAL: TStringField
       DisplayLabel = 'Fornecedor'
+      DisplayWidth = 50
       FieldName = 'NOME_RAZAO_SOCIAL'
       Origin = 'NOME_RAZAO_SOCIAL'
       Size = 80
@@ -1259,6 +1260,7 @@ object DM: TDM
     end
     object QRoupasDESCRICAO_ROUPA: TStringField
       DisplayLabel = 'Descri'#231#227'o Roupa'
+      DisplayWidth = 50
       FieldName = 'DESCRICAO_ROUPA'
       Origin = 'DESCRICAO_ROUPA'
       Required = True
@@ -1266,11 +1268,13 @@ object DM: TDM
     end
     object QRoupasCOD_BARRA: TStringField
       DisplayLabel = 'C'#243'digo de Barra'
+      DisplayWidth = 20
       FieldName = 'COD_BARRA'
       Origin = 'COD_BARRA'
       Size = 50
     end
     object QRoupasREFERENCIA: TStringField
+      DisplayWidth = 20
       FieldName = 'REFERENCIA'
       Origin = 'REFERENCIA'
       Visible = False

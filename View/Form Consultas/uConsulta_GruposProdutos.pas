@@ -64,9 +64,25 @@ begin
 end;
 
 procedure Tform_consulta_grupos_produtos.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlGruposRoupas.carregar(oGrupoRoupa);
 
+  mCaption := oCadastroGruposProdutos.btn_botao_salvar.caption;
+  oCadastroGruposProdutos.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroGruposProdutos.conhecaObj( aCtrlGruposRoupas, oGrupoRoupa );
+
+  oCadastroGruposProdutos.Caption:= 'Exclusão de Cargo';
+
+  oCadastroGruposProdutos.bloqueiaEdt;
+
+  oCadastroGruposProdutos.ShowModal;
+
+  oCadastroGruposProdutos.btn_botao_salvar.caption := mCaption;
+
+  oCadastroGruposProdutos.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_grupos_produtos.FormShow(Sender: TObject);

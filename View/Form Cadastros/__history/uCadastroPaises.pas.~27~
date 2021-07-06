@@ -66,8 +66,8 @@ begin
   Self.edt_sigla.Text:= oPais.getSigla;
   Self.edt_ddi.Text:= oPais.getDDI;
   Self.edt_moeda.Text:= oPais.getMoeda;
-  Self.edt_data_cadastro.Text:= DateTimeToStr( oPais.getDataCad);
-  self.edt_data_ult_alt.Text:= DateTimeToStr(oPais.getUltAlt);
+ Self.edt_data_cadastro.Text:= DateToStr( oPais.getDataCad);
+ self.edt_data_ult_alt.Text:= DateToStr(oPais.getUltAlt);
 end;
 
 procedure Tform_cadastro_paises.conhecaObj(pCtrl, pObj: TObject);
@@ -92,7 +92,6 @@ procedure Tform_cadastro_paises.FormActivate(Sender: TObject);
 begin
   inherited;
   edt_pais.SetFocus;
-
 end;
 
 procedure Tform_cadastro_paises.limpaEdt;
@@ -116,7 +115,7 @@ procedure Tform_cadastro_paises.salvar;
 begin
   inherited;
   if validaFormulario then
-    begin
+  begin
       oPais.setCodigo( StrToInt ( Self.edt_codigo.Text ) );
       oPais.setPais( Self.edt_pais.Text );
       oPais.setSigla( Self.edt_sigla.Text );
@@ -125,12 +124,14 @@ begin
       oPais.setDataCad( Date );
       oPais.setUltAlt( Date );
       oPais.setCodUsu( StrToInt ( Self.edt_cod_usuario.Text ) );
+
       if Self.btn_botao_salvar.Caption = 'Salvar' then // INCLUIR-ALTERAR
          aCtrlPais.salvar( oPais.clone )
       else //EXCLUIR
          aCtrlPais.excluir( oPais.clone );
-    end;
-    self.sair;
+
+      self.sair;
+  end;
 end;
 
 function Tform_cadastro_paises.validaFormulario: Boolean;
@@ -151,7 +152,7 @@ begin
     Exit;
   end;
 
-  Result:= true;
+ Result:= true;
 end;
 
 end.

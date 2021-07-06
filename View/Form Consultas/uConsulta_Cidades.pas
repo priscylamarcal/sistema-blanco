@@ -68,9 +68,25 @@ begin
 end;
 
 procedure Tform_consulta_cidades.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlCidades.carregar(aCidade);
 
+  mCaption := oCadastroCidades.btn_botao_salvar.caption;
+  oCadastroCidades.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroCidades.conhecaObj( aCtrlCidades, aCidade );
+
+  oCadastroCidades.Caption:= 'Exclusão de Cargo';
+
+  oCadastroCidades.bloqueiaEdt;
+
+  oCadastroCidades.ShowModal;
+
+  oCadastroCidades.btn_botao_salvar.caption := mCaption;
+
+  oCadastroCidades.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_cidades.FormShow(Sender: TObject);

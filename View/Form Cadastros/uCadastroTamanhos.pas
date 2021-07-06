@@ -89,7 +89,7 @@ end;
 procedure Tform_cadastro_tamanhos.FormActivate(Sender: TObject);
 begin
   inherited;
-  edt_sigla_tamanho.SetFocus;
+ // edt_sigla_tamanho.SetFocus;
 end;
 
 procedure Tform_cadastro_tamanhos.limpaEdt;

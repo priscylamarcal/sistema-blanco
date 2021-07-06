@@ -7,10 +7,10 @@ inherited form_cadastro_tamanhos: Tform_cadastro_tamanhos
   TextHeight = 13
   inherited pnl_fundo: TPanel
     Height = 212
-    ExplicitHeight = 294
+    ExplicitHeight = 212
     inherited ScrollBox1: TScrollBox
       Height = 212
-      ExplicitHeight = 294
+      ExplicitHeight = 212
       inherited lbl_cod_usuario: TLabel
         Top = 117
         ExplicitTop = 117
@@ -89,7 +89,7 @@ inherited form_cadastro_tamanhos: Tform_cadastro_tamanhos
       end
       inherited pnl_bottom: TPanel
         Top = 157
-        ExplicitTop = 239
+        ExplicitTop = 157
       end
       object edt_sigla_tamanho: PriTEdit
         Left = 112

@@ -260,7 +260,7 @@ end;
 procedure Tform_cadastro_funcionario.FormShow(Sender: TObject);
 begin
   inherited;
-  edt_nome.SetFocus;
+ // edt_nome.SetFocus;
   date_data_admissao.Date:= Date;
 end;
 

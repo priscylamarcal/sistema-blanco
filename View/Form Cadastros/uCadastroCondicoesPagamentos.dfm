@@ -10,7 +10,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
     Width = 871
     Height = 661
     ExplicitWidth = 871
-    ExplicitHeight = 561
+    ExplicitHeight = 661
     inherited ScrollBox1: TScrollBox
       Width = 871
       Height = 661
@@ -193,7 +193,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Top = 606
         Width = 871
         TabOrder = 15
-        ExplicitTop = 506
+        ExplicitTop = 606
         ExplicitWidth = 871
       end
       object edt_condicao_pagamento: PriTEdit

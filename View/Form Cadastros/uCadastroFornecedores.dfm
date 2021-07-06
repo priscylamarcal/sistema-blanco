@@ -11,12 +11,12 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
     Width = 924
     Height = 740
     ExplicitWidth = 924
-    ExplicitHeight = 845
+    ExplicitHeight = 740
     inherited ScrollBox1: TScrollBox
       Width = 924
       Height = 740
       ExplicitWidth = 924
-      ExplicitHeight = 845
+      ExplicitHeight = 740
       inherited lbl_cod_usuario: TLabel
         Top = 877
         ExplicitTop = 877

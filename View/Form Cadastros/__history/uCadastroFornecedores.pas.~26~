@@ -61,11 +61,11 @@ type
     lbl_condicao_pagamento: TLabel;
     lbl_cod_contato: TLabel;
     edt_cod_contato: PriTEdit;
-    ListView1: TListView;
+    ListView_contatos: TListView;
     pnl_botao_alterar: TPanel;
-    btn_botao_alterar: TSpeedButton;
-    pnl_botao_excluir: TPanel;
-    btn_botao_excluir: TSpeedButton;
+    btn_botao_alterar_item: TSpeedButton;
+    pnl_botao_excluir_item: TPanel;
+    btn_botao_excluir_item: TSpeedButton;
     pbl_limpar_grid: TPanel;
     btn_limpar_grid: TSpeedButton;
     procedure ComboBox_tipo_fornecedorChange(Sender: TObject);
@@ -74,6 +74,12 @@ type
     procedure btn_pesquisaClick(Sender: TObject);
     procedure btn_pesquisa_tipo_contatoClick(Sender: TObject);
     procedure btn_pesquisa_condicao_pagamentoClick(Sender: TObject);
+    procedure btn_adicionar_contatoClick(Sender: TObject);
+    procedure btn_limpar_gridClick(Sender: TObject);
+    procedure btn_botao_excluir_itemClick(Sender: TObject);
+    procedure ListView_contatosSelectItem(Sender: TObject; Item: TListItem;
+      Selected: Boolean);
+    procedure btn_botao_alterar_itemClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -100,6 +106,9 @@ type
     procedure setFrmConsultaCondicaoPagamento ( pConsulta : TObject );
 
     procedure tipoFornecedor;
+    procedure adicionarItens;
+    procedure limparItens;
+    function validaItens : Boolean;
   end;
 
 var
@@ -110,6 +119,16 @@ implementation
 {$R *.dfm}
 
 { Tform_cadastro_fornecedores }
+
+procedure Tform_cadastro_fornecedores.adicionarItens;
+var item : TListItem;
+begin
+  item:= ListView_contatos.Items.Add;
+
+  item.Caption:= edt_tipo_contato.Text;
+  item.SubItems.Add( edt_nome_tipo_selecionado.Text );
+  item.SubItems.Add( edt_algo.Text );
+end;
 
 procedure Tform_cadastro_fornecedores.bloqueiaEdt;
 begin
@@ -133,6 +152,44 @@ begin
   self.edt_pesquisa_condicao_pagamento.Enabled:= False;
 end;
 
+procedure Tform_cadastro_fornecedores.btn_adicionar_contatoClick(
+  Sender: TObject);
+begin
+  inherited;
+  if validaItens then
+  begin
+    adicionarItens;
+    limparItens;
+    edt_cod_contato.SetFocus;
+  end;
+end;
+
+procedure Tform_cadastro_fornecedores.btn_botao_alterar_itemClick(
+  Sender: TObject);
+var item : TListItem;
+begin
+  inherited;
+
+  edt_tipo_contato.Text:= ListView_contatos.Selected.Caption;
+  edt_nome_tipo_selecionado.Text:= ListView_contatos.Selected.SubItems[0];
+  edt_algo.Text:= ListView_contatos.Selected.SubItems[1];
+end;
+
+procedure Tform_cadastro_fornecedores.btn_botao_excluir_itemClick(Sender: TObject);
+begin
+  inherited;
+  if ListView_contatos.ItemFocused.Index = ListView_contatos.Items.Count - 1 then
+     ListView_contatos.DeleteSelected
+  else
+    MessageDlg( 'Primeiro deve excluir o último contato!', MtInformation, [ MbOK ], 0 );
+end;
+
+procedure Tform_cadastro_fornecedores.btn_limpar_gridClick(Sender: TObject);
+begin
+  inherited;
+  ListView_contatos.Clear;
+end;
+
 procedure Tform_cadastro_fornecedores.btn_pesquisaClick(Sender: TObject);
 var aux : string;
 begin
@@ -145,6 +202,7 @@ begin
 
   self.edt_cod_cidade.Text:= IntToStr( oFornecedor.getaCidade.getCodigo );
   self.edt_pesquisar_cidade.Text:= oFornecedor.getaCidade.getCidade;
+  self.edt_uf.Text:= oFornecedor.getaCidade.getoEstado.getUF;
 end;
 
 procedure Tform_cadastro_fornecedores.btn_pesquisa_condicao_pagamentoClick(
@@ -198,6 +256,7 @@ begin
   self.edt_pesquisar_cidade.Text:= oFornecedor.getaCidade.getCidade;
   self.edt_uf.Text:= oFornecedor.getaCidade.getoEstado.getUF;
   self.edt_cod_contato.Text:= IntToStr ( oFornecedor.getoContato.getCodigo );
+  self.edt_tipo_contato.Text:= oFornecedor.getoContato.getTipoContato;
   self.edt_nome_tipo_selecionado.Text:= oFornecedor.getContatoAux1;
   self.edt_algo.Text:= oFornecedor.getContatoAux2;
   self.edt_cpf_cnpj.Text:= oFornecedor.getCnpjCpf;
@@ -206,6 +265,8 @@ begin
   self.edt_pesquisa_condicao_pagamento.Text:= oFornecedor.getaCondicao.getCondicao;
   self.edt_data_cadastro.Text:= DateToStr( oFornecedor.getDataCad);
   self.edt_data_ult_alt.Text:= DateToStr(oFornecedor.getUltAlt);
+  self.edt_uf.Text:= oFornecedor.getaCidade.getoEstado.getUF;
+  self.ComboBox_tipo_fornecedor.Text:= oFornecedor.getTipoForn;
 end;
 
 procedure Tform_cadastro_fornecedores.ComboBox_tipo_fornecedorChange(
@@ -222,6 +283,7 @@ begin
   aCtrlFornecedores:= ctrlFornecedores( pCtrl );
 
   self.limpaEdt;
+  self.limparItens;
   self.carregaEdt;
 
 end;
@@ -285,6 +347,30 @@ begin
   self.edt_data_ult_alt.Clear;
 end;
 
+procedure Tform_cadastro_fornecedores.limparItens;
+begin
+  self.edt_cod_contato.Clear;
+  self.edt_tipo_contato.Clear;
+  self.edt_nome_tipo_selecionado.Clear;
+  self.edt_algo.Clear;
+end;
+
+procedure Tform_cadastro_fornecedores.ListView_contatosSelectItem(
+  Sender: TObject; Item: TListItem; Selected: Boolean);
+begin
+  inherited;
+  if Selected then
+  begin
+    btn_botao_excluir_item.Enabled:= True;
+    btn_botao_alterar_item.Enabled:= True;
+  end
+  else
+  begin
+    btn_botao_excluir_item.Enabled:= False;
+    btn_botao_alterar_item.Enabled:= False;
+  end;
+end;
+
 procedure Tform_cadastro_fornecedores.sair;
 begin
   inherited;
@@ -296,7 +382,36 @@ begin
   inherited;
   if validaFormulario then
   begin
+    oFornecedor.setCodigo( StrToInt ( self.edt_codigo.Text ) );
+    oFornecedor.setNomeRazaoSocial( self.edt_nome_razao_social.Text );
+    oFornecedor.setApelidoFantasia( self.edt_apelido_nome_fantasia.Text );
+    oFornecedor.setEndereco( self.edt_endereco.Text );
+    oFornecedor.setNumero( self.edt_numero.Text );
+    oFornecedor.setComplemento( self.edt_complemento.Text );
+    oFornecedor.setBairro( self.edt_bairro.Text );
+    oFornecedor.setCep( self.edt_cep.Text );
+    oFornecedor.getaCidade.setCodigo( StrToInt ( self.edt_cod_cidade.Text ) );
+    oFornecedor.getaCidade.setCidade( self.edt_pesquisar_cidade.Text );
+    oFornecedor.getaCidade.getoEstado.setUF( self.edt_uf.Text );
+    oFornecedor.getoContato.setCodigo( StrToInt ( self.edt_cod_contato.Text ) );
+    oFornecedor.getoContato.setTipoContato( self.edt_tipo_contato.Text );
+    oFornecedor.setContatoAux1( self.edt_nome_tipo_selecionado.Text );
+    oFornecedor.setContatoAux2( self.edt_algo.Text );
+    oFornecedor.setCnpjCpf( self.edt_cpf_cnpj.Text );
+    oFornecedor.setIeRg( self.edt_rg_ie.Text );
+    oFornecedor.getaCondicao.setCodigo( StrToInt ( self.edt_cod_condicao_pagamento.Text ) );
+    oFornecedor.getaCondicao.setCondicao( self.edt_pesquisa_condicao_pagamento.Text );
+    oFornecedor.setDataCad( Date );
+    oFornecedor.setUltAlt( Date );
+    oFornecedor.setCodUsu( StrToInt ( Self.edt_cod_usuario.Text ) );
+    oFornecedor.setTipoForn( self.ComboBox_tipo_fornecedor.Text);
 
+    if Self.btn_botao_salvar.Caption = 'Salvar' then // INCLUIR-ALTERAR
+       aCtrlFornecedores.salvar( oFornecedor.clone )
+    else //EXCLUIR
+       aCtrlFornecedores.excluir( oFornecedor.clone );
+
+    self.sair;
   end;
 end;
 
@@ -405,6 +520,27 @@ begin
   begin
     MessageDlg( 'O campo Condição de Pagamento é obrigatório!', MtInformation, [ MbOK ], 0 );
     edt_pesquisa_condicao_pagamento.SetFocus;
+    Exit;
+  end;
+
+ Result:= true;
+end;
+
+function Tform_cadastro_fornecedores.validaItens: Boolean;
+begin
+  Result:= False;
+
+  if Self.edt_tipo_contato.Text = '' then
+  begin
+    MessageDlg( 'O campo Tipo de Contato é obrigatório!', MtInformation, [ MbOK ], 0 );
+    edt_tipo_contato.SetFocus;
+    Exit;
+  end;
+
+  if Self.edt_nome_tipo_selecionado.Text = '' then
+  begin
+    MessageDlg( 'O campo é obrigatório!', MtInformation, [ MbOK ], 0 );
+    edt_nome_tipo_selecionado.SetFocus;
     Exit;
   end;
 

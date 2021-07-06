@@ -65,9 +65,25 @@ begin
 end;
 
 procedure Tform_consulta_cargos.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlCargos.carregar(oCargo);
 
+  mCaption := oCadastroCargos.btn_botao_salvar.caption;
+  oCadastroCargos.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroCargos.conhecaObj( aCtrlCargos, oCargo );
+
+  oCadastroCargos.Caption:= 'Exclusão de Cargo';
+
+  oCadastroCargos.bloqueiaEdt;
+
+  oCadastroCargos.ShowModal;
+
+  oCadastroCargos.btn_botao_salvar.caption := mCaption;
+
+  oCadastroCargos.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_cargos.FormShow(Sender: TObject);
