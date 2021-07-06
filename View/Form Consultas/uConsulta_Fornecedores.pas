@@ -160,8 +160,18 @@ begin
 end;
 
 procedure Tform_consulta_fornecedores.sair;
+var mFornecedor : Fornecedores;
 begin
-  inherited;
+  if (self.btn_botao_sair.Caption = 'Selecionar') then
+  begin
+    mFornecedor:= Fornecedores.crieObj;
+    aCtrlFornecedores.carregar( TObject( mFornecedor ) );
+    oFornecedor.setCodigo( mFornecedor.getCodigo );
+    oFornecedor.setNomeRazaoSocial( mFornecedor.getNomeRazaoSocial );
+       inherited Sair;
+  end
+  else
+    inherited Sair;
 
 end;
 

@@ -52,7 +52,7 @@ end;
 function daoMarcas.pesquisar(AFilter: TFilterSearch; pChave: string): string;
 var msql : string;
 begin
-    msql:= '';
+    msql:= 'SELECT * FROM MARCAS';
 
     case AFilter.TipoConsulta of
 

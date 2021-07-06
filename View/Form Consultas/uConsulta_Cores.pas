@@ -145,11 +145,19 @@ begin
 end;
 
 procedure Tform_consulta_cores.sair;
-var form : Tform_cadastro_cores;
+var mCor : Cores;
 begin
-  inherited;
-  if form.salvou then
-     self.pesquisar; inherited;
+  if self.btn_botao_sair.Caption = 'Selecionar' then
+  begin
+    mCor:= Cores.crieObj;
+    aCtrlCor.carregar( TObject( mCor ) );
+    aCor.setCodigo( mCor.getCodigo );
+    aCor.setCor( mCor.getCor );
+
+    inherited sair;
+  end
+  else
+    inherited Sair;
 end;
 
 procedure Tform_consulta_cores.setFrmCadastro(pObj: TObject);

@@ -1,43 +1,41 @@
 inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
   Caption = 'Cadastro de Fornecedor'
-  ClientHeight = 845
+  ClientHeight = 740
   ClientWidth = 924
   OnActivate = FormActivate
-  ExplicitTop = -242
   ExplicitWidth = 940
-  ExplicitHeight = 884
+  ExplicitHeight = 779
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
     Width = 924
-    Height = 845
+    Height = 740
     ExplicitWidth = 924
     ExplicitHeight = 845
     inherited ScrollBox1: TScrollBox
       Width = 924
-      Height = 845
-      VertScrollBar.Position = 126
+      Height = 740
       ExplicitWidth = 924
       ExplicitHeight = 845
       inherited lbl_cod_usuario: TLabel
-        Top = 751
+        Top = 877
         ExplicitTop = 877
       end
       inherited lbl_codigo: TLabel
-        Top = -87
+        Top = 39
         ExplicitTop = 39
       end
       inherited lbl_data_cadastro: TLabel
-        Top = 751
+        Top = 877
         ExplicitTop = 877
       end
       inherited lbl_data_ult_alt: TLabel
-        Top = 751
+        Top = 877
         ExplicitTop = 877
       end
       object lbl_tipo_fornecedor: TLabel [4]
         Left = 112
-        Top = -87
+        Top = 39
         Width = 112
         Height = 16
         Caption = 'Tipo de Fornecedor'
@@ -50,7 +48,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_titulo_dados_gerais: TLabel [5]
         Left = 16
-        Top = -111
+        Top = 15
         Width = 116
         Height = 18
         Caption = 'DADOS GERAIS'
@@ -63,7 +61,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_nome_razao_social: TLabel [6]
         Left = 8
-        Top = -31
+        Top = 95
         Width = 123
         Height = 16
         Caption = 'Nome/Raz'#227'o Social *'
@@ -76,7 +74,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_apelido_nome_fantasia: TLabel [7]
         Left = 480
-        Top = -31
+        Top = 95
         Width = 132
         Height = 16
         Caption = 'Apelido/Nome Fantasia'
@@ -89,7 +87,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_titulo_endereco: TLabel [8]
         Left = 16
-        Top = 24
+        Top = 150
         Width = 83
         Height = 18
         Caption = 'ENDERE'#199'O'
@@ -102,7 +100,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_endereco: TLabel [9]
         Left = 8
-        Top = 53
+        Top = 179
         Width = 65
         Height = 16
         Caption = 'Endere'#231'o *'
@@ -115,7 +113,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_numero: TLabel [10]
         Left = 432
-        Top = 53
+        Top = 179
         Width = 57
         Height = 16
         Caption = 'N'#250'mero *'
@@ -128,7 +126,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_complemento: TLabel [11]
         Left = 579
-        Top = 53
+        Top = 179
         Width = 79
         Height = 16
         Caption = 'Complemento'
@@ -141,7 +139,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_bairro: TLabel [12]
         Left = 8
-        Top = 115
+        Top = 241
         Width = 46
         Height = 16
         Caption = 'Bairro *'
@@ -154,7 +152,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_cep: TLabel [13]
         Left = 432
-        Top = 115
+        Top = 241
         Width = 22
         Height = 16
         Caption = 'CEP'
@@ -167,7 +165,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_codigo_cidade: TLabel [14]
         Left = 8
-        Top = 182
+        Top = 308
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -180,7 +178,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_cidade: TLabel [15]
         Left = 96
-        Top = 182
+        Top = 308
         Width = 51
         Height = 16
         Caption = 'Cidade *'
@@ -193,7 +191,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_uf: TLabel [16]
         Left = 547
-        Top = 182
+        Top = 308
         Width = 15
         Height = 16
         Caption = 'UF'
@@ -206,7 +204,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_algo_contato: TLabel [17]
         Left = 554
-        Top = 260
+        Top = 386
         Width = 67
         Height = 16
         Caption = 'Observa'#231#227'o'
@@ -219,7 +217,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_contatos: TLabel [18]
         Left = 16
-        Top = 235
+        Top = 361
         Width = 84
         Height = 18
         Caption = 'CONTATOS'
@@ -232,7 +230,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_nome_tipo: TLabel [19]
         Left = 316
-        Top = 260
+        Top = 386
         Width = 4
         Height = 16
         Font.Charset = DEFAULT_CHARSET
@@ -244,7 +242,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_tipo_contato: TLabel [20]
         Left = 96
-        Top = 260
+        Top = 386
         Width = 91
         Height = 16
         Caption = 'Tipo de Contato'
@@ -257,7 +255,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_cpf_cnpj: TLabel [21]
         Left = 8
-        Top = 593
+        Top = 719
         Width = 67
         Height = 16
         Caption = 'CPF/CNPJ *'
@@ -270,7 +268,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_rg_ie: TLabel [22]
         Left = 184
-        Top = 593
+        Top = 719
         Width = 44
         Height = 16
         Caption = 'RG/IE *'
@@ -283,7 +281,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_titulo_financeiro: TLabel [23]
         Left = 16
-        Top = 651
+        Top = 777
         Width = 99
         Height = 18
         Caption = 'FINANCEIRO'
@@ -296,7 +294,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_cod_condicao_pagamento: TLabel [24]
         Left = 8
-        Top = 677
+        Top = 803
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -309,7 +307,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_condicao_pagamento: TLabel [25]
         Left = 96
-        Top = 675
+        Top = 801
         Width = 138
         Height = 16
         Caption = 'Condi'#231#227'o de Pagamento'
@@ -322,7 +320,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object lbl_cod_contato: TLabel [26]
         Left = 8
-        Top = 263
+        Top = 389
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -334,30 +332,30 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
         ParentFont = False
       end
       inherited edt_cod_usuario: PriTEdit
-        Top = 766
+        Top = 892
         TabOrder = 1
-        ExplicitTop = 766
+        ExplicitTop = 892
       end
       inherited edt_codigo: PriTEdit
-        Top = -68
+        Top = 58
         TabOrder = 19
-        ExplicitTop = -68
+        ExplicitTop = 58
       end
       inherited edt_data_cadastro: PriTEdit
-        Top = 766
+        Top = 892
         TabOrder = 20
-        ExplicitTop = 766
+        ExplicitTop = 892
       end
       inherited edt_data_ult_alt: PriTEdit
-        Top = 766
+        Top = 892
         TabOrder = 21
-        ExplicitTop = 766
+        ExplicitTop = 892
       end
       inherited pnl_bottom: TPanel
-        Top = 790
+        Top = 916
         Width = 907
         TabOrder = 22
-        ExplicitTop = 790
+        ExplicitTop = 916
         ExplicitWidth = 907
         inherited pnl_botao_salvar: TPanel
           Left = 568
@@ -370,7 +368,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object ComboBox_tipo_fornecedor: TComboBox1
         Left = 112
-        Top = -68
+        Top = 58
         Width = 145
         Height = 24
         Style = csDropDownList
@@ -393,7 +391,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_nome_razao_social: PriTEdit
         Left = 8
-        Top = -9
+        Top = 117
         Width = 441
         Height = 24
         CharCase = ecUpperCase
@@ -409,7 +407,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_apelido_nome_fantasia: PriTEdit
         Left = 480
-        Top = -9
+        Top = 117
         Width = 366
         Height = 24
         CharCase = ecUpperCase
@@ -425,7 +423,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_endereco: PriTEdit
         Left = 8
-        Top = 75
+        Top = 201
         Width = 392
         Height = 24
         CharCase = ecUpperCase
@@ -441,7 +439,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_numero: PriTEdit
         Left = 432
-        Top = 75
+        Top = 201
         Width = 120
         Height = 24
         CharCase = ecUpperCase
@@ -457,7 +455,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_complemento: PriTEdit
         Left = 579
-        Top = 75
+        Top = 201
         Width = 266
         Height = 24
         CharCase = ecUpperCase
@@ -473,7 +471,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_bairro: PriTEdit
         Left = 8
-        Top = 137
+        Top = 263
         Width = 391
         Height = 24
         CharCase = ecUpperCase
@@ -489,7 +487,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_cep: PriTMaskEdit
         Left = 432
-        Top = 137
+        Top = 263
         Width = 80
         Height = 24
         EditMask = '99.999-999;1;_'
@@ -507,7 +505,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_cod_cidade: PriTEdit
         Left = 8
-        Top = 201
+        Top = 327
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -522,7 +520,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_uf: PriTEdit
         Left = 547
-        Top = 201
+        Top = 327
         Width = 80
         Height = 24
         TabStop = False
@@ -539,7 +537,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_pesquisar_cidade: PriTEdit
         Left = 96
-        Top = 201
+        Top = 327
         Width = 389
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -553,7 +551,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object pnl_btn_pesquisa: TPanel
         Left = 487
-        Top = 202
+        Top = 328
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -606,7 +604,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_algo: PriTEdit
         Left = 554
-        Top = 282
+        Top = 408
         Width = 231
         Height = 24
         CharCase = ecUpperCase
@@ -622,7 +620,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_nome_tipo_selecionado: PriTEdit
         Left = 316
-        Top = 282
+        Top = 408
         Width = 220
         Height = 24
         CharCase = ecUpperCase
@@ -638,7 +636,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_tipo_contato: PriTEdit
         Left = 96
-        Top = 282
+        Top = 408
         Width = 166
         Height = 24
         CharCase = ecUpperCase
@@ -654,7 +652,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object pnl_pesquisa_tipo_contato: TPanel
         Left = 266
-        Top = 284
+        Top = 410
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -707,7 +705,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object pnl_adicionar_contato: TPanel
         Left = 312
-        Top = 344
+        Top = 470
         Width = 94
         Height = 40
         BevelOuter = bvNone
@@ -738,7 +736,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_cpf_cnpj: PriTMaskEdit
         Left = 8
-        Top = 613
+        Top = 739
         Width = 124
         Height = 24
         EditMask = '99.999.999/9999-99;1;_'
@@ -756,7 +754,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_rg_ie: PriTEdit
         Left = 184
-        Top = 613
+        Top = 739
         Width = 121
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -771,7 +769,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object pnl_pesquisa_condicao_pagamento: TPanel
         Left = 380
-        Top = 698
+        Top = 824
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -823,7 +821,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_pesquisa_condicao_pagamento: PriTEdit
         Left = 96
-        Top = 697
+        Top = 823
         Width = 280
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -837,7 +835,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_cod_condicao_pagamento: PriTEdit
         Left = 8
-        Top = 697
+        Top = 823
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -852,7 +850,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object edt_cod_contato: PriTEdit
         Left = 8
-        Top = 282
+        Top = 408
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -867,7 +865,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object ListView_contatos: TListView
         Left = 8
-        Top = 400
+        Top = 526
         Width = 777
         Height = 172
         Columns = <
@@ -889,7 +887,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object pnl_botao_alterar: TPanel
         Left = 432
-        Top = 344
+        Top = 470
         Width = 94
         Height = 40
         BevelOuter = bvNone
@@ -925,7 +923,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object pnl_botao_excluir_item: TPanel
         Left = 560
-        Top = 344
+        Top = 470
         Width = 94
         Height = 40
         BevelOuter = bvNone
@@ -956,7 +954,7 @@ inherited form_cadastro_fornecedores: Tform_cadastro_fornecedores
       end
       object pbl_limpar_grid: TPanel
         Left = 685
-        Top = 344
+        Top = 470
         Width = 100
         Height = 40
         BevelOuter = bvNone

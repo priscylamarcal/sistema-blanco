@@ -1,21 +1,22 @@
 inherited form_cadastro_clientes: Tform_cadastro_clientes
   Caption = 'Cadastro de Cliente'
-  ClientHeight = 845
+  ClientHeight = 739
   ClientWidth = 932
   OnActivate = FormActivate
+  ExplicitTop = -173
   ExplicitWidth = 948
-  ExplicitHeight = 884
+  ExplicitHeight = 778
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
     Width = 932
-    Height = 845
-    ExplicitWidth = 931
+    Height = 739
+    ExplicitWidth = 932
     ExplicitHeight = 845
     inherited ScrollBox1: TScrollBox
       Width = 932
-      Height = 845
-      ExplicitWidth = 931
+      Height = 739
+      ExplicitWidth = 932
       ExplicitHeight = 845
       inherited lbl_cod_usuario: TLabel
         Top = 1077

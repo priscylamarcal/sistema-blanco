@@ -53,7 +53,7 @@ function daoGruposRoupas.pesquisar(AFilter: TFilterSearch;
   pChave: string): string;
 var msql : string;
 begin
-    msql:= '';
+    msql:= 'SELECT * FROM GRUPOS_ROUPAS';
 
     case AFilter.TipoConsulta of
 

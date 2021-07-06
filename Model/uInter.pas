@@ -188,6 +188,13 @@ begin
   oCadastroClientes.setFrmConsultaContatos( aConsultaTiposContatos );
   oCadastroClientes.setFrmConsultaFuncionarios( aConsultaFuncionarios );
   oCadastroClientes.setFrmConsultaCondicaoPagamento( aConsultaCondicoesPagamentos );
+
+  oCadastroProdutos.setFrmConsultaGruposProdutos( aConsultaGruposRoupas );
+  oCadastroProdutos.setFrmConsultaMarcas( aConsultaMarcas );
+  oCadastroProdutos.setFrmConsultaCores( aConsultaCores );
+  oCadastroProdutos.setFrmConsultaTamanhos( aConsultaTamanhos );
+  oCadastroProdutos.setFrmConsultaFornecedores( aConsultaFornecedores );
+  oCadastroProdutos.setFrmConsultaColecoes( aConsultaColecoes );
 end;
 
 destructor Inter.destrua_se;
