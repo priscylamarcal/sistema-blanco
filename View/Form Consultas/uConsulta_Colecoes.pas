@@ -142,9 +142,19 @@ begin
 end;
 
 procedure Tform_consulta_colecoes.sair;
+var mColecao : Colecoes;
 begin
-  inherited;
+  if self.btn_botao_sair.Caption = 'Selecionar' then
+  begin
+    mColecao:= Colecoes.crieObj;
+    aCtrlColecao.carregar( TObject( mColecao ) );
+    aColecao.setCodigo( mColecao.getCodigo );
+    aColecao.setColecao( mColecao.getColecao );
 
+    inherited sair;
+  end
+  else
+    inherited Sair;
 end;
 
 procedure Tform_consulta_colecoes.setFrmCadastro(pObj: TObject);

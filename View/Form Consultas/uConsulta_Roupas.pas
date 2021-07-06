@@ -40,8 +40,20 @@ implementation
 { Tform_consulta_roupas }
 
 procedure Tform_consulta_roupas.alterar;
+var form : Tform_cadastro_produtos;
 begin
   inherited;
+
+  oCadastroProdutos.limpaEdt;
+  aCtrlRoupas.carregar( aRoupa );
+  oCadastroProdutos.conhecaObj( aCtrlRoupas, aRoupa );
+
+  oCadastroProdutos.Caption:= 'Alteração de Roupa';
+
+  oCadastroProdutos.ShowModal;
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
 
 end;
 
@@ -69,9 +81,18 @@ begin
 end;
 
 procedure Tform_consulta_roupas.novo;
+var form : Tform_cadastro_produtos;
 begin
   inherited;
+  oCadastroProdutos.conhecaObj( aCtrlRoupas, aRoupa );
+  oCadastroProdutos.limpaEdt;
+
+  oCadastroProdutos.Caption:= 'Cadastro de Roupa';
+
   oCadastroProdutos.ShowModal;
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
 end;
 
 procedure Tform_consulta_roupas.pesquisar;
@@ -131,9 +152,13 @@ begin
 end;
 
 procedure Tform_consulta_roupas.setFrmCadastro(pObj: TObject);
+var form : Tform_cadastro_produtos;
 begin
   inherited;
   oCadastroProdutos := Tform_cadastro_produtos( pObj );
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
 end;
 
 procedure Tform_consulta_roupas.spb_botao_pesquisarClick(Sender: TObject);

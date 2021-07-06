@@ -173,9 +173,13 @@ begin
 end;
 
 procedure Tform_consulta_funcionarios.setFrmCadastro(pObj: TObject);
+var form : Tform_cadastro_funcionario;
 begin
   inherited;
   oCadastroFuncionarios:= Tform_cadastro_funcionario( pObj );
+
+  if form.salvou then
+    Self.pesquisar;      inherited;
 end;
 
 procedure Tform_consulta_funcionarios.spb_botao_pesquisarClick(Sender: TObject);

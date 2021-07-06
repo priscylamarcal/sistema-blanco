@@ -2,8 +2,8 @@ object form_consulta_pai: Tform_consulta_pai
   Left = 0
   Top = 0
   Caption = 'Consulta Pai'
-  ClientHeight = 825
-  ClientWidth = 1539
+  ClientHeight = 588
+  ClientWidth = 1308
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,32 +18,36 @@ object form_consulta_pai: Tform_consulta_pai
   object pnl_fundo: TPanel
     Left = 0
     Top = 0
-    Width = 1539
-    Height = 825
+    Width = 1308
+    Height = 588
     Align = alClient
     BevelOuter = bvNone
     Color = 14869726
     ParentBackground = False
     TabOrder = 0
+    ExplicitWidth = 1539
+    ExplicitHeight = 825
     object pnl_topo: TPanel
       Left = 0
       Top = 0
-      Width = 1539
+      Width = 1308
       Height = 89
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitTop = -6
       DesignSize = (
-        1539
+        1308
         89)
       object pnl_dentro_topo: TPanel
         Left = 0
         Top = 24
-        Width = 1539
+        Width = 1308
         Height = 65
         Anchors = [akLeft, akTop, akRight]
         BevelOuter = bvNone
         TabOrder = 0
+        ExplicitWidth = 1539
         object combobox_tipo_filtro: TComboBox1
           Left = 53
           Top = 21
@@ -120,14 +124,16 @@ object form_consulta_pai: Tform_consulta_pai
     end
     object pnl_bottom: TPanel
       Left = 0
-      Top = 757
-      Width = 1539
+      Top = 520
+      Width = 1308
       Height = 68
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitTop = 757
+      ExplicitWidth = 1539
       object pnl_botao_sair: TPanel
-        Left = 1379
+        Left = 1147
         Top = 8
         Width = 150
         Height = 40
@@ -159,12 +165,11 @@ object form_consulta_pai: Tform_consulta_pai
           OnClick = btn_botao_sairClick
           OnMouseEnter = btn_botao_sairMouseEnter
           OnMouseLeave = btn_botao_sairMouseLeave
-          ExplicitLeft = -4
           ExplicitTop = -2
         end
       end
       object pnl_botao_excluir: TPanel
-        Left = 1208
+        Left = 976
         Top = 8
         Width = 150
         Height = 40
@@ -196,14 +201,11 @@ object form_consulta_pai: Tform_consulta_pai
           OnClick = btn_botao_excluirClick
           OnMouseEnter = btn_botao_excluirMouseEnter
           OnMouseLeave = btn_botao_excluirMouseLeave
-          ExplicitLeft = 40
-          ExplicitTop = 16
-          ExplicitWidth = 23
-          ExplicitHeight = 22
+          ExplicitTop = -2
         end
       end
       object pnl_botao_novo: TPanel
-        Left = 872
+        Left = 640
         Top = 8
         Width = 150
         Height = 40
@@ -239,7 +241,7 @@ object form_consulta_pai: Tform_consulta_pai
         end
       end
       object pnl_botao_alterar: TPanel
-        Left = 1040
+        Left = 808
         Top = 8
         Width = 150
         Height = 40
@@ -278,29 +280,33 @@ object form_consulta_pai: Tform_consulta_pai
     object pnl_db_grid: TPanel
       Left = 0
       Top = 89
-      Width = 1539
-      Height = 668
+      Width = 1308
+      Height = 431
       Align = alClient
       Anchors = [akTop, akBottom]
       BevelOuter = bvNone
       Color = 14869726
       ParentBackground = False
       TabOrder = 2
+      ExplicitWidth = 1539
+      ExplicitHeight = 668
       object ScrollBox1: TScrollBox
         Left = 0
         Top = 0
-        Width = 1539
-        Height = 668
+        Width = 1308
+        Height = 431
         Align = alClient
         BevelInner = bvNone
         BevelOuter = bvNone
         BorderStyle = bsNone
         TabOrder = 0
+        ExplicitWidth = 1539
+        ExplicitHeight = 668
         object DBGrid: TDBGrid
           Left = 0
           Top = 0
-          Width = 1539
-          Height = 668
+          Width = 1308
+          Height = 431
           Align = alClient
           Color = clWhite
           FixedColor = 64

@@ -140,9 +140,19 @@ begin
 end;
 
 procedure Tform_consulta_tamanhos.sair;
+var mTamanho : Tamanhos;
 begin
-  inherited;
+  if self.btn_botao_sair.Caption = 'Selecionar' then
+  begin
+    mTamanho:= Tamanhos.crieObj;
+    aCtrlTamanhos.carregar( TObject( mTamanho ) );
+    oTamanho.setCodigo( mTamanho.getCodigo );
+    oTamanho.setSiglaTamanho( mTamanho.getSiglaTamanho );
 
+    inherited sair;
+  end
+  else
+    inherited Sair;
 end;
 
 procedure Tform_consulta_tamanhos.setFrmCadastro(pObj: TObject);

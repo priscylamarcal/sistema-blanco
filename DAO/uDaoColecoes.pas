@@ -52,7 +52,7 @@ end;
 function daoColecoes.pesquisar(AFilter: TFilterSearch; pChave: string): string;
 var msql : string;
 begin
-    msql:= '';
+    msql:= 'SELECT * FROM COLECOES';
 
     case AFilter.TipoConsulta of
 

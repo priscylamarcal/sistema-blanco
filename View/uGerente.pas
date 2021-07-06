@@ -268,6 +268,13 @@ begin
   aCtrlClientes.setCtrlTiposContatos( aCtrlTipoContato );
   aCtrlClientes.setCtrlFuncionarios( aCtrlFuncionarios );
   aCtrlClientes.setCtrlCondicoes( aCtrlCondicoes );
+
+  aCtrlRoupas.setCtrlGruposProdutos( aCtrlGrupoRoupa );
+  aCtrlRoupas.setCtrlMarcas( aCtrlMarca );
+  aCtrlRoupas.setCtrlCores( aCtrlCor );
+  aCtrlRoupas.setCtrlTamanhos( aCtrlTamanho );
+  aCtrlRoupas.setCtrlFornecedores( aCtrlFornecedores );
+  aCtrlRoupas.setCtrlColecoes( aCtrlColecao );
 end;
 
 procedure Tform_principal.FormDestroy(Sender: TObject);

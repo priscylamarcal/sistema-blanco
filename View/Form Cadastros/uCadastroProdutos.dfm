@@ -2,6 +2,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
   Caption = 'Cadastro de Roupa'
   ClientHeight = 878
   ClientWidth = 1074
+  ExplicitTop = -275
   ExplicitWidth = 1090
   ExplicitHeight = 917
   PixelsPerInch = 96
@@ -9,8 +10,8 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
   inherited pnl_fundo: TPanel
     Width = 1074
     Height = 878
-    ExplicitWidth = 897
-    ExplicitHeight = 845
+    ExplicitWidth = 1074
+    ExplicitHeight = 878
     inherited ScrollBox1: TScrollBox
       Width = 1074
       Height = 878
@@ -203,7 +204,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_qtd_total_produtos: TLabel [17]
         Left = 734
-        Top = 690
+        Top = 722
         Width = 192
         Height = 16
         Caption = 'Quantidade total de produtos'
@@ -379,6 +380,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 80
         ParentFont = False
         TabOrder = 7
         MudarCor = clCream
@@ -394,6 +396,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 50
         ParentFont = False
         TabOrder = 8
         MudarCor = clCream
@@ -409,6 +412,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 50
         ParentFont = False
         TabOrder = 9
         MudarCor = clCream
@@ -425,6 +429,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
+        ReadOnly = True
         TabOrder = 10
         MudarCor = clCream
       end
@@ -482,6 +487,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           ParentFont = False
+          OnClick = btn_pesquisa_grupoProdutoClick
           ExplicitWidth = 65
           ExplicitHeight = 21
         end
@@ -498,6 +504,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
+        ReadOnly = True
         TabOrder = 11
         MudarCor = clCream
       end
@@ -549,6 +556,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
             6767670101010F0F0F4242425858582A2A2A0101011C1C1CBABABAFFFFFFFFFF
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+          OnClick = btn_pesquisa_marcaClick
           ExplicitWidth = 65
           ExplicitHeight = 21
         end
@@ -563,6 +571,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 8
         NumbersOnly = True
         ParentFont = False
         TabOrder = 12
@@ -578,6 +587,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 3
         NumbersOnly = True
         ParentFont = False
         TabOrder = 13
@@ -593,6 +603,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 8
         NumbersOnly = True
         ParentFont = False
         TabOrder = 14
@@ -609,6 +620,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
+        ReadOnly = True
         TabOrder = 15
         MudarCor = clCream
       end
@@ -660,6 +672,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           ParentFont = False
+          OnClick = btn_pesquisa_corClick
           ExplicitWidth = 65
           ExplicitHeight = 21
         end
@@ -675,6 +688,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
+        ReadOnly = True
         TabOrder = 16
         MudarCor = clCream
       end
@@ -726,13 +740,14 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           ParentFont = False
+          OnClick = btn_pesquisa_tamanhoClick
           ExplicitWidth = 65
           ExplicitHeight = 21
         end
       end
       object edt_quant_total_produtos: PriTEdit
         Left = 805
-        Top = 712
+        Top = 744
         Width = 121
         Height = 24
         Enabled = False
@@ -743,6 +758,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
+        ReadOnly = True
         TabOrder = 22
         MudarCor = clCream
       end
@@ -758,6 +774,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
+        ReadOnly = True
         TabOrder = 17
         MudarCor = clCream
       end
@@ -809,6 +826,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           ParentFont = False
+          OnClick = btn_pesquisaClick
           ExplicitTop = 8
         end
       end
@@ -824,6 +842,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
+        ReadOnly = True
         TabOrder = 18
         MudarCor = clCream
       end
@@ -875,6 +894,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           ParentFont = False
+          OnClick = SpeedButton1Click
           ExplicitWidth = 65
           ExplicitHeight = 21
         end
@@ -884,11 +904,12 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Top = 886
         Width = 918
         Height = 193
+        MaxLength = 250
         TabOrder = 19
       end
       object ListView1: TListView
         Left = 8
-        Top = 504
+        Top = 544
         Width = 918
         Height = 162
         Columns = <>
@@ -1307,6 +1328,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         NumbersOnly = True
         ParentFont = False
         TabOrder = 28
@@ -1322,6 +1344,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         NumbersOnly = True
         ParentFont = False
         TabOrder = 29
@@ -1337,6 +1360,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         NumbersOnly = True
         ParentFont = False
         TabOrder = 30
@@ -1352,6 +1376,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         NumbersOnly = True
         ParentFont = False
         TabOrder = 31
@@ -1367,6 +1392,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         NumbersOnly = True
         ParentFont = False
         TabOrder = 32
@@ -1382,42 +1408,82 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         NumbersOnly = True
         ParentFont = False
         TabOrder = 33
         MudarCor = clCream
       end
-      object pnl_adicionar_contato: TPanel
-        Left = 944
-        Top = 504
-        Width = 94
+      object pbl_limpar_grid: TPanel
+        Left = 826
+        Top = 494
+        Width = 100
         Height = 40
         BevelOuter = bvNone
-        Color = 4227327
+        Color = clWhite
+        DragCursor = crHandPoint
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -13
+        Font.Color = clBlack
+        Font.Height = -11
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentBackground = False
         ParentFont = False
         TabOrder = 34
-        object btn_adicionar_contato: TSpeedButton
+        object btn_limpar_grid: TSpeedButton
+          Left = 0
+          Top = 0
+          Width = 100
+          Height = 40
+          Cursor = crHandPoint
+          Align = alClient
+          Caption = 'Limpar'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          ExplicitLeft = 24
+          ExplicitTop = 8
+          ExplicitWidth = 23
+          ExplicitHeight = 22
+        end
+      end
+      object pnl_botao_excluir_item: TPanel
+        Left = 704
+        Top = 494
+        Width = 94
+        Height = 40
+        BevelOuter = bvNone
+        Color = clRed
+        ParentBackground = False
+        TabOrder = 35
+        object btn_botao_excluir_item: TSpeedButton
           Left = 0
           Top = 0
           Width = 94
           Height = 40
           Cursor = crHandPoint
           Align = alClient
-          Caption = 'Adicionar'
+          Caption = 'Remover'
           Flat = True
-          ExplicitLeft = 16
-          ExplicitTop = 8
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          ExplicitLeft = 40
+          ExplicitTop = 16
+          ExplicitWidth = 23
+          ExplicitHeight = 22
         end
       end
       object pnl_botao_alterar: TPanel
-        Left = 944
-        Top = 565
+        Left = 584
+        Top = 494
         Width = 94
         Height = 40
         BevelOuter = bvNone
@@ -1429,8 +1495,8 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 35
-        object btn_botao_alterar: TSpeedButton
+        TabOrder = 36
+        object btn_botao_alterar_item: TSpeedButton
           Left = 0
           Top = 0
           Width = 94
@@ -1450,32 +1516,32 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
           ExplicitWidth = 150
         end
       end
-      object pnl_botao_excluir: TPanel
-        Left = 944
-        Top = 626
+      object pnl_adicionar_contato: TPanel
+        Left = 464
+        Top = 494
         Width = 94
         Height = 40
         BevelOuter = bvNone
-        Color = clRed
+        Color = 4227072
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
         ParentBackground = False
-        TabOrder = 36
-        object btn_botao_excluir: TSpeedButton
+        ParentFont = False
+        TabOrder = 37
+        object btn_adicionar_contato: TSpeedButton
           Left = 0
           Top = 0
           Width = 94
           Height = 40
           Cursor = crHandPoint
           Align = alClient
-          Caption = 'Excluir'
+          Caption = 'Adicionar'
           Flat = True
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clWhite
-          Font.Height = -13
-          Font.Name = 'Tahoma'
-          Font.Style = []
-          ParentFont = False
-          ExplicitLeft = 40
-          ExplicitTop = 16
+          ExplicitLeft = 56
+          ExplicitTop = 8
           ExplicitWidth = 23
           ExplicitHeight = 22
         end

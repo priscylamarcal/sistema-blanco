@@ -54,7 +54,7 @@ end;
 function daoCores.pesquisar(AFilter: TFilterSearch; pChave: string): string;
 var msql : string;
 begin
-   msql:= '';
+   msql:= 'SELECT * FROM CORES';
 
    case AFilter.TipoConsulta of
      TpCCodigo:
@@ -91,7 +91,7 @@ begin
        aDM.QCores.Edit;
 
     aDM.QCores.FieldByName('CODCOR').AsInteger:= mCor.getCodigo;
-    aDM.QCores.FieldByName('COR').AsAnsiString:= mCor.getCor;
+    aDM.QCores.FieldByName('COR').AsString:= mCor.getCor;
     aDM.QCores.FieldByName('DATACAD').AsDateTime:= mCor.getDataCad;
 
     aDM.QCores.Post;

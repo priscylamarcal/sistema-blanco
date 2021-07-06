@@ -143,3 +143,15 @@ begin
 end
 ^
 SET TERM ; ^
+
+SET TERM ^ ;
+
+CREATE OR ALTER TRIGGER ROUPAS_BI FOR ROUPAS
+ACTIVE BEFORE INSERT POSITION 0
+AS
+begin
+    if (NEW.cod_roupa = 0) THEN
+        new.cod_roupa = GEN_ID(gen_roupas, 1);
+end
+^
+SET TERM ; ^

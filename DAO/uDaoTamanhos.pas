@@ -55,7 +55,7 @@ end;
 function daoTamanhos.pesquisar(AFilter: TFilterSearch; pChave: string): string;
 var msql : string;
 begin
-    msql:= '';
+    msql:= 'SELECT * FROM SIGLA_TAMANHOS';
 
     case AFilter.TipoConsulta of
 

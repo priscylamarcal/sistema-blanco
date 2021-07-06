@@ -141,8 +141,19 @@ begin
 end;
 
 procedure Tform_consulta_marcas.sair;
+var mMarca : Marcas;
 begin
-  inherited;
+  if btn_botao_sair.Caption = 'Selecionar' then
+  begin
+    mMarca:= Marcas.crieObj;
+    aCtrlMarca.carregar( TObject ( mMarca ) );
+    aMarca.setCodigo( mMarca.getCodigo );
+    aMarca.setMarca( mMarca.getMarca );
+
+    inherited sair;
+  end
+  else
+    inherited sair;
 
 end;
 
