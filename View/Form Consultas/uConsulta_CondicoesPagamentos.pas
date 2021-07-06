@@ -68,9 +68,25 @@ begin
 end;
 
 procedure Tform_consulta_condicoes_pagamentos.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlCondicoes.carregar(aCondicaoPagamento);
 
+  mCaption := oCadastroCondicaoPagamento.btn_botao_salvar.caption;
+  oCadastroCondicaoPagamento.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroCondicaoPagamento.conhecaObj( aCtrlCondicoes, aCondicaoPagamento );
+
+  oCadastroCondicaoPagamento.Caption:= 'Exclusão de Cargo';
+
+  oCadastroCondicaoPagamento.bloqueiaEdt;
+
+  oCadastroCondicaoPagamento.ShowModal;
+
+  oCadastroCondicaoPagamento.btn_botao_salvar.caption := mCaption;
+
+  oCadastroCondicaoPagamento.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_condicoes_pagamentos.FormShow(Sender: TObject);

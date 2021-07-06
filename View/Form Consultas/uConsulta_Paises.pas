@@ -63,9 +63,25 @@ begin
 end;
 
 procedure Tform_consulta_paises.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlPaises.carregar(oPais);
 
+  mCaption := oCadastroPaises.btn_botao_salvar.caption;
+  oCadastroPaises.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroPaises.conhecaObj( aCtrlPaises, oPais );
+
+  oCadastroPaises.Caption:= 'Exclusão de País';
+
+  oCadastroPaises.bloqueiaEdt;
+
+  oCadastroPaises.ShowModal;
+
+  oCadastroPaises.btn_botao_salvar.caption := mCaption;
+
+  oCadastroPaises.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_paises.FormShow(Sender: TObject);

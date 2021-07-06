@@ -67,9 +67,25 @@ begin
 end;
 
 procedure Tform_consulta_roupas.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlRoupas.carregar(aRoupa);
 
+  mCaption := oCadastroProdutos.btn_botao_salvar.caption;
+  oCadastroProdutos.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroProdutos.conhecaObj( aCtrlRoupas, aRoupa );
+
+  oCadastroProdutos.Caption:= 'Exclusão de Cargo';
+
+  oCadastroProdutos.bloqueiaEdt;
+
+  oCadastroProdutos.ShowModal;
+
+  oCadastroProdutos.btn_botao_salvar.caption := mCaption;
+
+  oCadastroProdutos.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_roupas.FormShow(Sender: TObject);

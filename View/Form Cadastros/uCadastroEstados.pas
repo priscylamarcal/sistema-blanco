@@ -115,7 +115,7 @@ end;
 procedure Tform_cadastro_estados.FormActivate(Sender: TObject);
 begin
   inherited;
-  edt_estado.SetFocus;
+ // edt_estado.SetFocus;
 end;
 
 procedure Tform_cadastro_estados.limpaEdt;

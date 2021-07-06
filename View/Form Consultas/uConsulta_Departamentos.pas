@@ -63,9 +63,25 @@ begin
 end;
 
 procedure Tform_consulta_departamentos.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlDepartamentos.carregar(oDepartamento);
 
+  mCaption := oCadastroDepartamentos.btn_botao_salvar.caption;
+  oCadastroDepartamentos.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroDepartamentos.conhecaObj( aCtrlDepartamentos, oDepartamento );
+
+  oCadastroDepartamentos.Caption:= 'Exclusão de Cargo';
+
+  oCadastroDepartamentos.bloqueiaEdt;
+
+  oCadastroDepartamentos.ShowModal;
+
+  oCadastroDepartamentos.btn_botao_salvar.caption := mCaption;
+
+  oCadastroDepartamentos.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_departamentos.FormShow(Sender: TObject);

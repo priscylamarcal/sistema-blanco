@@ -64,9 +64,25 @@ begin
 end;
 
 procedure Tform_consulta_tipos_contatos.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlTiposContatos.carregar(oTipoContato);
 
+  mCaption := oCadastroTiposContatos.btn_botao_salvar.caption;
+  oCadastroTiposContatos.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroTiposContatos.conhecaObj( aCtrlTiposContatos, oTipoContato );
+
+  oCadastroTiposContatos.Caption:= 'Exclusão de Cargo';
+
+  oCadastroTiposContatos.bloqueiaEdt;
+
+  oCadastroTiposContatos.ShowModal;
+
+  oCadastroTiposContatos.btn_botao_salvar.caption := mCaption;
+
+  oCadastroTiposContatos.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_tipos_contatos.FormShow(Sender: TObject);

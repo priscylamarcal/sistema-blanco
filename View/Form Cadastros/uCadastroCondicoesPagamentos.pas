@@ -203,7 +203,7 @@ end;
 procedure Tform_cadastro_condicao_pagamento.FormShow(Sender: TObject);
 begin
   inherited;
-  edt_condicao_pagamento.SetFocus;
+  //edt_condicao_pagamento.SetFocus;
   edt_num_parcelas.Text:= '1';
 end;
 

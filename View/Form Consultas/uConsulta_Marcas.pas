@@ -63,9 +63,25 @@ begin
 end;
 
 procedure Tform_consulta_marcas.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlMarca.carregar(aMarca);
 
+  mCaption := oCadastroMarcas.btn_botao_salvar.caption;
+  oCadastroMarcas.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroMarcas.conhecaObj( aCtrlMarca, aMarca );
+
+  oCadastroMarcas.Caption:= 'Exclusão de Cargo';
+
+  oCadastroMarcas.bloqueiaEdt;
+
+  oCadastroMarcas.ShowModal;
+
+  oCadastroMarcas.btn_botao_salvar.caption := mCaption;
+
+  oCadastroMarcas.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_marcas.FormShow(Sender: TObject);

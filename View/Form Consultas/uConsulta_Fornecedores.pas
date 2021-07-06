@@ -71,9 +71,25 @@ begin
 end;
 
 procedure Tform_consulta_fornecedores.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlFornecedores.carregar(oFornecedor);
 
+  mCaption := oCadastroFornecedores.btn_botao_salvar.caption;
+  oCadastroFornecedores.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroFornecedores.conhecaObj( aCtrlFornecedores, oFornecedor );
+
+  oCadastroFornecedores.Caption:= 'Exclusão de Cargo';
+
+  oCadastroFornecedores.bloqueiaEdt;
+
+  oCadastroFornecedores.ShowModal;
+
+  oCadastroFornecedores.btn_botao_salvar.caption := mCaption;
+
+  oCadastroFornecedores.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_fornecedores.FormShow(Sender: TObject);

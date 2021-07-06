@@ -74,9 +74,25 @@ begin
 end;
 
 procedure Tform_consulta_clientes.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlClientes.carregar(oCliente);
 
+  mCaption := oCadastroClientes.btn_botao_salvar.caption;
+  oCadastroClientes.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroClientes.conhecaObj( aCtrlClientes, oCliente );
+
+  oCadastroClientes.Caption:= 'Exclusão de Cargo';
+
+  oCadastroClientes.bloqueiaEdt;
+
+  oCadastroClientes.ShowModal;
+
+  oCadastroClientes.btn_botao_salvar.caption := mCaption;
+
+  oCadastroClientes.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_clientes.FormShow(Sender: TObject);
@@ -164,8 +180,7 @@ end;
 
 procedure Tform_consulta_clientes.sair;
 begin
-  inherited;
-
+    inherited;
 end;
 
 procedure Tform_consulta_clientes.setFrmCadastro(pObj: TObject);

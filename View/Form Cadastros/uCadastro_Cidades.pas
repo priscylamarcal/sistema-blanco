@@ -124,7 +124,7 @@ end;
 procedure Tform_cadastro_cidades.FormActivate(Sender: TObject);
 begin
   inherited;
-  edt_cidade.SetFocus;
+ // edt_cidade.SetFocus;
 end;
 
 procedure Tform_cadastro_cidades.limpaEdt;

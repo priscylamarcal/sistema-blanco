@@ -62,9 +62,25 @@ begin
 end;
 
 procedure Tform_consulta_colecoes.excluir;
+var mCaption: string;
 begin
   inherited;
+  aCtrlColecao.carregar(aColecao);
 
+  mCaption := oCadastroColecoes.btn_botao_salvar.caption;
+  oCadastroColecoes.btn_botao_salvar.caption := 'Excluir';
+
+  oCadastroColecoes.conhecaObj( aCtrlColecao, aColecao );
+
+  oCadastroColecoes.Caption:= 'Exclusão de Cargo';
+
+  oCadastroColecoes.bloqueiaEdt;
+
+  oCadastroColecoes.ShowModal;
+
+  oCadastroColecoes.btn_botao_salvar.caption := mCaption;
+
+  oCadastroColecoes.desbloqueiaEdt;
 end;
 
 procedure Tform_consulta_colecoes.FormShow(Sender: TObject);

@@ -105,7 +105,7 @@ end;
 procedure Tform_cadastro_cargos.FormActivate(Sender: TObject);
 begin
   inherited;
-  edt_cargo.SetFocus;
+  //edt_cargo.SetFocus;
 end;
 
 procedure Tform_cadastro_cargos.limpaEdt;

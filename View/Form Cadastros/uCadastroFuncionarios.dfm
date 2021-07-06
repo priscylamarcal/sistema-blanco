@@ -2,7 +2,6 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
   Caption = 'Cadastro de Funcion'#225'rio'
   ClientHeight = 679
   ClientWidth = 1068
-  ExplicitTop = -130
   ExplicitWidth = 1084
   ExplicitHeight = 718
   PixelsPerInch = 96
@@ -11,14 +10,14 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
     Width = 1068
     Height = 679
     ExplicitWidth = 1068
-    ExplicitHeight = 845
+    ExplicitHeight = 679
     inherited ScrollBox1: TScrollBox
       Width = 1068
       Height = 679
       Font.Height = -13
       ParentFont = False
       ExplicitWidth = 1068
-      ExplicitHeight = 845
+      ExplicitHeight = 679
       inherited lbl_cod_usuario: TLabel
         Top = 1095
         ExplicitTop = 967

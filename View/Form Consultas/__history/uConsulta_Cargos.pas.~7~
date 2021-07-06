@@ -1,26 +1,24 @@
-unit uConsultaEstados;
+unit uConsulta_Cargos;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uConsultaPai, Data.DB, Vcl.Grids,
-  Vcl.DBGrids, Vcl.Buttons, Vcl.StdCtrls, campoEdit, ComboBox, Vcl.ExtCtrls,
-  uCadastroEstados,
-  uCtrlEstados,
-  uEstados, uFilterSearch;
+  Vcl.DBGrids, Vcl.StdCtrls, ComboBox, campoEdit, Vcl.Buttons, Vcl.ExtCtrls,
+  uCadastroCargos, uCtrlCargos, uCargos, uFilterSearch;
 
 type
-  Tform_consulta_estados = class(Tform_consulta_pai)
+  Tform_consulta_cargos = class(Tform_consulta_pai)
     procedure FormShow(Sender: TObject);
     procedure spb_botao_pesquisarClick(Sender: TObject);
-
   private
     { Private declarations }
-    oCadastroEstados : Tform_cadastro_estados;
 
-    oEstado : Estados;
-    aCtrlEstados : ctrlEstados;
+    oCadastroCargos : Tform_cadastro_cargos;
+
+    oCargo      : Cargos;
+    aCtrlCargos : ctrlCargos;
   public
     { Public declarations }
     procedure novo;                                           override;
@@ -34,69 +32,68 @@ type
   end;
 
 var
-  form_consulta_estados: Tform_consulta_estados;
+  form_consulta_cargos: Tform_consulta_cargos;
 
 implementation
 
 {$R *.dfm}
 
-{ Tform_consulta_estados }
+{ Tform_consulta_cargos }
 
-procedure Tform_consulta_estados.alterar;
-var form : Tform_cadastro_estados;
+procedure Tform_consulta_cargos.alterar;
+var form : Tform_cadastro_cargos;
 begin
   inherited;
-  aCtrlEstados.carregar( oEstado );
-  oCadastroEstados.conhecaObj( aCtrlEstados, oEstado );
+  aCtrlCargos.carregar( oCargo );
+  oCadastroCargos.conhecaObj( aCtrlCargos, oCargo );
 
-  oCadastroEstados.Caption:= 'Alteração de Estado';
+  oCadastroCargos.Caption:= 'Alteração de Cargo';
 
-  oCadastroEstados.ShowModal;
+  oCadastroCargos.ShowModal;
 
   if form.salvou then
     Self.pesquisar;      inherited;
+end;
+
+procedure Tform_consulta_cargos.conhecaObj(pCtrl, pObj: TObject);
+begin
+  inherited;
+  oCargo:= Cargos( pObj );
+  aCtrlCargos:= ctrlCargos( pCtrl );
+
+  self.DBGrid.DataSource:= TDataSource( aCtrlCargos.getDS );
+end;
+
+procedure Tform_consulta_cargos.excluir;
+begin
+  inherited;
 
 end;
 
-procedure Tform_consulta_estados.conhecaObj(pCtrl, pObj: TObject);
+procedure Tform_consulta_cargos.FormShow(Sender: TObject);
 begin
   inherited;
-  oEstado:= Estados( pobj );
-  aCtrlEstados:= ctrlEstados( pCtrl );
-
-  self.DBGrid.DataSource:= TDataSource( aCtrlEstados.getDS );
-end;
-
-procedure Tform_consulta_estados.excluir;
-begin
-  inherited;
-
-end;
-
-procedure Tform_consulta_estados.FormShow(Sender: TObject);
-begin
-  inherited;
-  combobox_tipo_filtro.ItemIndex:= 3;
+  combobox_tipo_filtro.ItemIndex:= 2;
   edt_pesquisa.Clear;
   self.pesquisar;   inherited;
 end;
 
-procedure Tform_consulta_estados.novo;
-var form : Tform_cadastro_estados;
+procedure Tform_consulta_cargos.novo;
+var form : Tform_cadastro_cargos;
 begin
   inherited;
-  oCadastroEstados.conhecaObj( aCtrlEstados, oEstado );
-  oCadastroEstados.limpaEdt;
+  oCadastroCargos.conhecaObj( aCtrlCargos, oCargo );
+  oCadastroCargos.limpaEdt;
 
-  oCadastroEstados.Caption:= 'Cadastro de Estado';
+  oCadastroCargos.Caption:= 'Cadastro de Cargo';
 
-  oCadastroEstados.ShowModal;
+  oCadastroCargos.ShowModal;
 
   if form.salvou then
     Self.pesquisar;      inherited;
 end;
 
-procedure Tform_consulta_estados.pesquisar;
+procedure Tform_consulta_cargos.pesquisar;
 var vFilter : TFilterSearch;
     pchave : string;
 begin
@@ -136,7 +133,7 @@ begin
     end;
 
   finally
-    aCtrlEstados.pesquisar(VFilter, pchave);
+    aCtrlCargos.pesquisar(VFilter, pchave);
     VFilter.Free;
   end;
     Except
@@ -145,29 +142,39 @@ begin
     End;
 end;
 
-procedure Tform_consulta_estados.sair;
+procedure Tform_consulta_cargos.sair;
+var mCargo : Cargos;
 begin
-  inherited;
+  if btn_botao_sair.Caption= 'Selecionar' then
+  begin
+    mCargo:= Cargos.crieObj;
+    aCtrlCargos.carregar( TObject ( mCargo ) );
+    oCargo.setCodigo( mCargo.getCodigo );
+    oCargo.setCargo( mCargo.getCargo );
 
+    inherited sair;
+  end
+  else
+    inherited sair;
 end;
 
-procedure Tform_consulta_estados.setFrmCadastro(pObj: TObject);
-var form : Tform_cadastro_estados;
+procedure Tform_consulta_cargos.setFrmCadastro(pObj: TObject);
+var form : Tform_cadastro_cargos;
 begin
   inherited;
-  oCadastroEstados:= Tform_cadastro_estados ( pObj );
+  oCadastroCargos:= Tform_cadastro_cargos( pObj );
 
   if form.salvou then
     Self.pesquisar;      inherited;
 end;
 
-procedure Tform_consulta_estados.spb_botao_pesquisarClick(Sender: TObject);
+procedure Tform_consulta_cargos.spb_botao_pesquisarClick(Sender: TObject);
 begin
   pesquisar;
   inherited;
 end;
 
-procedure Tform_consulta_estados.tipoFiltro;
+procedure Tform_consulta_cargos.tipoFiltro;
 begin
   inherited;
   case combobox_tipo_filtro.ItemIndex of
@@ -178,16 +185,9 @@ begin
         edt_pesquisa.Enabled:= true;
         edt_pesquisa.Clear;
       end;
-//    1:  //país
-//      begin
-//        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR PAÍS!';
-//        edt_pesquisa.NumbersOnly:= false;
-//        edt_pesquisa.Enabled:= true;
-//        edt_pesquisa.Clear;
-//      end;
-    1:  //estado
+    1:  //cargos
       begin
-        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR ESTADO!';
+        edt_pesquisa.TextHint:= 'DIGITE AQUI PARA CONSULTAR POR CARGO!';
         edt_pesquisa.NumbersOnly:= false;
         edt_pesquisa.Enabled:= true;
         edt_pesquisa.Clear;
