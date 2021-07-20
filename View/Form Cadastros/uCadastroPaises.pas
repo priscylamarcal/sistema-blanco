@@ -91,7 +91,9 @@ end;
 procedure Tform_cadastro_paises.FormActivate(Sender: TObject);
 begin
   inherited;
-  //edt_pais.SetFocus;
+
+  if Self.btn_botao_salvar.Caption='Salvar' then
+     edt_pais.SetFocus;
 end;
 
 procedure Tform_cadastro_paises.limpaEdt;

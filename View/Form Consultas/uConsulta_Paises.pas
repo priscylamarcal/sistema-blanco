@@ -79,6 +79,8 @@ begin
 
   oCadastroPaises.ShowModal;
 
+  oCadastroPaises.desbloqueiaEdt;
+
   oCadastroPaises.btn_botao_salvar.caption := mCaption;
 
   oCadastroPaises.desbloqueiaEdt;

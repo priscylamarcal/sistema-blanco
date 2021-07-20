@@ -339,7 +339,9 @@ end;
 procedure Tform_cadastro_clientes.FormActivate(Sender: TObject);
 begin
   inherited;
- // edt_razao_social.SetFocus;
+
+  if Self.btn_botao_salvar.Caption='Salvar' then
+        edt_razao_social.SetFocus;
 end;
 
 procedure Tform_cadastro_clientes.limpaEdt;

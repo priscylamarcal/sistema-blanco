@@ -25,7 +25,7 @@ var mPais : Paises;
 begin
   mPais:= Paises( pObj );
 
-  mPais.setCodigo( aDM.QPaises.FieldByName('CODPAIS').Value );
+  mPais.setCodigo( aDM.QPaises.FieldByName('CODPAIS').AsInteger );
   mPais.setPais( aDM.QPaises.FieldByName('PAIS').AsString );
   mPais.setDDI( aDM.QPaises.FieldByName('DDI').AsString );
   mPais.setSigla( aDM.QPaises.FieldByName('SIGLA').AsString );
