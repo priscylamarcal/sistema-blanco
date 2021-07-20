@@ -124,7 +124,9 @@ end;
 procedure Tform_cadastro_cidades.FormActivate(Sender: TObject);
 begin
   inherited;
- // edt_cidade.SetFocus;
+
+  if Self.btn_botao_salvar.Caption='Salvar' then
+          edt_cidade.SetFocus;
 end;
 
 procedure Tform_cadastro_cidades.limpaEdt;

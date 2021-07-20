@@ -115,7 +115,9 @@ end;
 procedure Tform_cadastro_estados.FormActivate(Sender: TObject);
 begin
   inherited;
- // edt_estado.SetFocus;
+
+  if Self.btn_botao_salvar.Caption='Salvar' then
+        edt_estado.SetFocus;
 end;
 
 procedure Tform_cadastro_estados.limpaEdt;

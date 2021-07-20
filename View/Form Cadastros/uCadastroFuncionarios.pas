@@ -260,7 +260,10 @@ end;
 procedure Tform_cadastro_funcionario.FormShow(Sender: TObject);
 begin
   inherited;
- // edt_nome.SetFocus;
+
+  if Self.btn_botao_salvar.Caption='Salvar' then
+        edt_nome.SetFocus;
+
   date_data_admissao.Date:= Date;
 end;
 

@@ -86,6 +86,7 @@ type
     procedure btn_pesquisa_tamanhoClick(Sender: TObject);
     procedure btn_pesquisaClick(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
 
   private
     { Private declarations }
@@ -290,6 +291,13 @@ begin
   self.edt_cod_colecao.Enabled:= True;
   self.edt_colecao.Enabled:= True;
   self.memo_obs.Enabled:= True;
+end;
+
+procedure Tform_cadastro_produtos.FormActivate(Sender: TObject);
+begin
+  inherited;
+  if Self.btn_botao_salvar.Caption='Salvar' then
+     edt_descricao_produto.SetFocus;
 end;
 
 procedure Tform_cadastro_produtos.limpaEdt;

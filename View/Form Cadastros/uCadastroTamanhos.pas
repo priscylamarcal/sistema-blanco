@@ -89,7 +89,9 @@ end;
 procedure Tform_cadastro_tamanhos.FormActivate(Sender: TObject);
 begin
   inherited;
- // edt_sigla_tamanho.SetFocus;
+
+  if Self.btn_botao_salvar.Caption='Salvar' then
+          edt_sigla_tamanho.SetFocus;
 end;
 
 procedure Tform_cadastro_tamanhos.limpaEdt;

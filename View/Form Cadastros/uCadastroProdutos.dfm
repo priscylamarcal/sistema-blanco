@@ -2,7 +2,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
   Caption = 'Cadastro de Roupa'
   ClientHeight = 771
   ClientWidth = 1074
-  ExplicitTop = -168
+  OnActivate = FormActivate
   ExplicitWidth = 1090
   ExplicitHeight = 810
   PixelsPerInch = 96
@@ -11,12 +11,12 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
     Width = 1074
     Height = 771
     ExplicitWidth = 1074
-    ExplicitHeight = 878
+    ExplicitHeight = 771
     inherited ScrollBox1: TScrollBox
       Width = 1074
       Height = 771
       ExplicitWidth = 1074
-      ExplicitHeight = 878
+      ExplicitHeight = 771
       inherited lbl_cod_usuario: TLabel
         Top = 1105
         ExplicitTop = 967

@@ -203,7 +203,10 @@ end;
 procedure Tform_cadastro_condicao_pagamento.FormShow(Sender: TObject);
 begin
   inherited;
-  //edt_condicao_pagamento.SetFocus;
+
+  if Self.btn_botao_salvar.Caption='Salvar' then
+        edt_condicao_pagamento.SetFocus;
+
   edt_num_parcelas.Text:= '1';
 end;
 
