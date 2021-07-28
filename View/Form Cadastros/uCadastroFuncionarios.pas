@@ -121,6 +121,8 @@ type
     procedure bloqueiaEdt;    override;
     procedure desbloqueiaEdt; override;
     function validaFormulario : Boolean; override;
+    procedure bloqueaiaBtnPesquisa;
+    procedure desbloqueiaBtnPesquisa;
 
     procedure setFrmConsultaCidades ( pConsulta : TObject );
     procedure setFrmConsultaContatos ( pConsulta : TObject );
@@ -147,6 +149,18 @@ begin
   item.Caption:= edt_tipo_contato.Text;
   item.SubItems.Add( edt_nome_tipo_selecionado.Text );
   item.SubItems.Add( edt_algo.Text );
+end;
+
+procedure Tform_cadastro_funcionario.bloqueaiaBtnPesquisa;
+begin
+  self.btn_adicionar_cidade.Visible:= False;
+  self.btn_pesquisa_tipo_contato.Visible:= False;
+  self.btn_pesquisa.Visible:= False;
+
+  self.btn_adicionar_contato.Enabled:= False;
+  self.btn_botao_alterar_item.Enabled:= False;
+  self.btn_remover_item.Enabled:= False;
+  self.btn_limpar_grid.Enabled:= False;
 end;
 
 procedure Tform_cadastro_funcionario.bloqueiaEdt;
@@ -225,6 +239,18 @@ begin
   self.limpaEdt;
   self.limparItens;
   self.carregaEdt;
+end;
+
+procedure Tform_cadastro_funcionario.desbloqueiaBtnPesquisa;
+begin
+  self.btn_adicionar_cidade.Visible:= True;
+  self.btn_pesquisa_tipo_contato.Visible:= True;
+  self.btn_pesquisa.Visible:= True;
+
+  self.btn_adicionar_contato.Enabled:= True;
+  self.btn_botao_alterar_item.Enabled:= True;
+  self.btn_remover_item.Enabled:= True;
+  self.btn_limpar_grid.Enabled:= True;
 end;
 
 procedure Tform_cadastro_funcionario.desbloqueiaEdt;

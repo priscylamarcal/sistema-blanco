@@ -88,11 +88,15 @@ begin
 
   oCadastroClientes.bloqueiaEdt;
 
+  oCadastroClientes.bloqueaiaBtnPesquisa;
+
   oCadastroClientes.ShowModal;
 
   oCadastroClientes.btn_botao_salvar.caption := mCaption;
 
   oCadastroClientes.desbloqueiaEdt;
+
+  oCadastroClientes.desbloqueiaBtnPesquisa;
 end;
 
 procedure Tform_consulta_clientes.FormShow(Sender: TObject);

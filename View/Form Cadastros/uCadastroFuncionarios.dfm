@@ -1,18 +1,18 @@
 inherited form_cadastro_funcionario: Tform_cadastro_funcionario
   Caption = 'Cadastro de Funcion'#225'rio'
   ClientHeight = 679
-  ClientWidth = 1068
-  ExplicitWidth = 1084
+  ClientWidth = 1081
+  ExplicitWidth = 1097
   ExplicitHeight = 718
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
-    Width = 1068
+    Width = 1081
     Height = 679
     ExplicitWidth = 1068
     ExplicitHeight = 679
     inherited ScrollBox1: TScrollBox
-      Width = 1068
+      Width = 1081
       Height = 679
       Font.Height = -13
       ParentFont = False
@@ -384,10 +384,10 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
       end
       inherited pnl_bottom: TPanel
         Top = 1134
-        Width = 1051
+        Width = 1064
         TabOrder = 29
         ExplicitTop = 1134
-        ExplicitWidth = 1051
+        ExplicitWidth = 1064
         inherited pnl_botao_salvar: TPanel
           Left = 728
           ExplicitLeft = 728

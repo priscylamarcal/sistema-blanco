@@ -81,11 +81,15 @@ begin
 
   oCadastroProdutos.bloqueiaEdt;
 
+  oCadastroProdutos.bloqueaiaBtnPesquisa;
+
   oCadastroProdutos.ShowModal;
 
   oCadastroProdutos.btn_botao_salvar.caption := mCaption;
 
   oCadastroProdutos.desbloqueiaEdt;
+
+  oCadastroProdutos.desbloqueiaBtnPesquisa;
 end;
 
 procedure Tform_consulta_roupas.FormShow(Sender: TObject);

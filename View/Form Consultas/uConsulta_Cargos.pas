@@ -79,11 +79,15 @@ begin
 
   oCadastroCargos.bloqueiaEdt;
 
+  oCadastroCargos.btn_pesquisa.Visible:= False;
+
   oCadastroCargos.ShowModal;
 
   oCadastroCargos.btn_botao_salvar.caption := mCaption;
 
   oCadastroCargos.desbloqueiaEdt;
+
+  oCadastroCargos.btn_pesquisa.Visible:= True;
 end;
 
 procedure Tform_consulta_cargos.FormShow(Sender: TObject);

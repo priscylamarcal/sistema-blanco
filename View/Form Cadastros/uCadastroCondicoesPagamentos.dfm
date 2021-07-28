@@ -282,6 +282,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Top = 256
         Width = 100
         Height = 40
+        Cursor = crHandPoint
         BevelOuter = bvNone
         Color = 4227072
         Font.Charset = DEFAULT_CHARSET
@@ -466,6 +467,7 @@ inherited form_cadastro_condicao_pagamento: Tform_cadastro_condicao_pagamento
         Top = 256
         Width = 100
         Height = 40
+        Cursor = crHandPoint
         BevelOuter = bvNone
         Color = clWhite
         DragCursor = crHandPoint

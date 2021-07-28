@@ -76,6 +76,8 @@ type
     procedure desbloqueiaEdt; override;
     function validaFormulario : Boolean; override;
     procedure setFrmConsultaFormas ( pConsulta : TObject );
+    procedure bloqueaiaBtnPesquisa;
+    procedure desbloqueiaBtnPesquisa;
 
     procedure adicionarItens;
     procedure limparItens;
@@ -137,6 +139,16 @@ begin
 
 end;
 
+procedure Tform_cadastro_condicao_pagamento.bloqueaiaBtnPesquisa;
+begin
+  self.btn_pesquisa.Visible:= False;
+
+  self.btn_adicionar_contato.Enabled:= False;
+  self.btn_botao_alterar_item.Enabled:= False;
+  self.btn_remover_item.Enabled:= False;
+  self.btn_limpar_grid.Enabled:= False;
+end;
+
 procedure Tform_cadastro_condicao_pagamento.bloqueiaEdt;
 begin
   inherited;
@@ -185,6 +197,16 @@ begin
   self.limpaEdt;
   self.limparItens;
   self.carregaEdt;
+end;
+
+procedure Tform_cadastro_condicao_pagamento.desbloqueiaBtnPesquisa;
+begin
+  self.btn_pesquisa.Visible:= True;
+
+  self.btn_adicionar_contato.Enabled:= True;
+  self.btn_botao_alterar_item.Enabled:= True;
+  self.btn_remover_item.Enabled:= True;
+  self.btn_limpar_grid.Enabled:= True;
 end;
 
 procedure Tform_cadastro_condicao_pagamento.desbloqueiaEdt;

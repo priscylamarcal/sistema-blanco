@@ -98,6 +98,8 @@ type
     procedure carregaEdt;     override;
     procedure bloqueiaEdt;    override;
     procedure desbloqueiaEdt; override;
+    procedure bloqueaiaBtnPesquisa;
+    procedure desbloqueiaBtnPesquisa;
 
     function validaFormulario : Boolean; override;
 
@@ -130,6 +132,19 @@ begin
   item.SubItems.Add( edt_algo.Text );
 end;
 
+procedure Tform_cadastro_fornecedores.bloqueaiaBtnPesquisa;
+begin
+  self.btn_pesquisa.Visible:= False;
+  self.btn_pesquisa_tipo_contato.Visible:= False;
+  self.btn_pesquisa_condicao_pagamento.Visible:= False;
+  self.ComboBox_tipo_fornecedor.Visible:= False;
+
+  self.btn_adicionar_contato.Enabled:= False;
+  self.btn_botao_alterar_item.Enabled:= False;
+  self.btn_botao_excluir_item.Enabled:= False;
+  self.btn_limpar_grid.Enabled:= False;
+end;
+
 procedure Tform_cadastro_fornecedores.bloqueiaEdt;
 begin
   inherited;
@@ -144,6 +159,7 @@ begin
   self.edt_pesquisar_cidade.Enabled:= False;
   self.edt_uf.Enabled:= False;
   self.edt_cod_contato.Enabled:= False;
+  self.edt_tipo_contato.Enabled:= False;
   self.edt_nome_tipo_selecionado.Enabled:= False;
   self.edt_algo.Enabled:= False;
   self.edt_cpf_cnpj.Enabled:= False;
@@ -288,6 +304,19 @@ begin
 
 end;
 
+procedure Tform_cadastro_fornecedores.desbloqueiaBtnPesquisa;
+begin
+  self.btn_pesquisa.Visible:= True;
+  self.btn_pesquisa_tipo_contato.Visible:= True;
+  self.btn_pesquisa_condicao_pagamento.Visible:= True;
+  self.ComboBox_tipo_fornecedor.Visible:= True;
+
+  self.btn_adicionar_contato.Enabled:= True;
+  self.btn_botao_alterar_item.Enabled:= True;
+  self.btn_botao_excluir_item.Enabled:= True;
+  self.btn_limpar_grid.Enabled:= True;
+end;
+
 procedure Tform_cadastro_fornecedores.desbloqueiaEdt;
 begin
   inherited;
@@ -302,6 +331,7 @@ begin
   self.edt_pesquisar_cidade.Enabled:= True;
   self.edt_uf.Enabled:= True;
   self.edt_cod_contato.Enabled:= True;
+  self.edt_tipo_contato.Enabled:= True;
   self.edt_nome_tipo_selecionado.Enabled:= True;
   self.edt_algo.Enabled:= True;
   self.edt_cpf_cnpj.Enabled:= True;
