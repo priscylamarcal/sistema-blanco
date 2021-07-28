@@ -82,11 +82,15 @@ begin
 
   oCadastroCidades.bloqueiaEdt;
 
+  oCadastroCidades.btn_pesquisa.Visible:= False;
+
   oCadastroCidades.ShowModal;
 
   oCadastroCidades.btn_botao_salvar.caption := mCaption;
 
   oCadastroCidades.desbloqueiaEdt;
+
+  oCadastroCidades.btn_pesquisa.Visible:= True;
 end;
 
 procedure Tform_consulta_cidades.FormShow(Sender: TObject);

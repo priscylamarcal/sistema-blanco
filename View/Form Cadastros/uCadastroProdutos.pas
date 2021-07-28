@@ -49,8 +49,8 @@ type
     pnl_btn_pesquisa: TPanel;
     btn_pesquisa: TSpeedButton;
     edt_colecao: PriTEdit;
-    Panel1: TPanel;
-    SpeedButton1: TSpeedButton;
+    pbl_botao_pesquisa_colecao: TPanel;
+    btn_pesquisa_colecao: TSpeedButton;
     lbl_fornecedor: TLabel;
     lbl_colecao: TLabel;
     lbl_observacoes: TLabel;
@@ -85,7 +85,7 @@ type
     procedure btn_pesquisa_corClick(Sender: TObject);
     procedure btn_pesquisa_tamanhoClick(Sender: TObject);
     procedure btn_pesquisaClick(Sender: TObject);
-    procedure SpeedButton1Click(Sender: TObject);
+    procedure btn_pesquisa_colecaoClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
 
   private
@@ -109,6 +109,8 @@ type
     procedure carregaEdt;     override;
     procedure bloqueiaEdt;    override;
     procedure desbloqueiaEdt; override;
+    procedure bloqueaiaBtnPesquisa;
+    procedure desbloqueiaBtnPesquisa;
 
     function validaFormulario : Boolean; override;
 
@@ -136,6 +138,21 @@ implementation
 procedure Tform_cadastro_produtos.adicionarItens;
 begin
 
+end;
+
+procedure Tform_cadastro_produtos.bloqueaiaBtnPesquisa;
+begin
+  self.btn_pesquisa_grupoProduto.Visible:= False;
+  self.btn_pesquisa_marca.Visible:= False;
+  self.btn_pesquisa_cor.Visible:= False;
+  self.btn_pesquisa_tamanho.Visible:= False;
+  self.btn_pesquisa.Visible:= False;
+  self.btn_pesquisa_colecao.Visible:= False;
+
+  self.btn_adicionar_contato.Enabled:= False;
+  self.btn_botao_alterar_item.Enabled:= False;
+  self.btn_botao_excluir_item.Enabled:= False;
+  self.btn_limpar_grid.Enabled:= False;
 end;
 
 procedure Tform_cadastro_produtos.bloqueiaEdt;
@@ -267,6 +284,21 @@ begin
 
   self.limpaEdt;
   self.carregaEdt;
+end;
+
+procedure Tform_cadastro_produtos.desbloqueiaBtnPesquisa;
+begin
+  self.btn_pesquisa_grupoProduto.Visible:= True;
+  self.btn_pesquisa_marca.Visible:= True;
+  self.btn_pesquisa_cor.Visible:= True;
+  self.btn_pesquisa_tamanho.Visible:= True;
+  self.btn_pesquisa.Visible:= True;
+  self.btn_pesquisa_colecao.Visible:= True;
+
+  self.btn_adicionar_contato.Enabled:= True;
+  self.btn_botao_alterar_item.Enabled:= True;
+  self.btn_botao_excluir_item.Enabled:= True;
+  self.btn_limpar_grid.Enabled:= True;
 end;
 
 procedure Tform_cadastro_produtos.desbloqueiaEdt;
@@ -416,7 +448,7 @@ begin
   aConsultaTamanhos:= Tform_consulta_tamanhos( pConsulta );
 end;
 
-procedure Tform_cadastro_produtos.SpeedButton1Click(Sender: TObject);
+procedure Tform_cadastro_produtos.btn_pesquisa_colecaoClick(Sender: TObject);
 var aux : string;
 begin
   aConsultaColecoes.conhecaObj( aCtrlRoupas.getCtrlColecoes, aRoupa.getaColecao );

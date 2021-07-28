@@ -81,15 +81,19 @@ begin
 
   oCadastroFornecedores.conhecaObj( aCtrlFornecedores, oFornecedor );
 
-  oCadastroFornecedores.Caption:= 'Exclusão de Cargo';
+  oCadastroFornecedores.Caption:= 'Exclusão de Fornecedor';
 
   oCadastroFornecedores.bloqueiaEdt;
+
+  oCadastroFornecedores.bloqueaiaBtnPesquisa;
 
   oCadastroFornecedores.ShowModal;
 
   oCadastroFornecedores.btn_botao_salvar.caption := mCaption;
 
   oCadastroFornecedores.desbloqueiaEdt;
+
+  oCadastroFornecedores.desbloqueiaBtnPesquisa;
 end;
 
 procedure Tform_consulta_fornecedores.FormShow(Sender: TObject);

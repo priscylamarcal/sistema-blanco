@@ -83,11 +83,15 @@ begin
 
   oCadastroEstados.bloqueiaEdt;
 
+  oCadastroEstados.btn_pesquisa.Visible:= False;
+
   oCadastroEstados.ShowModal;
 
   oCadastroEstados.btn_botao_salvar.caption := mCaption;
 
   oCadastroEstados.desbloqueiaEdt;
+
+  oCadastroEstados.btn_pesquisa.Visible:= True;
 end;
 
 procedure Tform_consulta_estados.FormShow(Sender: TObject);

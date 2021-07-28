@@ -81,12 +81,14 @@ begin
   oCadastroCondicaoPagamento.Caption:= 'Exclusão de Cargo';
 
   oCadastroCondicaoPagamento.bloqueiaEdt;
+  oCadastroCondicaoPagamento.bloqueaiaBtnPesquisa;
 
   oCadastroCondicaoPagamento.ShowModal;
 
   oCadastroCondicaoPagamento.btn_botao_salvar.caption := mCaption;
 
   oCadastroCondicaoPagamento.desbloqueiaEdt;
+  oCadastroCondicaoPagamento.desbloqueiaBtnPesquisa;
 end;
 
 procedure Tform_consulta_condicoes_pagamentos.FormShow(Sender: TObject);

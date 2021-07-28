@@ -83,11 +83,15 @@ begin
 
   oCadastroFuncionarios.bloqueiaEdt;
 
+  oCadastroFuncionarios.bloqueaiaBtnPesquisa;
+
   oCadastroFuncionarios.ShowModal;
 
   oCadastroFuncionarios.btn_botao_salvar.caption := mCaption;
 
   oCadastroFuncionarios.desbloqueiaEdt;
+
+  oCadastroFuncionarios.desbloqueiaBtnPesquisa;
 end;
 
 procedure Tform_consulta_funcionarios.FormShow(Sender: TObject);
