@@ -106,7 +106,8 @@ uses
   uCtrlClientes in 'Controller\uCtrlClientes.pas',
   uDaoRoupas in 'DAO\uDaoRoupas.pas',
   uCtrlRoupas in 'Controller\uCtrlRoupas.pas',
-  uRoupas in 'Model\Classes\uRoupas.pas';
+  uRoupas in 'Model\Classes\uRoupas.pas',
+  uConsulta_Compras in 'View\Form Consultas\uConsulta_Compras.pas' {form_consulta_compras};
 
 {$R *.res}
 
@@ -158,5 +159,6 @@ begin
   Application.CreateForm(Tform_cadastro_tipo_contato, form_cadastro_tipo_contato);
   Application.CreateForm(Tform_consulta_cidades, form_consulta_cidades);
   Application.CreateForm(Tform_cadastro_cidades, form_cadastro_cidades);
+  Application.CreateForm(Tform_consulta_compras, form_consulta_compras);
   Application.Run;
 end.

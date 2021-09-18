@@ -340,6 +340,10 @@
         <DCCReference Include="DAO\uDaoRoupas.pas"/>
         <DCCReference Include="Controller\uCtrlRoupas.pas"/>
         <DCCReference Include="Model\Classes\uRoupas.pas"/>
+        <DCCReference Include="View\Form Consultas\uConsulta_Compras.pas">
+            <Form>form_consulta_compras</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

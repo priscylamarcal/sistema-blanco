@@ -83,6 +83,7 @@ type
     spb_tipos_contato: TSpeedButton;
     spb_funcionários: TSpeedButton;
     spb_roupas: TSpeedButton;
+    spb_compras: TSpeedButton;
 
     procedure Sair1Click(Sender: TObject);
 
@@ -109,7 +110,6 @@ type
     procedure spb_departamentosClick(Sender: TObject);
     procedure spb_formas_pagamentoClick(Sender: TObject);
     procedure spb_condicoes_pagamentoClick(Sender: TObject);
-    procedure spb_vendasClick(Sender: TObject);
     procedure spb_contas_receberClick(Sender: TObject);
     procedure spb_contas_pagarClick(Sender: TObject);
     procedure spb_colecaoClick(Sender: TObject);
@@ -129,6 +129,7 @@ type
     procedure spb_rapido_clientesClick(Sender: TObject);
     procedure spb_rapido_roupaClick(Sender: TObject);
     procedure spb_cidadesClick(Sender: TObject);
+    procedure spb_comprasClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -360,6 +361,11 @@ begin
   aInter.PDColecoes(aCtrlColecao, aColecao);
 end;
 
+procedure Tform_principal.spb_comprasClick(Sender: TObject);
+begin
+  aInter.PDCompras(nil, nil);
+end;
+
 procedure Tform_principal.spb_condicoes_pagamentoClick(Sender: TObject);
 begin
   aInter.PDCondicoesPagamentos(aCtrlCondicoes, aCondicao);
@@ -428,11 +434,6 @@ end;
 procedure Tform_principal.spb_tipos_contatoClick(Sender: TObject);
 begin
   aInter.PDTiposContatos( aCtrlTipoContato , oTipoContato );
-end;
-
-procedure Tform_principal.spb_vendasClick(Sender: TObject);
-begin
-  aInter.PDVendas(nil, nil);
 end;
 
 procedure Tform_principal.spb_marcaClick(Sender: TObject);
