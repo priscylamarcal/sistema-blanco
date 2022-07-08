@@ -8,6 +8,7 @@ uses uConsulta_Paises, uConsulta_Estados, uConsulta_Cargos, uConsulta_Clientes,
      uConsulta_FormasPagamentos, uConsulta_Fornecedores, uConsulta_Funcionarios,
      uConsulta_GruposProdutos, uConsulta_Marcas, uConsulta_Roupas, uConsulta_Tamanhos,
      uConsulta_TiposContatos, uConsulta_Vendas, uConsulta_Estoques, uConsulta_Cidades,
+     uConsulta_Compras,
 
      uCadastroPaises, uCadastroEstados, uCadastroFuncionarios,
      uCadastroCargos, uCadastroDepartamentos, uCadastroFormasPagamentos,
@@ -15,11 +16,12 @@ uses uConsulta_Paises, uConsulta_Estados, uConsulta_Cargos, uConsulta_Clientes,
      uCadastroContasPagar, uCadastroColecoes, uCadastroCores,
      uCadastroGruposProdutos, uCadastroMarcas, uCadastroTamanhos,
      uCadastroProdutos, uCadastroFornecedores, uCadastroClientes, uCadastroTiposContatos,
-     uCadastro_Cidades, uCondicoesPagamentos, uFuncionarios,
+     uCadastro_Cidades, uCadastro_Compras,
+
 
      uPaises, uEstados, uCores, uColecoes, uGruposRoupas, uMarcas,
      uTamanhos, uFormaPagamento, uTiposContatos, uCidades, uCargos, uFornecedores,
-     uClientes, uRoupas,
+     uClientes, uRoupas, uCondicoesPagamentos, uFuncionarios,
 
      uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores, uCtrlColecoes,
      uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
@@ -50,6 +52,7 @@ type Inter = class
     aConsultaEstoques            : Tform_consulta_estoques;
     aConsultaFuncionarios        : Tform_consulta_funcionarios;
     aConsultaCidades             : Tform_consulta_cidades;
+    aConsultaCompras             : Tform_consulta_compras;
 
     oCadastroPaises             : Tform_cadastro_paises;
     oCadastroEstados            : Tform_cadastro_estados;
@@ -71,6 +74,7 @@ type Inter = class
     oCadastroTiposContatos      : Tform_cadastro_tipo_contato;
     oCadastroCondicaoPagamento  : Tform_cadastro_condicao_pagamento;
     oCadastroCidade             : Tform_cadastro_cidades;
+    oCadastroCompras            : Tform_cadastro_compras;
   public
     constructor crieObj;
     destructor destrua_se;
@@ -96,6 +100,7 @@ type Inter = class
     procedure PDTiposContatos ( pCtrl : TObject; pObj : TiposContatos );
     procedure PDEstoques ( pCtrl : TObject; pObj : TObject );
     procedure PDCidades ( pCtrl : TObject; pObj : Cidades );
+    procedure PDCompras ( pCtrl : TObject; pObj : TObject );
 end;
 
 implementation
@@ -125,6 +130,7 @@ begin
   aConsultaEstoques            := Tform_consulta_estoques.Create(nil);
   aConsultaFuncionarios        := Tform_consulta_funcionarios.Create(nil);
   aConsultaCidades             := Tform_consulta_cidades.Create(nil);
+  aConsultaCompras             := Tform_consulta_compras.Create(nil);
 
   oCadastroPaises               := Tform_cadastro_paises.Create(nil);
   oCadastroEstados              := Tform_cadastro_estados.Create(nil);
@@ -146,6 +152,7 @@ begin
   oCadastroTiposContatos        := Tform_cadastro_tipo_contato.Create(nil);
   oCadastroCondicaoPagamento    := Tform_cadastro_condicao_pagamento.Create(nil);
   oCadastroCidade               := Tform_cadastro_cidades.Create(nil);
+  oCadastroCompras              := Tform_cadastro_compras.Create(nil);
 
   aConsultaPaises.setFrmCadastro( oCadastroPaises );
   aConsultaEstados.setFrmCadastro( oCadastroEstados );
@@ -167,6 +174,7 @@ begin
   aConsultaTiposContatos.setFrmCadastro( oCadastroTiposContatos );
   aConsultaCondicoesPagamentos.setFrmCadastro( oCadastroCondicaoPagamento );
   aConsultaCidades.setFrmCadastro( oCadastroCidade );
+  aConsultaCompras.setFrmCadastro(oCadastroCompras);
 
   oCadastroEstados.setFrmConsultaPaises( aConsultaPaises );
 
@@ -220,6 +228,7 @@ begin
   aConsultaEstoques.FreeInstance;
   aConsultaFuncionarios.FreeInstance;
   aConsultaCidades.FreeInstance;
+  aConsultaCompras.FreeInstance;
 
   oCadastroPaises.FreeInstance;
   oCadastroEstados.FreeInstance;
@@ -241,6 +250,7 @@ begin
   oCadastroTiposContatos.FreeInstance;
   oCadastroCondicaoPagamento.FreeInstance;
   oCadastroCidade.FreeInstance;
+  oCadastroCompras.FreeInstance;
 end;
 
 procedure Inter.PDCargos(pCtrl: TObject; pObj: Cargos);
@@ -265,6 +275,11 @@ procedure Inter.PDColecoes(pCtrl: TObject; pObj: Colecoes);
 begin
   aConsultaColecoes.conhecaObj( pCtrl, pObj );
   aConsultaColecoes.ShowModal;
+end;
+
+procedure Inter.PDCompras(pCtrl, pObj: TObject);
+begin
+  aConsultaCompras.ShowModal;
 end;
 
 procedure Inter.PDCondicoesPagamentos(pCtrl : TObject; pObj : CondicoesPagamentos);

@@ -4117,14 +4117,14 @@
       Left = 610
       Top = 76
       Width = 170
-      Height = 207
+      Height = 245
       BevelKind = bkFlat
       BevelOuter = bvNone
       TabOrder = 7
       Visible = False
       object spb_contas_pagar: TSpeedButton
         Left = 0
-        Top = 164
+        Top = 205
         Width = 166
         Height = 41
         Cursor = crHandPoint
@@ -4191,7 +4191,7 @@
       end
       object spb_contas_receber: TSpeedButton
         Left = 0
-        Top = 123
+        Top = 164
         Width = 166
         Height = 41
         Cursor = crHandPoint
@@ -4214,7 +4214,7 @@
       end
       object spb_vendas: TSpeedButton
         Left = 0
-        Top = 82
+        Top = 123
         Width = 166
         Height = 41
         Cursor = crHandPoint
@@ -4229,11 +4229,31 @@
         Font.Style = []
         Margin = 10
         ParentFont = False
-        OnClick = spb_vendasClick
+        OnMouseEnter = spb_paisesMouseEnter
+        OnMouseLeave = spb_paisesMouseLeave
+        ExplicitLeft = 2
+        ExplicitTop = 88
+      end
+      object spb_compras: TSpeedButton
+        Left = 0
+        Top = 82
+        Width = 166
+        Height = 41
+        Cursor = crHandPoint
+        Align = alTop
+        Caption = 'Compras'
+        Flat = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clGray
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Margin = 10
+        ParentFont = False
+        OnClick = spb_comprasClick
         OnMouseEnter = spb_paisesMouseEnter
         OnMouseLeave = spb_paisesMouseLeave
         ExplicitTop = 90
-        ExplicitWidth = 146
       end
     end
     object pnl_cadastros_basicos: TPanel

@@ -9,14 +9,14 @@ inherited form_cadastro_funcionario: Tform_cadastro_funcionario
   inherited pnl_fundo: TPanel
     Width = 1081
     Height = 679
-    ExplicitWidth = 1068
+    ExplicitWidth = 1081
     ExplicitHeight = 679
     inherited ScrollBox1: TScrollBox
       Width = 1081
       Height = 679
       Font.Height = -13
       ParentFont = False
-      ExplicitWidth = 1068
+      ExplicitWidth = 1081
       ExplicitHeight = 679
       inherited lbl_cod_usuario: TLabel
         Top = 1095

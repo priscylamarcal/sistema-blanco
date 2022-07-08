@@ -1,44 +1,45 @@
 inherited form_cadastro_produtos: Tform_cadastro_produtos
-  Caption = 'Cadastro de Produto'
-  ClientHeight = 1061
+  Caption = 'Cadastro de Roupa'
+  ClientHeight = 771
   ClientWidth = 1074
-  ExplicitTop = -279
+  OnActivate = FormActivate
   ExplicitWidth = 1090
-  ExplicitHeight = 1100
+  ExplicitHeight = 810
   PixelsPerInch = 96
   TextHeight = 13
   inherited pnl_fundo: TPanel
     Width = 1074
-    Height = 1061
-    ExplicitWidth = 897
-    ExplicitHeight = 845
+    Height = 771
+    ExplicitWidth = 1074
+    ExplicitHeight = 771
     inherited ScrollBox1: TScrollBox
       Width = 1074
-      Height = 1061
-      ExplicitWidth = 897
-      ExplicitHeight = 845
+      Height = 771
+      VertScrollBar.Position = 428
+      ExplicitWidth = 1074
+      ExplicitHeight = 771
       inherited lbl_cod_usuario: TLabel
-        Top = 1105
+        Top = 677
         ExplicitTop = 967
       end
       inherited lbl_codigo: TLabel
-        Top = 56
+        Top = -372
         ExplicitTop = 56
       end
       inherited lbl_data_cadastro: TLabel
-        Top = 1105
+        Top = 677
         ExplicitTop = 959
       end
       inherited lbl_data_ult_alt: TLabel
-        Top = 1105
+        Top = 677
         ExplicitTop = 959
       end
       object lbl_descricao_produto: TLabel [4]
         Left = 112
-        Top = 56
-        Width = 133
+        Top = -372
+        Width = 125
         Height = 16
-        Caption = 'Descri'#231#227'o do Produto *'
+        Caption = 'Descri'#231#227'o da Roupa *'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
@@ -48,7 +49,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_referencia: TLabel [5]
         Left = 216
-        Top = 125
+        Top = -303
         Width = 61
         Height = 16
         Caption = 'Refer'#234'ncia'
@@ -61,7 +62,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_barra: TLabel [6]
         Left = 8
-        Top = 125
+        Top = -303
         Width = 92
         Height = 16
         Caption = 'C'#243'digo de Barra'
@@ -74,7 +75,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_grupo_produtos: TLabel [7]
         Left = 104
-        Top = 188
+        Top = -240
         Width = 106
         Height = 16
         Caption = 'Grupo de Produtos'
@@ -87,7 +88,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_marca: TLabel [8]
         Left = 104
-        Top = 246
+        Top = -182
         Width = 47
         Height = 16
         Caption = 'Marca *'
@@ -100,10 +101,10 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_titulo_dados_produtos: TLabel [9]
         Left = 23
-        Top = 20
-        Width = 161
+        Top = -408
+        Width = 137
         Height = 18
-        Caption = 'DADOS DO PRODUTO'
+        Caption = 'DADOS DA ROUPA'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
@@ -113,7 +114,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_titulo_valores: TLabel [10]
         Left = 23
-        Top = 308
+        Top = -120
         Width = 71
         Height = 18
         Caption = 'VALORES'
@@ -126,7 +127,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_valor_custo: TLabel [11]
         Left = 8
-        Top = 338
+        Top = -90
         Width = 82
         Height = 16
         Caption = 'Valor de custo'
@@ -139,7 +140,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_lucro: TLabel [12]
         Left = 168
-        Top = 338
+        Top = -90
         Width = 47
         Height = 16
         Caption = 'Lucro %'
@@ -152,7 +153,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_valor_venda: TLabel [13]
         Left = 336
-        Top = 338
+        Top = -90
         Width = 100
         Height = 16
         Caption = 'Valor de Venda *'
@@ -165,10 +166,10 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_variacoes_produto: TLabel [14]
         Left = 23
-        Top = 405
-        Width = 196
+        Top = -23
+        Width = 172
         Height = 18
-        Caption = 'VARIA'#199#213'ES DO PRODUTO'
+        Caption = 'VARIA'#199#213'ES DA ROUPA'
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -15
@@ -178,7 +179,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cor: TLabel [15]
         Left = 98
-        Top = 434
+        Top = 6
         Width = 32
         Height = 16
         Caption = 'Cor *'
@@ -190,8 +191,8 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         ParentFont = False
       end
       object lbl_tamanho: TLabel [16]
-        Left = 573
-        Top = 434
+        Left = 413
+        Top = 6
         Width = 66
         Height = 16
         Caption = 'Tamanho *'
@@ -204,7 +205,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_qtd_total_produtos: TLabel [17]
         Left = 734
-        Top = 690
+        Top = 294
         Width = 192
         Height = 16
         Caption = 'Quantidade total de produtos'
@@ -217,7 +218,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_fornecedor: TLabel [18]
         Left = 100
-        Top = 769
+        Top = 341
         Width = 77
         Height = 16
         Caption = 'Fornecedor *'
@@ -230,7 +231,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_colecao: TLabel [19]
         Left = 573
-        Top = 769
+        Top = 341
         Width = 45
         Height = 16
         Caption = 'Cole'#231#227'o'
@@ -243,7 +244,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_observacoes: TLabel [20]
         Left = 23
-        Top = 847
+        Top = 419
         Width = 113
         Height = 18
         Caption = 'OBSERVA'#199#213'ES'
@@ -256,7 +257,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_grupo_produto: TLabel [21]
         Left = 8
-        Top = 188
+        Top = -240
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -269,7 +270,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_marca: TLabel [22]
         Left = 8
-        Top = 246
+        Top = -182
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -282,7 +283,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_cor: TLabel [23]
         Left = 8
-        Top = 434
+        Top = 6
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -294,8 +295,8 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         ParentFont = False
       end
       object lbl_cod_tamanho: TLabel [24]
-        Left = 481
-        Top = 434
+        Left = 321
+        Top = 6
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -308,7 +309,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_fornecedor: TLabel [25]
         Left = 8
-        Top = 769
+        Top = 341
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -321,7 +322,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_colecao: TLabel [26]
         Left = 481
-        Top = 769
+        Top = 341
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -333,30 +334,30 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         ParentFont = False
       end
       inherited edt_cod_usuario: PriTEdit
-        Top = 1120
-        TabOrder = 6
-        ExplicitTop = 1120
+        Top = 692
+        TabOrder = 4
+        ExplicitTop = 692
       end
       inherited edt_codigo: PriTEdit
-        Top = 75
-        TabOrder = 22
-        ExplicitTop = 75
+        Top = -353
+        TabOrder = 20
+        ExplicitTop = -353
       end
       inherited edt_data_cadastro: PriTEdit
-        Top = 1120
-        TabOrder = 8
-        ExplicitTop = 1120
+        Top = 692
+        TabOrder = 6
+        ExplicitTop = 692
       end
       inherited edt_data_ult_alt: PriTEdit
-        Top = 1120
-        TabOrder = 7
-        ExplicitTop = 1120
+        Top = 692
+        TabOrder = 5
+        ExplicitTop = 692
       end
       inherited pnl_bottom: TPanel
-        Top = 1144
+        Top = 716
         Width = 1057
-        TabOrder = 23
-        ExplicitTop = 1144
+        TabOrder = 21
+        ExplicitTop = 716
         ExplicitWidth = 1057
         inherited pnl_botao_salvar: TPanel
           Left = 728
@@ -371,7 +372,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_descricao_produto: PriTEdit
         Left = 112
-        Top = 75
+        Top = -353
         Width = 566
         Height = 24
         CharCase = ecUpperCase
@@ -380,13 +381,14 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 80
         ParentFont = False
-        TabOrder = 9
+        TabOrder = 7
         MudarCor = clCream
       end
       object edt_referencia: PriTEdit
         Left = 216
-        Top = 144
+        Top = -284
         Width = 177
         Height = 24
         CharCase = ecUpperCase
@@ -395,13 +397,14 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 50
         ParentFont = False
-        TabOrder = 10
+        TabOrder = 8
         MudarCor = clCream
       end
       object edt_cod_barra: PriTEdit
         Left = 8
-        Top = 144
+        Top = -284
         Width = 184
         Height = 24
         CharCase = ecUpperCase
@@ -410,13 +413,14 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 50
         ParentFont = False
-        TabOrder = 11
+        TabOrder = 9
         MudarCor = clCream
       end
       object edt_pesquisar_grupoProduto_produto: PriTEdit
         Left = 104
-        Top = 208
+        Top = -220
         Width = 280
         Height = 24
         CharCase = ecUpperCase
@@ -426,12 +430,13 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 12
+        ReadOnly = True
+        TabOrder = 10
         MudarCor = clCream
       end
       object pnl_btn_pesquisa_grupoProduto: TPanel
         Left = 390
-        Top = 208
+        Top = -220
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -483,13 +488,14 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           ParentFont = False
+          OnClick = btn_pesquisa_grupoProdutoClick
           ExplicitWidth = 65
           ExplicitHeight = 21
         end
       end
       object edt_pesquisar_marca_produto: PriTEdit
         Left = 104
-        Top = 266
+        Top = -162
         Width = 280
         Height = 24
         CharCase = ecUpperCase
@@ -499,12 +505,13 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 13
+        ReadOnly = True
+        TabOrder = 11
         MudarCor = clCream
       end
       object pnl_btn_pesquisa_marca: TPanel
         Left = 390
-        Top = 269
+        Top = -159
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -550,13 +557,14 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
             6767670101010F0F0F4242425858582A2A2A0101011C1C1CBABABAFFFFFFFFFF
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+          OnClick = btn_pesquisa_marcaClick
           ExplicitWidth = 65
           ExplicitHeight = 21
         end
       end
       object edt_valor_custo: PriTEdit
         Left = 8
-        Top = 358
+        Top = -70
         Width = 121
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -564,44 +572,47 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 8
+        NumbersOnly = True
+        ParentFont = False
+        TabOrder = 12
+        MudarCor = clCream
+      end
+      object edt_lucro: PriTEdit
+        Left = 168
+        Top = -70
+        Width = 121
+        Height = 24
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        MaxLength = 3
+        NumbersOnly = True
+        ParentFont = False
+        TabOrder = 13
+        MudarCor = clCream
+      end
+      object edt_valor_venda: PriTEdit
+        Left = 336
+        Top = -70
+        Width = 121
+        Height = 24
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        MaxLength = 8
         NumbersOnly = True
         ParentFont = False
         TabOrder = 14
         MudarCor = clCream
       end
-      object edt_lucro: PriTEdit
-        Left = 168
-        Top = 358
-        Width = 121
-        Height = 24
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        NumbersOnly = True
-        ParentFont = False
-        TabOrder = 15
-        MudarCor = clCream
-      end
-      object edt_valor_venda: PriTEdit
-        Left = 336
-        Top = 358
-        Width = 121
-        Height = 24
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        NumbersOnly = True
-        ParentFont = False
-        TabOrder = 16
-        MudarCor = clCream
-      end
       object edt_pesquisar_cor: PriTEdit
         Left = 98
-        Top = 454
+        Top = 26
         Width = 150
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -610,12 +621,13 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 17
+        ReadOnly = True
+        TabOrder = 15
         MudarCor = clCream
       end
       object pnl_btn_pesquisa_cor: TPanel
         Left = 251
-        Top = 456
+        Top = 28
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -661,13 +673,14 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           ParentFont = False
+          OnClick = btn_pesquisa_corClick
           ExplicitWidth = 65
           ExplicitHeight = 21
         end
       end
       object edt_pesquisar_tamanho: PriTEdit
-        Left = 573
-        Top = 454
+        Left = 413
+        Top = 26
         Width = 150
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -676,12 +689,13 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 18
+        ReadOnly = True
+        TabOrder = 16
         MudarCor = clCream
       end
       object pnl_btn_pesquisa_tamanho: TPanel
-        Left = 728
-        Top = 455
+        Left = 568
+        Top = 26
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -727,73 +741,14 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           ParentFont = False
+          OnClick = btn_pesquisa_tamanhoClick
           ExplicitWidth = 65
           ExplicitHeight = 21
         end
       end
-      object pnl_adicionar_cor: TPanel
-        Left = 303
-        Top = 446
-        Width = 150
-        Height = 40
-        BevelOuter = bvNone
-        Color = 4227327
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentBackground = False
-        ParentFont = False
-        TabOrder = 5
-        object btn_adicionar_cor: TSpeedButton
-          Left = 0
-          Top = 0
-          Width = 150
-          Height = 40
-          Cursor = crHandPoint
-          Align = alClient
-          Caption = 'Adicionar'
-          Flat = True
-          ExplicitLeft = 56
-          ExplicitTop = 8
-          ExplicitWidth = 23
-          ExplicitHeight = 22
-        end
-      end
-      object pnl_btn_adicionar_tamanho: TPanel
-        Left = 776
-        Top = 446
-        Width = 150
-        Height = 40
-        BevelOuter = bvNone
-        Color = 4227327
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentBackground = False
-        ParentFont = False
-        TabOrder = 4
-        object btn_adicionar_tamanho: TSpeedButton
-          Left = 0
-          Top = 0
-          Width = 150
-          Height = 40
-          Cursor = crHandPoint
-          Align = alClient
-          Caption = 'Adicionar'
-          Flat = True
-          ExplicitLeft = 56
-          ExplicitTop = 8
-          ExplicitWidth = 23
-          ExplicitHeight = 22
-        end
-      end
       object edt_quant_total_produtos: PriTEdit
         Left = 805
-        Top = 712
+        Top = 316
         Width = 121
         Height = 24
         Enabled = False
@@ -804,12 +759,13 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Style = []
         NumbersOnly = True
         ParentFont = False
-        TabOrder = 24
+        ReadOnly = True
+        TabOrder = 22
         MudarCor = clCream
       end
       object edt_pesquisar_registro: PriTEdit
         Left = 98
-        Top = 789
+        Top = 361
         Width = 280
         Height = 24
         CharCase = ecUpperCase
@@ -819,16 +775,17 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 19
+        ReadOnly = True
+        TabOrder = 17
         MudarCor = clCream
       end
       object pnl_btn_pesquisa: TPanel
         Left = 380
-        Top = 790
+        Top = 362
         Width = 35
         Height = 22
         BevelOuter = bvNone
-        TabOrder = 25
+        TabOrder = 23
         object btn_pesquisa: TSpeedButton
           Left = 0
           Top = 0
@@ -870,12 +827,13 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           ParentFont = False
+          OnClick = btn_pesquisaClick
           ExplicitTop = 8
         end
       end
       object edt_colecao: PriTEdit
         Left = 573
-        Top = 789
+        Top = 361
         Width = 280
         Height = 24
         CharCase = ecUpperCase
@@ -885,17 +843,18 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
-        TabOrder = 20
+        ReadOnly = True
+        TabOrder = 18
         MudarCor = clCream
       end
-      object Panel1: TPanel
+      object pbl_botao_pesquisa_colecao: TPanel
         Left = 857
-        Top = 790
+        Top = 362
         Width = 35
         Height = 22
         BevelOuter = bvNone
-        TabOrder = 26
-        object SpeedButton1: TSpeedButton
+        TabOrder = 24
+        object btn_pesquisa_colecao: TSpeedButton
           Left = 0
           Top = 0
           Width = 35
@@ -936,33 +895,35 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
             FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFBCBCBC5959592626260F0F0F3F
             3F3F7A7A7AF0F0F0FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
           ParentFont = False
+          OnClick = btn_pesquisa_colecaoClick
           ExplicitWidth = 65
           ExplicitHeight = 21
         end
       end
       object memo_obs: TMemo
         Left = 8
-        Top = 886
-        Width = 824
+        Top = 458
+        Width = 918
         Height = 193
-        TabOrder = 21
+        MaxLength = 250
+        TabOrder = 19
       end
       object ListView1: TListView
         Left = 8
-        Top = 504
+        Top = 116
         Width = 918
-        Height = 177
+        Height = 162
         Columns = <>
-        TabOrder = 27
+        TabOrder = 25
       end
       object pnl_img: TPanel
         Left = 698
-        Top = 12
+        Top = -416
         Width = 349
         Height = 300
         BevelInner = bvSpace
         BevelOuter = bvNone
-        TabOrder = 28
+        TabOrder = 26
         object img_funcionario: TImage
           Left = 1
           Top = 1
@@ -1330,7 +1291,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pnl_btn_selecionar_foto: TPanel
         Left = 896
-        Top = 319
+        Top = -109
         Width = 150
         Height = 40
         BevelOuter = bvNone
@@ -1342,7 +1303,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Style = []
         ParentBackground = False
         ParentFont = False
-        TabOrder = 29
+        TabOrder = 27
         object btn_selecionar_foto: TSpeedButton
           Left = 0
           Top = 0
@@ -1360,7 +1321,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_cod_grupo_produto: PriTEdit
         Left = 8
-        Top = 208
+        Top = -220
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1368,14 +1329,47 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
+        NumbersOnly = True
+        ParentFont = False
+        TabOrder = 28
+        MudarCor = clCream
+      end
+      object edt_cod_marca: PriTEdit
+        Left = 8
+        Top = -162
+        Width = 80
+        Height = 24
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        MaxLength = 4
+        NumbersOnly = True
+        ParentFont = False
+        TabOrder = 29
+        MudarCor = clCream
+      end
+      object edt_cod_cor: PriTEdit
+        Left = 8
+        Top = 26
+        Width = 80
+        Height = 24
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        MaxLength = 4
         NumbersOnly = True
         ParentFont = False
         TabOrder = 30
         MudarCor = clCream
       end
-      object edt_cod_marca: PriTEdit
-        Left = 8
-        Top = 266
+      object edt_cod_tamanho: PriTEdit
+        Left = 321
+        Top = 26
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1383,14 +1377,15 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         NumbersOnly = True
         ParentFont = False
         TabOrder = 31
         MudarCor = clCream
       end
-      object edt_cod_cor: PriTEdit
+      object edt_cod_fornecedor: PriTEdit
         Left = 8
-        Top = 454
+        Top = 361
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1398,14 +1393,15 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         NumbersOnly = True
         ParentFont = False
         TabOrder = 32
         MudarCor = clCream
       end
-      object edt_cod_tamanho: PriTEdit
+      object edt_cod_colecao: PriTEdit
         Left = 481
-        Top = 454
+        Top = 361
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1413,40 +1409,143 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
+        MaxLength = 4
         NumbersOnly = True
         ParentFont = False
         TabOrder = 33
         MudarCor = clCream
       end
-      object edt_cod_fornecedor: PriTEdit
-        Left = 8
-        Top = 789
-        Width = 80
-        Height = 24
+      object pbl_limpar_grid: TPanel
+        Left = 826
+        Top = 66
+        Width = 100
+        Height = 40
+        BevelOuter = bvNone
+        Color = clWhite
+        DragCursor = crHandPoint
         Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
+        Font.Color = clBlack
+        Font.Height = -11
         Font.Name = 'Tahoma'
         Font.Style = []
-        NumbersOnly = True
+        ParentBackground = False
         ParentFont = False
         TabOrder = 34
-        MudarCor = clCream
+        object btn_limpar_grid: TSpeedButton
+          Left = 0
+          Top = 0
+          Width = 100
+          Height = 40
+          Cursor = crHandPoint
+          Align = alClient
+          Caption = 'Limpar'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          ExplicitLeft = 24
+          ExplicitTop = 8
+          ExplicitWidth = 23
+          ExplicitHeight = 22
+        end
       end
-      object edt_cod_colecao: PriTEdit
-        Left = 481
-        Top = 789
-        Width = 80
-        Height = 24
+      object pnl_botao_excluir_item: TPanel
+        Left = 704
+        Top = 66
+        Width = 94
+        Height = 40
+        BevelOuter = bvNone
+        Color = clRed
+        ParentBackground = False
+        TabOrder = 35
+        object btn_botao_excluir_item: TSpeedButton
+          Left = 0
+          Top = 0
+          Width = 94
+          Height = 40
+          Cursor = crHandPoint
+          Align = alClient
+          Caption = 'Remover'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWhite
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          ExplicitLeft = 40
+          ExplicitTop = 16
+          ExplicitWidth = 23
+          ExplicitHeight = 22
+        end
+      end
+      object pnl_botao_alterar: TPanel
+        Left = 584
+        Top = 66
+        Width = 94
+        Height = 40
+        BevelOuter = bvNone
+        Color = 1624307
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
         Font.Height = -13
         Font.Name = 'Tahoma'
         Font.Style = []
-        NumbersOnly = True
+        ParentBackground = False
         ParentFont = False
-        TabOrder = 35
-        MudarCor = clCream
+        TabOrder = 36
+        object btn_botao_alterar_item: TSpeedButton
+          Left = 0
+          Top = 0
+          Width = 94
+          Height = 40
+          Cursor = crHandPoint
+          Align = alClient
+          Caption = 'Alterar'
+          Flat = True
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          ExplicitLeft = -12
+          ExplicitTop = -15
+          ExplicitWidth = 150
+        end
+      end
+      object pnl_adicionar_contato: TPanel
+        Left = 464
+        Top = 66
+        Width = 94
+        Height = 40
+        BevelOuter = bvNone
+        Color = 4227072
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -13
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentBackground = False
+        ParentFont = False
+        TabOrder = 37
+        object btn_adicionar_contato: TSpeedButton
+          Left = 0
+          Top = 0
+          Width = 94
+          Height = 40
+          Cursor = crHandPoint
+          Align = alClient
+          Caption = 'Adicionar'
+          Flat = True
+          ExplicitLeft = 56
+          ExplicitTop = 8
+          ExplicitWidth = 23
+          ExplicitHeight = 22
+        end
       end
     end
   end
