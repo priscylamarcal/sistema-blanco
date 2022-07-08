@@ -16,11 +16,12 @@ uses uConsulta_Paises, uConsulta_Estados, uConsulta_Cargos, uConsulta_Clientes,
      uCadastroContasPagar, uCadastroColecoes, uCadastroCores,
      uCadastroGruposProdutos, uCadastroMarcas, uCadastroTamanhos,
      uCadastroProdutos, uCadastroFornecedores, uCadastroClientes, uCadastroTiposContatos,
-     uCadastro_Cidades, uCondicoesPagamentos, uFuncionarios,
+     uCadastro_Cidades, uCadastro_Compras,
+
 
      uPaises, uEstados, uCores, uColecoes, uGruposRoupas, uMarcas,
      uTamanhos, uFormaPagamento, uTiposContatos, uCidades, uCargos, uFornecedores,
-     uClientes, uRoupas,
+     uClientes, uRoupas, uCondicoesPagamentos, uFuncionarios,
 
      uCtrlPaises, uCtrlEstados, uDepartamentos, uCtrlCores, uCtrlColecoes,
      uCtrlGruposRoupas, uCtrlMarcas, uCtrlTamanhos, uCtrlFormasPagamentos,
@@ -73,6 +74,7 @@ type Inter = class
     oCadastroTiposContatos      : Tform_cadastro_tipo_contato;
     oCadastroCondicaoPagamento  : Tform_cadastro_condicao_pagamento;
     oCadastroCidade             : Tform_cadastro_cidades;
+    oCadastroCompras            : Tform_cadastro_compras;
   public
     constructor crieObj;
     destructor destrua_se;
@@ -150,6 +152,7 @@ begin
   oCadastroTiposContatos        := Tform_cadastro_tipo_contato.Create(nil);
   oCadastroCondicaoPagamento    := Tform_cadastro_condicao_pagamento.Create(nil);
   oCadastroCidade               := Tform_cadastro_cidades.Create(nil);
+  oCadastroCompras              := Tform_cadastro_compras.Create(nil);
 
   aConsultaPaises.setFrmCadastro( oCadastroPaises );
   aConsultaEstados.setFrmCadastro( oCadastroEstados );
@@ -171,6 +174,7 @@ begin
   aConsultaTiposContatos.setFrmCadastro( oCadastroTiposContatos );
   aConsultaCondicoesPagamentos.setFrmCadastro( oCadastroCondicaoPagamento );
   aConsultaCidades.setFrmCadastro( oCadastroCidade );
+  aConsultaCompras.setFrmCadastro(oCadastroCompras);
 
   oCadastroEstados.setFrmConsultaPaises( aConsultaPaises );
 
@@ -246,6 +250,7 @@ begin
   oCadastroTiposContatos.FreeInstance;
   oCadastroCondicaoPagamento.FreeInstance;
   oCadastroCidade.FreeInstance;
+  oCadastroCompras.FreeInstance;
 end;
 
 procedure Inter.PDCargos(pCtrl: TObject; pObj: Cargos);

@@ -15,28 +15,27 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
     inherited ScrollBox1: TScrollBox
       Width = 1074
       Height = 771
-      VertScrollBar.Position = 428
       ExplicitWidth = 1074
       ExplicitHeight = 771
       inherited lbl_cod_usuario: TLabel
-        Top = 677
+        Top = 1105
         ExplicitTop = 967
       end
       inherited lbl_codigo: TLabel
-        Top = -372
+        Top = 56
         ExplicitTop = 56
       end
       inherited lbl_data_cadastro: TLabel
-        Top = 677
+        Top = 1105
         ExplicitTop = 959
       end
       inherited lbl_data_ult_alt: TLabel
-        Top = 677
+        Top = 1105
         ExplicitTop = 959
       end
       object lbl_descricao_produto: TLabel [4]
         Left = 112
-        Top = -372
+        Top = 56
         Width = 125
         Height = 16
         Caption = 'Descri'#231#227'o da Roupa *'
@@ -49,7 +48,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_referencia: TLabel [5]
         Left = 216
-        Top = -303
+        Top = 125
         Width = 61
         Height = 16
         Caption = 'Refer'#234'ncia'
@@ -62,7 +61,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_barra: TLabel [6]
         Left = 8
-        Top = -303
+        Top = 125
         Width = 92
         Height = 16
         Caption = 'C'#243'digo de Barra'
@@ -75,7 +74,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_grupo_produtos: TLabel [7]
         Left = 104
-        Top = -240
+        Top = 188
         Width = 106
         Height = 16
         Caption = 'Grupo de Produtos'
@@ -88,7 +87,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_marca: TLabel [8]
         Left = 104
-        Top = -182
+        Top = 246
         Width = 47
         Height = 16
         Caption = 'Marca *'
@@ -101,7 +100,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_titulo_dados_produtos: TLabel [9]
         Left = 23
-        Top = -408
+        Top = 20
         Width = 137
         Height = 18
         Caption = 'DADOS DA ROUPA'
@@ -114,7 +113,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_titulo_valores: TLabel [10]
         Left = 23
-        Top = -120
+        Top = 308
         Width = 71
         Height = 18
         Caption = 'VALORES'
@@ -127,7 +126,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_valor_custo: TLabel [11]
         Left = 8
-        Top = -90
+        Top = 338
         Width = 82
         Height = 16
         Caption = 'Valor de custo'
@@ -140,7 +139,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_lucro: TLabel [12]
         Left = 168
-        Top = -90
+        Top = 338
         Width = 47
         Height = 16
         Caption = 'Lucro %'
@@ -153,7 +152,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_valor_venda: TLabel [13]
         Left = 336
-        Top = -90
+        Top = 338
         Width = 100
         Height = 16
         Caption = 'Valor de Venda *'
@@ -166,7 +165,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_variacoes_produto: TLabel [14]
         Left = 23
-        Top = -23
+        Top = 405
         Width = 172
         Height = 18
         Caption = 'VARIA'#199#213'ES DA ROUPA'
@@ -179,7 +178,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cor: TLabel [15]
         Left = 98
-        Top = 6
+        Top = 434
         Width = 32
         Height = 16
         Caption = 'Cor *'
@@ -192,7 +191,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_tamanho: TLabel [16]
         Left = 413
-        Top = 6
+        Top = 434
         Width = 66
         Height = 16
         Caption = 'Tamanho *'
@@ -205,7 +204,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_qtd_total_produtos: TLabel [17]
         Left = 734
-        Top = 294
+        Top = 722
         Width = 192
         Height = 16
         Caption = 'Quantidade total de produtos'
@@ -218,7 +217,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_fornecedor: TLabel [18]
         Left = 100
-        Top = 341
+        Top = 769
         Width = 77
         Height = 16
         Caption = 'Fornecedor *'
@@ -231,7 +230,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_colecao: TLabel [19]
         Left = 573
-        Top = 341
+        Top = 769
         Width = 45
         Height = 16
         Caption = 'Cole'#231#227'o'
@@ -244,7 +243,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_observacoes: TLabel [20]
         Left = 23
-        Top = 419
+        Top = 847
         Width = 113
         Height = 18
         Caption = 'OBSERVA'#199#213'ES'
@@ -257,7 +256,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_grupo_produto: TLabel [21]
         Left = 8
-        Top = -240
+        Top = 188
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -270,7 +269,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_marca: TLabel [22]
         Left = 8
-        Top = -182
+        Top = 246
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -283,7 +282,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_cor: TLabel [23]
         Left = 8
-        Top = 6
+        Top = 434
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -296,7 +295,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_tamanho: TLabel [24]
         Left = 321
-        Top = 6
+        Top = 434
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -309,7 +308,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_fornecedor: TLabel [25]
         Left = 8
-        Top = 341
+        Top = 769
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -322,7 +321,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object lbl_cod_colecao: TLabel [26]
         Left = 481
-        Top = 341
+        Top = 769
         Width = 39
         Height = 16
         Caption = 'C'#243'digo'
@@ -334,30 +333,30 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
         ParentFont = False
       end
       inherited edt_cod_usuario: PriTEdit
-        Top = 692
+        Top = 1120
         TabOrder = 4
-        ExplicitTop = 692
+        ExplicitTop = 1120
       end
       inherited edt_codigo: PriTEdit
-        Top = -353
+        Top = 75
         TabOrder = 20
-        ExplicitTop = -353
+        ExplicitTop = 75
       end
       inherited edt_data_cadastro: PriTEdit
-        Top = 692
+        Top = 1120
         TabOrder = 6
-        ExplicitTop = 692
+        ExplicitTop = 1120
       end
       inherited edt_data_ult_alt: PriTEdit
-        Top = 692
+        Top = 1120
         TabOrder = 5
-        ExplicitTop = 692
+        ExplicitTop = 1120
       end
       inherited pnl_bottom: TPanel
-        Top = 716
+        Top = 1144
         Width = 1057
         TabOrder = 21
-        ExplicitTop = 716
+        ExplicitTop = 1144
         ExplicitWidth = 1057
         inherited pnl_botao_salvar: TPanel
           Left = 728
@@ -372,7 +371,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_descricao_produto: PriTEdit
         Left = 112
-        Top = -353
+        Top = 75
         Width = 566
         Height = 24
         CharCase = ecUpperCase
@@ -388,7 +387,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_referencia: PriTEdit
         Left = 216
-        Top = -284
+        Top = 144
         Width = 177
         Height = 24
         CharCase = ecUpperCase
@@ -404,7 +403,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_cod_barra: PriTEdit
         Left = 8
-        Top = -284
+        Top = 144
         Width = 184
         Height = 24
         CharCase = ecUpperCase
@@ -420,7 +419,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_pesquisar_grupoProduto_produto: PriTEdit
         Left = 104
-        Top = -220
+        Top = 208
         Width = 280
         Height = 24
         CharCase = ecUpperCase
@@ -436,7 +435,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pnl_btn_pesquisa_grupoProduto: TPanel
         Left = 390
-        Top = -220
+        Top = 208
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -495,7 +494,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_pesquisar_marca_produto: PriTEdit
         Left = 104
-        Top = -162
+        Top = 266
         Width = 280
         Height = 24
         CharCase = ecUpperCase
@@ -511,7 +510,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pnl_btn_pesquisa_marca: TPanel
         Left = 390
-        Top = -159
+        Top = 269
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -564,7 +563,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_valor_custo: PriTEdit
         Left = 8
-        Top = -70
+        Top = 358
         Width = 121
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -580,7 +579,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_lucro: PriTEdit
         Left = 168
-        Top = -70
+        Top = 358
         Width = 121
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -596,7 +595,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_valor_venda: PriTEdit
         Left = 336
-        Top = -70
+        Top = 358
         Width = 121
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -612,7 +611,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_pesquisar_cor: PriTEdit
         Left = 98
-        Top = 26
+        Top = 454
         Width = 150
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -627,7 +626,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pnl_btn_pesquisa_cor: TPanel
         Left = 251
-        Top = 28
+        Top = 456
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -680,7 +679,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_pesquisar_tamanho: PriTEdit
         Left = 413
-        Top = 26
+        Top = 454
         Width = 150
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -695,7 +694,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pnl_btn_pesquisa_tamanho: TPanel
         Left = 568
-        Top = 26
+        Top = 454
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -748,7 +747,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_quant_total_produtos: PriTEdit
         Left = 805
-        Top = 316
+        Top = 744
         Width = 121
         Height = 24
         Enabled = False
@@ -765,7 +764,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_pesquisar_registro: PriTEdit
         Left = 98
-        Top = 361
+        Top = 789
         Width = 280
         Height = 24
         CharCase = ecUpperCase
@@ -781,7 +780,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pnl_btn_pesquisa: TPanel
         Left = 380
-        Top = 362
+        Top = 790
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -833,7 +832,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_colecao: PriTEdit
         Left = 573
-        Top = 361
+        Top = 789
         Width = 280
         Height = 24
         CharCase = ecUpperCase
@@ -849,7 +848,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pbl_botao_pesquisa_colecao: TPanel
         Left = 857
-        Top = 362
+        Top = 790
         Width = 35
         Height = 22
         BevelOuter = bvNone
@@ -902,7 +901,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object memo_obs: TMemo
         Left = 8
-        Top = 458
+        Top = 886
         Width = 918
         Height = 193
         MaxLength = 250
@@ -910,7 +909,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object ListView1: TListView
         Left = 8
-        Top = 116
+        Top = 544
         Width = 918
         Height = 162
         Columns = <>
@@ -918,7 +917,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pnl_img: TPanel
         Left = 698
-        Top = -416
+        Top = 12
         Width = 349
         Height = 300
         BevelInner = bvSpace
@@ -1291,7 +1290,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pnl_btn_selecionar_foto: TPanel
         Left = 896
-        Top = -109
+        Top = 319
         Width = 150
         Height = 40
         BevelOuter = bvNone
@@ -1321,7 +1320,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_cod_grupo_produto: PriTEdit
         Left = 8
-        Top = -220
+        Top = 208
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1337,7 +1336,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_cod_marca: PriTEdit
         Left = 8
-        Top = -162
+        Top = 266
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1353,7 +1352,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_cod_cor: PriTEdit
         Left = 8
-        Top = 26
+        Top = 454
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1369,7 +1368,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_cod_tamanho: PriTEdit
         Left = 321
-        Top = 26
+        Top = 454
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1385,7 +1384,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_cod_fornecedor: PriTEdit
         Left = 8
-        Top = 361
+        Top = 789
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1401,7 +1400,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object edt_cod_colecao: PriTEdit
         Left = 481
-        Top = 361
+        Top = 789
         Width = 80
         Height = 24
         Font.Charset = DEFAULT_CHARSET
@@ -1417,7 +1416,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pbl_limpar_grid: TPanel
         Left = 826
-        Top = 66
+        Top = 494
         Width = 100
         Height = 40
         BevelOuter = bvNone
@@ -1454,7 +1453,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pnl_botao_excluir_item: TPanel
         Left = 704
-        Top = 66
+        Top = 494
         Width = 94
         Height = 40
         BevelOuter = bvNone
@@ -1484,7 +1483,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pnl_botao_alterar: TPanel
         Left = 584
-        Top = 66
+        Top = 494
         Width = 94
         Height = 40
         BevelOuter = bvNone
@@ -1519,7 +1518,7 @@ inherited form_cadastro_produtos: Tform_cadastro_produtos
       end
       object pnl_adicionar_contato: TPanel
         Left = 464
-        Top = 66
+        Top = 494
         Width = 94
         Height = 40
         BevelOuter = bvNone
